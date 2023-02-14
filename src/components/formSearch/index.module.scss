@@ -8,32 +8,35 @@
     .wrapper{
         display: flex;
         flex-wrap: wrap;
-        gap: 4px;
+        gap: 6px;
         background: #febb02;
         padding: 2px 4px;
+        position: relative;
 
      
 
-        .wrapDate{
-            display: flex;
-            gap: 1px;
-        }
-
+        
         input[type=search]{
             height: 40px;
-            width: 200px;
+            width: 300px;
             border: none;
         }
-
-        input[type=date]{
-            height: 40px;
-            width: 200px;
-            border: none;
+        
+        .wrapDate{
+            display: flex;
+            
+            gap: 3px;
+           
+            input[type=date]{
+                height: 40px;
+                width: 150px;
+                border: none;
+            }
         }
-
+            
         input[type=text]{
             height: 40px;
-            width: 200px;
+            width: 300px;
             border: none;
         }
 
@@ -46,11 +49,13 @@
             border: none;
             color: white;
             font-size: medium;
+            height: 40px;
         }
         
     
     }
 }
+
    
 @media only screen and (max-width: 600px) {
     .wrapper{
@@ -58,29 +63,11 @@
         align-items: center;
         flex-direction: column;
         width: 100%;
-
-        input[type=search]{
-            height: 40px;
-            width: 100%;
-            border: none;
-        }
-
-        input[type=date]{
-            height: 40px;
-            width: 100%;
-            border: none;
-        }
-
-        input[type=text]{
-            height: 40px;
-            width: 100%;
-            border: none;
-        }
+        padding: 10px 300px;
     
         .wrapDate{
             justify-content: center;
             align-items: center;
-            flex-direction: column;
             gap: 4px;
         }
   }

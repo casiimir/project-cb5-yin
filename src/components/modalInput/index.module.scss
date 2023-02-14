@@ -1,0 +1,23 @@
+.modalInput{
+
+    border: 1px solid black;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    position: absolute;
+    background: white;
+    padding: 0.5rem;
+
+
+    .label{
+        cursor: pointer;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        &:hover{
+
+            background: #eaeaea;
+        }
+    }
+
+}
