@@ -7,7 +7,12 @@ const Header = () => {
   return (
     <header className={styles.Header}>
       <div className={styles.headerWrapper}>
-        <img className={styles.logo} width="150px" src="/booking.svg" alt="" />
+        <img
+          className={styles.logo}
+          width="150px"
+          src="/bookingWhite.svg"
+          alt=""
+        />
         <div className={styles.desktopWrapper}>
           <div className={styles.otherBtns}>
             <Button type="icon" content="EUR" className="Currency" />
