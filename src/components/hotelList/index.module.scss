@@ -1,0 +1,21 @@
+.List {
+  padding: 20px 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 3px solid black;
+
+  .ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .li {
+    background-color: lightgrey;
+    padding: 20px;
+  }
+}
