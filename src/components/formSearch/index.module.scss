@@ -1,0 +1,87 @@
+.FormSearch{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    .wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        background: #febb02;
+        padding: 2px 4px;
+
+     
+
+        .wrapDate{
+            display: flex;
+            gap: 1px;
+        }
+
+        input[type=search]{
+            height: 40px;
+            width: 200px;
+            border: none;
+        }
+
+        input[type=date]{
+            height: 40px;
+            width: 200px;
+            border: none;
+        }
+
+        input[type=text]{
+            height: 40px;
+            width: 200px;
+            border: none;
+        }
+
+
+        
+        input[type=submit]{
+
+            width: 80px;
+            background: #0071c2;
+            border: none;
+            color: white;
+            font-size: medium;
+        }
+        
+    
+    }
+}
+   
+@media only screen and (max-width: 600px) {
+    .wrapper{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+
+        input[type=search]{
+            height: 40px;
+            width: 100%;
+            border: none;
+        }
+
+        input[type=date]{
+            height: 40px;
+            width: 100%;
+            border: none;
+        }
+
+        input[type=text]{
+            height: 40px;
+            width: 100%;
+            border: none;
+        }
+    
+        .wrapDate{
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 4px;
+        }
+  }
+}
