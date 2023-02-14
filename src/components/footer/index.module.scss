@@ -1,3 +1,64 @@
 .Footer {
-  background-color: rgba(0, 0, 255, 0.34);
+  .blue {
+    background-color: #003580;
+    padding: 20px;
+  }
+  .description {
+    color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+    }
+    h3 {
+      margin-top: -10px;
+    }
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    gap: 5px;
+
+    input {
+      border-radius: 5px;
+      height: 40px;
+      padding: 10px;
+    }
+
+    .mail {
+      width: 200px;
+      color: rgb(135, 135, 135);
+    }
+
+    .submit {
+      background-color: #0071c2;
+      color: whitesmoke;
+    }
+  }
+
+  .copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    font-size: 10pt;
+    color: rgb(39, 39, 39);
+  }
+
+  .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+
+    .logo {
+    }
+  }
 }
