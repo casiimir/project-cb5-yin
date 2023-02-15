@@ -2,17 +2,11 @@ import Head from "next/head";
 import MainLayout from "@/layout/mainLayout";
 import styles from "@/styles/Home.module.scss";
 import FormSearch from "@/components/formSearch";
-import { useReducer } from "react";
 
-import reducer from "@/store/reducers";
-import initialValue from "./../store/state";
-import AppContext from "@/store/context";
 import HotelList from "@/components/hotelList";
 import FilterHotelList from "@/components/FilterHotelList";
 
 export default function Home() {
-  const [state, dispatch] = useReducer(reducer, initialValue);
-
   return (
     <>
       <Head>
@@ -34,16 +28,9 @@ export default function Home() {
       <main className={styles.main}>
         <MainLayout>
           <FormSearch />
+          <FilterHotelList />
           <HotelList />
         </MainLayout>
-
-        <AppContext.Provider value={{ state, dispatch }}>
-          <MainLayout>
-            <FormSearch />
-            <FilterHotelList />
-            <HotelList />
-          </MainLayout>
-        </AppContext.Provider>
       </main>
     </>
   );
