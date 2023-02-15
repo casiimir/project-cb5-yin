@@ -11,9 +11,17 @@
     align-items: center;
 
     h2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
     h3 {
-      margin-top: -10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-top: 10px;
     }
   }
 
@@ -46,6 +54,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin: 30px;
     font-size: 10pt;
     color: rgb(39, 39, 39);

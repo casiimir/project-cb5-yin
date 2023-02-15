@@ -1,21 +1,40 @@
-.List {
-  padding: 20px 10px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  border: 3px solid black;
+.sectionHotelSicily {
+  padding: 20px;
 
-  .ul {
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
+  .List {
   }
 
-  .li {
-    background-color: lightgrey;
-    padding: 20px;
+  .Div {
+    margin: 0;
+    display: flex;
+    overflow: scroll;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .DivImg {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .sectionHotelSicily {
+    .List {
+      padding: 50px 200px;
+
+      p {
+        padding: 10px 110px;
+      }
+    }
+
+    .Div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      text-align: justify;
+    }
   }
 }
