@@ -55,7 +55,7 @@ const FormSearch = () => {
         </button>
 
         {modalOpen && (
-          <ModalPersonRoom setOpenModal={setModalOpen} setCount={setCount} />
+          <ModalPersonRoom setOpenModal={setModalOpen} count={count} />
         )}
 
         <input value="Cerca" type="submit" />

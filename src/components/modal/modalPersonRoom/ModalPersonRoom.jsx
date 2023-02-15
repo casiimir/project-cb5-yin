@@ -1,14 +1,13 @@
 import styles from "./index.module.scss";
 import CounterAdulti from "../../counter/counterA";
-import CounterBambini from "../../counter/counterB";
-import CounterCamere from "../../counter/counterC";
+
 import { useState } from "react";
 
-const ModalPersonRoom = ({ setOpenModal, setCount }) => {
+const ModalPersonRoom = ({ setOpenModal, count }) => {
   return (
     <div className={styles.modalBackground}>
       <div className={styles.modalContainer}>
-        <div className={styles.titleCloseBtn}>
+        <div className={styles.closeBtn}>
           <button
             onClick={() => {
               setOpenModal(false);
@@ -17,9 +16,9 @@ const ModalPersonRoom = ({ setOpenModal, setCount }) => {
             X
           </button>
           <div>
-            Adulti <CounterAdulti setCount={setCount} />
-            Bambini <CounterBambini />
-            Camere <CounterCamere />
+            Adulti <CounterAdulti />
+            Bambini <CounterAdulti />
+            Camere <CounterAdulti />
           </div>
         </div>
       </div>
