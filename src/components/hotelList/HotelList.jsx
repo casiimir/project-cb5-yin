@@ -8,13 +8,14 @@ const HotelList = (city) => {
     <>
       <div className={styles.List}>
         <p>Hotel per Città</p>
-        <ul className={styles.ul}>
+        <div className="">
           {cityList.map((city) => (
-            <li className={styles.li} key={city.id}>
-              <h5>{city.city}</h5>
-            </li>
+            <div>
+              <img src={city.image_url} alt="" />
+              <h4>{city.name}</h4>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </>
   );
