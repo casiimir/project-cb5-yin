@@ -12,14 +12,12 @@ const FormSearch = () => {
   const [openModal, setOpenModal] = useState(false);
 
   const [modalOpen, setModalOpen] = useState(false);
-  const [count, setCount] = useState(1);
-  
-  const { state } = useContext(AppContext);
 
+  const { state } = useContext(AppContext);
 
   useEffect(() => {
     GET(`hotels/locations?locale=it&name=${location}`).then((res) => {
-      console.log(res)
+      console.log(res);
       if (Array.isArray(res)) {
         console.log(res);
         setData(res);
