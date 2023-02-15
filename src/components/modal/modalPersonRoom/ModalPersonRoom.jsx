@@ -4,7 +4,7 @@ import CounterBambini from "../../counter/counterForm/CounterBambini";
 import CounterCamere from "../../counter/counterForm/CounterCamere";
 import { useState } from "react";
 
-const ModalPersonRoom = ({ setOpenModal, count }) => {
+const ModalPersonRoom = ({ setOpenModal }) => {
   return (
     <div className={styles.modalBackground}>
       <button
