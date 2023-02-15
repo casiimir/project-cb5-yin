@@ -1,0 +1,36 @@
+.section {
+  padding: 30px 40px;
+
+  p {
+  }
+
+  .Hotels {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow: scroll;
+  }
+
+  .infoHotel {
+    border: 1px lightgray;
+    background-color: lightgray;
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .section {
+    .Hotels {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
