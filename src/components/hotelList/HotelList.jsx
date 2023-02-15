@@ -6,15 +6,17 @@ const HotelList = (city) => {
 
   return (
     <>
-      <div className={styles.List}>
-        <p>Hotel per Città</p>
-        <div className="">
-          {cityList.map((city) => (
-            <div>
-              <img src={city.image_url} alt="" />
-              <h4>{city.name}</h4>
-            </div>
-          ))}
+      <div className={styles.sectionHotelSicily}>
+        <div className={styles.List}>
+          <p>Hotel in Sicilia</p>
+          <div className={styles.Div}>
+            {cityList.map((city) => (
+              <div className={styles.DivImg}>
+                <img className={styles.image} src={city.image_url} alt="img" />
+                <h4>{city.name}</h4>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
