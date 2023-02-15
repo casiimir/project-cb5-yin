@@ -9,6 +9,9 @@ const cases = {
 
   ADD_ROOMS: "ADD_ROOMS",
   REMOVE_ROOMS: "REMOVE_ROOMS",
+  SET_AUTH: "SET_AUTH",
+  LOGOUT: "LOGOUT",
+  
 };
 const reducer = (state, action) => {
   switch (action.type) {
@@ -25,6 +28,7 @@ const reducer = (state, action) => {
           adults: state.prenotation.adults + 1,
         },
       };
+
     case cases.REMOVE_ADULTS:
       console.log({
         ...state,
@@ -108,6 +112,34 @@ const reducer = (state, action) => {
             rooms: state.prenotation.rooms,
           },
         };
+
+      case cases.SET_AUTH:
+        if(!action.payload) return {
+          ...state,
+          username: ""
+        }
+        
+        const newAuthState = {
+          status: action.payload.status,
+          username: (action.payload.username)  ? action.payload.username : ""
+        }
+        
+        localStorage.setItem("auth", JSON.stringify(newAuthState))
+        return{
+          ...state,
+              auth: newAuthState
+        }
+
+      case cases.LOGOUT:
+      localStorage.removeItem("auth");
+      return{
+        ...state,
+        auth:{
+          ...state.auth,
+          username:"",
+        }
+      }
   }
+      
 };
-export default reducer;
+export {cases, reducer};

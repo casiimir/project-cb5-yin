@@ -7,15 +7,19 @@ import ModalPersonRoom from "../modal/modalPersonRoom";
 import { calculateSizeAdjustValues } from "next/dist/server/font-utils";
 
 const FormSearch = () => {
-  const [location, setLocation] = useState(null);
+  const [location, setLocation] = useState("");
   const [data, setData] = useState([]);
   const [openModal, setOpenModal] = useState(false);
-  const { state } = useContext(AppContext);
+
   const [modalOpen, setModalOpen] = useState(false);
   const [count, setCount] = useState(1);
+  
+  const { state } = useContext(AppContext);
+
 
   useEffect(() => {
     GET(`hotels/locations?locale=it&name=${location}`).then((res) => {
+      console.log(res)
       if (Array.isArray(res)) {
         console.log(res);
         setData(res);

@@ -1,3 +1,7 @@
+import { getAuthFromLS } from "@/utils/utils";
+
+
+
 const initialValue = {
     location: {},
     check_in: "21-12-2012",
@@ -6,6 +10,10 @@ const initialValue = {
         adults: 1,
         children: 0,
         rooms: 1
+    },
+    auth: {
+        username: "",
+        status: false,
     }
 
 };
