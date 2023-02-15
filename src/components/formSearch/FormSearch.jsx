@@ -4,6 +4,7 @@ import AppContext from "@/store/context";
 import ModalInput from "../modalInput/ModalInput";
 import styles from "./index.module.scss";
 import ModalPersonRoom from "../modal/modalPersonRoom";
+import { calculateSizeAdjustValues } from "next/dist/server/font-utils";
 
 const FormSearch = () => {
   const [location, setLocation] = useState(null);
@@ -46,17 +47,16 @@ const FormSearch = () => {
 
         <button
           type="button"
-          className=""
+          className={styles.openModalFormBtn}
           onClick={() => {
             setModalOpen(true);
           }}
         >
-          {count} adulto - 0 bambini - 1 camera
+          {state.prenotation.adults} adulti - {state.prenotation.children}{" "}
+          bambini - {state.prenotation.rooms} camere
         </button>
 
-        {modalOpen && (
-          <ModalPersonRoom setOpenModal={setModalOpen} count={count} />
-        )}
+        {modalOpen && <ModalPersonRoom setOpenModal={setModalOpen} />}
 
         <input value="Cerca" type="submit" />
       </div>

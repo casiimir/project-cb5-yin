@@ -1,74 +1,69 @@
-.FormSearch{
+.FormSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  .wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    
-    .wrapper{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        background: #febb02;
-        padding: 2px 4px;
-        position: relative;
+    flex-wrap: wrap;
+    gap: 6px;
+    background: #febb02;
+    padding: 2px 4px;
+    position: relative;
 
-     
-
-        
-        input[type=search]{
-            height: 40px;
-            width: 300px;
-            border: none;
-        }
-        
-        .wrapDate{
-            display: flex;
-            
-            gap: 3px;
-           
-            input[type=date]{
-                height: 40px;
-                width: 150px;
-                border: none;
-            }
-        }
-            
-        input[type=text]{
-            height: 40px;
-            width: 300px;
-            border: none;
-        }
-
-
-        
-        input[type=submit]{
-
-            width: 80px;
-            background: #0071c2;
-            border: none;
-            color: white;
-            font-size: medium;
-            height: 40px;
-        }
-        
-    
+    input[type="search"] {
+      height: 40px;
+      width: 300px;
+      border: none;
     }
+
+    .wrapDate {
+      display: flex;
+
+      gap: 3px;
+
+      input[type="date"] {
+        height: 40px;
+        width: 150px;
+        border: none;
+      }
+    }
+
+    input[type="text"] {
+      height: 40px;
+      width: 300px;
+      border: none;
+    }
+
+    input[type="submit"] {
+      width: 80px;
+      background: #0071c2;
+      border: none;
+      color: white;
+      font-size: medium;
+      height: 40px;
+    }
+    .openModalFormBtn {
+      background-color: white;
+      height: 40px;
+      width: 300px;
+      border: none;
+    }
+  }
 }
 
-   
 @media only screen and (max-width: 600px) {
-    .wrapper{
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-        padding: 10px 300px;
-    
-        .wrapDate{
-            justify-content: center;
-            align-items: center;
-            gap: 4px;
-        }
+  .wrapper {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 300px;
+
+    .wrapDate {
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+    }
   }
 }
