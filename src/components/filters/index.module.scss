@@ -1,0 +1,33 @@
+.DivFilters {
+  .ulHotels {
+    display: flex;
+    overflow: scroll;
+    gap: 10px;
+    padding: 20px 0px;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(211, 211, 211, 0.621);
+    color: #007bb5;
+    border-radius: 30px;
+    padding: 20px;
+    height: 30px;
+  }
+
+  li:hover {
+    border: 1px solid #007bb5;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .DivFilters {
+    .ulHotels {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

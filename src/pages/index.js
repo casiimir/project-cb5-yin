@@ -4,11 +4,15 @@ import styles from "@/styles/Home.module.scss";
 import FormSearch from "@/components/formSearch";
 import { useReducer } from "react";
 
+import reducer from "@/store/reducers";
+import initialValue from "./../store/state";
+import AppContext from "@/store/context";
 import HotelList from "@/components/hotelList";
+import FilterHotelList from "@/components/FilterHotelList";
 
 export default function Home() {
-  
- 
+  const [state, dispatch] = useReducer(reducer, initialValue);
+
   return (
     <>
       <Head>
@@ -26,15 +30,20 @@ export default function Home() {
           href="https://cf.bstatic.com/static/img/b25logo/favicon/ebc77706da3aae4aee7b05dadf182390f0d26d11.ico"
         />
       </Head>
-      
+
       <main className={styles.main}>
-      
-        <MainLayout> 
+        <MainLayout>
           <FormSearch />
           <HotelList />
         </MainLayout>
-      
-        
+
+        <AppContext.Provider value={{ state, dispatch }}>
+          <MainLayout>
+            <FormSearch />
+            <FilterHotelList />
+            <HotelList />
+          </MainLayout>
+        </AppContext.Provider>
       </main>
     </>
   );
