@@ -1,36 +1,18 @@
-import { useReducer } from "react";
+import { useReducer, useContext } from "react";
+import AppContext from "@/store/context";
 const initialState = { count: 1 };
 
-function reducer(state, action) {
-  switch (action.type) {
-    case "increment":
-      return { count: state.count + 1 };
-    case "decrement": {
-      if (state.count >= 2) {
-        return { count: state.count - 1 };
-      }
-      return { count: state.count };
-    }
-    default:
-      throw new Error();
-  }
-}
-function isCount1() {
-  if (state.count === 1) {
-    return true;
-  }
-  return false;
-}
-function CounterAdulti({ setCount }) {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(setCount);
+function CounterAdulti() {
+  //const [state, dispatch] = useReducer(reducer, initialState);
+  const { dispatch, state } = useContext(AppContext);
+
   return (
     <>
-      <button type="button" onClick={() => dispatch({ type: "decrement" })}>
+      <button type="button" onClick={() => dispatch({ type: "REMOVE_ADULTS" })}>
         -
       </button>
-      {state.count}
-      <button type="button" onClick={() => dispatch({ type: "increment" })}>
+      {state.prenotation.adults}
+      <button type="button" onClick={() => dispatch({ type: "ADD_ADULTS" })}>
         +
       </button>
     </>
