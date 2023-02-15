@@ -2,7 +2,7 @@ import Head from "next/head";
 import MainLayout from "@/layout/mainLayout";
 import styles from "@/styles/Home.module.scss";
 import FormSearch from "@/components/formSearch";
-
+import WorkTeam from "../components/workTeam";
 import HotelList from "@/components/hotelList";
 import FilterHotelList from "@/components/FilterHotelList";
 
@@ -30,6 +30,7 @@ export default function Home() {
           <FormSearch />
           <FilterHotelList />
           <HotelList />
+          <WorkTeam />
         </MainLayout>
       </main>
     </>
