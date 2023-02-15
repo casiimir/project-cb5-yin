@@ -1,7 +1,20 @@
 * {
   box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+    text-decoration: none;
+  }
 }
