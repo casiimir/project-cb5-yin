@@ -1,7 +1,9 @@
 import styles from "./index.module.scss";
-import { Link } from "react";
+
 
 const Navbar = () => {
+
+
   return (
     <div className={styles.Navbar}>
       <ul>

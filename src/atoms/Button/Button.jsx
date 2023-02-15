@@ -7,9 +7,14 @@ const buttonStyleMap = {
   icon: styles.Icon,
 };
 
-function Button({ content, type }) {
+function Button({ content, type, onClick = null }) {
   return (
-    <button className={buttonStyleMap[type] ?? styles.Default}>
+    <button
+    
+    onClick={() =>{ if(onClick && typeof onClick === "function"){
+      onClick()
+    }}}  
+     className={buttonStyleMap[type] ?? styles.Default}>
       {content}
     </button>
   );
