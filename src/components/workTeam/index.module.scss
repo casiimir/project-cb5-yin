@@ -1,0 +1,50 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: central;
+  align-items: center;
+  text-align: center;
+  .titleTeam {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    p {
+      margin-top: 10px;
+    }
+  }
+  .photos {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    img {
+      margin: 1px;
+      display: flex;
+      justify-content: center;
+      border-radius: 100%;
+      border: 1px solid blue;
+      gap: 10px;
+      width: 60px;
+      height: 60px;
+      border: none;
+    }
+  }
+  .moreInfo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    button {
+      background-color: #003580;
+      color: whitesmoke;
+      font-size: 1.1rem;
+      border-radius: 40px;
+      border: none;
+      width: 150px;
+      height: 40px;
+    }
+  }
+}
