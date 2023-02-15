@@ -1,11 +1,26 @@
 .modalBackground {
-  width: 200px;
-  height: 150px;
-  background-color: #febb02;
-  position: fixed;
+  border: 1px solid black;
+  width: 300px;
   display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  position: absolute;
+  background: #febb02;
+  padding: 0.5rem;
+
+  height: 250px;
+  background-color: #febb02;
+
   justify-content: center;
   align-items: center;
+  .modalFormBtn {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+  }
   .modalContainer {
     width: 80%;
     height: 60%;
@@ -14,13 +29,19 @@
     display: flex;
     flex-direction: column;
     padding: 2px;
+    .closeBtn {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .modalForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: column;
   }
 }
 
-.closeBtn {
-  display: flex;
-  justify-content: flex-end;
-}
 .closeBtn button {
   background-color: transparent;
   border: none;
