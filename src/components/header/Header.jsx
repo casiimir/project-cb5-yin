@@ -2,6 +2,7 @@ import styles from "./index.module.scss";
 import { FaRegUserCircle } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import Button from "@/atoms/Button/Button";
+import Navbar from "@/components/navbar"
 
 const Header = () => {
   return (
@@ -28,6 +29,9 @@ const Header = () => {
           <Button type="icon" content={<FaRegUserCircle />} />
           <Button type="icon" content={<FiMenu />} />
         </div>
+      </div>
+      <div>
+        <Navbar />
       </div>
     </header>
   );
