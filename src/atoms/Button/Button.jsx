@@ -6,6 +6,7 @@ const buttonStyleMap = {
   secondary: styles.Secondary,
   currency: styles.Currency,
   icon: styles.Icon,
+  outline: styles.Outline,
 };
 
 function Button({ content, type, onClick = null }) {

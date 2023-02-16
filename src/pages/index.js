@@ -10,13 +10,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>
-          Booking.com | Sito ufficiale | I migliori hotel, voli, noleggi auto e
-          alloggi{" "}
-        </title>
+        <title>Book Yin | Un clone in NextJS creato con gustoso diletto</title>
         <meta
           name="description"
-          content="Booking.com | Sito ufficiale | I migliori hotel, voli, noleggi auto e alloggi  "
+          content="Book Yin | Un clone in NextJS creato con gustoso diletto"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
