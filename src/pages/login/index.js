@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 export default function Login() {
   const { dispatch } = useContext(AppContext);
-  const [loading, setLoading] = false;
+  const [loading, setLoading] = useState(false);
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
