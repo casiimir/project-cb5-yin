@@ -1,15 +1,29 @@
+@import "@/styles/variables.scss";
+
 .Header {
-  background: #003580;
+  background: $blue;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  color: $white;
+  padding: 16px;
+  min-height: 125px;
+
+  &:before {
+    content:"";
+    background-color: $blue;
+    position: absolute;
+    height: 100%;
+    width: 4000px;
+    left: -2000px;
+    z-index: -1;
+  }
   
   .headerWrapper {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
     background: transparent;
     color: #fafafa;
   }
@@ -18,29 +32,37 @@
     display: none;
   }
   .mobileIcons {
-    gap: 2rem;
-    font-size: 1.3rem;
+    gap: 32px;
+    font-size: 21px;
     display: flex;
+  }
+
+  .language {
+    border-radius: 50%;
+    width: 20px;
+    height: fit-content;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .Header {
-    .headerWrapper {
-      max-width: 1024px;
-    }
     .desktopWrapper {
       display: flex;
-      gap: 2rem;
-      padding: 0.4rem;
+      gap: 32px;
+      padding: 7px;
+
+      button {
+        font-size: 16px;
+      }
 
       .Login {
         display: flex;
-        gap: 1rem;
+        gap: 16px;
       }
       .otherBtns {
         display: flex;
-        gap: 1rem;
+        gap: 16px;
+        align-items: center;
       }
     }
     .mobileIcons {

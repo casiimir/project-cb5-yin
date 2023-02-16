@@ -20,38 +20,34 @@ export default function Login () {
     }
 
 
-    return(
-        
-        <div className={styles.login}>
-            <h3>Accedi gratuitamente</h3>
-            <form className={styles.form} onSubmit={onHandleSubmit}>
-                <input type="text" 
-                    value={user}
-                    onChange={(e) => setUser(()=> e.target.value)}
-                    placeholder="Username"
-                    required
-
-                />
-                <input type="password"
-                        value={password}
-                        onChange={(e) => setPassword(()=> e.target.value)}
-                        placeholder="Password"
-                        required
-                        
-                 />
-                <input type="submit"   
-                        value="Login"/>
-               <Link href={"/"}>
-               Vai a home
-               </Link> 
-                
-
-
-
-            </form>
-        </div>
-        
-    )
+    return (
+      <div className={styles.login}>
+        <img
+          className={styles.logo}
+          width="150px"
+          src="/bookyn_color.svg"
+          alt="Bookyn Logo"
+        />
+        <form className={styles.form} onSubmit={onHandleSubmit}>
+          <input
+            type="text"
+            value={user}
+            onChange={(e) => setUser(() => e.target.value)}
+            placeholder="Inserisci il tuo nome"
+            required
+          />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(() => e.target.value)}
+            placeholder="Inserisci una password"
+            required
+          />
+          <input type="submit" value="Login" />
+          <Link href={"/"}>Vai a home</Link>
+        </form>
+      </div>
+    );
 
 
 

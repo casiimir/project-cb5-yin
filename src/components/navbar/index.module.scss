@@ -1,5 +1,6 @@
+@import "@/styles/variables.scss";
+
 .Navbar {
-  padding: 8px 16px;
 
   ul {
     margin: 0;
@@ -46,6 +47,15 @@
       display: inline-block;
       height: 100%;
       vertical-align: top;
+      width: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .Navbar {
+    .svgIcons {
+      height: 20px;
       width: auto;
     }
   }
