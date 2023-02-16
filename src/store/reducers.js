@@ -11,6 +11,12 @@ const cases = {
   REMOVE_ROOMS: "REMOVE_ROOMS",
   SET_AUTH: "SET_AUTH",
   LOGOUT: "LOGOUT",
+
+  TOGGLE_STAR1: "TOGGLE_STAR1",
+  TOGGLE_STAR2: "TOGGLE_STAR2",
+  TOGGLE_STAR3: "TOGGLE_STAR3",
+  TOGGLE_STAR4: "TOGGLE_STAR4",
+  TOGGLE_STAR5: "TOGGLE_STAR5",
 };
 const reducer = (state, action) => {
   switch (action.type) {
@@ -126,6 +132,9 @@ const reducer = (state, action) => {
           username: "",
         },
       };
+    case cases.TOGGLE_STAR1:
+      console.log(state.star1);
+      break;
   }
 };
 export { cases, reducer };

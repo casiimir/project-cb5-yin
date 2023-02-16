@@ -18,10 +18,13 @@
     padding: 20px;
     height: 30px;
   }
-
-  li:hover {
-    border: 1px solid #007bb5;
+  .toggleOn {
+    outline: 2px solid #ffd700;
   }
+
+  // li:hover {
+  //   border: 1px solid #007bb5;
+  // }
 }
 
 @media only screen and (min-width: 600px) {
