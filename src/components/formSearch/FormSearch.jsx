@@ -3,10 +3,8 @@ import { GET } from "@/utils/http";
 import AppContext from "@/store/context";
 import ModalInput from "../modalInput/ModalInput";
 import styles from "./index.module.scss";
-import ModalPersonRoom from "../modal/modalPersonRoom";
+import ModalOccupancy from "../modal/modalOccupancy";
 import { useRouter } from "next/router";
-import Image from "next/image";
-import { calculateSizeAdjustValues } from "next/dist/server/font-utils";
 
 const FormSearch = () => {
   const [location, setLocation] = useState("");
@@ -62,11 +60,10 @@ const FormSearch = () => {
             setModalOpen(true);
           }}
         >
-          {state.prenotation.adults} adulti - {state.prenotation.children}{" "}
-          bambini - {state.prenotation.rooms} camere
+          {state.prenotation.adults} adulti - {state.prenotation.children} bambini - {state.prenotation.rooms} camera
         </button>
 
-        {modalOpen && <ModalPersonRoom setOpenModal={setModalOpen} />}
+        {modalOpen && <ModalOccupancy setOpenModal={setModalOpen} />}
 
         <input value="Cerca" type="submit" />
       </div>

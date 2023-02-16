@@ -1,0 +1,33 @@
+@import "@/styles/variables.scss";
+
+.ModalOccupancy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  width: 300px;
+  height: 250px;
+  padding: 32px;
+
+.modalRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+
+    /*.overlay {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 0;
+  }*/
+
+
+}

@@ -1,7 +1,7 @@
 @import "@/styles/variables.scss";
 
 .Header {
-  background: $blue;
+  background: $dark-blue;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -52,7 +52,7 @@
 
     &:before {
       content: "";
-      background-color: $blue;
+      background-color: $dark-blue;
       position: absolute;
       height: 124px;
       width: 4000px;
