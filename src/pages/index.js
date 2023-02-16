@@ -6,9 +6,6 @@ import WorkTeam from "../components/workTeam";
 import HotelList from "@/components/hotelList";
 import FilterHotelList from "@/components/FilterHotelList";
 
-
-
-
 export default function Home() {
   return (
     <>
