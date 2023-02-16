@@ -4,23 +4,23 @@ import styles from "./index.module.scss";
 import { useState } from "react";
 
 const FilterHotelList = () => {
-  const [toggle, setToggle] = useState({
-    star1: false,
-    star2: false,
-    star3: false,
-    star4: false,
-    star5: false,
-  });
+  const [filterByStars, setFilterByStars] = useState([3, 4]);
   return (
     <div className={styles.section}>
       <p>Scopri il tuo hotel ideale</p>
-      <Filters toggle={toggle} setToggle={setToggle} />
+      <Filters
+        filterByStars={filterByStars}
+        setFilterByStars={setFilterByStars}
+      />
       <div className={styles.Hotels}>
-        {hotels.map((hotel) => (
-          <div className={styles.infoHotel}>
-            <h4>{hotel.name}</h4>
-          </div>
-        ))}
+        {hotels.map((elem) => {
+          if (!filterByStars.includes(elem.class)) return undefined;
+          return (
+            <div className={styles.infoHotel}>
+              <h4>{elem.name}</h4>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
