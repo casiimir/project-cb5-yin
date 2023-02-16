@@ -5,9 +5,6 @@ import FormSearch from "@/components/formSearch";
 import WorkTeam from "../components/workTeam";
 import HotelList from "@/components/hotelList";
 import FilterHotelList from "@/components/FilterHotelList";
-import { useEffect } from 'react';
-import { GET } from '@/utils/http';
-
 
 
 

@@ -1,4 +1,5 @@
 const BASE_URL = "https://booking-com.p.rapidapi.com/v1";
+//'https://booking-com.p.rapidapi.com/v1/hotels/data?locale=en-gb&hotel_id=1377073'
 
 const options = {
   method: "GET",
