@@ -3,8 +3,7 @@
 .Navbar {
 
   ul {
-    margin: 0;
-    padding: 10px 0px;
+    padding: 0px 0px 10px 0px;
     display: flex;
     align-items: center;
     overflow-x: scroll;
@@ -26,28 +25,25 @@
     li {
       display: flex;
       flex-wrap: nowrap;
-      font-size: 18px;
-      font-weight: 500;
-      margin-right: 5%;
+      font-size: 14px;
+      margin-right: 3%;
+      //padding: 11px 16px;
       align-items: center;
       gap: 10px;
       color: white;
-      fill: white;
       cursor: pointer;
       white-space: nowrap;
     }
 
     li.active {
       border: 1px solid white;
-      padding: 15px 25px;
+      padding: 11px 16px;
       border-radius: 30px;
       background-color: rgb(255, 255, 255, 0.1);
     }
-    svg {
+    .svg {
       display: inline-block;
-      height: 100%;
-      vertical-align: top;
-      width: auto;
+      filter: invert(1);
     }
   }
 }

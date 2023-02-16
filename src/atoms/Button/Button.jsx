@@ -4,6 +4,7 @@ import styles from "./index.module.scss";
 const buttonStyleMap = {
   primary: styles.Primary,
   secondary: styles.Secondary,
+  currency: styles.Currency,
   icon: styles.Icon,
 };
 

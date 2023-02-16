@@ -7,66 +7,72 @@
   flex-direction: column;
   color: $white;
   padding: 16px;
-  min-height: 125px;
+  height: 143px;
 
-  &:before {
-    content:"";
-    background-color: $blue;
-    position: absolute;
-    height: 100%;
-    width: 4000px;
-    left: -2000px;
-    z-index: -1;
-  }
-  
-  .headerWrapper {
+  .headerTop {
     width: 100%;
     display: flex;
     align-items: center;
+    flex-direction: row;
     justify-content: space-between;
-    background: transparent;
-    color: #fafafa;
-  }
+    color: $white;
+    padding-bottom: 12px;
 
-  .desktopWrapper {
-    display: none;
-  }
-  .mobileIcons {
-    gap: 32px;
-    font-size: 21px;
-    display: flex;
-  }
+    .userSection {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 20px;
 
-  .language {
-    border-radius: 50%;
-    width: 20px;
-    height: fit-content;
+      .userCurrency {
+        display: none;
+      }
+
+      .userLanguage {
+        border-radius: 50%;
+        width: 24px;
+        height: fit-content;
+      }
+
+      .mobileBtnsLogin {
+        display: block;
+        margin-right: -11px;
+      }
+
+      .desktopBtnsLogin {
+        display: none;
+      }
+    }
   }
 }
 
 @media screen and (min-width: 992px) {
   .Header {
-    .desktopWrapper {
-      display: flex;
-      gap: 32px;
-      padding: 7px;
+    height: 124px;
 
-      button {
-        font-size: 16px;
-      }
-
-      .Login {
-        display: flex;
-        gap: 16px;
-      }
-      .otherBtns {
-        display: flex;
-        gap: 16px;
-        align-items: center;
-      }
+    &:before {
+      content: "";
+      background-color: $blue;
+      position: absolute;
+      height: 124px;
+      width: 4000px;
+      left: -2000px;
+      z-index: -1;
     }
-    .mobileIcons {
-      display: none;
+
+    .headerLogo {
+      padding-left: 15px;
+    }
+    .userCurrency {
+      display: block !important;
+    }
+
+    .mobileBtnsLogin {
+      display: none !important;
+    }
+
+    .desktopBtnsLogin {
+      display: block !important;
     }
   }
 }
