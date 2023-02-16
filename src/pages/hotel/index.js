@@ -9,7 +9,7 @@ function Hotel() {
  
   return (
     <MainLayout>
-      <div>{data.name}</div>;
+      <div>{hotel.name}</div>;
     </MainLayout>
   );
 }
