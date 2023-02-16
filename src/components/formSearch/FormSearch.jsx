@@ -4,7 +4,7 @@ import AppContext from "@/store/context";
 import ModalInput from "../modalInput/ModalInput";
 import styles from "./index.module.scss";
 import ModalPersonRoom from "../modal/modalPersonRoom";
-import { calculateSizeAdjustValues } from "next/dist/server/font-utils";
+import { useRouter } from "next/router";
 
 const FormSearch = () => {
   const [location, setLocation] = useState("");
@@ -14,6 +14,7 @@ const FormSearch = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const { state } = useContext(AppContext);
+  const router = useRouter();
 
   useEffect(() => {
     GET(`hotels/locations?locale=it&name=${location}`).then((res) => {
@@ -25,6 +26,11 @@ const FormSearch = () => {
     });
   }, [location]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    router.push("search");
+  };
+
   const onHandleChangeInput = (value) => {
     setLocation(value);
     if (openModal && value === "") {
@@ -33,7 +39,7 @@ const FormSearch = () => {
   };
 
   return (
-    <form className={styles.FormSearch}>
+    <form className={styles.FormSearch} onSubmit={(e) => handleSubmit(e)}>
       <div className={styles.wrapper}>
         <input
           value={state.location.label ? state.location.label : location}
