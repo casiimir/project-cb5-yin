@@ -19,13 +19,9 @@ const FilterHotelList = () => {
             <div className={styles.infoHotel}>
               <img src={elem.entrance_photo_url} alt="img" />
               <div className={styles.data}>
-                <p>
-                  <h5>{elem.name}</h5>
-                </p>
-                <p>
-                  <h5>{elem.city}</h5>
-                  <h5>{elem.country}</h5>
-                </p>
+                <h5>{elem.name}</h5>
+                <h5>{elem.city}</h5>
+                <h5>{elem.country}</h5>
                 <div className={styles.review}>
                   <h5>{elem.review_score}</h5>
                 </div>
