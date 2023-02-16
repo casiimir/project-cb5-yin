@@ -21,6 +21,23 @@ const FilterHotelList = () => {
             </div>
           );
         })}
+        {hotels.map((hotel) => (
+          <div className={styles.infoHotel}>
+            <img src={hotel.entrance_photo_url} alt="img" />
+            <div className={styles.data}>
+              <p>
+                <h5>{hotel.name}</h5>
+              </p>
+              <p>
+                <h5>{hotel.city}</h5>
+                <h5>{hotel.country}</h5>
+              </p>
+            </div>
+            <div className={styles.review}>
+              <h5>{hotel.review_score}</h5>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
