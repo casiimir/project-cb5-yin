@@ -133,7 +133,7 @@ const reducer = (state, action) => {
         },
       };
     case cases.TOGGLE_STAR1:
-      console.log(state.star1);
+      console.log(stateFilter.star1);
       break;
   }
 };
