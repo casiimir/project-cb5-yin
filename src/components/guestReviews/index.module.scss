@@ -1,7 +1,11 @@
 .main {
   display: flex;
   flex-direction: column;
-
+  .scoreHotel {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
   .container {
     display: flex;
     flex-direction: column;
@@ -10,21 +14,15 @@
     width: 300px;
     height: 200px;
     border-radius: 15px;
-  }
-  .scoreHotel {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  .userReview {
-    padding: 10px;
-    gap: 10px;
-    display: flex;
-    flex-direction: row;
-  }
-  .cardReviews {
-    display: flex;
-    flex-direction: column;
+    .userReview {
+      padding: 10px;
+      gap: 10px;
+      display: flex;
+      flex-direction: row;
+    }
+    .cardReviews {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
