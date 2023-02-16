@@ -1,3 +1,5 @@
+@import "@/styles/variables.scss";
+
 .FormSearch {
   display: flex;
   justify-content: center;
@@ -12,7 +14,7 @@
     align-items: center;
 
     gap: 6px;
-    background: #febb02;
+    background: $yellow;
     padding: 0.3rem;
     position: relative;
 
@@ -27,7 +29,7 @@
       border-radius: 2px;
       padding: 4px;
       &:hover {
-        outline: 0.3px solid rgb(205, 137, 0);
+        outline: 0.3px solid $yellow;
       }
     }
 
@@ -43,14 +45,14 @@
         border-radius: 2px;
         padding: 4px;
         &:hover {
-          outline: 0.3px solid rgb(205, 137, 0);
+          outline: 0.3px solid $yellow;
         }
       }
     }
 
     input[type="submit"] {
       width: 100%;
-      background: #0071c2;
+      background: $blue-button;
       border-radius: 2px;
       border: none;
       color: white;
@@ -58,7 +60,8 @@
       height: 40px;
       transition: all 0.2s ease;
       &:hover {
-        background: #00487a;
+        background: $blue;
+        cursor: pointer;
       }
     }
     .openModalFormBtn {
@@ -68,14 +71,16 @@
       border: none;
       border-radius: 2px;
       &:hover {
-        outline: 0.3px solid rgb(205, 137, 0);
+        outline: 0.3px solid $yellow;
       }
     }
   }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 992px) {
   .FormSearch {
+
+    margin: -25px; 
     .wrapper {
       flex-direction: row;
       max-width: 1024px;

@@ -22,9 +22,9 @@ const Navbar = () => {
           <a href="/">Soggiorni</a>
         </li>
 
-        <li class="sc-hOGkXu laBzag">
+        <li>
           <svg
-            class="Navbar_svgIcons__R2MaE"
+            className={styles.svgIcons}
             height="20"
             width="20"
             viewBox="0 0 24 24"

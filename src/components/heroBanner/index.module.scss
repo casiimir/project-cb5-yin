@@ -1,0 +1,28 @@
+@import "@/styles/variables.scss";
+
+.HeroBanner {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .HeroBanner {
+    background: $blue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 240px;
+    color: $white;
+    padding: 0px 16px;
+    font-size: 22px;
+
+      &:before {
+    content:"";
+    background-color: $blue;
+    position: absolute;
+    height: 240px;
+    width: 4000px;
+    left: -2000px;
+    z-index: -1;
+  }
+  }
+}

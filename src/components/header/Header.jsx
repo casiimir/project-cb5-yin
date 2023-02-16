@@ -25,23 +25,33 @@ const Header = () => {
       <div className={styles.headerWrapper}>
         <img
           className={styles.logo}
-          width="150px"
+          width="140px"
           src="/bookingWhite.svg"
           alt=""
         />
         <div className={styles.desktopWrapper}>
           <div className={styles.otherBtns}>
-            <Button type="icon" content="EUR" className="Currency" />
-            <Button type="icon" content="LANG" className="Language" />
+            <Button type="icon" content="EUR" className={styles.currency} />
+            <img
+              type="icon"
+              content=""
+              className={styles.language}
+              src="https://t-cf.bstatic.com/design-assets/assets/v3.56.0/images-flags/It@3x.png"
+            />
           </div>
-           
+
           <div className={styles.Login}>
             <h3>{state.auth.username}</h3>
-            
+
             <Button type="primary" content="Iscriviti" />
-            {state.auth.username ? <Button onClick={logout} type="primary"  content="Logout" /> : <Link href={"/login"}><Button type="primary" content="Accedi" /></Link>}
-            <Link href={"/login"}>
-            </Link>
+            {state.auth.username ? (
+              <Button onClick={logout} type="primary" content="Logout" />
+            ) : (
+              <Link href={"/login"}>
+                <Button type="primary" content="Accedi" />
+              </Link>
+            )}
+            <Link href={"/login"}></Link>
           </div>
         </div>
         <div className={styles.mobileIcons}>
