@@ -17,27 +17,18 @@ const FilterHotelList = () => {
           if (!filterByStars.includes(elem.class)) return undefined;
           return (
             <div className={styles.infoHotel}>
-              <h4>{elem.name}</h4>
+              <img src={elem.entrance_photo_url} alt="img" />
+              <div className={styles.data}>
+                <h5>{elem.name}</h5>
+                <h5>{elem.city}</h5>
+                <h5>{elem.country}</h5>
+                <div className={styles.review}>
+                  <h5>{elem.review_score}</h5>
+                </div>
+              </div>
             </div>
           );
         })}
-        {hotels.map((hotel) => (
-          <div className={styles.infoHotel}>
-            <img src={hotel.entrance_photo_url} alt="img" />
-            <div className={styles.data}>
-              <p>
-                <h5>{hotel.name}</h5>
-              </p>
-              <p>
-                <h5>{hotel.city}</h5>
-                <h5>{hotel.country}</h5>
-              </p>
-            </div>
-            <div className={styles.review}>
-              <h5>{hotel.review_score}</h5>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   );

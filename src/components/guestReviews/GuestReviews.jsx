@@ -17,30 +17,31 @@ const GuestReviews = () => {
         <h4>review_score_word</h4>
         <h6> n recensioni </h6>
       </div>
-
-      {customersReview.map((customer) => {
-        return (
-          <div className={styles.container}>
-            <div className={styles.userReview}>
-              <Image
-                src={
-                  customer.author.avatar
-                    ? customer.author.avatar
-                    : "https://graph.facebook.com/v2.9/554753386/picture?type=square&height=64&width=64"
-                } //{entrance_photo_url}
-                alt="nameHotel" //{nameHotel}
-                width={40}
-                height={40}
-              />
-              <h2>{customer.title}</h2>
+      <div className={styles.container}>
+        {customersReview.map((customer) => {
+          return (
+            <div className={styles.card}>
+              <div className={styles.userReview}>
+                <Image
+                  src={
+                    customer.author.avatar
+                      ? customer.author.avatar
+                      : "https://graph.facebook.com/v2.9/554753386/picture?type=square&height=64&width=64"
+                  } //{entrance_photo_url}
+                  alt="nameHotel" //{nameHotel}
+                  width={40}
+                  height={40}
+                />
+                <h2>{customer.author.name}</h2>
+              </div>
+              <div className={styles.cardReviews}>
+                <h3>{customer.title}</h3>
+                <p>{customer.cons}</p>
+              </div>
             </div>
-            <div className={styles.cardReviews}>
-              <h3>{customer.title}</h3>
-              <p>{customer.cons}</p>
-            </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };
