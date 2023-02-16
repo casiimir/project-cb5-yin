@@ -5,6 +5,8 @@ import ModalInput from "../modalInput/ModalInput";
 import styles from "./index.module.scss";
 import ModalPersonRoom from "../modal/modalPersonRoom";
 import { useRouter } from "next/router";
+import Image from "next/image";
+import { calculateSizeAdjustValues } from "next/dist/server/font-utils";
 
 const FormSearch = () => {
   const [location, setLocation] = useState("");

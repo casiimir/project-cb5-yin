@@ -16,7 +16,7 @@ useEffect(() => {
 },[])
   return(
     <AppContext.Provider value={{state, dispatch}}>
-    <Component {...pageProps} />;
+    <Component {...pageProps} />
     </AppContext.Provider>
   )
 }
