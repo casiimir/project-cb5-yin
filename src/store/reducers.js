@@ -11,16 +11,13 @@ const cases = {
   REMOVE_ROOMS: "REMOVE_ROOMS",
   SET_AUTH: "SET_AUTH",
   LOGOUT: "LOGOUT",
-  
 };
 const reducer = (state, action) => {
   switch (action.type) {
     case cases.ADD_LOCATION:
       return { ...state, location: action.payload };
+
     case cases.ADD_ADULTS:
-      console.log({
-        ...state,
-      });
       return {
         ...state,
         prenotation: {
@@ -30,9 +27,6 @@ const reducer = (state, action) => {
       };
 
     case cases.REMOVE_ADULTS:
-      console.log({
-        ...state,
-      });
       if (state.prenotation.adults >= 2) {
         return {
           ...state,
@@ -44,10 +38,6 @@ const reducer = (state, action) => {
       } else
         return {
           ...state,
-          prenotation: {
-            ...state.prenotation,
-            adults: state.prenotation.adults,
-          },
         };
 
     case cases.ADD_CHILDREN:
@@ -76,10 +66,6 @@ const reducer = (state, action) => {
       } else
         return {
           ...state,
-          prenotation: {
-            ...state.prenotation,
-            children: state.prenotation.children,
-          },
         };
     case cases.ADD_ROOMS:
       console.log({
@@ -113,33 +99,33 @@ const reducer = (state, action) => {
           },
         };
 
-      case cases.SET_AUTH:
-        if(!action.payload) return {
+    case cases.SET_AUTH:
+      if (!action.payload)
+        return {
           ...state,
-          username: ""
-        }
-        
-        const newAuthState = {
-          status: action.payload.status,
-          username: (action.payload.username)  ? action.payload.username : ""
-        }
-        
-        localStorage.setItem("auth", JSON.stringify(newAuthState))
-        return{
-          ...state,
-              auth: newAuthState
-        }
+          username: "",
+        };
 
-      case cases.LOGOUT:
-      localStorage.removeItem("auth");
-      return{
+      const newAuthState = {
+        status: action.payload.status,
+        username: action.payload.username ? action.payload.username : "",
+      };
+
+      localStorage.setItem("auth", JSON.stringify(newAuthState));
+      return {
         ...state,
-        auth:{
+        auth: newAuthState,
+      };
+
+    case cases.LOGOUT:
+      localStorage.removeItem("auth");
+      return {
+        ...state,
+        auth: {
           ...state.auth,
-          username:"",
-        }
-      }
+          username: "",
+        },
+      };
   }
-      
 };
-export {cases, reducer};
+export { cases, reducer };
