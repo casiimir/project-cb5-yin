@@ -10,7 +10,7 @@ const FilterHotelList = () => {
   return (
     <div className={styles.HotelList}>
       <h2>
-        Soggiorna in una delle nostre strutture migliori e più particolari
+        Soggiorna in una delle nostre strutture migliori
       </h2>
       <p>
         Stanze, Ville, Chalet... persino Castelli! Scopri i nostri migliori

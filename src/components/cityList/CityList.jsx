@@ -6,17 +6,16 @@ const CityList = (city) => {
 
   return (
     <>
-      <div className={styles.sectionHotelSicily}>
-        <div className={styles.List}>
-          <p>Hotel in Sicilia</p>
-          <div className={styles.Div}>
-            {cityList.map((city) => (
-              <div className={styles.DivImg}>
-                <img className={styles.image} src={city.image_url} alt="img" />
-                <h4>{city.name}</h4>
-              </div>
-            ))}
-          </div>
+      <div className={styles.CityList}>
+        <h2>Sicilia: una straordinaria terra da scoperire</h2>
+        <p>Queste mete popolari hanno tanto da offrire</p>
+        <div className={styles.cityGallery}>
+          {cityList.map((city) => (
+            <div className={styles.cityCard}>
+              <img className={styles.cityImage} src={city.image_url} alt="img" />
+              <h2 className={styles.cityName}>{city.name}</h2>
+            </div>
+          ))}
         </div>
       </div>
     </>
