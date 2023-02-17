@@ -2,55 +2,58 @@
 
 .Header {
   background: $dark-blue;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  color: $white;
-  padding: 16px;
-  height: 143px;
 
-  .headerTop {
-    width: 100%;
+  .wrapperHeader {
     display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
     color: $white;
-    padding-bottom: 12px;
+    padding: 16px;
+    height: 143px;
+    max-width: 1110px;
+    margin: 0 auto;
 
-    .userSection {
+    .headerTop {
       display: flex;
       align-items: center;
       flex-direction: row;
-      gap: 20px;
+      justify-content: space-between;
+      color: $white;
+      padding-bottom: 12px;
 
-      .userCurrency {
-        display: none;
-      }
+      .userSection {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 20px;
 
-      .userLanguage {
-        border-radius: 50%;
-        width: 24px;
-        height: fit-content;
-      }
+        .userCurrency {
+          display: none;
+        }
 
-      .mobileBtnsLogin {
-        display: block;
-        margin-right: -11px;
-      }
+        .userLanguage {
+          border-radius: 50%;
+          width: 24px;
+          height: fit-content;
+        }
 
-      .desktopBtnsLogin {
-        display: none;
+        .mobileBtnsLogin {
+          display: block;
+          margin-right: -11px;
+        }
+
+        .desktopBtnsLogin {
+          display: none;
+        }
       }
     }
   }
 }
-
 @media screen and (min-width: 992px) {
   .Header {
     height: 124px;
 
-    &:before {
+    /*&:before {
       content: "";
       background-color: $dark-blue;
       position: absolute;
@@ -58,7 +61,7 @@
       width: 4000px;
       left: -2000px;
       z-index: -1;
-    }
+    }*/
 
     .headerLogo {
       padding-left: 15px;

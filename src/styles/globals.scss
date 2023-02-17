@@ -8,8 +8,6 @@
 }
 
 body {
-  min-height: 100vh;
-  margin: 0 auto;
   font-family: $font-family;
 }
 
@@ -19,11 +17,5 @@ a {
   &:visited {
     color: inherit;
     text-decoration: none;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  body {
-    max-width: 1110px;
   }
 }
