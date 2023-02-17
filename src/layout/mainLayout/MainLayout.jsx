@@ -8,7 +8,7 @@ const MainLayout = ({ children }) => {
     <div className={styles.Layout}>
       <Header />
       <HeroBanner />
-      {children}
+      <div className={styles.Main}>{children}</div>
       <Footer />
     </div>
   );
