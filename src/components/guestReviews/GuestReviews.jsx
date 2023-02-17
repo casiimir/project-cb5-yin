@@ -1,21 +1,18 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
 import { customersReview } from "../../mocks/review_customers";
-import CardReviews from "./../CardReviews/CardReviews";
 
-const GuestReviews = () => {
-  //{
-  // customersReview.map((cust) => {
-  //   console.log(cust);
-  // });
-  //}
+
+const GuestReviews = ({dataHotelReview, reviewData}) => {
+  
+
   return (
     <div className={styles.main}>
       <h2>Recensioni degli ospiti</h2>
       <div className={styles.scoreHotel}>
-        <h3> review_score </h3>
-        <h4>review_score_word</h4>
-        <h6> n recensioni </h6>
+        <h3> {dataHotelReview?.review_score} </h3>
+        <h4>{dataHotelReview?.review_score_word}</h4>
+        <h6>{dataHotelReview?.ranking} posizione </h6>
       </div>
       <div className={styles.container}>
         {customersReview.map((customer) => {
