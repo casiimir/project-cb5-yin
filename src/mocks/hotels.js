@@ -6,6 +6,7 @@ export const hotels = [
     entrance_photo_url:
       "https://cf.bstatic.com/xdata/images/hotel/max1280x900/58006048.jpg?k=dfeb825474b3801e19c08831f26153d60501480b04d1c9794e751aedc9298855&o=&hp=1",
     review_score: "8.3",
+    review_score_word:"Ottimo",
     countrycode: "de",
     city: "Berlin",
     country: "Germany",
@@ -19,6 +20,7 @@ export const hotels = [
     entrance_photo_url:
       "https://cf.bstatic.com/xdata/images/hotel/max1280x900/307982974.jpg?k=d3c15f462d797172119be171aee8e5c384686b3e779264cca7407649b48e0f6e&o=&hp=1",
     review_score: "8.9",
+    review_score_word:"Favoloso",
     countrycode: "at",
     city: "Kaprun",
     country: "Austria",
@@ -32,6 +34,7 @@ export const hotels = [
     entrance_photo_url:
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/342705900.jpg?k=fa98234fc1d8d76f5dad36a357c5d21094042fdc9451a65e93077f34bf316eac&o=&hp=1",
     review_score: "8.8",
+    review_score_word:"Favoloso",
     countrycode: "lt",
     city: "Kaunas",
     country: "Lithuania",
@@ -45,6 +48,7 @@ export const hotels = [
     entrance_photo_url:
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/105110522.jpg?k=e92f4d4ce0dc9fa548294370475280fc1a3236d2ef734211af62e2b35d1c4d81&o=&hp=1",
     review_score: "8.4",
+    review_score_word:"Ottimo",
     countrycode: "hr",
     city: "Sveti Petar u Šumi",
     country: "Croatia",
@@ -58,6 +62,7 @@ export const hotels = [
     entrance_photo_url:
       "https://cf.bstatic.com/images/hotel/square60/243/243472489.jpg",
     review_score: "7.5",
+    review_score_word:"Buono",
     countrycode: "de",
     city: "Hannover",
     country: "Germany",
@@ -71,6 +76,7 @@ export const hotels = [
     entrance_photo_url:
       "https://cf.bstatic.com/images/hotel/square60/496/49670707.jpg",
     review_score: "10.0",
+    review_score_word:"Eccezionale",
     countrycode: "ru",
     city: "Yekaterinburg",
     country: "Russia",
@@ -84,6 +90,7 @@ export const hotels = [
     entrance_photo_url:
       "https://cf.bstatic.com/images/hotel/square60/472/47261874.jpg",
     review_score: "8.4",
+    review_score_word:"Ottimo",
     countrycode: "it",
     city: "Positano",
     country: "Italy",
@@ -96,6 +103,7 @@ export const hotels = [
     entrance_photo_url:
       "https://cf.bstatic.com/images/hotel/square60/406/406556550.jpg",
     review_score: "10.0",
+    review_score_word:"Eccezionale",
     countrycode: "it",
     city: "Casa Marchetti",
     country: "Italia",
@@ -108,6 +116,7 @@ export const hotels = [
     entrance_photo_url:
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/132057869.jpg?k=dbef5d72e7a5638cbff3fa9bdc3b3b7b0250e6baa22c0ac2b8c820e864a5ef00&o=&hp=1",
     review_score: "9.6",
+    review_score_word:"Eccezionale",
     countrycode: "hr",
     city: "Bol",
     country: "Croatia",
@@ -120,6 +129,7 @@ export const hotels = [
     entrance_photo_url:
       "https://cf.bstatic.com/images/hotel/square60/472/47261463.jpg",
     review_score: "7.5",
+    review_score_word:"Buono",
     countrycode: "ru",
     city: "Reutov",
     country: "Russia",
@@ -133,6 +143,7 @@ export const hotels = [
     entrance_photo_url:
       "https://cf.bstatic.com/images/hotel/square60/255/255513750.jpg",
     review_score: "7.9",
+    review_score_word:"Buono",
     countrycode: "au",
     city: "Perth",
     country: "Australia",
@@ -145,6 +156,7 @@ export const hotels = [
     entrance_photo_url:
       "https://cf.bstatic.com/images/hotel/square60/105/105100145.jpg",
     review_score: "5.0",
+    review_score_word:"Passabile",
     countrycode: "hr",
     city: "Novalja",
     country: "Croatia",

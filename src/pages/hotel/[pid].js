@@ -15,6 +15,15 @@ function Hotel() {
   const router = useRouter();
   const { pid } = router.query;
 
+     useEffect(() => {
+      if(router.isReady === true)
+       GET(`hotels/data?locale=it&hotel_id=${pid}`)
+       .then((response) => setDataHotelReview(response))
+  //   GET(`hotels/reviews?hotel_id=${pid}&locale=it&sort_type=SORT_MOST_RELEVANT&customer_type=solo_traveller%2Creview_category_group_of_friends&language_filter=it%2Cde%2Cfr`)
+  //   .then((response) => setReviewData(response.result))
+    },[router.isReady])
+
+  
   //------Description---------//
   //GET 1 --> DESCRIPTION HOTEL
   //GET 2 --> REVIEW HOTEL
@@ -35,13 +44,15 @@ function Hotel() {
 
   return (
     <MainLayout>
+
+   
       <div>{hotel.name}</div>;
       <div>
         <HotelDescription descriptionData={descriptionData} />
         <HotelInfo />
       </div>
       <GuestReviews reviewData={reviewData} dataHotelReview={dataHotelReview} />
-      <HotelList />
+      <HotelList  dataHotelReview={dataHotelReview}/>
     </MainLayout>
   );
 }
