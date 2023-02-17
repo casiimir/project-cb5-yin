@@ -1,0 +1,49 @@
+$gallery-width: 800px;
+.Gallery {
+  overflow: hidden;
+  width: $gallery-width;
+
+  img {
+    object-fit: cover;
+  }
+}
+.GalleryTop {
+  display: flex;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  height: 450px;
+
+  .GalleryTopWrapper {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .GalleryWrapperTopImg,
+    .GalleryWrapperBottomImg {
+      height: 49%;
+    }
+  }
+
+  .GalleryTopImg {
+    width: 70%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.GalleryBottom {
+  padding: 0.5rem;
+
+  height: 100px;
+  display: flex;
+  gap: 0.5rem;
+  .GalleryBottomImg {
+    height: 100%;
+    width: calc(($gallery-width - 3rem) / 5);
+  }
+}
