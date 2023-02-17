@@ -35,6 +35,7 @@ const FilterHotelList = () => {
                   <h6 className={styles.score}>{elem.review_score}</h6>
                   <p className={styles.review}> xxx recensioni</p>
                 </div>
+                
               </div>
             );
           })}
