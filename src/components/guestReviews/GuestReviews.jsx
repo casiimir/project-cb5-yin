@@ -15,7 +15,7 @@ const GuestReviews = ({dataHotelReview, reviewData}) => {
         <h6>{dataHotelReview?.ranking} posizione </h6>
       </div>
       <div className={styles.container}>
-        {customersReview.map((customer) => {
+        {reviewData?.map((customer) => {
           return (
             <div className={styles.card}>
               <div className={styles.userReview}>

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { GET } from "../../utils/http";
 import GuestReviews from "@/components/guestReviews";
 import { useRouter } from "next/router";
+import HotelList from "@/components/HotelList";
 
 function Hotel() {
   const [dataHotelReview, setDataHotelReview] = useState([])
@@ -11,18 +12,16 @@ function Hotel() {
   const router= useRouter()
   const {pid} = router.query;
 
-  useEffect(() => {
-    if(router.isReady === true)
-    GET(`hotels/data?locale=it&hotel_id=${pid}`)
-    .then((response) => setDataHotelReview(response))
-  },[router.isReady])
+  // useEffect(() => {
+  //   if(router.isReady === true)
+  //   GET(`hotels/data?locale=it&hotel_id=${pid}`)
+  //   .then((response) => setDataHotelReview(response))
+  //   GET(`hotels/reviews?hotel_id=${pid}&locale=it&sort_type=SORT_MOST_RELEVANT&customer_type=solo_traveller%2Creview_category_group_of_friends&language_filter=it%2Cde%2Cfr`)
+  //   .then((response) => setReviewData(response.result))
+  // },[router.isReady])
 
 
-  useEffect(() => {
-    if(router.isReady === true)
-    GET(`/hotels/reviews?hotel_id=${pid}&locale=it&sort_type=SORT_MOST_RELEVANT&customer_type=solo_traveller%2Creview_category_group_of_friends&language_filter=it%2Cde%2Cfr}`)
-    .then((response) => setReviewData(response))
-  },[router.isReady])
+
 
   
   return (
@@ -33,6 +32,7 @@ function Hotel() {
     
       <div>{hotel.name}</div>;
       <GuestReviews reviewData={reviewData} dataHotelReview={dataHotelReview} />
+      <HotelList />
     </MainLayout>
   );
 }
