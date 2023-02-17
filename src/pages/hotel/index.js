@@ -1,6 +1,5 @@
 import MainLayout from "@/layout/mainLayout";
 import { hotel } from "@/mocks/hotelPageMock";
-import { GET } from "../../utils/http";
 import GuestReviews from "@/components/guestReviews";
 
 function Hotel() {

@@ -75,7 +75,7 @@
   height: 35px;
   border-radius: 4px;
   cursor: pointer;
-    &:hover {
+  &:hover {
     background: $light-gray;
   }
 }
@@ -90,4 +90,26 @@
   width: 40px;
   height: 40px;
   font-size: 25px;
+  cursor: pointer;
+  &:hover {
+    background: $light-gray;
+  }
+}
+
+.OutlineRounded {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: $blue-button;
+  border: none;
+  width: auto;
+  height: 45px;
+  line-height: 16px;
+  padding: 11px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  &:hover {
+    background: $white-gray;
+  }
 }

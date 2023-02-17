@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
+import Button from "@/atoms/Button/Button";
+
 
 const Filters = ({ filterByStars, setFilterByStars }) => {
   useEffect(() => {
@@ -18,32 +20,47 @@ const Filters = ({ filterByStars, setFilterByStars }) => {
     }
   }
   return (
-    <div className={styles.DivFilters}>
+    <div className={styles.Filter}>
       <ul className={styles.ulHotels}>
         <li className={filterByStars.includes(1) && styles.toggleOn}>
-          <button type="button" name="star1" onClick={() => handleOnClick(1)}>
-            ⭐
-          </button>
+          <Button
+            type="outlineRounded"
+            content="1 stella ⭐"
+            name="star1"
+            onClick={() => handleOnClick(1)}
+          />
         </li>
         <li className={filterByStars.includes(2) && styles.toggleOn}>
-          <button type="button" name="star2" onClick={() => handleOnClick(2)}>
-            ⭐⭐
-          </button>
+          <Button
+            type="outlineRounded"
+            content="2 stelle ⭐"
+            name="star2"
+            onClick={() => handleOnClick(2)}
+          />
         </li>
         <li className={filterByStars.includes(3) && styles.toggleOn}>
-          <button type="button" name="star3" onClick={() => handleOnClick(3)}>
-            ⭐⭐⭐
-          </button>
+          <Button
+            type="outlineRounded"
+            content="3 stelle ⭐"
+            name="star3"
+            onClick={() => handleOnClick(3)}
+          />
         </li>
         <li className={filterByStars.includes(4) && styles.toggleOn}>
-          <button type="button" name="star4" onClick={() => handleOnClick(4)}>
-            ⭐⭐⭐⭐
-          </button>
+          <Button
+            type="outlineRounded"
+            content="4 stelle ⭐"
+            name="star4"
+            onClick={() => handleOnClick(4)}
+          />
         </li>
         <li className={filterByStars.includes(5) && styles.toggleOn}>
-          <button type="button" name="star5" onClick={() => handleOnClick(5)}>
-            ⭐⭐⭐⭐⭐
-          </button>
+          <Button
+            type="outlineRounded"
+            content="5 stelle ⭐"
+            name="star5"
+            onClick={() => handleOnClick(5)}
+          />
         </li>
       </ul>
     </div>
