@@ -6,6 +6,7 @@ import GuestReviews from "@/components/guestReviews";
 import { useRouter } from "next/router";
 import HotelList from "@/components/HotelList";
 import HotelDescription from "@/components/hotelDescription/HotelDescription";
+import HotelInfo from "@/components/hotelInfo";
 
 function Hotel() {
   const [dataHotelReview, setDataHotelReview] = useState([]);
@@ -19,24 +20,27 @@ function Hotel() {
   //GET 2 --> REVIEW HOTEL
   //GET 3 --> REVIEW USER
 
-  // useEffect(() => {
-  //   if (router.isReady === true)
-  //     GET(`hotels/description?hotel_id=${pid}&locale=it`).then((res) =>
-  //       setdescriptionData(res)
-  //     );
-  //   GET(`hotels/data?locale=it&hotel_id=${pid}`)
-  //   .then((response) => setDataHotelReview(response))
-  //   GET(`hotels/reviews?hotel_id=${pid}&locale=it&sort_type=SORT_MOST_RELEVANT&customer_type=solo_traveller%2Creview_category_group_of_friends&language_filter=it%2Cde%2Cfr`)
-  //   .then((response) => setReviewData(response.result))
-  //}, [router.isReady]);
+  useEffect(() => {
+    if (router.isReady === true)
+      GET(`hotels/description?hotel_id=${pid}&locale=it`).then((res) =>
+        setdescriptionData(res)
+      );
+    GET(`hotels/data?locale=it&hotel_id=${pid}`).then((response) =>
+      setDataHotelReview(response)
+    );
+    GET(
+      `hotels/reviews?hotel_id=${pid}&locale=it&sort_type=SORT_MOST_RELEVANT&customer_type=solo_traveller%2Creview_category_group_of_friends&language_filter=it%2Cde%2Cfr`
+    ).then((response) => setReviewData(response.result));
+  }, [router.isReady]);
 
   return (
     <MainLayout>
-      <p>{pid}</p>
-      {/* {photoData && <img src={photoData[0]?.url_max} alt="siamo cotti"/>} */}
       <div>{hotel.name}</div>;
+      <div>
+        <HotelDescription descriptionData={descriptionData} />
+        <HotelInfo />
+      </div>
       <GuestReviews reviewData={reviewData} dataHotelReview={dataHotelReview} />
-      <HotelDescription descriptionData={descriptionData} />
       <HotelList />
     </MainLayout>
   );

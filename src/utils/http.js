@@ -11,7 +11,7 @@ const options = {
 
 const GET = async (resource) => {
   try {
-    const res = await fetch(` ${BASE_URL}/${resource}`, options);
+    const res = await fetch(`${BASE_URL}/${resource}`, options);
 
     if (res.status >= 400) {
       throw new Error("Abbiamo un problema di connessione");
