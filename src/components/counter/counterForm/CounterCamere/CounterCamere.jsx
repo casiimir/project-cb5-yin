@@ -1,6 +1,6 @@
 import { useReducer, useContext } from "react";
 import AppContext from "@/store/context";
-import { BsPlusSquare, BsDashSquare } from "react-icons/bs";
+import Button from "@/atoms/Button/Button";
 const initialState = { count: 1 };
 
 function CounterCamere() {
@@ -9,13 +9,17 @@ function CounterCamere() {
 
   return (
     <>
-      <button type="button" onClick={() => dispatch({ type: "REMOVE_ROOMS" })}>
-        <BsDashSquare />
-      </button>
+      <Button
+        type="operation"
+        content="-"
+        onClick={() => dispatch({ type: "REMOVE_ROOMS" })}
+      />
       {state.prenotation.rooms}
-      <button type="button" onClick={() => dispatch({ type: "ADD_ROOMS" })}>
-        <BsPlusSquare />
-      </button>
+        <Button
+          type="operation"
+          content="+"
+          onClick={() => dispatch({ type: "ADD_ROOMS" })}
+        />
     </>
   );
 }

@@ -7,6 +7,7 @@ const buttonStyleMap = {
   currency: styles.Currency,
   icon: styles.Icon,
   outline: styles.Outline,
+  operation: styles.Operation,
 };
 
 function Button({ content, type, onClick = null }) {
