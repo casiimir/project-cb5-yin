@@ -8,6 +8,7 @@ const buttonStyleMap = {
   icon: styles.Icon,
   outline: styles.Outline,
   operation: styles.Operation,
+  outlineRounded: styles.OutlineRounded,
 };
 
 function Button({ content, type, onClick = null }) {

@@ -4,7 +4,7 @@ export const hotels = [
     hoteltype_id: 204,
     name: "Riu Plaza Berlin",
     entrance_photo_url:
-      "https://cf.bstatic.com/images/hotel/square60/272/272369306.jpg",
+      "https://cf.bstatic.com/xdata/images/hotel/max1280x900/58006048.jpg?k=dfeb825474b3801e19c08831f26153d60501480b04d1c9794e751aedc9298855&o=&hp=1",
     review_score: "8.3",
     countrycode: "de",
     city: "Berlin",
@@ -17,7 +17,7 @@ export const hotels = [
     hoteltype_id: 201,
     name: "Apartment WILKY in Kaprun",
     entrance_photo_url:
-      "https://cf.bstatic.com/images/hotel/square60/259/259695136.jpg",
+      "https://cf.bstatic.com/xdata/images/hotel/max1280x900/307982974.jpg?k=d3c15f462d797172119be171aee8e5c384686b3e779264cca7407649b48e0f6e&o=&hp=1",
     review_score: "8.9",
     countrycode: "at",
     city: "Kaprun",
@@ -30,7 +30,7 @@ export const hotels = [
     hoteltype_id: 204,
     name: "HOF HOTEL",
     entrance_photo_url:
-      "https://cf.bstatic.com/images/hotel/square60/342/342705900.jpg",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/342705900.jpg?k=fa98234fc1d8d76f5dad36a357c5d21094042fdc9451a65e93077f34bf316eac&o=&hp=1",
     review_score: "8.8",
     countrycode: "lt",
     city: "Kaunas",
@@ -43,7 +43,7 @@ export const hotels = [
     hoteltype_id: 201,
     name: "Apartment Srblin",
     entrance_photo_url:
-      "https://cf.bstatic.com/images/hotel/square60/105/105110522.jpg",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/105110522.jpg?k=e92f4d4ce0dc9fa548294370475280fc1a3236d2ef734211af62e2b35d1c4d81&o=&hp=1",
     review_score: "8.4",
     countrycode: "hr",
     city: "Sveti Petar u Šumi",
@@ -106,7 +106,7 @@ export const hotels = [
     hoteltype_id: 201,
     name: "Guest House Mate",
     entrance_photo_url:
-      "https://cf.bstatic.com/images/hotel/square60/132/132057885.jpg",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/132057869.jpg?k=dbef5d72e7a5638cbff3fa9bdc3b3b7b0250e6baa22c0ac2b8c820e864a5ef00&o=&hp=1",
     review_score: "9.6",
     countrycode: "hr",
     city: "Bol",

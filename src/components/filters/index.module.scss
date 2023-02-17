@@ -1,9 +1,11 @@
 @import "@/styles/variables.scss";
 
-.DivFilters {
+.Filter {
   .ulHotels {
     display: flex;
-    overflow: scroll;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
     padding: 20px 0px;
   }
@@ -12,27 +14,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgba(211, 211, 211, 0.621);
-    color: #007bb5;
+    color: $blue;
+    width: auto;
+    height: 45px;
     border-radius: 30px;
-    padding: 20px;
-    height: 30px;
   }
   .toggleOn {
-    outline: 2px solid #ffd700;
+    background-color: $white-gray;
+    outline: 1.5px solid $blue;
   }
-
-  // li:hover {
-  //   border: 1px solid #007bb5;
-  // }
 }
 
-@media only screen and (min-width: 600px) {
-  .DivFilters {
+@media only screen and (min-width: 568px) {
+  .Filter {
     .ulHotels {
       display: flex;
-      justify-content: center;
+      flex-wrap: wrap;
       align-items: center;
+      justify-content: left;
+      gap: 10px;
+      padding: 20px 0px;
     }
   }
 }

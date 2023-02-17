@@ -1,7 +1,7 @@
 import { cityList } from "@/mocks/cityList";
 import styles from "./index.module.scss";
 
-const HotelList = (city) => {
+const CityList = (city) => {
   console.log(city);
 
   return (
@@ -23,4 +23,4 @@ const HotelList = (city) => {
   );
 };
 
-export default HotelList;
+export default CityList;
