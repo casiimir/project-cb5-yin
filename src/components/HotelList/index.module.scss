@@ -10,6 +10,7 @@
       align-items: center;
       overflow: hidden;
       gap: 20px;
+      padding-top: 15px;
 
       .cardHotel {
         background-color: rgb(255, 255, 255);
@@ -23,38 +24,26 @@
           width: 260px;
           padding-bottom: 10px;
         }
-
-        .scoreContainer {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-
-          .wrap{
-              display: flex;
-              flex-direction: column;
-  
-              .review {
-                padding: 5px;
-                font-size: 14px;
-              }
-              
-              .payment{
-                  width: fit-content;
-                  border-radius: 5px 5px 5px 0px;
-                  padding: 5px;
-                  margin-top: 2px;
-                }
-        }
-
-        }
-        .btn{
+        .wrapper{
+            display: flex;
+            gap:10px;
+            padding-top: 40px;
+            padding-bottom: 10px;
+            
+            
+          .score {
             background-color: $blue;
             color: $white;
-            border: none;
-            padding: 10px;
-            margin-top: 12px;
-            margin-left: 60px;
-            
+            width: fit-content;
+            border-radius: 5px 5px 5px 0px;
+            padding: 5px;
+            margin-top: 2px;
+          }
+          .vote{
+            padding-top: 12px;
+            font-weight: bold;
+          }
+
         }
       }
     }
