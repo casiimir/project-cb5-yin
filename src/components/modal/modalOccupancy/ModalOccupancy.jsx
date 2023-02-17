@@ -8,31 +8,33 @@ const ModalOccupancy = ({ setOpenModal }) => {
   return (
     <div className={styles.ModalOccupancy}>
       <div
-        className={styles.overlay}
+        className={styles.modalOverlay}
         onClick={() => {
           setOpenModal(false);
         }}
       ></div>
-      <div className={styles.modalRow}>
-        <label>Adulti</label>
-        <div>
-          <CounterAdulti />
+      <div className={styles.modalContainer}>
+        <div className={styles.modalRow}>
+          <label>Adulti</label>
+          <div className={styles.modalCounter}>
+            <CounterAdulti />
+          </div>
         </div>
-      </div>
-      <div className={styles.modalRow}>
-        <label>Bambini</label>
-        <div>
-          <CounterBambini />
+        <div className={styles.modalRow}>
+          <label>Bambini</label>
+          <div className={styles.modalCounter}>
+            <CounterBambini />
+          </div>
         </div>
-      </div>
-      <div className={styles.modalRow}>
-        <label>Camere</label>
-        <div>
-          <CounterCamere />
+        <div className={styles.modalRow}>
+          <label>Camere</label>
+          <div className={styles.modalCounter}>
+            <CounterCamere />
+          </div>
         </div>
-      </div>
-      <div>
-        <Button type="outline" content="Fatto" />
+        <div className={styles.modalInput}>
+          <Button type="outline" content="Fatto" />
+        </div>
       </div>
     </div>
   );

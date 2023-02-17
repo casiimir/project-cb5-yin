@@ -1,6 +1,6 @@
 import { useReducer, useContext } from "react";
 import AppContext from "@/store/context";
-import { BsPlusSquare, BsDashSquare } from "react-icons/bs";
+import Button from "@/atoms/Button/Button";
 const initialState = { count: 1 };
 
 function CounterBambini() {
@@ -9,16 +9,17 @@ function CounterBambini() {
 
   return (
     <>
-      <button
-        type="button"
+      <Button
+        type="operation"
+        content="-"
         onClick={() => dispatch({ type: "REMOVE_CHILDREN" })}
-      >
-        <BsDashSquare />
-      </button>
+      />
       {state.prenotation.children}
-      <button type="button" onClick={() => dispatch({ type: "ADD_CHILDREN" })}>
-        <BsPlusSquare />
-      </button>
+      <Button
+        type="operation"
+        content="+"
+        onClick={() => dispatch({ type: "ADD_CHILDREN" })}
+      />
     </>
   );
 }
