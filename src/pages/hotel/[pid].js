@@ -5,7 +5,7 @@ import { GET } from "../../utils/http";
 import GuestReviews from "@/components/guestReviews";
 import { useRouter } from "next/router";
 import HotelList from "@/components/HotelList";
-import HotelDescription from "@/components/hotelDescription/HotelDescription";
+import DynamicHotel from "@/components/dynamicHotel";
 
 function Hotel() {
   const [dataHotelReview, setDataHotelReview] = useState([]);
@@ -32,11 +32,9 @@ function Hotel() {
 
   return (
     <MainLayout>
-      <p>{pid}</p>
-      {/* {photoData && <img src={photoData[0]?.url_max} alt="siamo cotti"/>} */}
       <div>{hotel.name}</div>;
+      <DynamicHotel />
       <GuestReviews reviewData={reviewData} dataHotelReview={dataHotelReview} />
-      <HotelDescription descriptionData={descriptionData} />
       <HotelList />
     </MainLayout>
   );
