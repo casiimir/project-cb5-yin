@@ -5,39 +5,42 @@ import { GET } from "../../utils/http";
 import GuestReviews from "@/components/guestReviews";
 import { useRouter } from "next/router";
 import HotelList from "@/components/HotelList";
+import HotelDescription from "@/components/hotelDescription/HotelDescription";
 
 function Hotel() {
-  const [dataHotelReview, setDataHotelReview] = useState([])
-  const [reviewData, setReviewData]= useState([])
-  const router= useRouter()
-  const {pid} = router.query;
+  const [dataHotelReview, setDataHotelReview] = useState([]);
+  const [reviewData, setReviewData] = useState([]);
+  const [descriptionData, setdescriptionData] = useState([]);
+  const router = useRouter();
+  const { pid } = router.query;
+
+  //------Description---------//
+  //GET 1 --> DESCRIPTION HOTEL
+  //GET 2 --> REVIEW HOTEL
+  //GET 3 --> REVIEW USER
 
   // useEffect(() => {
-  //   if(router.isReady === true)
+  //   if (router.isReady === true)
+  //     GET(`hotels/description?hotel_id=${pid}&locale=it`).then((res) =>
+  //       setdescriptionData(res)
+  //     );
   //   GET(`hotels/data?locale=it&hotel_id=${pid}`)
   //   .then((response) => setDataHotelReview(response))
   //   GET(`hotels/reviews?hotel_id=${pid}&locale=it&sort_type=SORT_MOST_RELEVANT&customer_type=solo_traveller%2Creview_category_group_of_friends&language_filter=it%2Cde%2Cfr`)
   //   .then((response) => setReviewData(response.result))
-  // },[router.isReady])
+  //}, [router.isReady]);
 
-
-
-
-  
   return (
     <MainLayout>
-
-    <p>{pid}</p>
-    {/* {photoData && <img src={photoData[0]?.url_max} alt="siamo cotti"/>} */}
-    
+      <p>{pid}</p>
+      {/* {photoData && <img src={photoData[0]?.url_max} alt="siamo cotti"/>} */}
       <div>{hotel.name}</div>;
       <GuestReviews reviewData={reviewData} dataHotelReview={dataHotelReview} />
+      <HotelDescription descriptionData={descriptionData} />
       <HotelList />
     </MainLayout>
   );
 }
-
-
 
 /* export async function getServerSideProps() {
 
