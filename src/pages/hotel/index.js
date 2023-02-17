@@ -1,11 +1,15 @@
 import MainLayout from "@/layout/mainLayout";
 import { hotel } from "@/mocks/hotelPageMock";
 import GuestReviews from "@/components/guestReviews";
+import HotelGallery from "@/components/HotelGallery/HotelGallery";
+import HotelDescription from "@/components/hotelDescription/HotelDescription";
 
 function Hotel() {
   return (
     <MainLayout>
       <div>{hotel.name}</div>;
+      <HotelGallery />
+      <HotelDescription />
       <GuestReviews />
     </MainLayout>
   );
