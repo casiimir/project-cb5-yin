@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  outline: 1px solid red;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: space-between;
+  .container {
+  }
+  .buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+}

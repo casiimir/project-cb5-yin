@@ -2,10 +2,7 @@ import styles from "./index.module.scss";
 import Image from "next/image";
 import { customersReview } from "../../mocks/review_customers";
 
-
-const GuestReviews = ({dataHotelReview, reviewData}) => {
-  
-
+const GuestReviews = ({ dataHotelReview, reviewData }) => {
   return (
     <div className={styles.main}>
       <h2>Recensioni degli ospiti</h2>
