@@ -1,0 +1,37 @@
+@import "/src/styles/variables.scss";
+.FilterForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  border-radius: 4px;
+  padding: 1rem 0;
+}
+.SubmitButton {
+  justify-self: center;
+  align-self: flex-end;
+  padding: 8px 12px;
+  background: $blue-button;
+  color: white;
+  border: none;
+  margin-right: 0.5rem;
+}
+.Filter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  outline: 0.7px solid rgba(36, 36, 36, 0.35);
+  padding: 0.5rem;
+  border-radius: 2px;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    input[type="checkbox"] {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+}

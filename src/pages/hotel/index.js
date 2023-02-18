@@ -10,8 +10,6 @@ function Hotel() {
   return (
     <MainLayout>
       <div>{hotel.name}</div>
-      <HotelGalleryWrapper />
-
       <HotelDescription />
       <HotelInfo />
       <GuestReviews />
