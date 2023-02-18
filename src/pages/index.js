@@ -5,6 +5,7 @@ import FormSearch from "@/components/formSearch";
 import WorkTeam from "../components/workTeam";
 import CityList from "@/components/cityList";
 import FilterHotelList from "@/components/FilterHotelList";
+import SectionOne from "@/components/sectionOneHotel";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       <main className={styles.main}>
         <MainLayout>
           <FormSearch />
+          <SectionOne />
           <FilterHotelList />
           <CityList />
           <WorkTeam />
