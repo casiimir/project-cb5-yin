@@ -2,15 +2,16 @@ import MainLayout from "@/layout/mainLayout";
 import { hotel } from "@/mocks/hotelPageMock";
 import { GET } from "@/utils/http";
 import GuestReviews from "@/components/guestReviews";
-import HotelGallery from "@/components/HotelGallery/HotelGallery";
 import HotelDescription from "@/components/hotelDescription/HotelDescription";
 import HotelInfo from "@/components/hotelInfo";
+import HotelGalleryWrapper from "@/components/HotelGalleryWrapper/HotelGalleryWrapper";
 
 function Hotel() {
   return (
     <MainLayout>
       <div>{hotel.name}</div>
-      <HotelGallery />
+      <HotelGalleryWrapper />
+
       <HotelDescription />
       <HotelInfo />
       <GuestReviews />

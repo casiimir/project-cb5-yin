@@ -2,16 +2,9 @@ import { GET } from "@/utils/http";
 import React, { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 
-function HotelGallery() {
-  const [galleryData, setGalleryData] = useState(null);
+function HotelGallery({ galleryData }) {
+  if (!galleryData) return <div>Loading</div>;
 
-  useEffect(() => {
-    GET("hotels/photos?hotel_id=1377073&locale=it").then((res) =>
-      setGalleryData(res)
-    );
-  }, []);
-
-  if (!galleryData) return <div>ASPETTA</div>;
   return (
     <div className={styles.Gallery}>
       <div className={styles.GalleryTop}>

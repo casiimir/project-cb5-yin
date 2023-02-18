@@ -1,0 +1,13 @@
+.HotelCarousel {
+  display: flex;
+  outline: 1px solid red;
+  .CarouselImgWrapper {
+    width: 100%;
+    .CarouselImg {
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
