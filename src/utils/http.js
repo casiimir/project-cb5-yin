@@ -1,3 +1,6 @@
+
+
+
 const BASE_URL = "https://booking-com.p.rapidapi.com/v1";
 //'https://booking-com.p.rapidapi.com/v1/hotels/data?locale=en-gb&hotel_id=1377073'
 
@@ -14,17 +17,18 @@ const GET = async (resource) => {
     const res = await fetch(`${BASE_URL}/${resource}`, options);
 
     if (res.status >= 400) {
-      throw new Error("Abbiamo un problema di connessione");
+      throw new Error("Abbiamo un problema di connessione");ù
+      
     }
 
     const data = await res.json();
-
+    
     return data;
   } catch (err) {
-    return { status: false };
   } finally {
-    // console.log("FINALLY SEMPRE E COMUNQUE");
   }
+
+ 
 };
 
 export { GET };

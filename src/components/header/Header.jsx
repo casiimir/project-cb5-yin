@@ -12,8 +12,6 @@ import Image from "next/image";
 const Header = () => {
   const { state, dispatch } = useContext(AppContext);
 
-  console.log(state);
-
   const logout = () => {
     dispatch({
       type: cases.SET_AUTH,
