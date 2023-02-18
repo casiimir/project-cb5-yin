@@ -11,14 +11,16 @@ const buttonStyleMap = {
   outlineRounded: styles.OutlineRounded,
 };
 
-function Button({ content, type, onClick = null }) {
+function Button({ content, style, onClick = null }) {
   return (
-    <button
-    
-    onClick={() =>{ if(onClick && typeof onClick === "function"){
-      onClick()
-    }}}  
-     className={buttonStyleMap[type] ?? styles.Default}>
+    <button type="button"
+      onClick={() => {
+        if (onClick && typeof onClick === "function") {
+          onClick();
+        }
+      }}
+      className={buttonStyleMap[style] ?? styles.Default}
+    >
       {content}
     </button>
   );

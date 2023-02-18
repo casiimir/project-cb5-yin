@@ -10,16 +10,16 @@ function CounterCamere() {
   return (
     <>
       <Button
-        type="operation"
+        style="operation"
         content="-"
         onClick={() => dispatch({ type: "REMOVE_ROOMS" })}
       />
       {state.prenotation.rooms}
-        <Button
-          type="operation"
-          content="+"
-          onClick={() => dispatch({ type: "ADD_ROOMS" })}
-        />
+      <Button
+        style="operation"
+        content="+"
+        onClick={() => dispatch({ type: "ADD_ROOMS" })}
+      />
     </>
   );
 }

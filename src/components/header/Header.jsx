@@ -30,7 +30,7 @@ const Header = () => {
           </div>
           <div className={styles.userSection}>
             <div className={styles.userCurrency}>
-              <Button type="currency" content="EUR" />
+              <Button style="currency" content="EUR" />
             </div>
             <Image
               className={styles.userLanguage}
@@ -38,18 +38,18 @@ const Header = () => {
               height={24}
               src="https://t-cf.bstatic.com/design-assets/assets/v3.56.0/images-flags/It@3x.png"
             />
-            <Button type="icon" content={<FaRegUserCircle />} />
+            <Button style="icon" content={<FaRegUserCircle />} />
             <div className={styles.mobileBtnsLogin}>
-              <Button type="icon" content={<FiMenu />} />
+              <Button style="icon" content={<FiMenu />} />
             </div>
             <h3 className={styles.desktopBtnsLogin}>{state.auth.username}</h3>
             <div className={styles.desktopBtnsLogin}>
-              <Button type="primary" content="Iscriviti" />
+              <Button style="primary" content="Iscriviti" />
               {state.auth.username ? (
                 <Button onClick={logout} type="primary" content="Logout" />
               ) : (
                 <Link href={"/login"}>
-                  <Button type="primary" content="Accedi" />
+                  <Button style="primary" content="Accedi" />
                 </Link>
               )}
               <Link href={"/login"}></Link>

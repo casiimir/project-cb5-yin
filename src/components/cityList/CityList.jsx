@@ -7,7 +7,7 @@ const CityList = (city) => {
   return (
     <>
       <div className={styles.CityList}>
-        <h2>Sicilia: una straordinaria terra da scoperire</h2>
+        <h2>Sicilia: una straordinaria terra da scoprire</h2>
         <p>Queste mete popolari hanno tanto da offrire</p>
         <div className={styles.cityGallery}>
           {cityList.map((city) => (
