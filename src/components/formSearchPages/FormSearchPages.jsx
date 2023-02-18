@@ -17,8 +17,9 @@ const FormSearchPages = () => {
   const router = useRouter();
 
   useEffect(() => {
+    if (location == "") return;
     GET(`hotels/locations?locale=it&name=${location}`).then((res) => {
-      console.log(res);
+      console.log(res, "diocaro");
       if (Array.isArray(res)) {
         console.log(res);
         setData(res);
@@ -41,26 +42,28 @@ const FormSearchPages = () => {
   return (
     <form className={styles.FormSearch} onSubmit={(e) => handleSubmit(e)}>
       <div className={styles.wrapper}>
-      
-      <div className={styles.wrapTitle}>
-      <h2 className={styles.Title}>Cerca</h2>
-      <p className={styles.paragraf}>Destinazione/nome struttura:</p>
-      </div>
-      
-  
-        <input
-          value={state.location.label ? state.location.label : location}
-          onChange={(e) => onHandleChangeInput(e.target.value)}
-          type="search"
-          placeholder="Dove ti va di andare?"
-        />
+        <h2 className={styles.Title}>Cerca</h2>
+
+        <label>
+          Destinazione/nome struttura:
+          <input
+            value={state.location.label ? state.location.label : location}
+            onChange={(e) => onHandleChangeInput(e.target.value)}
+            type="search"
+            placeholder="Dove ti va di andare?"
+          />
+        </label>
+
         {openModal && <ModalInput setOpenModal={setOpenModal} data={data} />}
-        <div className={styles.wrapDate}>
-          <p>Check-in:</p>
-          <input type="date" placeholder="Data del check-in"/>
-          <p>Check-out:</p>
+
+        <label>
+          Check-in
+          <input type="date" placeholder="Data del check-in" />
+        </label>
+        <label>
+          Check-out:
           <input type="date" placeholder="Data del check-out" />
-        </div>
+        </label>
 
         <button
           type="button"
@@ -69,7 +72,8 @@ const FormSearchPages = () => {
             setModalOpen(true);
           }}
         >
-          {state.prenotation.adults} adulti - {state.prenotation.children} bambini - {state.prenotation.rooms} camera
+          {state.prenotation.adults} adulti - {state.prenotation.children}{" "}
+          bambini - {state.prenotation.rooms} camera
         </button>
 
         {modalOpen && <ModalOccupancy setOpenModal={setModalOpen} />}

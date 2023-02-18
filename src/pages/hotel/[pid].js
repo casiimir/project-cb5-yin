@@ -10,18 +10,19 @@ import HotelInfo from "@/components/hotelInfo";
 import AddressHotel from "@/components/addressHotel/AddressHotel";
 import { wait } from "@/utils/utils";
 import Loader from "@/atoms/Loader/Loader";
-import HotelGalleryWrapper from "@/components/HotelGalleryWrapper/HotelGalleryWrapper";
+import FormSearchPages from "@/components/formSearchPages";
+import HotelGallery from "@/components/HotelGallery/HotelGallery";
 import styles from "@/styles/Hotel.module.scss";
+import HotelCarousel from "@/components/hotelgalleryCarousel/HotelCarousel";
 
-function Hotel() {
-  const [dataHotelReview, setDataHotelReview] = useState([]);
+function Hotel({ galleryData, descriptionData, dataHotelReview }) {
+  //const [dataHotelReview, setDataHotelReview] = useState([]);
   const [reviewData, setReviewData] = useState([]);
-  const [descriptionData, setdescriptionData] = useState([]);
-  const [positionData, setPositionData] = useState([]);
-  const router = useRouter();
-  const { pid } = router.query;
 
   const [loading, setLoading] = useState(true);
+
+  const router = useRouter();
+  const { pid } = router.query;
 
   //------Description---------//
   //GET 1 --> DESCRIPTION HOTEL
@@ -31,22 +32,22 @@ function Hotel() {
 
   useEffect(() => {
     if (router.isReady === true) {
-      GET(`hotels/description?hotel_id=${pid}&locale=it`)
+      /*  GET(`hotels/description?hotel_id=${pid}&locale=it`)
         .then((res) => {
           console.log(res);
           setdescriptionData(res);
         })
         .catch((error) => console.log(error));
+ */
+      //wait(1000);
 
-      wait();
-
-      GET(`hotels/data?locale=it&hotel_id=${pid}`)
+      /* GET(`hotels/data?locale=it&hotel_id=${pid}`)
         .then((response) => {
           setDataHotelReview(response);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.log(error)); */
 
-      wait();
+      //wait(1000);
 
       GET(
         `hotels/reviews?hotel_id=${pid}&locale=it&sort_type=SORT_MOST_RELEVANT&customer_type=solo_traveller%2Creview_category_group_of_friends&language_filter=it%2Cde%2Cfr`
@@ -55,6 +56,12 @@ function Hotel() {
           setReviewData(response.result);
         })
         .catch((error) => console.log(error));
+
+      //wait(1000);
+
+      /* GET(`hotels/photos?hotel_id=${pid}&locale=it`)
+        .then((res) => setGalleryData(res))
+        .catch((error) => console.log(error)); */
 
       // GET(`hotels/map-markers?locale=it&hotel_id=${pid}`).then((response) =>
       //   setPositionData(response)
@@ -74,9 +81,16 @@ function Hotel() {
             <div>
               <AddressHotel dataHotelReview={dataHotelReview} />
               <div className={styles.SearchAndGalleryWrapper}>
-                {/* componenti search e gallery */}
-
-                <HotelGalleryWrapper />
+                <FormSearchPages />
+                {galleryData && (
+                  <div>
+                    <HotelCarousel galleryData={galleryData} />
+                    <HotelGallery
+                      galleryData={galleryData}
+                      //setGalleryData={setGalleryData}
+                    />
+                  </div>
+                )}
               </div>
             </div>
             <div>
@@ -97,11 +111,22 @@ function Hotel() {
   );
 }
 
-/* export async function getServerSideProps() {
+export async function getServerSideProps(context) {
+  const { pid } = context.params;
+  //gallery
+  const galleryData = await GET(
+    `hotels/photos?hotel_id=${pid}&locale=it`
+  ).catch((error) => console.log(error));
 
-  const data= await GET(`hotels/data?locale=en-gb&hotel_id=1377074`)
+  const descriptionData = await GET(
+    `hotels/description?hotel_id=${pid}&locale=it`
+  ).catch((error) => console.log(error));
 
-  return { props: { data } }
-} */
+  const dataHotelReview = await GET(
+    `hotels/data?locale=it&hotel_id=${pid}`
+  ).catch((error) => console.log(error));
+
+  return { props: { galleryData, descriptionData, dataHotelReview } };
+}
 
 export default Hotel;
