@@ -1,10 +1,14 @@
 $gallery-width: 800px;
 .Gallery {
+  display: none;
   overflow: hidden;
   width: $gallery-width;
 
   img {
     object-fit: cover;
+  }
+  @media screen and (min-width: 768px) {
+    display: block;
   }
 }
 .GalleryTop {
