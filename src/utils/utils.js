@@ -4,3 +4,13 @@ export const getAuthFromLS = () => {
   if (!authData) return null;
   return authData;
 };
+
+
+export const wait = () => {
+
+  setTimeout(() => {
+    console.log("TOPPETEEEE")
+ },1000)
+
+ 
+}

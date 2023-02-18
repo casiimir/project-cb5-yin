@@ -16,7 +16,7 @@ const HotelList = ({dataHotelReview}) => {
         <div className={styles.hotelContainer}>
           {hotels.map((elem) => {
             return (
-              <div className={styles.cardHotel}>
+              <div key={elem.hotel_id} className={styles.cardHotel}>
                 <img src={elem.entrance_photo_url} alt="img" />
                 <h3>{elem.name}</h3>
                     <div className={styles.wrapper}>
@@ -26,7 +26,6 @@ const HotelList = ({dataHotelReview}) => {
                 <div className={styles.scoreContainer}>
         
                 </div>
-                <button className={styles.btn}>Vedi disponibilità</button>
               </div>
           
           );
