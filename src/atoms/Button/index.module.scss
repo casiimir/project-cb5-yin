@@ -108,6 +108,7 @@
   line-height: 16px;
   padding: 11px 18px;
   border-radius: 30px;
+  outline: .5px solid $light-blue;
   cursor: pointer;
   &:hover {
     background: $white-gray;
