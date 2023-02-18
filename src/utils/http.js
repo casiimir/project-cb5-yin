@@ -20,7 +20,6 @@ const GET = async (resource, iswait = false) => {
 
     if (res.status >= 400) {
       throw new Error("Abbiamo un problema di connessione");
-      ù;
     }
 
     const data = await res.json();

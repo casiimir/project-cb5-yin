@@ -1,12 +1,28 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
 import styles from "./index.module.scss";
 import SearchCard from "./SearchCard";
 import Loader from "@/atoms/Loader/Loader";
 import { GET } from "@/utils/http";
 import AppContext from "@/store/context";
+import FormSearchPages from "../formSearchPages";
+import SearchPageFilter from "../SearchPageFilter/SearchPageFilter";
 
 function SearchWrapper() {
+  const [filterBy, setFilterBy] = useState({
+    class: [
+      { id: 1, label: "Nessuna Stella", checked: false },
+      { id: 2, label: "1", checked: false },
+      { id: 3, label: "2", checked: false },
+      { id: 4, label: "3", checked: false },
+      { id: 5, label: "4", checked: false },
+      { id: 6, label: "5", checked: false },
+    ],
+    rating: null,
+    review_num: null,
+  });
+
   const [searchResults, setSearchResults] = useState(null);
+  //const [filterResults, setFilterResults] = useState(null);
   const [loading, setLoading] = useState(true);
   const { state } = useContext(AppContext);
 
@@ -23,19 +39,25 @@ function SearchWrapper() {
       .finally(() => setLoading(false));
   }, []);
 
+  useEffect(() => {
+    console.log(filterBy);
+  }, [filterBy]);
+
   return (
     <div className={styles.Container}>
       <div className={styles.SearchWrapper}>
         <div className={styles.LeftSection}>
-          {/* COMPONENTE SEARCH */}
-          <div className={styles.Filter}>{/* COMPONENTE FILTER */}</div>
+          <FormSearchPages />
+          <div className={styles.Filter}>
+            <SearchPageFilter setFilterBy={setFilterBy} filterBy={filterBy} />
+          </div>
         </div>
         <div className={styles.RightSection}>
           {loading ? (
             <Loader></Loader>
           ) : (
             <>
-              <h3>{searchResults.count} STRUTTURE TROVATE</h3>
+              <h3>{searchResults?.count} STRUTTURE TROVATE</h3>
               <div className={styles.ResultWrapper}>
                 {searchResults &&
                   searchResults.result.map((el) => <SearchCard el={el} />)}
