@@ -1,8 +1,7 @@
 import styles from "./index.module.scss";
+import { AiOutlineHeart } from "react-icons/ai";
 
 const AddressHotel = ({ dataHotelReview }) => {
-  const positionHotel = "";
-
   //console.log(positionData);
   //   if (positionData.geo_info.city_centre.distance < 500) {
   //     const positionHotel = "Ottima posizione - In centro";
@@ -12,17 +11,23 @@ const AddressHotel = ({ dataHotelReview }) => {
 
   return (
     <div className={styles.main}>
-      <div className={styles.container}>
-        <h3>{dataHotelReview.name}</h3>
-        <p>
-          {dataHotelReview.address} {dataHotelReview.city}
-          {dataHotelReview.country} - positionHotel
-        </p>
-      </div>
-      <div className={styles.buttons}>
-        <button>Prenota adesso</button>
-        <i>icona</i>
-      </div>
+      {dataHotelReview && (
+        <>
+          <div className={styles.container}>
+            <h3>{dataHotelReview.name}</h3>
+            <p>
+              {dataHotelReview.address} {dataHotelReview.city}
+              {dataHotelReview.country} - positionHotel
+            </p>
+          </div>
+          <div className={styles.buttons}>
+            <i>
+              <AiOutlineHeart />
+            </i>
+            <button>Prenota adesso</button>
+          </div>
+        </>
+      )}
     </div>
   );
 };

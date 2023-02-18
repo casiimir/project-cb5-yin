@@ -10,7 +10,6 @@ function HotelCarousel({ galleryData }) {
           src={galleryData[0].url_max}
           alt=""
         />
-        <p>ciao</p>
       </div>
     </div>
   );
