@@ -9,13 +9,15 @@ function CounterAdulti() {
   return (
     <>
       <Button
-        type="operation"
+        type="button"
+        style="operation"
         content="-"
         onClick={() => dispatch({ type: "REMOVE_ADULTS" })}
       />
       {state.prenotation.adults}
       <Button
-        type="operation"
+        type="button"
+        style="operation"
         content="+"
         onClick={() => dispatch({ type: "ADD_ADULTS" })}
       />

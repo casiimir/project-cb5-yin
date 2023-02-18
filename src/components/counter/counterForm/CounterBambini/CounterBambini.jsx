@@ -10,13 +10,13 @@ function CounterBambini() {
   return (
     <>
       <Button
-        type="operation"
+        style="operation"
         content="-"
         onClick={() => dispatch({ type: "REMOVE_CHILDREN" })}
       />
       {state.prenotation.children}
       <Button
-        type="operation"
+        style="operation"
         content="+"
         onClick={() => dispatch({ type: "ADD_CHILDREN" })}
       />

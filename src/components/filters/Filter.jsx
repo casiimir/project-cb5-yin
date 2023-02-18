@@ -24,7 +24,7 @@ const Filters = ({ filterByStars, setFilterByStars }) => {
       <ul className={styles.ulHotels}>
         <li className={filterByStars.includes(1) && styles.toggleOn}>
           <Button
-            type="outlineRounded"
+            style="outlineRounded"
             content="1 stella ⭐"
             name="star1"
             onClick={() => handleOnClick(1)}
@@ -32,7 +32,7 @@ const Filters = ({ filterByStars, setFilterByStars }) => {
         </li>
         <li className={filterByStars.includes(2) && styles.toggleOn}>
           <Button
-            type="outlineRounded"
+            style="outlineRounded"
             content="2 stelle ⭐"
             name="star2"
             onClick={() => handleOnClick(2)}
@@ -40,7 +40,7 @@ const Filters = ({ filterByStars, setFilterByStars }) => {
         </li>
         <li className={filterByStars.includes(3) && styles.toggleOn}>
           <Button
-            type="outlineRounded"
+            style="outlineRounded"
             content="3 stelle ⭐"
             name="star3"
             onClick={() => handleOnClick(3)}
@@ -48,7 +48,7 @@ const Filters = ({ filterByStars, setFilterByStars }) => {
         </li>
         <li className={filterByStars.includes(4) && styles.toggleOn}>
           <Button
-            type="outlineRounded"
+            style="outlineRounded"
             content="4 stelle ⭐"
             name="star4"
             onClick={() => handleOnClick(4)}
@@ -56,7 +56,7 @@ const Filters = ({ filterByStars, setFilterByStars }) => {
         </li>
         <li className={filterByStars.includes(5) && styles.toggleOn}>
           <Button
-            type="outlineRounded"
+            style="outlineRounded"
             content="5 stelle ⭐"
             name="star5"
             onClick={() => handleOnClick(5)}

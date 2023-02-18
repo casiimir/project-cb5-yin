@@ -33,7 +33,7 @@ const ModalOccupancy = ({ setOpenModal }) => {
           </div>
         </div>
         <div className={styles.modalInput}>
-          <Button type="outline" content="Fatto" />
+          <Button type="submit" style="outline" content="Fatto" />
         </div>
       </div>
     </div>

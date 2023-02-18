@@ -1,6 +1,7 @@
 @import "@/styles/variables.scss";
 
 .CityList {
+  background-color: red;
   padding: 30px 16px;
   display: flex;
   flex-direction: column;
@@ -21,6 +22,15 @@
         width: 100%;
         height: 265px;
         object-fit: cover;
+        cursor: pointer;
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+        &:hover {
+          -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+          -webkit-transition: 0.3s ease-in-out;
+          transition: 0.3s ease-in-out;
+        }
       }
       .cityName {
         position: absolute;
@@ -36,13 +46,23 @@
 }
 
 @media only screen and (min-width: 767px) {
+  .cityGallery {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+
   .cityCard {
     width: inherit !important;
-    
+    padding-top: 0!important;
+
     .cityImage {
       width: 340px !important;
       height: 265px !important;
       object-fit: cover;
     }
   }
+}
 }
