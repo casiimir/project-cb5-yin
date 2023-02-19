@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 
 function SearchCard({ el }) {
   const router = useRouter();
+  console.log(el);
   // TODO: Completare card
   return (
     <div className={styles.Card}>
@@ -25,6 +26,7 @@ function SearchCard({ el }) {
           <h4>{el.hotel_name}</h4>
           <p>{el.city}</p>
           <p>{el.address}</p>
+          <p>{el?.distances[0].text}</p>
         </div>
         <div className={styles.CardDetailedInfo}>
           <div className={styles.CardReviews}>
@@ -39,7 +41,7 @@ function SearchCard({ el }) {
 
           <button
             onClick={() => {
-              router.push("/hotel");
+              router.push(`/hotel/${el.hotel_id}`);
             }}
             className={styles.CardButton}
           >
