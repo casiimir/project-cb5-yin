@@ -1,16 +1,41 @@
-import React, { useState } from "react";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
+
+import "swiper/scss";
+import "swiper/scss/navigation";
+import "swiper/scss/pagination";
 import styles from "./index.module.scss";
 
+import { Navigation, Pagination } from "swiper";
+
 function HotelCarousel({ galleryData }) {
+  console.log(galleryData);
   return (
     <div className={styles.HotelCarousel}>
-      <div className={styles.CarouselImgWrapper}>
-        <img
-          className={styles.CarouselImg}
-          src={galleryData[0].url_max}
-          alt=""
-        />
-      </div>
+      <Swiper
+        className={styles.Swiper}
+        pagination={{
+          type: "fraction",
+        }}
+        navigation={true}
+        modules={[Navigation, Pagination]}
+      >
+        {galleryData.map((hotel) => {
+          return (
+            <SwiperSlide
+              key={hotel?.photo_id}
+              className={styles.CarouselImgWrapper}
+            >
+              <img
+                className={styles.CarouselImg}
+                src={hotel.url_max}
+                alt={hotel?.ml_tags[0]?.tag_name}
+              />
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </div>
   );
 }
