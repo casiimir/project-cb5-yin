@@ -11,7 +11,6 @@ const CityList = () => {
 
   const handleDynamicRoute = (dest_id) => {
     dispatch({ type: cases.ADD_LOCATION, payload: dest_id });
-    console.log("dioca");
     router.push("/search");
   };
 

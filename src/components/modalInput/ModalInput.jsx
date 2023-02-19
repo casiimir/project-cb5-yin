@@ -4,11 +4,14 @@ import AppContext from "@/store/context";
 import styles from "./index.module.scss";
 
 const ModalInput = ({ data, setOpenModal }) => {
-  const { dispatch } = useContext(AppContext);
+  const { dispatch, state } = useContext(AppContext);
   const dispatchHandler = (el) => {
     setOpenModal(false);
-    dispatch({ type: "ADD_LOCATION", payload: el });
-    console.log(AppContext);
+    dispatch({
+      type: "ADD_LOCATION",
+      payload: { city_name: el.city_name, dest_id: el.dest_id },
+    });
+    console.log("so", el);
   };
 
   return (

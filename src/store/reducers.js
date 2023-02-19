@@ -1,5 +1,6 @@
 const cases = {
   ADD_LOCATION: "ADD_LOCATION",
+  REMOVE_LOCATION: "REMOVE_LOCATION",
 
   ADD_ADULTS: "ADD_ADULTS",
   REMOVE_ADULTS: "REMOVE_ADULTS",
@@ -22,6 +23,12 @@ const reducer = (state, action) => {
   switch (action.type) {
     case cases.ADD_LOCATION:
       return { ...state, location: action.payload };
+
+    case cases.REMOVE_LOCATION:
+      return {
+        ...state,
+        location: {},
+      };
 
     case cases.ADD_ADULTS:
       return {

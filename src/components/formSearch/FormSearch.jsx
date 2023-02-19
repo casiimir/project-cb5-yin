@@ -5,6 +5,7 @@ import ModalInput from "../modalInput/ModalInput";
 import styles from "./index.module.scss";
 import ModalOccupancy from "../modal/modalOccupancy";
 import { useRouter } from "next/router";
+import { cases } from "@/store/reducers";
 
 const FormSearch = () => {
   const [location, setLocation] = useState("");
@@ -13,14 +14,12 @@ const FormSearch = () => {
 
   const [modalOpen, setModalOpen] = useState(false);
 
-  const { state } = useContext(AppContext);
+  const { state, dispatch } = useContext(AppContext);
   const router = useRouter();
 
   useEffect(() => {
     GET(`hotels/locations?locale=it&name=${location}`).then((res) => {
-      console.log(res);
       if (Array.isArray(res)) {
-        console.log(res);
         setData(res);
       }
     });
@@ -29,6 +28,13 @@ const FormSearch = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     router.push("search");
+  };
+
+  const handleRemoveInput = () => {
+    if (location !== "") {
+      setLocation("");
+    }
+    dispatch({ type: cases.REMOVE_LOCATION });
   };
 
   const onHandleChangeInput = (value) => {
@@ -41,12 +47,25 @@ const FormSearch = () => {
   return (
     <form className={styles.FormSearch} onSubmit={(e) => handleSubmit(e)}>
       <div className={styles.wrapper}>
-        <input
-          value={state.location.label ? state.location.label : location}
-          onChange={(e) => onHandleChangeInput(e.target.value)}
-          type="search"
-          placeholder="Dove ti va di andare?"
-        />
+        <div className={styles.inputSearchWrapper}>
+          <input
+            value={
+              state.location.city_name ? state.location.city_name : location
+            }
+            onChange={(e) => onHandleChangeInput(e.target.value)}
+            type="search"
+            placeholder="Dove ti va di andare?"
+          />
+          {location !== "" && (
+            <button
+              className={styles.deleteInput}
+              onClick={() => handleRemoveInput()}
+            >
+              ❌
+            </button>
+          )}
+        </div>
+
         {openModal && <ModalInput setOpenModal={setOpenModal} data={data} />}
         <div className={styles.wrapDate}>
           <input type="date" />
@@ -60,7 +79,8 @@ const FormSearch = () => {
             setModalOpen(true);
           }}
         >
-          {state.prenotation.adults} adulti - {state.prenotation.children} bambini - {state.prenotation.rooms} camera
+          {state.prenotation.adults} adulti - {state.prenotation.children}{" "}
+          bambini - {state.prenotation.rooms} camera
         </button>
 
         {modalOpen && <ModalOccupancy setOpenModal={setModalOpen} />}
