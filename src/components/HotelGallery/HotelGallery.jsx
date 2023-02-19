@@ -20,7 +20,10 @@ function HotelGallery({ galleryData }) {
           />
         </div>
         <div className={styles.GalleryTopImg}>
-          <img src={galleryData[0].url_max} alt={galleryData[0].tags[0].tag} />
+          <img
+            src={galleryData[0].url_max}
+            alt={galleryData[0]?.tags[0]?.tag}
+          />
         </div>
       </div>
       <div className={styles.GalleryBottom}>
@@ -31,7 +34,7 @@ function HotelGallery({ galleryData }) {
               <img
                 className={styles.GalleryBottomImg}
                 src={photo.url_max}
-                alt={photo.tags[0].tag}
+                alt={photo.tags[0]?.tag}
               />
             </div>
           );

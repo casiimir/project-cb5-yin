@@ -1,8 +1,19 @@
 import { cityList } from "@/mocks/cityList";
 import styles from "./index.module.scss";
+import { useRouter } from "next/router";
+import { useContext } from "react";
+import AppContext from "@/store/context";
+import { cases } from "@/store/reducers";
 
-const CityList = (city) => {
-  console.log(city);
+const CityList = () => {
+  const router = useRouter();
+  const { dispatch } = useContext(AppContext);
+
+  const handleDynamicRoute = (dest_id) => {
+    dispatch({ type: cases.ADD_LOCATION, payload: dest_id });
+    console.log("dioca");
+    router.push("/search");
+  };
 
   return (
     <>
@@ -15,11 +26,15 @@ const CityList = (city) => {
           {cityList.map((city) => (
             <div className={styles.cityCard}>
               <img
+                onClick={() => handleDynamicRoute(city.dest_id)}
                 className={styles.cityImage}
                 src={city.image_url}
                 alt="img"
               />
-              <div className={styles.cityOverlay}></div>
+              <div
+                className={styles.cityOverlay}
+                onClick={() => handleDynamicRoute(city.dest_id)}
+              ></div>
               <h3 className={styles.cityName}>{city.name}</h3>
               <h2 className={styles.cityCTA}>
                 Scopri<br></br>

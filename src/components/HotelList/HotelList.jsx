@@ -1,33 +1,25 @@
 import Image from "next/image";
 import { hotels } from "@/mocks/hotels";
-import styles from "./index.module.scss"
+import styles from "./index.module.scss";
+import Link from "next/link";
 
-
-
-const HotelList = ({dataHotelReview}) => {
-
-
-    return(
-       
-        <div className={styles.container}>
-
-        <h2>Chi ha guardato{` ${dataHotelReview?.name}` } ha guardato anche queste strutture</h2> 
-        
-        <div className={styles.hotelContainer}>
-          {hotels.map((elem) => {
-            return (
+const HotelList = () => {
+  return (
+    <div className={styles.container}>
+      <div className={styles.hotelContainer}>
+        {hotels.map((elem) => {
+          return (
+            <Link href={`/hotel/${elem.hotel_id}`}>
               <div key={elem.hotel_id} className={styles.cardHotel}>
                 <img src={elem.entrance_photo_url} alt="img" />
                 <h3>{elem.name}</h3>
-                    <div className={styles.wrapper}>
-                        <p className={styles.score}>{elem.review_score}</p>
-                        <p className={styles.vote}>{elem.review_score_word}</p>
-                    </div>
-                <div className={styles.scoreContainer}>
-        
+                <div className={styles.wrapper}>
+                  <p className={styles.score}>{elem.review_score}</p>
+                  <p className={styles.vote}>{elem.review_score_word}</p>
                 </div>
+                <div className={styles.scoreContainer}></div>
               </div>
-          
+            </Link>
           );
         })}
         <button className={styles.arrowRight}>
