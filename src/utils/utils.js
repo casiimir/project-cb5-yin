@@ -5,8 +5,9 @@ export const getAuthFromLS = () => {
   return authData;
 };
 
-export const wait = (time) => {
+export const wait = (func,time) => {
   setTimeout(() => {
+    func()
     console.log("TOPPETEEEE");
   }, time);
 };
