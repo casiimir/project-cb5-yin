@@ -23,9 +23,12 @@ const Header = () => {
     <header className={styles.Header}>
       <div className={styles.wrapperHeader}>
         <div className={styles.headerTop}>
-          <div className={styles.headerLogo}>
-            <img width="140px" src="/bookingWhite.svg" alt="" />
-          </div>
+          <Link href={"/"}>
+            <div className={styles.headerLogo}>
+              <img width="140px" src="/bookingWhite.svg" alt="" />
+            </div>
+          </Link>
+
           <div className={styles.userSection}>
             <div className={styles.userCurrency}>
               <Button style="currency" content="EUR" />

@@ -1,9 +1,12 @@
 @import "@/styles/variables.scss";
 
+.Layout {
+  overflow: hidden;
+}
+
 @media screen and (min-width: 992px) {
   .Main {
     margin: 0 auto;
     max-width: 1110px;
-
   }
 }
