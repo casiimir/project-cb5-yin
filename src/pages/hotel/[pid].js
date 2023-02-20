@@ -14,6 +14,7 @@ import FormSearchPages from "@/components/formSearchPages";
 import HotelGallery from "@/components/HotelGallery/HotelGallery";
 import styles from "@/styles/Hotel.module.scss";
 import HotelCarousel from "@/components/hotelgalleryCarousel/HotelCarousel";
+import HotelFacilities from "@/components/hotelFacilities/hotelFacilities";
 
 function Hotel({ galleryData, descriptionData, dataHotelReview }) {
   //const [dataHotelReview, setDataHotelReview] = useState([]);
