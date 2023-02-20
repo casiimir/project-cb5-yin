@@ -1,3 +1,3 @@
-import WorkTeam from "./workTeam";
+import WorkTeam from "./WorkTeam";
 
 export default WorkTeam;

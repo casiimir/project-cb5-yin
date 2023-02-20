@@ -1,3 +1,3 @@
-import HeroBanner from "./heroBanner";
+import HeroBanner from "./HeroBanner";
 
 export default HeroBanner;

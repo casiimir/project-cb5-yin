@@ -1,3 +1,3 @@
-import CityList from "./cityList";
+import CityList from "./CityList";
 
 export default CityList;
