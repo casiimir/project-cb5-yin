@@ -11,7 +11,7 @@ const CityList = () => {
 
   const handleDynamicRoute = (dest_id) => {
     dispatch({ type: cases.ADD_LOCATION, payload: dest_id });
-    router.push("/search");
+    router.push(`/search?dest_id=${dest_id}`);
   };
 
   return (

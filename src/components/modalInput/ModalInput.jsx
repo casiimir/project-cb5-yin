@@ -3,7 +3,7 @@ import AppContext from "@/store/context";
 
 import styles from "./index.module.scss";
 
-const ModalInput = ({ data, setOpenModal }) => {
+const ModalInput = ({ data, setOpenModal, setDestid }) => {
   const { dispatch, state } = useContext(AppContext);
   const dispatchHandler = (el) => {
     setOpenModal(false);
@@ -11,7 +11,7 @@ const ModalInput = ({ data, setOpenModal }) => {
       type: "ADD_LOCATION",
       payload: { city_name: el.city_name, dest_id: el.dest_id },
     });
-    console.log("so", el);
+    setDestid(el.dest_id);
   };
 
   return (

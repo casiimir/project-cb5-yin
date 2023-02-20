@@ -32,7 +32,7 @@ function Hotel({ galleryData, descriptionData, dataHotelReview }) {
   //GET 4 --> POSITION HOTEL
 
   useEffect(() => {
-    if (router.isReady === true) {
+    if (router.isReady) {
       /*  GET(`hotels/description?hotel_id=${pid}&locale=it`)
         .then((res) => {
           console.log(res);

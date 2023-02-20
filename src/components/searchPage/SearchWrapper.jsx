@@ -8,6 +8,8 @@ import FormSearchPages from "../formSearchPages";
 import SearchPageFilter from "../SearchPageFilter/SearchPageFilter";
 import SearchPagination from "./../searchPagination/index";
 import NotFoundSearch from "../NotFoundSearch/NotFoundSearch";
+import { useRouter } from "next/router";
+import { buildSearchQueryString } from "@/utils/utils";
 
 const selectFilters = [
   { name: "Distance from city centre", id: "distance" },
@@ -35,29 +37,25 @@ function SearchWrapper() {
     rating: null,
     review_num: null,
   });
-
-  const { state } = useContext(AppContext);
-
-  useEffect(() => {
-    console.log("navigation: ", navigation);
-  }, [navigation]);
+  const router = useRouter();
+  const { checkIn, checkOut, dest_id, adults, children, rooms } = router.query;
 
   useEffect(() => {
-    console.log(state.location);
     setLoading(true);
-    GET(
-      `hotels/search?dest_id=${state.location.dest_id}&order_by=${selectFilter}&filter_by_currency=EUR&adults_number=2&room_number=1&checkout_date=2023-07-16&units=metric&checkin_date=2023-07-15&dest_type=city&locale=it&children_ages=5%2C0&categories_filter_ids=class%3A%3A2%2Cclass%3A%3A4%2Cfree_cancellation%3A%3A1&page_number=${navigation}&include_adjacency=true&children_number=2`
-    )
-      .then((res) => {
-        console.log(res);
-        setSearchResults(res);
-      })
-      .finally(() => setLoading(false));
-  }, [navigation, selectFilter]);
-
-  useEffect(() => {
-    console.log(filterBy);
-  }, [filterBy]);
+    if (router.isReady) {
+      const qs = buildSearchQueryString();
+      //TODO: implementare qs dentro GET
+      console.log(router.query);
+      GET(
+        `hotels/search?dest_id=${dest_id}&order_by=${selectFilter}&filter_by_currency=EUR&adults_number=${adults}&room_number=${rooms}&checkout_date=${checkOut}&units=metric&checkin_date=${checkIn}&dest_type=city&locale=it&children_ages=5%2C0&categories_filter_ids=class%3A%3A2%2Cclass%3A%3A4%2Cfree_cancellation%3A%3A1&page_number=${navigation}&include_adjacency=true&children_number=${children}`
+      )
+        .then((res) => {
+          console.log(res);
+          setSearchResults(res);
+        })
+        .finally(() => setLoading(false));
+    }
+  }, [router.isReady, navigation, selectFilter]);
 
   return (
     <div className={styles.Container}>
@@ -78,11 +76,6 @@ function SearchWrapper() {
                   <NotFoundSearch />
                 ) : (
                   <>
-                    <SearchPagination
-                      navigation={navigation}
-                      setNavigation={setNavigation}
-                    />
-
                     <select
                       value={selectFilter}
                       onChange={(e) => setSelectFilter(e.target.value)}
@@ -102,6 +95,11 @@ function SearchWrapper() {
                     {searchResults?.result.map((el, id) => (
                       <SearchCard key={id} el={el} />
                     ))}
+
+                    <SearchPagination
+                      navigation={navigation}
+                      setNavigation={setNavigation}
+                    />
                   </>
                 )}
               </div>
