@@ -22,6 +22,22 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+
+    .div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .icons {
+      display: none;
+    }
+
+    .div:hover {
+      .icons {
+        display: block;
+        color: #003580;
+      }
+    }
     img {
       margin: 1px;
       display: flex;
