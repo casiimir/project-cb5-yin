@@ -36,9 +36,10 @@ function SearchPageFilter({ setFilterBy, filterBy }) {
       ></input>
       <div className={styles.Filter}>
         Stelle
-        {filterBy.class.map((elem) => {
+        {filterBy.class.map((elem, id) => {
           return (
             <CheckBox
+            key={id}
               id={elem.id}
               checked={elem.checked}
               onChange={HandleCheck}
