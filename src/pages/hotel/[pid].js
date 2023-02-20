@@ -103,6 +103,7 @@ function Hotel({ galleryData, descriptionData, dataHotelReview }) {
               reviewData={reviewData}
               dataHotelReview={dataHotelReview}
             />
+            <HotelFacilities dataHotelReview={dataHotelReview} />
             <h2>
               Chi ha guardato{` ${dataHotelReview?.name}`} ha guardato anche
               queste strutture
