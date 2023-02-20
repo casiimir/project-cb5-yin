@@ -6,8 +6,12 @@ import { GET } from "@/utils/http";
 import AppContext from "@/store/context";
 import FormSearchPages from "../formSearchPages";
 import SearchPageFilter from "../SearchPageFilter/SearchPageFilter";
+import SearchPagination from './../searchPagination/index';
 
 function SearchWrapper() {
+  const [searchResults, setSearchResults] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [navigation, setNavigation]= useState(0)
   const [filterBy, setFilterBy] = useState({
     class: [
       { id: 1, label: "Nessuna Stella", checked: false },
@@ -20,24 +24,25 @@ function SearchWrapper() {
     rating: null,
     review_num: null,
   });
-
-  const [searchResults, setSearchResults] = useState(null);
-  //const [filterResults, setFilterResults] = useState(null);
-  const [loading, setLoading] = useState(true);
+  
   const { state } = useContext(AppContext);
+
+  useEffect(() => {
+    console.log( "navigation: ", navigation)
+  }, [navigation])
 
   useEffect(() => {
     console.log(state.location);
     setLoading(true);
     GET(
-      `hotels/search?dest_id=${state.location.dest_id}&order_by=popularity&filter_by_currency=EUR&adults_number=2&room_number=1&checkout_date=2023-07-16&units=metric&checkin_date=2023-07-15&dest_type=city&locale=it&children_ages=5%2C0&categories_filter_ids=class%3A%3A2%2Cclass%3A%3A4%2Cfree_cancellation%3A%3A1&page_number=0&include_adjacency=true&children_number=2`
+      `hotels/search?dest_id=${state.location.dest_id}&order_by=popularity&filter_by_currency=EUR&adults_number=2&room_number=1&checkout_date=2023-07-16&units=metric&checkin_date=2023-07-15&dest_type=city&locale=it&children_ages=5%2C0&categories_filter_ids=class%3A%3A2%2Cclass%3A%3A4%2Cfree_cancellation%3A%3A1&page_number=${navigation}&include_adjacency=true&children_number=2`
     )
       .then((res) => {
         console.log(res);
         setSearchResults(res);
       })
       .finally(() => setLoading(false));
-  }, []);
+  }, [navigation]);
 
   useEffect(() => {
     console.log(filterBy);
@@ -45,6 +50,7 @@ function SearchWrapper() {
 
   return (
     <div className={styles.Container}>
+      
       <div className={styles.SearchWrapper}>
         <div className={styles.LeftSection}>
           <FormSearchPages />
@@ -53,14 +59,16 @@ function SearchWrapper() {
           </div>
         </div>
         <div className={styles.RightSection}>
+        
           {loading ? (
             <Loader></Loader>
           ) : (
             <>
+            <SearchPagination navigation={navigation} setNavigation= {setNavigation}/>
               <h3>{searchResults?.result.length} STRUTTURE TROVATE</h3>
               <div className={styles.ResultWrapper}>
                 {searchResults &&
-                  searchResults.result.map((el) => <SearchCard el={el} />)}
+                  searchResults.result.map((el, id) => <SearchCard key={id} el={el} />)}
               </div>
             </>
           )}

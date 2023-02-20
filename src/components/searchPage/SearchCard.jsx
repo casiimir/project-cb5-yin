@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 
 function SearchCard({ el }) {
   const router = useRouter();
-  console.log(el);
   // TODO: Completare card
   return (
     <div className={styles.Card}>
@@ -14,6 +13,7 @@ function SearchCard({ el }) {
         src={el.max_photo_url}
         width={200}
         height={200}
+        alt="str"
       />
       {/* <img
         className={styles.CardImage}

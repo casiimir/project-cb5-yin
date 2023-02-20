@@ -25,7 +25,7 @@ const Header = () => {
         <div className={styles.headerTop}>
           <Link href={"/"}>
             <div className={styles.headerLogo}>
-              <img width="140px" src="/bookingWhite.svg" alt="" />
+              <img width="140px" src="/bookingWhite.svg" alt="im" />
             </div>
           </Link>
 
@@ -38,6 +38,7 @@ const Header = () => {
               width={24}
               height={24}
               src="https://t-cf.bstatic.com/design-assets/assets/v3.56.0/images-flags/It@3x.png"
+              alt="im"
             />
             <Button style="icon" content={<FaRegUserCircle />} />
             <div className={styles.mobileBtnsLogin}>
