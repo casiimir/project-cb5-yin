@@ -1,0 +1,43 @@
+.quattrozeroquattro {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 100px 0;
+
+  .wrap {
+    display: flex;
+    align-items: center;
+    border-right: 2px solid lightgrey;
+    height: 3rem;
+    padding-right: 20px;
+    font-weight: bolder;
+    font-size: xx-large;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+  }
+}
+.listOptions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 120px;
+  padding: 50px 0;
+  .otherOption {
+    li {
+      height: 30px;
+      padding: 5px 0;
+      &:hover {
+        border-bottom: 1px solid rgb(0, 113, 194);
+      }
+    }
+  }
+}
