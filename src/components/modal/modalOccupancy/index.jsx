@@ -1,2 +1,2 @@
-import ModalOccupancy from "./modalOccupancy";
+import ModalOccupancy from "./ModalOccupancy";
 export default ModalOccupancy;

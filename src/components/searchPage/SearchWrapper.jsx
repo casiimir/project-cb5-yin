@@ -7,6 +7,7 @@ import AppContext from "@/store/context";
 import FormSearchPages from "../formSearchPages";
 import SearchPageFilter from "../SearchPageFilter/SearchPageFilter";
 import SearchPagination from "./../searchPagination/index";
+import NotFoundSearch from "../NotFoundSearch/NotFoundSearch";
 
 const selectFilters = [
   { name: "Distance from city centre", id: "distance" },
@@ -18,7 +19,6 @@ const selectFilters = [
 ];
 
 function SearchWrapper() {
-  //stato per Select
   const [selectFilter, setSelectFilter] = useState("popularity");
   const [searchResults, setSearchResults] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -59,8 +59,6 @@ function SearchWrapper() {
     console.log(filterBy);
   }, [filterBy]);
 
-  console.log(selectFilter);
-
   return (
     <div className={styles.Container}>
       <div className={styles.SearchWrapper}>
@@ -75,26 +73,37 @@ function SearchWrapper() {
             <Loader></Loader>
           ) : (
             <>
-              <select
-                value={selectFilter}
-                onChange={(e) => setSelectFilter(e.target.value)}
-              >
-                {selectFilters.map((el, idx) => (
-                  <option className={styles.options} key={idx} value={el.id}>
-                    {el.name}
-                  </option>
-                ))}
-              </select>
-              <SearchPagination
-                navigation={navigation}
-                setNavigation={setNavigation}
-              />
-              <h3>{searchResults?.result.length} STRUTTURE TROVATE</h3>
               <div className={styles.ResultWrapper}>
-                {searchResults &&
-                  searchResults.result.map((el, id) => (
-                    <SearchCard key={id} el={el} />
-                  ))}
+                {!searchResults || searchResults?.result.length < 1 ? (
+                  <NotFoundSearch />
+                ) : (
+                  <>
+                    <SearchPagination
+                      navigation={navigation}
+                      setNavigation={setNavigation}
+                    />
+
+                    <select
+                      value={selectFilter}
+                      onChange={(e) => setSelectFilter(e.target.value)}
+                    >
+                      {selectFilters.map((el, idx) => (
+                        <option
+                          className={styles.options}
+                          key={idx}
+                          value={el.id}
+                        >
+                          {el.name}
+                        </option>
+                      ))}
+                    </select>
+
+                    <h3>{searchResults?.result.length} STRUTTURE TROVATE</h3>
+                    {searchResults?.result.map((el, id) => (
+                      <SearchCard key={id} el={el} />
+                    ))}
+                  </>
+                )}
               </div>
             </>
           )}

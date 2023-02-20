@@ -1,3 +1,3 @@
-import GuestReviews from "./guestReviews";
+import GuestReviews from "./GuestReviews";
 
 export default GuestReviews;
