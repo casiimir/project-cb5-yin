@@ -8,10 +8,14 @@ import { useRouter } from "next/router";
 import { cases } from "@/store/reducers";
 
 const FormSearch = () => {
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState(""); //locationID
+  const [destid, setDestid] = useState(null); //dest_id
   const [data, setData] = useState([]);
+  const [dates, setDates] = useState({
+    checkIn: undefined,
+    checkOut: undefined,
+  });
   const [openModal, setOpenModal] = useState(false);
-
   const [modalOpen, setModalOpen] = useState(false);
 
   const { state, dispatch } = useContext(AppContext);
@@ -25,9 +29,41 @@ const FormSearch = () => {
     });
   }, [location]);
 
+  useEffect(() => {
+    console.log(dates);
+  }, [dates]);
+
   const handleSubmit = (e) => {
+    //controlli se checkout < checkin
     e.preventDefault();
-    router.push("search");
+    console.log(
+      dates.checkIn,
+      dates.checkOut,
+      destid,
+      !dates.checkIn || !dates.checkOut || !destid
+    );
+    if (!dates.checkIn || !dates.checkOut || !destid) return;
+    router.push(
+      `/search?dest_id=${destid}&checkIn=${dates.checkIn}&checkOut=${dates.checkOut}&adults=${state.prenotation.adults}&children=${state.prenotation.children}&rooms=${state.prenotation.rooms}`
+    );
+  };
+
+  const handleCheckIn = (value) => {
+    setDates((prev) => {
+      return {
+        ...prev,
+        checkIn: value,
+      };
+    });
+  };
+
+  const handleCheckOut = (value) => {
+    setDates((prev) => {
+      return {
+        ...prev,
+        checkOut: value,
+      };
+    });
   };
 
   const handleRemoveInput = () => {
@@ -65,11 +101,17 @@ const FormSearch = () => {
             )}
           </div>
         </div>
-        {openModal && <ModalInput setOpenModal={setOpenModal} data={data} />}
+        {openModal && (
+          <ModalInput
+            setOpenModal={setOpenModal}
+            data={data}
+            setDestid={setDestid}
+          />
+        )}
 
         <div className={styles.inputDate}>
-          <input type="date" />
-          <input type="date" />
+          <input type="date" onChange={(e) => handleCheckIn(e.target.value)} />
+          <input type="date" onChange={(e) => handleCheckOut(e.target.value)} />
         </div>
         <div className={styles.inputOccupancy}>
           <button
@@ -86,7 +128,11 @@ const FormSearch = () => {
         {modalOpen && <ModalOccupancy setOpenModal={setModalOpen} />}
 
         <div className={styles.inputSubmit}>
-          <input value="Cerca" type="submit" />
+          <input
+            value="Cerca"
+            type="submit"
+            //disabled={!dates.checkIn || !dates.checkOut || !destid}
+          />
         </div>
       </div>
     </form>

@@ -5,7 +5,7 @@ function CheckBox({ checked, id, label, onChange }) {
   return (
     <label>
       <input
-        onClick={() => onChange(id)}
+        onChange={() => onChange(id)}
         checked={checked}
         type="checkbox"
         id=""
@@ -39,7 +39,7 @@ function SearchPageFilter({ setFilterBy, filterBy }) {
         {filterBy.class.map((elem, id) => {
           return (
             <CheckBox
-            key={id}
+              key={id}
               id={elem.id}
               checked={elem.checked}
               onChange={HandleCheck}
