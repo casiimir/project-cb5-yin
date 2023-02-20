@@ -1,5 +1,5 @@
 .Section {
-  padding: 50px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -8,7 +8,13 @@
   .section {
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
   }
 
   .div {
@@ -25,7 +31,31 @@
 
   button {
     width: 150px;
-    padding: 10px;
+    padding: 5px;
     border-radius: 20px;
+  }
+
+  button:hover {
+    background-color: rgba(0, 0, 96, 0.655);
+    color: white;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    .div {
+      .img {
+        display: flex;
+        object-fit: cover;
+        height: 200px;
+        width: 500px;
+      }
+      .data {
+        display: flex;
+        gap: 40px;
+        position: absolute;
+        padding: 10px;
+      }
+    }
   }
 }

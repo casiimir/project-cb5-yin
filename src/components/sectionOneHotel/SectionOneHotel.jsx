@@ -7,17 +7,25 @@ const SectionOne = () => {
       <p>Promozioni, offerte e altri sconti speciali per te</p>
       <div className={styles.section}>
         <div className={styles.div}>
-          <img src="https://picsum.photos/200" alt="img" />
+          <img
+            src="https://picsum.photos/200"
+            alt="img"
+            className={styles.img}
+          />
           <div className={styles.data}>
-            <h3>Sed ut perspiciatis</h3>
+            <h4>Sed ut perspiciatis</h4>
             <p>Nemo enim ipsam voluptatem quia voluptas sit.</p>
             <button>Scopri gli hotel</button>
           </div>
         </div>
         <div className={styles.div}>
-          <img src="https://picsum.photos/200" alt="img" />
+          <img
+            src="https://picsum.photos/200"
+            alt="img"
+            className={styles.img}
+          />
           <div className={styles.data}>
-            <h3>Sed ut perspiciatis</h3>
+            <h4>Sed ut perspiciatis</h4>
             <p>Nemo enim ipsam voluptatem quia voluptas sit.</p>
             <button>Scopri gli hotel</button>
           </div>
