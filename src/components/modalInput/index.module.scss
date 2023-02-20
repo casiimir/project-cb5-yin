@@ -1,25 +1,72 @@
 @import "@/styles/variables.scss";
 
-.modalInput{
+.ModalInput {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  background-color: $white;
+  width: 91.5%;
+  z-index: 5;
+  position: fixed;
+  top: 218px;
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.25);
 
-    border: 1px solid black;
-    width: 300px;
+  .wrapperLabel {
     display: flex;
     flex-direction: column;
-    gap: .4rem;
-    position: absolute;
-    background: white;
-    padding: 0.5rem;
+    text-align: left;
+    align-items: left;
+    position: relative;
+    background-color: $white;
+    overflow: hidden;
+    padding: 0 8px;
 
+    .label {
+      display: flex;
+      background-image: url(../../../public/map.svg);
+      background-repeat: no-repeat;
+      background-size: 15px;
+      background-position: 8px 50%;
+      cursor: pointer;
+      padding-left: 40px;
+      min-height: 50px;
+      align-items: center;
 
-    .label{
-        cursor: pointer;
-        padding: 0.2rem 0.5rem;
-        border-radius: 4px;
-        &:hover{
+      &:not(:last-child) {
+        border-bottom: 3px solid $white-gray;
+      }
 
-            background: #eaeaea;
-        }
     }
+  }
+}
 
+@media screen and (min-width: 568px) {
+  .ModalInput {
+    width: 350px;
+    height: 250px;
+    position: absolute;
+    left: auto;
+    right: 0;
+    top: 170px;
+    box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.24);
+
+    .wrapperLabel {
+      width: 350px;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .ModalInput {
+    position: absolute;
+    left: auto;
+    left: 5px;
+    top: 60px;
+    box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.24);
+
+    .wrapperLabel {
+      width: 350px;
+    }
+  }
 }

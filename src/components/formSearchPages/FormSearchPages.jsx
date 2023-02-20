@@ -3,7 +3,7 @@ import { GET } from "@/utils/http";
 import AppContext from "@/store/context";
 import ModalInput from "../modalInput/ModalInput";
 import styles from "./index.module.scss";
-import ModalOccupancy from "../modal/modalOccupancy";
+import ModalOccupancy from "../modalOccupancy";
 import { useRouter } from "next/router";
 
 const FormSearchPages = () => {

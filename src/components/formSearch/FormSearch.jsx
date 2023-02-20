@@ -3,7 +3,7 @@ import { GET } from "@/utils/http";
 import AppContext from "@/store/context";
 import ModalInput from "../modalInput/ModalInput";
 import styles from "./index.module.scss";
-import ModalOccupancy from "../modal/modalOccupancy";
+import ModalOccupancy from "../modalOccupancy";
 import { useRouter } from "next/router";
 import { cases } from "@/store/reducers";
 
@@ -35,6 +35,7 @@ const FormSearch = () => {
       setLocation("");
     }
     dispatch({ type: cases.REMOVE_LOCATION });
+    setOpenModal(false);
   };
 
   const onHandleChangeInput = (value) => {
@@ -47,45 +48,46 @@ const FormSearch = () => {
   return (
     <form className={styles.FormSearch} onSubmit={(e) => handleSubmit(e)}>
       <div className={styles.wrapper}>
-        <div className={styles.inputSearchWrapper}>
-          <input
-            value={
-              state.location.city_name ? state.location.city_name : location
-            }
-            onChange={(e) => onHandleChangeInput(e.target.value)}
-            type="search"
-            placeholder="Dove ti va di andare?"
-          />
-          {location !== "" && (
-            <button
-              className={styles.deleteInput}
-              onClick={() => handleRemoveInput()}
-            >
-              ❌
-            </button>
-          )}
+        <div className={styles.wrapperSearch}>
+          <div className={styles.inputSearch}>
+            <input
+              value={
+                state.location.city_name ? state.location.city_name : location
+              }
+              onChange={(e) => onHandleChangeInput(e.target.value)}
+              type="search"
+              placeholder="Dove ti va di andare?"
+            />
+            {location !== "" && (
+              <div className={styles.deleteInput}>
+                <button onClick={() => handleRemoveInput()}> </button>
+              </div>
+            )}
+          </div>
         </div>
-
         {openModal && <ModalInput setOpenModal={setOpenModal} data={data} />}
-        <div className={styles.wrapDate}>
+
+        <div className={styles.inputDate}>
           <input type="date" />
           <input type="date" />
         </div>
-
-        <button
-          type="button"
-          className={styles.openModalFormBtn}
-          onClick={() => {
-            setModalOpen(true);
-          }}
-        >
-          {state.prenotation.adults} adulti - {state.prenotation.children}{" "}
-          bambini - {state.prenotation.rooms} camera
-        </button>
+        <div className={styles.inputOccupancy}>
+          <button
+            type="button"
+            onClick={() => {
+              setModalOpen(true);
+            }}
+          >
+            {state.prenotation.adults} adulti - {state.prenotation.children}{" "}
+            bambini - {state.prenotation.rooms} camera
+          </button>
+        </div>
 
         {modalOpen && <ModalOccupancy setOpenModal={setModalOpen} />}
 
-        <input value="Cerca" type="submit" />
+        <div className={styles.inputSubmit}>
+          <input value="Cerca" type="submit" />
+        </div>
       </div>
     </form>
   );
