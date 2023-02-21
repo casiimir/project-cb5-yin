@@ -1,12 +1,8 @@
 import React from "react";
-import MainLayout from "@/layout/mainLayout";
+import MainLayout from "@/layout/MainLayout";
 import SearchWrapper from "@/components/searchPage/SearchWrapper";
 
-
-
-
 function Search() {
-
   return (
     <MainLayout>
       <SearchWrapper />

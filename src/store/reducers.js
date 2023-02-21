@@ -19,6 +19,45 @@ const cases = {
   TOGGLE_STAR4: "TOGGLE_STAR4",
   TOGGLE_STAR5: "TOGGLE_STAR5",
 };
+
+const counterCases = {
+  INCREMENT: "INCREMENT",
+  DECREMENT: "DECREMENT",
+  SET: "SET",
+  SETPAGES: "SETPAGES",
+};
+
+const counterReducer = (state, action) => {
+  switch (action.type) {
+    case counterCases.SETPAGES:
+      console.log(counterCases.SETPAGES, {
+        ...state,
+        pages: action.payload,
+      });
+      return {
+        ...state,
+        pages: action.payload,
+      };
+    case counterCases.INCREMENT:
+      console.log(counterCases.INCREMENT);
+      return {
+        current: state.current + 1,
+      };
+    case counterCases.DECREMENT:
+      console.log(counterCases.DECREMENT);
+      return {
+        ...state,
+        current: state.current - 1,
+      };
+    case counterCases.SET:
+      console.log(counterCases.SET);
+      return {
+        ...state,
+        current: action.payload,
+      };
+  }
+};
+
 const reducer = (state, action) => {
   switch (action.type) {
     case cases.ADD_LOCATION:
@@ -144,4 +183,4 @@ const reducer = (state, action) => {
       break;
   }
 };
-export { cases, reducer };
+export { cases, reducer, counterCases, counterReducer };

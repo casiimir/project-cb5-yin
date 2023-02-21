@@ -10,6 +10,8 @@ import SearchPagination from "./../searchPagination/index";
 import NotFoundSearch from "../NotFoundSearch/NotFoundSearch";
 import { useRouter } from "next/router";
 import { buildSearchQueryString } from "@/utils/utils";
+import { counterReducer } from "@/store/reducers";
+import { counterCases } from "@/store/reducers";
 
 const selectFilters = [
   { name: "Distance from city centre", id: "distance" },
@@ -21,10 +23,13 @@ const selectFilters = [
 ];
 
 function SearchWrapper() {
+  const [navigation, navigationDispatch] = useReducer(counterReducer, {
+    current: 1,
+    pages: null,
+  });
   const [selectFilter, setSelectFilter] = useState("popularity");
   const [searchResults, setSearchResults] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [navigation, setNavigation] = useState(0);
   const [filterBy, setFilterBy] = useState({
     class: [
       { id: 1, label: "Nessuna Stella", checked: false },
@@ -40,12 +45,24 @@ function SearchWrapper() {
   const router = useRouter();
 
   useEffect(() => {
+    console.log(navigation);
+  }, [navigation]);
+
+  useEffect(() => {
+    navigationDispatch({
+      type: counterCases.SETPAGES,
+      payload: Math.ceil(searchResults?.count / 20),
+    });
+  }, [searchResults]);
+
+  useEffect(() => {
     setLoading(true);
+
     if (router.isReady) {
       const qs = buildSearchQueryString({
         ...router.query,
+        page_number: navigation.current - 1 ? navigation.current - 1 : 0,
       });
-
       GET(
         `hotels/search?${qs}&children_ages=5%2C0&categories_filter_ids=class%3A%3A2%2Cclass%3A%3A4%2Cfree_cancellation%3A%3A1`
       )
@@ -55,7 +72,7 @@ function SearchWrapper() {
         })
         .finally(() => setLoading(false));
     }
-  }, [router.isReady, navigation, selectFilter]);
+  }, [router.isReady, navigation.current, selectFilter]);
 
   return (
     <div className={styles.Container}>
@@ -71,6 +88,8 @@ function SearchWrapper() {
             <Loader></Loader>
           ) : (
             <>
+              {console.log(navigation, "ermenegildo")}
+
               <div className={styles.ResultWrapper}>
                 {!searchResults || searchResults?.result.length < 1 ? (
                   <NotFoundSearch />
@@ -98,7 +117,7 @@ function SearchWrapper() {
 
                     <SearchPagination
                       navigation={navigation}
-                      setNavigation={setNavigation}
+                      navigationDispatch={navigationDispatch}
                     />
                   </>
                 )}
