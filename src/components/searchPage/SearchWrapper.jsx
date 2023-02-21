@@ -38,16 +38,16 @@ function SearchWrapper() {
     review_num: null,
   });
   const router = useRouter();
-  const { checkIn, checkOut, dest_id, adults, children, rooms } = router.query;
 
   useEffect(() => {
     setLoading(true);
     if (router.isReady) {
-      const qs = buildSearchQueryString();
-      //TODO: implementare qs dentro GET
-      console.log(router.query);
+      const qs = buildSearchQueryString({
+        ...router.query,
+      });
+
       GET(
-        `hotels/search?dest_id=${dest_id}&order_by=${selectFilter}&filter_by_currency=EUR&adults_number=${adults}&room_number=${rooms}&checkout_date=${checkOut}&units=metric&checkin_date=${checkIn}&dest_type=city&locale=it&children_ages=5%2C0&categories_filter_ids=class%3A%3A2%2Cclass%3A%3A4%2Cfree_cancellation%3A%3A1&page_number=${navigation}&include_adjacency=true&children_number=${children}`
+        `hotels/search?${qs}&children_ages=5%2C0&categories_filter_ids=class%3A%3A2%2Cclass%3A%3A4%2Cfree_cancellation%3A%3A1`
       )
         .then((res) => {
           console.log(res);
