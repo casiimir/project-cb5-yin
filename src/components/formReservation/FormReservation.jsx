@@ -1,18 +1,30 @@
+import ModalCheckOut from "../modalCheckOut";
 import styles from "./index.module.scss";
 
 const FormReservation = () => {
   return (
     <div className={styles.Form}>
-      <p>Inserisci le tue informazioni</p>
+      <h3>Inserisci le tue informazioni</h3>
       <form className={styles.FormAffari}>
         <label>Viaggi per affari?</label>
-        <input type="radio" value="si" name="si" checked /> Si
-        <input type="radio" value="no" name="si" /> No
+        <div className={styles.risposte}>
+          <input type="radio" value="si" name="si" /> Si
+          <input type="radio" value="no" name="si" /> No
+        </div>
       </form>
       <form className={styles.FormReservation}>
-        <input type="text" placeholder="Nome" />
-        <input type="text" placeholder="Cognome" />
-        <input type="text" placeholder="Email" />
+        <label>
+          Il tuo nome:
+          <input type="text" placeholder="Es. Mario" />
+        </label>
+        <label>
+          Il tuo cognome:
+          <input type="text" placeholder="Es. Rossi" />
+        </label>
+        <label>
+          La tua e-mail:
+          <input type="text" placeholder="Es. mariorossi@gmail.com" />
+        </label>
       </form>
       <form className={styles.FormPrenotazione}>
         <label>Per chi stai prenotando?</label>
@@ -22,6 +34,9 @@ const FormReservation = () => {
           Per un'altra persona
         </div>
       </form>
+      <div className={styles.ModalCheckOut}>
+        <ModalCheckOut />
+      </div>
     </div>
   );
 };
