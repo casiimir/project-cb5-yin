@@ -1,0 +1,40 @@
+.Form {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  .FormAffari {
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+  }
+
+  .FormReservation {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 23%;
+  }
+
+  input {
+    border-radius: 5px;
+    padding: 2px 8px;
+  }
+
+  input:hover {
+    background-color: rgba(128, 128, 128, 0.249);
+  }
+
+  .FormPrenotazione {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+    .risposte {
+      display: flex;
+      gap: 5px;
+    }
+  }
+}

@@ -1,13 +1,7 @@
-import Head from "next/head";
-import MainLayout from "@/layout/mainLayout";
-import styles from "@/styles/Home.module.scss";
-import FormSearch from "@/components/formSearch";
-import WorkTeam from "../components/workTeam";
-import CityList from "@/components/cityList";
-import FilterHotelList from "@/components/FilterHotelList";
-import SectionOne from "@/components/sectionOneHotel";
 import FormReservation from "@/components/formReservation";
-export default function Home() {
+import MainLayout from "@/layout/mainLayout";
+
+export default function Reservation() {
   return (
     <>
       <Head>
@@ -22,15 +16,9 @@ export default function Home() {
           href="https://cf.bstatic.com/static/img/b25logo/favicon/ebc77706da3aae4aee7b05dadf182390f0d26d11.ico"
         />
       </Head>
-
       <main className={styles.main}>
         <MainLayout>
-          <FormSearch />
           <FormReservation />
-          <SectionOne />
-          <FilterHotelList />
-          <CityList />
-          <WorkTeam />
         </MainLayout>
       </main>
     </>
