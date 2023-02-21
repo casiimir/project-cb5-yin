@@ -4,8 +4,14 @@ export const getAuthFromLS = () => {
   if (!authData) return null;
   return authData;
 };
+export const getFavouritesFromLS = () => {
+  const rawData = localStorage.getItem("next-trip-favourites");
+  const favouritesData = JSON.parse(rawData);
+  if (!favouritesData) return null;
+  return favouritesData;
+};
 
-const getTodayDate = () => {
+/* const getTodayDate = () => {
   const oggi = new Date();
   const anno = oggi.getFullYear();
   const mese = (oggi.getMonth() + 1).toString().padStart(2, "0");
@@ -16,9 +22,7 @@ const getTodayDate = () => {
   console.log("mentre domani è: ", domani);
 
   return `${anno}-${mese}-${giorno}`;
-};
-
-const getTomorrowDate = () => {};
+}; */
 
 export const buildSearchQueryString = (params = {}) => {
   // Aggiungi eventuali parametri di default

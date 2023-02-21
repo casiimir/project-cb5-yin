@@ -11,6 +11,7 @@ const initialValue = {
     username: "",
     status: false,
   },
+  favourites: [],
 };
 
 export default initialValue;
