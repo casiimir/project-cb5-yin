@@ -18,6 +18,9 @@ const cases = {
   TOGGLE_STAR3: "TOGGLE_STAR3",
   TOGGLE_STAR4: "TOGGLE_STAR4",
   TOGGLE_STAR5: "TOGGLE_STAR5",
+
+  ADD_FAVOURITE: "ADD_FAVOURITE",
+  REMOVE_FAVOURITE: "REMOVE_FAVOURITE",
 };
 
 const counterCases = {
@@ -60,6 +63,25 @@ const counterReducer = (state, action) => {
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case cases.ADD_FAVOURITE:
+      let updatedFav = [...state.favourites, action.payload];
+      localStorage.setItem("next-trip-favourites", JSON.stringify(updatedFav));
+      return {
+        ...state,
+        favourites: updatedFav,
+      };
+    case cases.REMOVE_FAVOURITE:
+      const updatedFavourites = state.favourites.filter(
+        (el) => el.id !== action.payload
+      );
+      localStorage.setItem(
+        "next-trip-favourites",
+        JSON.stringify(updatedFavourites)
+      );
+      return {
+        ...state,
+        favourites: updatedFavourites,
+      };
     case cases.ADD_LOCATION:
       return { ...state, location: action.payload };
 
