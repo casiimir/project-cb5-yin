@@ -1,0 +1,75 @@
+@import "../../styles/variables.scss";
+
+.Card {
+  display: flex;
+  padding: 1rem;
+  margin-top: 20px;
+  margin-right: 20px;
+  border-radius: 4px;
+  gap: 1rem;
+  box-shadow: 0 0 4px #242424;
+  margin-left: 20px;
+  height: 250px;
+  padding: 30px;
+
+  .CardImage {
+    border-radius: 4px;
+    object-fit: cover;
+  }
+  .CardInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    flex: 1;
+
+    .CardWrapper {
+      outline: 1px solid #24242423;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .CardDetailedInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .CardReviews {
+      display: flex;
+      padding: 0.5rem;
+      gap: 0.5rem;
+      width: fit-content;
+
+      .ReviewsWrapper {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+      }
+      .ReviewScore {
+        background: #003580;
+        color: white;
+        border-radius: 6px 6px 6px 1px;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          align-self: center;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        align-self: flex-end;
+        .ReviewScore {
+          order: 2;
+        }
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+}

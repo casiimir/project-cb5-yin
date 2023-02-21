@@ -1,6 +1,5 @@
 import FormReservation from "@/components/formReservation";
 import MainLayout from "@/layout/mainLayout";
-import ModalCheckOut from "../../components/modalCheckOut/ModalCheckOut";
 import Head from "next/head";
 import BookingDetails from "@/components/bookingDetails";
 import styles from "../../styles/reservation.module.scss";
@@ -11,11 +10,12 @@ import Loader from "@/atoms/Loader/Loader";
 import { GET } from "@/utils/http";
 
 export default function Reservation() {
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState({});
   const [loading, setLoading] = useState(true);
 
   const router = useRouter();
   const { pid } = router.query;
+
   useEffect(() => {
     setLoading(true);
     if (router.isReady) {
@@ -43,24 +43,24 @@ export default function Reservation() {
         />
       </Head>
       {loading ? (
-        <>
-          <MainLayout>
-            <div className={styles.container}>
-              <div className={styles.wrapper}>
-                <BookingDetails />
-              </div>
-              <div className={styles.wrap}>
-                <CardReservation results={results} />
-                <FormReservation />
-                <ModalCheckOut />
-              </div>
-            </div>
-          </MainLayout>
-        </>
-      ) : (
         <Loader />
+      ) : (
+        <>
+          <main className={styles.main}>
+            <MainLayout>
+              <div className={styles.container}>
+                <div className={styles.wrapper}>
+                  <BookingDetails results={results} />
+                </div>
+                <div className={styles.wrap}>
+                  <CardReservation results={results} />
+                  <FormReservation />
+                </div>
+              </div>
+            </MainLayout>
+          </main>
+        </>
       )}
-      <main className={styles.main}></main>
     </>
   );
 }
