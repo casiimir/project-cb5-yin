@@ -44,7 +44,7 @@ const FormSearch = () => {
     );
     if (!dates.checkIn || !dates.checkOut || !destid) return;
     router.push(
-      `/search?dest_id=${destid}&checkIn=${dates.checkIn}&checkOut=${dates.checkOut}&adults=${state.prenotation.adults}&children=${state.prenotation.children}&rooms=${state.prenotation.rooms}`
+      `/search?dest_id=${destid}&checkin_date=${dates.checkIn}&checkout_date=${dates.checkOut}&adults_number=${state.prenotation.adults}&children_number=${state.prenotation.children}&room_number=${state.prenotation.rooms}`
     );
   };
 

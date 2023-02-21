@@ -1,6 +1,6 @@
-import Header from "@/components/header";
+import Header from "@/components/Header";
 import HeroBanner from "@/components/HeroBanner";
-import Footer from "@/components/footer";
+import Footer from "@/components/Footer";
 import styles from "./index.module.scss";
 
 const MainLayout = ({ children }) => {
