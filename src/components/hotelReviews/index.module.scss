@@ -1,0 +1,110 @@
+@import "/src/styles/variables.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 22px;
+
+  .score {
+    font-weight: 600;
+    padding-top: 15px;
+
+    .scoreNumber {
+      background-color: $blue;
+      color: $white;
+      width: -moz-fit-content;
+      width: fit-content;
+      border-radius: 5px 5px 5px 0px;
+      padding: 5px;
+      margin-right: 5px;
+    }
+  }
+
+  .container {
+    display: flex;
+    gap: 16px;
+    overflow: hidden;
+    overflow-x: scroll;
+    padding-bottom: 10px;
+
+    &::-webkit-scrollbar {
+      height: 7px;
+      background-color: transparent;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: #007bb5;
+    }
+
+    .card {
+      border: 1px solid $light-gray;
+      min-width: 250px;
+      min-height: 230px;
+      padding: 16px;
+
+      .authorContent {
+        display: flex;
+        gap: 10px;
+      }
+
+      .author {
+        gap: 10px;
+        display: flex;
+        flex-direction: row;
+
+        img {
+          border-radius: 50%;
+        }
+      }
+
+      .country {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h5 {
+          font-size: 14px;
+        }
+
+        span {
+          display: flex;
+          gap: 5px;
+        }
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding-top: 10px;
+
+        span {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          font-size: 14px;
+        }
+
+        button {
+          border: none;
+          background-color: transparent;
+          text-align: left;
+          width: fit-content;
+          color: $blue-button;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+.review {
+  background-color: #007bb5;
+  border-radius: 30px;
+  padding: 7px;
+  margin-right: 10px;
+}

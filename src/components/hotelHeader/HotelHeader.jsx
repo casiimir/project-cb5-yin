@@ -1,4 +1,10 @@
 import styles from "./index.module.scss";
+
+import { GET } from "../../utils/http";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+
+import HotelReserve from "@/components/hotelReserve";
 import Heart from "@/atoms/Heart/Heart";
 
 const HotelHeader = ({ dataHotelReview }) => {
@@ -14,12 +20,33 @@ const HotelHeader = ({ dataHotelReview }) => {
     str += starStr;
   }
 
+  const [reviewData, setReviewData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const router = useRouter();
+  const { pid } = router.query;
+
+    useEffect(() => {
+      if (router.isReady) {
+
+        GET(
+          `hotels/reviews?hotel_id=${pid}&locale=it&sort_type=SORT_MOST_RELEVANT&customer_type=solo_traveller%2Creview_category_group_of_friends&language_filter=it%2Cde%2Cfr`
+        )
+          .then((response) => {
+            setReviewData(response.result);
+          })
+          .catch((error) => console.log(error));
+
+        setLoading(false);
+      }
+    }, [router.isReady]);
+
   return (
     <div className={styles.HotelHeader}>
       {dataHotelReview && (
         <>
           <div className={styles.topHeader}>
-            <div>
+            <div className={styles.left}>
               <span className={styles.typo}>
                 {dataHotelReview.booking_home.group.replaceAll("_", " ")}
               </span>
@@ -27,7 +54,10 @@ const HotelHeader = ({ dataHotelReview }) => {
                 {!dataHotelReview.class ? "" : str}
               </span>
             </div>
-            <Heart data={dataHotelReview} />
+            <div className={styles.right}>
+              <Heart data={dataHotelReview} />
+              <HotelReserve pid={pid} />
+            </div>
           </div>
           <div className={styles.mainHeader}>
             <span className={styles.title}>

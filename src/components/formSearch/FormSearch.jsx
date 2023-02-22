@@ -92,6 +92,9 @@ const FormSearch = () => {
       onSubmit={(e) => handleSubmit(e)}
     >
       <div className={styles.wrapper}>
+        <div className={styles.title}>
+          <h3>Non sei convinto? Cerca ancora</h3>
+        </div>
         <div className={styles.wrapperSearch}>
           <div className={styles.inputSearch}>
             <input
