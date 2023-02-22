@@ -36,6 +36,13 @@ const OurTeam = () => {
           Us[0].description,
         ]);
 
+        setDescrizione(
+          "Hi, I'm a 24 years old sicilian web developer, Edgemony scholarship winner since October. "
+        );
+        setInstagram("https://chiacirrito.github.io/newportfolio/home.html");
+        setGitHub("/chiacirrito");
+        setLinkedIn("/in/chiara-cirrito-90a2021b7/");
+        setMember("Chiara Cirrito");
         break;
 
       case 3:

@@ -1,0 +1,24 @@
+@import "/src/styles/variables.scss";
+.Info {
+  background-color: #007cb538;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+  gap: 20px;
+  padding: 20px;
+  margin: 30px 0;
+
+  p {
+    font-size: 9pt;
+  }
+
+  .reserveBtn {
+    background-color: $blue;
+    border: none;
+    border-radius: 2px;
+    color: whitesmoke;
+    padding: 10px;
+  }
+}
