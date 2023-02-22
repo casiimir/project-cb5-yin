@@ -1,6 +1,5 @@
 import styles from "./index.module.scss";
-import { AiOutlineHeart } from "react-icons/ai";
-
+import Heart from "@/atoms/Heart/Heart";
 
 const HotelHeader = ({ dataHotelReview }) => {
   //console.log(positionData);
@@ -9,7 +8,6 @@ const HotelHeader = ({ dataHotelReview }) => {
   //   } else if (positionData.geo_info.city_centre.distance < 2000) {
   //     const positionHotel = "Buona posizione - Vicino al centro";
   //   }
-  console.log(dataHotelReview);
 
   return (
     <div className={styles.HotelHeader}>
@@ -22,11 +20,7 @@ const HotelHeader = ({ dataHotelReview }) => {
               </span>{" "}
               <span className={styles.class}>{dataHotelReview.class}</span>
             </div>
-            <div className={styles.wishBtn}>
-              <span>
-                <AiOutlineHeart />
-              </span>
-            </div>
+            <Heart data={dataHotelReview} />
           </div>
           <div className={styles.mainHeader}>
             <span className={styles.title}>
