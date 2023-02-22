@@ -95,7 +95,7 @@ function Hotel({ galleryData, descriptionData, dataHotelReview }) {
               {descriptionData && (
                 <HotelDescription descriptionData={descriptionData} />
               )}
-              <HotelInfo />
+              <HotelInfo pid={pid} />
               <FormSearchPages />
             </div>
             <GuestReviews
