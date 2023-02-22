@@ -5,7 +5,7 @@ import ModalInput from "../modalInput/ModalInput";
 import styles from "./index.module.scss";
 import ModalOccupancy from "../modalOccupancy";
 import { useRouter } from "next/router";
-
+//componente da rimuovere
 const FormSearchPages = () => {
   const [location, setLocation] = useState("");
   const [data, setData] = useState([]);
@@ -15,11 +15,11 @@ const FormSearchPages = () => {
 
   const { state } = useContext(AppContext);
   const router = useRouter();
+  console.log(router.pathname);
 
   useEffect(() => {
     if (location == "") return;
     GET(`hotels/locations?locale=it&name=${location}`).then((res) => {
-      console.log(res, "diocaro");
       if (Array.isArray(res)) {
         console.log(res);
         setData(res);

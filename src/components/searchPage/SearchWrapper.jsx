@@ -3,24 +3,15 @@ import styles from "./index.module.scss";
 import SearchCard from "./SearchCard";
 import Loader from "@/atoms/Loader/Loader";
 import { GET } from "@/utils/http";
-import AppContext from "@/store/context";
 import FormSearchPages from "../formSearchPages";
-import SearchPageFilter from "../SearchPageFilter/SearchPageFilter";
 import SearchPagination from "./../searchPagination/index";
 import NotFoundSearch from "../NotFoundSearch/NotFoundSearch";
 import { useRouter } from "next/router";
 import { buildSearchQueryString } from "@/utils/utils";
 import { counterReducer } from "@/store/reducers";
 import { counterCases } from "@/store/reducers";
-
-const selectFilters = [
-  { name: "Distance from city centre", id: "distance" },
-  { name: "Popularity", id: "popularity" },
-  { name: "Stars (5 to 0)", id: "class_descending" },
-  { name: "Stars (0 to 5)", id: "class_ascending" },
-  { name: "Guest review score", id: "review_score" },
-  { name: "Price (low to high)", id: "price" },
-];
+import FormSearch from "../formSearch";
+import Select from "../Select/Select";
 
 function SearchWrapper() {
   const [navigation, navigationDispatch] = useReducer(counterReducer, {
@@ -63,6 +54,7 @@ function SearchWrapper() {
       <div className={styles.SearchWrapper}>
         <div className={styles.LeftSection}>
           <FormSearchPages />
+          {/* <FormSearch />  TODO: FRA  */}
         </div>
         <div className={styles.RightSection}>
           {loading ? (
@@ -74,20 +66,10 @@ function SearchWrapper() {
                   <NotFoundSearch />
                 ) : (
                   <>
-                    <select
-                      value={selectFilter}
-                      onChange={(e) => setSelectFilter(e.target.value)}
-                    >
-                      {selectFilters.map((el, idx) => (
-                        <option
-                          className={styles.options}
-                          key={idx}
-                          value={el.id}
-                        >
-                          {el.name}
-                        </option>
-                      ))}
-                    </select>
+                    <Select
+                      selectFilter={selectFilter}
+                      setSelectFilter={setSelectFilter}
+                    />
 
                     <h3>{searchResults?.result.length} STRUTTURE TROVATE</h3>
                     {searchResults?.result.map((el, id) => (
