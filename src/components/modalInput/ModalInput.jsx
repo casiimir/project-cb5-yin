@@ -17,8 +17,12 @@ const ModalInput = ({ data, setOpenModal, setDestid }) => {
   return (
     <div className={styles.ModalInput}>
       <div className={styles.wrapperLabel}>
-        {data?.map((el) => (
-          <div onClick={() => dispatchHandler(el)} className={styles.label}>
+        {data?.map((el, index) => (
+          <div
+            key={index}
+            onClick={() => dispatchHandler(el)}
+            className={styles.label}
+          >
             {el.label}
           </div>
         ))}

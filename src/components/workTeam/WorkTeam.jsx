@@ -5,7 +5,6 @@ import Image from "next/image";
 import styles from "./index.module.scss";
 import Link from "next/link";
 const WorkTeam = () => {
-  console.log(Us);
   return (
     <>
       <div className={styles.main}>
@@ -20,7 +19,7 @@ const WorkTeam = () => {
           <div className={styles.div}>
             <Image
               src={Us[0].Photo}
-              alt="13"
+              alt="Chiara Cirrito"
               width={400}
               height={400}
               priority
@@ -42,7 +41,13 @@ const WorkTeam = () => {
             </div>
           </div>
           <div className={styles.div}>
-            <Image src={Us[1].Photo} width={400} height={400} priority />
+            <Image
+              src={Us[1].Photo}
+              width={400}
+              height={400}
+              alt="Edward Catrimi"
+              priority
+            />
             <div className={styles.icons}>
               <Link href={"https://www.linkedin.com/in/edwardcatrimi/"}>
                 <GrLinkedin />
@@ -55,7 +60,7 @@ const WorkTeam = () => {
           <div className={styles.div}>
             <Image
               src={Us[2].Photo}
-              alt="13"
+              alt="Francesco Carella"
               width={400}
               height={400}
               priority
@@ -77,7 +82,7 @@ const WorkTeam = () => {
           <div className={styles.div}>
             <Image
               src={Us[3].Photo}
-              alt="13"
+              alt="Gabriele Chiaramonte"
               width={400}
               height={400}
               priority
@@ -94,7 +99,7 @@ const WorkTeam = () => {
           <div className={styles.div}>
             <Image
               src={Us[4].Photo}
-              alt="13"
+              alt="Hysen Shemollari"
               width={400}
               height={400}
               priority

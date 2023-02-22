@@ -30,7 +30,7 @@ function HotelGallery({ galleryData }) {
         {galleryData.map((photo, id) => {
           if (id < 3 || id > 7) return undefined;
           return (
-            <div>
+            <div key={id}>
               <img
                 className={styles.GalleryBottomImg}
                 src={photo.url_max}

@@ -1,12 +1,9 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import styles from "./index.module.scss";
 import Button from "@/atoms/Button/Button";
 
-
 const Filters = ({ filterByStars, setFilterByStars }) => {
-  useEffect(() => {
-    console.log(filterByStars);
-  }, [filterByStars]);
+  useEffect(() => {}, [filterByStars]);
 
   function handleOnClick(star) {
     console.log(filterByStars, star, filterByStars.includes(star));
@@ -15,14 +12,14 @@ const Filters = ({ filterByStars, setFilterByStars }) => {
       setFilterByStars([...filterByStars, star]);
     } else {
       //Rimuovi
-      console.log(filterByStars.filter((el) => el !== star));
+
       setFilterByStars(filterByStars.filter((el) => el !== star));
     }
   }
   return (
     <div className={styles.Filter}>
       <ul className={styles.ulHotels}>
-        <li className={filterByStars.includes(1) && styles.toggleOn}>
+        <li className={filterByStars.includes(1) ? styles.toggleOn : null}>
           <Button
             style="outlineRounded"
             content="1 stella ⭐"
@@ -30,7 +27,7 @@ const Filters = ({ filterByStars, setFilterByStars }) => {
             onClick={() => handleOnClick(1)}
           />
         </li>
-        <li className={filterByStars.includes(2) && styles.toggleOn}>
+        <li className={filterByStars.includes(2) ? styles.toggleOn : null}>
           <Button
             style="outlineRounded"
             content="2 stelle ⭐"
@@ -38,7 +35,7 @@ const Filters = ({ filterByStars, setFilterByStars }) => {
             onClick={() => handleOnClick(2)}
           />
         </li>
-        <li className={filterByStars.includes(3) && styles.toggleOn}>
+        <li className={filterByStars.includes(3) ? styles.toggleOn : null}>
           <Button
             style="outlineRounded"
             content="3 stelle ⭐"
@@ -46,7 +43,7 @@ const Filters = ({ filterByStars, setFilterByStars }) => {
             onClick={() => handleOnClick(3)}
           />
         </li>
-        <li className={filterByStars.includes(4) && styles.toggleOn}>
+        <li className={filterByStars.includes(4) ? styles.toggleOn : null}>
           <Button
             style="outlineRounded"
             content="4 stelle ⭐"
@@ -54,7 +51,7 @@ const Filters = ({ filterByStars, setFilterByStars }) => {
             onClick={() => handleOnClick(4)}
           />
         </li>
-        <li className={filterByStars.includes(5) && styles.toggleOn}>
+        <li className={filterByStars.includes(5) ? styles.toggleOn : null}>
           <Button
             style="outlineRounded"
             content="5 stelle ⭐"
