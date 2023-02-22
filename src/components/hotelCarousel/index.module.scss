@@ -1,0 +1,66 @@
+@import "@/styles/variables.scss";
+
+.HotelCarousel {
+  display: flex;
+  max-height: 250px;
+
+  .Swiper {
+    div:nth-child(2) {
+      //border: 2px solid red;
+      background: rgba(255,255,255,0.8);
+      left: 0;
+      width: 38px;
+      height: 38px;
+      color: $black;
+
+      :after {
+        font-size: 16px;
+      }
+    }
+
+    div:nth-child(3) {
+      //border: 2px solid rgb(26, 255, 0);
+      background: rgba(255,255,255,0.8);
+      right: 0;
+      width: 38px;
+      height: 38px;
+      color: $black;
+
+      :after {
+        font-size: 16px;
+      }
+    }
+
+    div:nth-child(4) {
+      vertical-align: bottom;
+      letter-spacing: 1px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 12px;
+      border-radius: 3px;
+      font-weight: normal;
+      word-spacing: -4px;
+      font-size: 12px;
+      line-height: 1;
+      color: white;
+      width: fit-content;
+      left: auto;
+      right: 8px;
+      bottom: 8px;
+      z-index: 2;
+    }
+
+    .slideWrapper {
+      width: 100%;
+    }
+    .slideImg {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .HotelCarousel {
+    display: none;
+  }
+}
