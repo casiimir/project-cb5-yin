@@ -6,6 +6,7 @@
   justify-content: central;
   align-items: center;
   text-align: center;
+
   .titleTeam {
     align-items: center;
     display: flex;
@@ -20,21 +21,34 @@
   .photos {
     padding: 10px;
     display: flex;
-    flex-direction: row;
+    // flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
+
+    @media screen and (min-width: 568px) {
+      gap: 30px;
+    }
 
     .div {
       display: flex;
       flex-direction: column;
+      transition: all 0.4s ease;
     }
 
     .icons {
-      display: none;
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.4s ease;
+      padding-top: 10px;
     }
 
     .div:hover {
       .icons {
-        display: block;
+        opacity: 1;
         color: #003580;
       }
     }
@@ -43,11 +57,15 @@
       display: flex;
       justify-content: center;
       border-radius: 100%;
-      border: 1px solid blue;
-      gap: 10px;
-      width: 60px;
-      height: 60px;
+      box-shadow: 0 0 5px #242424;
+      width: 125px;
+      height: 125px;
       border: none;
+
+      @media screen and (min-width: 568px) {
+        width: 150px;
+        height: 150px;
+      }
     }
   }
   .moreInfo {
@@ -56,13 +74,18 @@
     margin-bottom: 40px;
 
     button {
-      background-color: #003580;
+      background: #0071c2;
       color: whitesmoke;
       font-size: 1.1rem;
       border-radius: 40px;
       border: none;
       width: 150px;
       height: 40px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      &:hover {
+        background: #003580;
+      }
     }
   }
 }

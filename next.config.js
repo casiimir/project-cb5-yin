@@ -10,7 +10,8 @@ const nextConfig = {
       "lh5.googleusercontent.com",
       "lh4.googleusercontent.com",
       "t-cf.bstatic.com",
-      "lh6.googleusercontent.com"
+      "lh6.googleusercontent.com",
+      "media.licdn.com",
     ],
   },
 };
