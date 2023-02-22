@@ -1,5 +1,6 @@
-import styles from "./index.module.scss";
+import Link from "next/link";
 import Image from "next/image";
+import styles from "./index.module.scss";
 
 const Navbar = () => {
   return (
@@ -38,17 +39,19 @@ const Navbar = () => {
           />
           <a href="/">Attrazioni</a>
         </li>
-        <li>
-          <Image
-            className={styles.svg}
-            src="/team.svg"
-            alt=""
-            width={20}
-            height={20}
-            priority
-          />
-          <a href="/">About Us</a>
-        </li>
+        <Link href={"/about"}>
+          <li>
+            <Image
+              className={styles.svg}
+              src="/team.svg"
+              alt=""
+              width={20}
+              height={20}
+              priority
+            />
+            <p>About Us</p>
+          </li>
+        </Link>
       </ul>
     </div>
   );

@@ -1,9 +1,11 @@
 import { GrGithub, GrLinkedin } from "react-icons/gr";
+import { Us } from "@/mocks/photosAboutUs";
 import { CgWebsite } from "react-icons/cg";
 import Image from "next/image";
 import styles from "./index.module.scss";
 import Link from "next/link";
 const WorkTeam = () => {
+  console.log(Us);
   return (
     <>
       <div className={styles.main}>
@@ -17,10 +19,10 @@ const WorkTeam = () => {
         <div className={styles.photos}>
           <div className={styles.div}>
             <Image
-              src="https://picsum.photos/200/300"
+              src={Us[0].Photo_first}
               alt="13"
-              width={40}
-              height={31}
+              width={400}
+              height={400}
               priority
             />
             <div className={styles.icons}>
@@ -40,13 +42,7 @@ const WorkTeam = () => {
             </div>
           </div>
           <div className={styles.div}>
-            <Image
-              src="https://picsum.photos/200/300"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
+            <Image src={Us[1].Photo_second} width={400} height={400} priority />
             <div className={styles.icons}>
               <Link href={"https://www.linkedin.com/in/edwardcatrimi/"}>
                 <GrLinkedin />
@@ -58,10 +54,10 @@ const WorkTeam = () => {
           </div>
           <div className={styles.div}>
             <Image
-              src="https://picsum.photos/200/300"
+              src={Us[2].Photo_third}
               alt="13"
-              width={40}
-              height={31}
+              width={400}
+              height={400}
               priority
             />
             <div className={styles.icons}>
@@ -80,10 +76,10 @@ const WorkTeam = () => {
           </div>
           <div className={styles.div}>
             <Image
-              src="https://picsum.photos/200/300"
+              src={Us[3].Photo_fourth}
               alt="13"
-              width={40}
-              height={31}
+              width={400}
+              height={400}
               priority
             />
             <div className={styles.icons}>
@@ -97,10 +93,10 @@ const WorkTeam = () => {
           </div>
           <div className={styles.div}>
             <Image
-              src="https://picsum.photos/200/300"
+              src={Us[4].Photo_fifth}
               alt="13"
-              width={40}
-              height={31}
+              width={400}
+              height={400}
               priority
             />
             <div className={styles.icons}>
@@ -114,7 +110,9 @@ const WorkTeam = () => {
           </div>
         </div>
         <div className={styles.moreInfo}>
-          <button type="button">Scopri di più</button>
+          <Link href={"/about"}>
+            <button type="button">Scopri di più</button>
+          </Link>
         </div>
       </div>
     </>
