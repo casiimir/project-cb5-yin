@@ -19,7 +19,7 @@ const WorkTeam = () => {
         <div className={styles.photos}>
           <div className={styles.div}>
             <Image
-              src={Us[0].Photo_first}
+              src={Us[0].Photo}
               alt="13"
               width={400}
               height={400}
@@ -42,7 +42,7 @@ const WorkTeam = () => {
             </div>
           </div>
           <div className={styles.div}>
-            <Image src={Us[1].Photo_second} width={400} height={400} priority />
+            <Image src={Us[1].Photo} width={400} height={400} priority />
             <div className={styles.icons}>
               <Link href={"https://www.linkedin.com/in/edwardcatrimi/"}>
                 <GrLinkedin />
@@ -54,7 +54,7 @@ const WorkTeam = () => {
           </div>
           <div className={styles.div}>
             <Image
-              src={Us[2].Photo_third}
+              src={Us[2].Photo}
               alt="13"
               width={400}
               height={400}
@@ -76,7 +76,7 @@ const WorkTeam = () => {
           </div>
           <div className={styles.div}>
             <Image
-              src={Us[3].Photo_fourth}
+              src={Us[3].Photo}
               alt="13"
               width={400}
               height={400}
@@ -93,7 +93,7 @@ const WorkTeam = () => {
           </div>
           <div className={styles.div}>
             <Image
-              src={Us[4].Photo_fifth}
+              src={Us[4].Photo}
               alt="13"
               width={400}
               height={400}
