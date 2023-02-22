@@ -33,27 +33,20 @@ const counterCases = {
 const counterReducer = (state, action) => {
   switch (action.type) {
     case counterCases.SETPAGES:
-      console.log(counterCases.SETPAGES, {
-        ...state,
-        pages: action.payload,
-      });
       return {
         ...state,
         pages: action.payload,
       };
     case counterCases.INCREMENT:
-      console.log(counterCases.INCREMENT);
       return {
         current: state.current + 1,
       };
     case counterCases.DECREMENT:
-      console.log(counterCases.DECREMENT);
       return {
         ...state,
         current: state.current - 1,
       };
     case counterCases.SET:
-      console.log(counterCases.SET);
       return {
         ...state,
         current: action.payload,

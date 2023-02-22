@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useLayoutEffect } from "react";
 import { GET } from "@/utils/http";
 import AppContext from "@/store/context";
 import ModalInput from "../modalInput/ModalInput";
@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { cases } from "@/store/reducers";
 
 const FormSearch = () => {
+  const [formType, setFormType] = useState();
   const [location, setLocation] = useState(""); //locationID
   const [destid, setDestid] = useState(null); //dest_id
   const [data, setData] = useState([]);
@@ -21,6 +22,10 @@ const FormSearch = () => {
   const { state, dispatch } = useContext(AppContext);
   const router = useRouter();
 
+  useLayoutEffect(() => {
+    setFormType(router.pathname == "/" ? "home" : "search");
+  }, [router.isReady]);
+
   useEffect(() => {
     GET(`hotels/locations?locale=it&name=${location}`).then((res) => {
       if (Array.isArray(res)) {
@@ -28,10 +33,6 @@ const FormSearch = () => {
       }
     });
   }, [location]);
-
-  useEffect(() => {
-    console.log(dates);
-  }, [dates]);
 
   const handleSubmit = (e) => {
     //controlli se checkout < checkin
@@ -82,7 +83,14 @@ const FormSearch = () => {
   };
 
   return (
-    <form className={styles.FormSearch} onSubmit={(e) => handleSubmit(e)}>
+    <form
+      className={
+        formType === "home"
+          ? `${styles.FormSearch}`
+          : `${styles.FormSearch} ${styles.FormSearchOther}`
+      }
+      onSubmit={(e) => handleSubmit(e)}
+    >
       <div className={styles.wrapper}>
         <div className={styles.wrapperSearch}>
           <div className={styles.inputSearch}>

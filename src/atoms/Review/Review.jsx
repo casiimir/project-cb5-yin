@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./index.module.scss";
 
 function Review({ data }) {
-  console.log(data);
   return (
     <div className={styles.CardReviews}>
       <div className={styles.ReviewScore}>
