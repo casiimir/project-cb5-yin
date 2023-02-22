@@ -72,8 +72,9 @@ const reducer = (state, action) => {
       };
     case cases.REMOVE_FAVOURITE:
       const updatedFavourites = state.favourites.filter(
-        (el) => el.id !== action.payload
+        (el) => el.hotel_id !== action.payload
       );
+      console.log(state.favourites, updatedFavourites);
       localStorage.setItem(
         "next-trip-favourites",
         JSON.stringify(updatedFavourites)
