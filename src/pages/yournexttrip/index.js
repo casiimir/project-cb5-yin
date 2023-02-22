@@ -27,6 +27,7 @@ function nextTrip() {
                     src={el.main_photo_url.replace("square60", "square500")}
                     alt="image"
                     fill
+                    priority
                   />
                 </div>
 

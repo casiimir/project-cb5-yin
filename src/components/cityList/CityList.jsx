@@ -22,8 +22,8 @@ const CityList = () => {
           <p>Queste mete popolari hanno tanto da offrire</p>
         </div>
         <div className={styles.cityGallery}>
-          {cityList.map((city) => (
-            <div className={styles.cityCard}>
+          {cityList.map((city, index) => (
+            <div key={index} className={styles.cityCard}>
               <img
                 onClick={() => handleDynamicRoute(city.dest_id)}
                 className={styles.cityImage}

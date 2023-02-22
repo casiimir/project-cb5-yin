@@ -21,10 +21,11 @@ const FilterHotelList = () => {
       />
       <div className={styles.container}>
         <div className={styles.hotelContainer}>
-          {hotels.map((elem) => {
+          {hotels.map((elem, index) => {
             if (!filterByStars.includes(elem.class)) return undefined;
             return (
               <div
+                key={index}
                 className={styles.cardHotel}
                 onClick={() => {
                   router.push(`/hotel/${elem.hotel_id}`);

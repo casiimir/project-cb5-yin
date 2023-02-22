@@ -10,7 +10,7 @@ const FormReservation = () => {
         <label>Viaggi per affari?</label>
         <div className={styles.risposte}>
           <input type="radio" value="si" name="si" /> Si
-          <input type="radio" value="no" name="si" /> No
+          <input type="radio" value="no" name="no" /> No
         </div>
       </form>
       <form className={styles.FormReservation}>
@@ -51,7 +51,7 @@ const FormReservation = () => {
             <option value="fr">Francia</option>
             <option value="g">Germania</option>
             <option value="gr">Grecia</option>
-            <option value="it" autofocus>
+            <option value="it" autoFocus={true}>
               Italia
             </option>
             <option value="lt">Lettonia</option>

@@ -7,10 +7,10 @@ const HotelList = () => {
   return (
     <div className={styles.container}>
       <div className={styles.hotelContainer}>
-        {hotels.map((elem) => {
+        {hotels.map((elem, index) => {
           return (
-            <Link href={`/hotel/${elem.hotel_id}`}>
-              <div key={elem.hotel_id} className={styles.cardHotel}>
+            <Link key={index} href={`/hotel/${elem.hotel_id}`}>
+              <div key={index} className={styles.cardHotel}>
                 <img src={elem.entrance_photo_url} alt="img" />
                 <h3>{elem.name}</h3>
                 <div className={styles.wrapper}>
