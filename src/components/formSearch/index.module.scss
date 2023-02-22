@@ -6,6 +6,11 @@
   align-items: center;
   padding: 16px;
 
+  .title {
+    display: none;
+    text-align: left;
+  }
+
   input {
     outline: none;
     cursor: pointer;
@@ -163,6 +168,19 @@
   }
 }
 
+.FormSearchOther {
+  padding:0;
+
+  .title {
+    display: block;
+  }
+
+.wrapper {
+  padding: 10px;
+  border-radius: 0;
+  gap: 12px;
+}
+}
 @media only screen and (min-width: 992px) {
   .FormSearch {
     padding: 0px 16px;

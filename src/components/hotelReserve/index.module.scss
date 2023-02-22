@@ -1,0 +1,11 @@
+@import "/src/styles/variables.scss";
+
+.HotelReserve {
+button {
+  background-color: $blue-button;
+  color: $white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 2px;
+}
+}

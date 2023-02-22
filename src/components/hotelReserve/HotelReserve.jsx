@@ -1,8 +1,14 @@
-import React from "react";
+import Link from "next/link";
 import styles from "./index.module.scss";
 
-function HotelReserve() {
-  return <div>HotelReserve</div>;
-}
+const HotelReserve = ({ pid }) => {
+  return (
+    <div className={styles.HotelReserve}>
+      <Link href={`/reservation/${pid}`}>
+        <button>Prenota ora</button>
+      </Link>
+    </div>
+  );
+};
 
 export default HotelReserve;

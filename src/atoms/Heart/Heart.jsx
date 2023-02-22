@@ -12,7 +12,6 @@ function Heart({ data }) {
 
   return (
     <div className={styles.wishBtn}>
-      <span>
         {isFav ? (
           <AiFillHeart
             onClick={() => {
@@ -35,7 +34,6 @@ function Heart({ data }) {
             }}
           />
         )}
-      </span>
     </div>
   );
 }

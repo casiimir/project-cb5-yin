@@ -2,15 +2,13 @@ import { GET } from "../../utils/http";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
-import FormSearchPages from "@/components/formSearchPages";
-import GuestReviews from "@/components/guestReviews";
+import FormSearch from "@/components/formSearch";
+import HotelReviews from "@/components/hotelReviews";
 import HotelHeader from "@/components/hotelHeader/HotelHeader";
 import HotelCarousel from "@/components/hotelCarousel/HotelCarousel";
 import HotelDescription from "@/components/hotelDescription/HotelDescription";
-import HotelFacilities from "@/components/hotelFacilities/hotelFacilities";
-import HotelGallery from "@/components/HotelGallery/HotelGallery";
-import HotelInfo from "@/components/hotelInfo";
-import HotelList from "@/components/HotelList";
+import HotelGallery from "@/components/hotelGallery/HotelGallery";
+import HotelList from "@/components/hotelList";
 
 import Loader from "@/atoms/Loader/Loader";
 import MainLayout from "@/layout/mainLayout";
@@ -95,10 +93,9 @@ function Hotel({ galleryData, descriptionData, dataHotelReview }) {
               {descriptionData && (
                 <HotelDescription descriptionData={descriptionData} />
               )}
-              <HotelInfo pid={pid} />
-              <FormSearchPages />
+              <FormSearch />
             </div>
-            <GuestReviews
+            <HotelReviews
               reviewData={reviewData}
               dataHotelReview={dataHotelReview}
             />
