@@ -1,0 +1,30 @@
+@import "/src/styles/variables.scss";
+.Modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  .Overlay {
+    background: rgba($color: #242424, $alpha: 0.4);
+    width: 100%;
+    height: 100%;
+  }
+  .Content {
+    height: 100vh;
+    background: white;
+    width: 94vw;
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    transition: transition 5s ease;
+    transform: translateY(-50%);
+    padding: 1rem;
+
+    .Top {
+      border-radius: 4px;
+      background: $blue;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

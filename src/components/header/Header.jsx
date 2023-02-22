@@ -42,7 +42,15 @@ const Header = () => {
             />
             <Button style="icon" content={<FaRegUserCircle />} />
             <div className={styles.mobileBtnsLogin}>
-              <Button style="icon" content={<FiMenu />} />
+              <Button
+                style="icon"
+                content={<FiMenu />}
+                onClick={() =>
+                  dispatch({
+                    type: cases.TOGGLE_MODAL,
+                  })
+                }
+              />
             </div>
             <h3 className={styles.desktopBtnsLogin}>{state.auth.username}</h3>
             <div className={styles.desktopBtnsLogin}>
