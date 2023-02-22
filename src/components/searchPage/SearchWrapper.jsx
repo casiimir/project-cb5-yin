@@ -30,23 +30,7 @@ function SearchWrapper() {
   const [selectFilter, setSelectFilter] = useState("popularity");
   const [searchResults, setSearchResults] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [filterBy, setFilterBy] = useState({
-    class: [
-      { id: 1, label: "Nessuna Stella", checked: false },
-      { id: 2, label: "1", checked: false },
-      { id: 3, label: "2", checked: false },
-      { id: 4, label: "3", checked: false },
-      { id: 5, label: "4", checked: false },
-      { id: 6, label: "5", checked: false },
-    ],
-    rating: null,
-    review_num: null,
-  });
   const router = useRouter();
-
-  useEffect(() => {
-    console.log(navigation);
-  }, [navigation]);
 
   useEffect(() => {
     navigationDispatch({
@@ -79,17 +63,12 @@ function SearchWrapper() {
       <div className={styles.SearchWrapper}>
         <div className={styles.LeftSection}>
           <FormSearchPages />
-          <div className={styles.Filter}>
-            <SearchPageFilter setFilterBy={setFilterBy} filterBy={filterBy} />
-          </div>
         </div>
         <div className={styles.RightSection}>
           {loading ? (
             <Loader></Loader>
           ) : (
             <>
-              {console.log(navigation, "ermenegildo")}
-
               <div className={styles.ResultWrapper}>
                 {!searchResults || searchResults?.result.length < 1 ? (
                   <NotFoundSearch />

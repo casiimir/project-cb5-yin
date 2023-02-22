@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import MainLayout from "@/layout/mainLayout";
 import { getFavouritesFromLS } from "@/utils/utils";
 import styles from "@/styles/Favourites.module.scss";
+import Review from "@/atoms/Review/Review";
 
 function nextTrip() {
   const [favourites, setFavuorites] = useState(null);
@@ -23,7 +24,7 @@ function nextTrip() {
                 <p>
                   {el.country} {el.city} {el.address}
                 </p>
-                {/* fare atom review */}
+                <Review data={el} />
               </div>
               <button>Vedi struttura</button>
             </div>
