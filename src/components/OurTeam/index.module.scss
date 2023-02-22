@@ -1,0 +1,153 @@
+@import "@/styles/variables.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: central;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+  .titleTeam {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-bottom: 50px;
+    p {
+    }
+    h2 {
+      color: #003580;
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    .containerMember {
+      display: flex;
+      flex-direction: column;
+
+      .photos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+          width: 150px;
+          height: 150px;
+          display: flex;
+          border: 0;
+          background: #003580;
+          justify-content: center;
+          align-items: center;
+          clip-path: polygon(
+            25% 0%,
+            75% 0%,
+            100% 50%,
+            75% 100%,
+            25% 100%,
+            0% 50%
+          );
+          cursor: pointer;
+        }
+        button:hover {
+          transform: scale(1.1);
+        }
+        img {
+          margin: 1px;
+          display: flex;
+          gap: 10px;
+          width: 145px;
+          height: 145px;
+          border: none;
+          clip-path: polygon(
+            25% 0%,
+            75% 0%,
+            100% 50%,
+            75% 100%,
+            25% 100%,
+            0% 50%
+          );
+        }
+      }
+
+      .nameMember {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .figureMember {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.7rem;
+      }
+    }
+  }
+  .moreInfo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  .memberDescription {
+    margin: 50px 0;
+    padding-bottom: 50px;
+    width: 80vw;
+
+    background-color: gainsboro;
+
+    gap: 10px;
+    .textDescription {
+      text-align: left;
+      display: flex;
+      padding-left: 30px;
+      flex-direction: column;
+      .nameMemberState {
+      }
+    }
+    .links {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      font-size: 30px;
+      padding-top: 10px;
+      padding-right: 60px;
+    }
+    .off {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: 865px) {
+  .main {
+    .container {
+      flex-direction: row;
+      gap: 20px;
+      .containerMember {
+        .photos {
+          a {
+          }
+        }
+      }
+    }
+
+    .memberDescription {
+      justify-content: space-between;
+      .links {
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+@media screen and (min-width: 992px) {
+  .main {
+    .container {
+      gap: 50px;
+    }
+  }
+}
