@@ -1,20 +1,21 @@
-import MainLayout from "@/layout/mainLayout";
-import { hotel } from "@/mocks/hotelPageMock";
-import { useState, useEffect } from "react";
 import { GET } from "../../utils/http";
-import GuestReviews from "@/components/guestReviews";
 import { useRouter } from "next/router";
-import HotelList from "@/components/HotelList";
-import HotelDescription from "@/components/hotelDescription/HotelDescription";
-import HotelInfo from "@/components/hotelInfo";
-import AddressHotel from "@/components/addressHotel/AddressHotel";
-import { wait } from "@/utils/utils";
-import Loader from "@/atoms/Loader/Loader";
+import { useState, useEffect } from "react";
+
 import FormSearchPages from "@/components/formSearchPages";
-import HotelGallery from "@/components/HotelGallery/HotelGallery";
-import styles from "@/styles/Hotel.module.scss";
-import HotelCarousel from "@/components/hotelgalleryCarousel/HotelCarousel";
+import GuestReviews from "@/components/guestReviews";
+import HotelHeader from "@/components/hotelHeader/HotelHeader";
+import HotelCarousel from "@/components/hotelCarousel/HotelCarousel";
+import HotelDescription from "@/components/hotelDescription/HotelDescription";
 import HotelFacilities from "@/components/hotelFacilities/hotelFacilities";
+import HotelGallery from "@/components/HotelGallery/HotelGallery";
+import HotelInfo from "@/components/hotelInfo";
+import HotelList from "@/components/HotelList";
+
+import Loader from "@/atoms/Loader/Loader";
+import MainLayout from "@/layout/mainLayout";
+
+import styles from "@/styles/hotel.module.scss";
 
 function Hotel({ galleryData, descriptionData, dataHotelReview }) {
   //const [dataHotelReview, setDataHotelReview] = useState([]);
@@ -80,16 +81,12 @@ function Hotel({ galleryData, descriptionData, dataHotelReview }) {
         ) : (
           <>
             <div>
-              <AddressHotel dataHotelReview={dataHotelReview} />
+              <HotelHeader dataHotelReview={dataHotelReview} />
               <div className={styles.SearchAndGalleryWrapper}>
-                <FormSearchPages />
                 {galleryData && (
                   <div>
                     <HotelCarousel galleryData={galleryData} />
-                    <HotelGallery
-                      galleryData={galleryData}
-                      //setGalleryData={setGalleryData}
-                    />
+                    <HotelGallery galleryData={galleryData} />
                   </div>
                 )}
               </div>
@@ -99,12 +96,13 @@ function Hotel({ galleryData, descriptionData, dataHotelReview }) {
                 <HotelDescription descriptionData={descriptionData} />
               )}
               <HotelInfo />
+              <FormSearchPages />
             </div>
             <GuestReviews
               reviewData={reviewData}
               dataHotelReview={dataHotelReview}
             />
-            <HotelFacilities dataHotelReview={dataHotelReview} />
+            {/*<HotelFacilities dataHotelReview={dataHotelReview} />*/}
             <h2>
               Chi ha guardato{` ${dataHotelReview?.name}`} ha guardato anche
               queste strutture

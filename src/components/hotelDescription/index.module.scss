@@ -1,6 +1,15 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  margin-bottom: 30px;
+  padding: 16px;
+
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    padding-top: 10px;
+    font-size: 14px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
 }
