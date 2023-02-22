@@ -1,10 +1,10 @@
+import Link from "next/link";
 import styles from "./index.module.scss";
 
 const SectionOne = () => {
   return (
     <div className={styles.Section}>
       <h2>Le nostre scelte top</h2>
-      <p>Promozioni, offerte e altri sconti speciali per te</p>
       <div className={styles.section}>
         <div className={styles.div}>
           <img
@@ -13,9 +13,11 @@ const SectionOne = () => {
             className={styles.img}
           />
           <div className={styles.data}>
-            <h4>Sed ut perspiciatis</h4>
-            <p>Nemo enim ipsam voluptatem quia voluptas sit.</p>
-            <button>Scopri gli hotel</button>
+            <h4>Vuoi scoprire chi ha creato tutto ciò?</h4>
+            <p>Leggi le storie dei web developer</p>
+            <Link href={"/about"}>
+              <button>Scopri il team</button>
+            </Link>
           </div>
         </div>
         <div className={styles.div}>
@@ -25,9 +27,11 @@ const SectionOne = () => {
             className={styles.img}
           />
           <div className={styles.data}>
-            <h4>Sed ut perspiciatis</h4>
-            <p>Nemo enim ipsam voluptatem quia voluptas sit.</p>
-            <button>Scopri gli hotel</button>
+            <h4>Vuoi saperne di più?</h4>
+            <p>Leggi le storie del team di professionisti che li ha guidati</p>
+            <Link href={"https://edgemony.com/"}>
+              <button>Scopri il team</button>
+            </Link>
           </div>
         </div>
       </div>

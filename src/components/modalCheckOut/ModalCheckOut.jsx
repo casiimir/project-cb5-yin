@@ -25,12 +25,13 @@ const ModalCheckOut = () => {
               <div className={styles.close}>
                 <p onClick={onHandleModal}>X</p>
               </div>
-              <div className={styles.write}></div>
-              <h3>Congratulazioni</h3>
-              <h4>La tua prenotazione è andata a buon fine</h4>
-              <Link href={"/"}>
-                <p>Vai alla Home</p>
-              </Link>
+              <div className={styles.write}>
+                <h3>Congratulazioni</h3>
+                <h4>La tua prenotazione è andata a buon fine</h4>
+                <Link href={"/"}>
+                  <p>Vai alla Home</p>
+                </Link>
+              </div>
             </div>
           </div>
 

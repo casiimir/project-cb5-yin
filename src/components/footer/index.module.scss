@@ -34,6 +34,7 @@
 
   form {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 5px;
@@ -48,7 +49,7 @@
     }
 
     .mail {
-      width: 375px;
+      width: 300px;
       color: $black;
       border: none;
       font-size: 20px;

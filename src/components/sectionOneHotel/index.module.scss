@@ -15,6 +15,7 @@
   img {
     width: 100px;
     height: 100px;
+    opacity: 0.7;
   }
 
   .div {
@@ -30,31 +31,43 @@
   }
 
   button {
+    background-color: #007bb5;
     width: 150px;
     padding: 5px;
-    border-radius: 20px;
+    border-radius: 4px;
+    border: none;
   }
 
   button:hover {
-    background-color: rgba(0, 0, 96, 0.655);
-    color: white;
+    background-color: rgba(1, 1, 116, 0.871);
+    cursor: pointer;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .section {
-    .div {
-      .img {
-        display: flex;
-        object-fit: cover;
-        height: 200px;
-        width: 500px;
-      }
-      .data {
-        display: flex;
-        gap: 40px;
-        position: absolute;
-        padding: 10px;
+  .Section {
+    .section {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .div {
+        .img {
+          display: flex;
+          object-fit: cover;
+          height: 200px;
+          width: 400px;
+        }
+        .data {
+          display: flex;
+          gap: 40px;
+          position: absolute;
+          padding: 10px;
+          color: white;
+        }
+        button {
+          color: white;
+        }
       }
     }
   }
