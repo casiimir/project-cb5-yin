@@ -54,7 +54,6 @@ const Header = () => {
                   <Button style="primary" content="Accedi" />
                 </Link>
               )}
-              <Link href={"/login"}></Link>
             </div>
           </div>
         </div>
