@@ -2,7 +2,6 @@
   position: absolute;
   display: flex;
   justify-content: center;
-  width: 100%;
   transition: all 2s;
   animation: fadeIn 1s;
   z-index: 1;
@@ -12,14 +11,14 @@
   .content {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
-    padding-left: 30px;
+    margin: 30px;
     gap: 20px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
     border-radius: 5px;
-    width: 600px;
-    height: 300px;
+    width: 400px;
+    height: 200px;
     background: rgb(0, 113, 194);
     color: white;
     padding-bottom: 80px;
