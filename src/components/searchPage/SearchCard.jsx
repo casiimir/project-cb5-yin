@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./index.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import Review from "@/atoms/Review/Review";
 
 function SearchCard({ el }) {
   const router = useRouter();
@@ -29,15 +30,7 @@ function SearchCard({ el }) {
           <p>{el?.distances[0].text}</p>
         </div>
         <div className={styles.CardDetailedInfo}>
-          <div className={styles.CardReviews}>
-            <div className={styles.ReviewScore}>
-              <p>{el.review_score}</p>
-            </div>
-            <div className={styles.ReviewsWrapper}>
-              <span>{el.review_score_word}</span>
-              <span>{el.review_nr} reviews</span>
-            </div>
-          </div>
+          <Review data={el} />
 
           <button
             onClick={() => {
