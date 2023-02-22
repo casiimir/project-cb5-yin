@@ -1,4 +1,6 @@
 import React from "react";
+import styles from "./index.module.scss";
+
 const selectFilters = [
   { name: "Distance from city centre", id: "distance" },
   { name: "Popularity", id: "popularity" },
@@ -11,6 +13,7 @@ const selectFilters = [
 function Select({ selectFilter, setSelectFilter }) {
   return (
     <select
+      className={styles.select}
       value={selectFilter}
       onChange={(e) => setSelectFilter(e.target.value)}
     >
