@@ -12,6 +12,7 @@ const initialValue = {
     status: false,
   },
   favourites: [],
+  showModal: false,
 };
 
 export default initialValue;
