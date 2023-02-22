@@ -59,6 +59,11 @@
       background-color: #0071c2;
       color: $white;
     }
+
+    .submit:hover {
+      cursor: pointer;
+      background-color: rgba(0, 0, 105, 0.429);
+    }
   }
 
   .copyright {
