@@ -11,7 +11,7 @@ import HotelGallery from "@/components/hotelGallery/HotelGallery";
 import HotelList from "@/components/hotelList";
 
 import Loader from "@/atoms/Loader/Loader";
-import MainLayout from "@/layout/mainLayout";
+import MainLayout from "./../../layout/mainLayout/MainLayout";
 
 import styles from "@/styles/hotel.module.scss";
 

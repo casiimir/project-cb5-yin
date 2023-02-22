@@ -20,10 +20,9 @@ const HotelReviews = ({ dataHotelReview, reviewData }) => {
         </div>
       </div>
       <div className={styles.container}>
-        {reviewData?.map((customer) => {
-          console.log(customer.author);
+        {reviewData?.map((customer, index) => {
           return (
-            <div className={styles.card}>
+            <div key={index} className={styles.card}>
               <div className={styles.authorContent}>
                 <div className={styles.author}>
                   <Image

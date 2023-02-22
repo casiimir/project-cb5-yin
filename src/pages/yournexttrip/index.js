@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MainLayout from "@/layout/mainLayout";
+import MainLayout from "./../../layout/mainLayout/MainLayout";
 import { getFavouritesFromLS } from "@/utils/utils";
 import styles from "@/styles/Favourites.module.scss";
 import Review from "@/atoms/Review/Review";
@@ -27,6 +27,9 @@ function nextTrip() {
                     src={el.main_photo_url.replace("square60", "square500")}
                     alt="image"
                     fill
+                    sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
                     priority
                   />
                 </div>
