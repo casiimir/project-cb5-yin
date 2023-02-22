@@ -34,24 +34,6 @@
     justify-content: center;
     min-width: 200px;
 
-    select {
-      padding: 10px 20px;
-      border: 1px solid $blue-button;
-      color: $blue-button;
-      outline: none;
-      border-radius: 20px;
-      font-weight: bold;
-      background-color: #fff;
-      .options {
-        color: black;
-        line-height: 50px !important;
-        padding: 300px;
-
-        &:hover {
-          background: lightgrey !important;
-        }
-      }
-    }
     .ResultWrapper {
       display: flex;
       flex-direction: column;
