@@ -4,13 +4,10 @@ import styles from "./index.module.scss";
 import Link from "next/link";
 import { GrGithub, GrLinkedin } from "react-icons/gr";
 import { CgWebsite } from "react-icons/cg";
+import { Us } from "./../../mocks/photosAboutUs";
 
 const OurTeam = () => {
-  const [descrizione, setDescrizione] = useState();
-  const [member, setMember] = useState();
-  const [instagram, setInstagram] = useState();
-  const [github, setGitHub] = useState();
-  const [linkedin, setLinkedIn] = useState();
+  const [member, setMember] = useState([0]);
   const [links, setLinks] = useState(false);
 
   const teamMember = (member) => {
@@ -18,52 +15,60 @@ const OurTeam = () => {
     setLinks(true);
     switch (member) {
       case 1:
-        setDescrizione(
-          "Eddy Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum culpa quo dignissimos sint, exercitationem libero placeat dolor eaque. Nostrum, reprehenderit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum culpa quo dignissimos sint, exercitationem libero placeat dolor eaque. Nostrum, reprehenderit!"
-        );
-        setInstagram("instagram Eddy");
-        setGitHub("/edwardsicily");
-        setLinkedIn("/in/edwardcatrimi/");
-        setMember("Edward Catrimi");
+        //-------------Edward-------------
+        setMember([
+          Us[1].Name,
+          Us[1].Photo,
+          Us[1].Linkedin,
+          Us[1].Github,
+          Us[1].description,
+        ]);
+
         break;
 
       case 2:
-        setDescrizione(
-          "Chiara Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum culpa quo dignissimos sint, exercitationem libero placeat dolor eaque. Nostrum, reprehenderit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum culpa quo dignissimos sint, exercitationem libero placeat dolor eaque. Nostrum, reprehenderit!"
-        );
-        setInstagram("https://chiacirrito.github.io/newportfolio/home.html");
-        setGitHub("/chiacirrito");
-        setLinkedIn("/in/chiara-cirrito-90a2021b7/");
-        setMember("Chiara Cirrito");
+        //-------------Chiara-------------
+        setMember([
+          Us[0].Name,
+          Us[0].Photo,
+          Us[0].Linkedin,
+          Us[0].Github,
+          Us[0].description,
+        ]);
+
         break;
 
       case 3:
-        setDescrizione(
-          "Fra Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum culpa quo dignissimos sint, exercitationem libero placeat dolor eaque. Nostrum, reprehenderit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum culpa quo dignissimos sint, exercitationem libero placeat dolor eaque. Nostrum, reprehenderit!"
-        );
-        setInstagram("https://francescodecarocarella.it");
-        setGitHub("/FrancescoDeCaroCarella");
-        setLinkedIn("/in/francescodecarocarella/");
-        setMember("Francesco De Caro Carella");
+        //-------------Francesco-------------
+        setMember([
+          Us[2].Name,
+          Us[2].Photo,
+          Us[2].Linkedin,
+          Us[2].Github,
+          Us[2].description,
+          Us[2].Sito,
+        ]);
         break;
 
       case 4:
-        setDescrizione(
-          "Gabri Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum culpa quo dignissimos sint, exercitationem libero placeat dolor eaque. Nostrum, reprehenderit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum culpa quo dignissimos sint, exercitationem libero placeat dolor eaque. Nostrum, reprehenderit!"
-        );
-        setInstagram("instagram Gabri");
-        setGitHub("/Gabriele9102");
-        setLinkedIn("/in/gabriele-chiaramonte/");
-        setMember("Gabriele Chiaramonte");
+        //-------------Gabriele-------------
+        setMember([
+          Us[3].Name,
+          Us[3].Photo,
+          Us[3].Linkedin,
+          Us[3].Github,
+          Us[3].description,
+        ]);
         break;
       case 5:
-        setDescrizione(
-          "Zeni Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum culpa quo dignissimos sint, exercitationem libero placeat dolor eaque. Nostrum, reprehenderit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum culpa quo dignissimos sint, exercitationem libero placeat dolor eaque. Nostrum, reprehenderit!"
-        );
-        setInstagram("https://zaotosh.github.io/");
-        setGitHub("/ZaoTosh");
-        setLinkedIn("/in/hysen-shemollari");
-        setMember("Hysen Shemolari");
+        //-------------Hysen-------------
+        setMember([
+          Us[4].Name,
+          Us[4].Photo,
+          Us[4].Linkedin,
+          Us[4].Github,
+          Us[4].description,
+        ]);
         break;
       default:
         console.error("errore");
@@ -76,6 +81,7 @@ const OurTeam = () => {
           <h4>Our </h4> <h2 className={styles.colorBlue}>Team</h2>
         </div>
         <div className={styles.container}>
+          {/* -------------Edward------------- */}
           <div className={styles.containerMember}>
             <div className={styles.photos}>
               <button
@@ -83,26 +89,43 @@ const OurTeam = () => {
                   teamMember(1);
                 }}
               >
-                <a href="#arrivo">
-                  <div className={styles.div}>
-                    <Image
-                      src="https://picsum.photos/200/300"
-                      alt="13"
-                      width={40}
-                      height={31}
-                      priority
-                    />
-                  </div>
-                </a>
+                <div className={styles.div}>
+                  <Image
+                    src={Us[1].Photo}
+                    alt="13"
+                    width={40}
+                    height={31}
+                    priority
+                  />
+                </div>
               </button>
             </div>
             <div className={styles.nameMember}>
-              <h5>Edward Catrimi</h5>
+              <h5>{Us[1].Name}</h5>
             </div>
             <div className={styles.figureMember}>
               <p>Front End Developer</p>
             </div>
+            {member[0] == "Edward Catrimi" && (
+              <div className={links ? styles.memberDescription : styles.off}>
+                <div className={styles.links}>
+                  <>
+                    <Link href={member[2]}>
+                      <GrLinkedin />
+                    </Link>
+                    <Link href={member[3]}>
+                      <GrGithub />
+                    </Link>
+                  </>
+                </div>
+                <div className={styles.textDescription}>
+                  <h2>{member[0]}</h2>
+                  <p>{member[4]}</p>
+                </div>
+              </div>
+            )}
           </div>
+          {/* -------------Chiara------------- */}
           <div className={styles.containerMember}>
             <div className={styles.photos}>
               <button
@@ -111,26 +134,43 @@ const OurTeam = () => {
                 }}
               >
                 {" "}
-                <a href={"#arrivo"}>
-                  <div className={styles.div}>
-                    <Image
-                      src="https://picsum.photos/200/300"
-                      alt="13"
-                      width={40}
-                      height={31}
-                      priority
-                    />
-                  </div>{" "}
-                </a>
+                <div className={styles.div}>
+                  <Image
+                    src={Us[0].Photo}
+                    alt="13"
+                    width={40}
+                    height={31}
+                    priority
+                  />
+                </div>{" "}
               </button>
             </div>
             <div className={styles.nameMember}>
-              <h5>Chiara Cirrito</h5>
+              <h5>{Us[2].Name}</h5>
             </div>
             <div className={styles.figureMember}>
               <p>Front End Developer</p>
             </div>
           </div>
+          {member[0] == "Chiara Cirrito" && (
+            <div className={links ? styles.memberDescription : styles.off}>
+              <div className={styles.links}>
+                <>
+                  <Link href={member[2]}>
+                    <GrLinkedin />
+                  </Link>
+                  <Link href={member[3]}>
+                    <GrGithub />
+                  </Link>
+                </>
+              </div>
+              <div className={styles.textDescription}>
+                <h2>{member[0]}</h2>
+                <p>{member[4]}</p>
+              </div>
+            </div>
+          )}
+          {/* -------------Francesco------------- */}
           <div className={styles.containerMember}>
             <div className={styles.photos}>
               <button
@@ -138,26 +178,46 @@ const OurTeam = () => {
                   teamMember(3);
                 }}
               >
-                <a href="#arrivo">
-                  <div className={styles.div}>
-                    <Image
-                      src="https://picsum.photos/200/300"
-                      alt="13"
-                      width={40}
-                      height={31}
-                      priority
-                    />
-                  </div>
-                </a>
+                <div className={styles.div}>
+                  <Image
+                    src={Us[2].Photo}
+                    alt="13"
+                    width={40}
+                    height={31}
+                    priority
+                  />
+                </div>
               </button>
             </div>
             <div className={styles.nameMember}>
-              <h5>Francesco Decaro Carella</h5>
+              <h5>{Us[2].Name}</h5>
             </div>
             <div className={styles.figureMember}>
               <p>Front End Developer - UX Designer</p>
             </div>
           </div>
+          {member[0] == "Francesco De Caro Carella" && (
+            <div className={links ? styles.memberDescription : styles.off}>
+              <div className={styles.links}>
+                <>
+                  <Link href={member[2]}>
+                    <GrLinkedin />
+                  </Link>
+                  <Link href={member[3]}>
+                    <GrGithub />
+                  </Link>
+                  <Link href={Us[2].Sito}>
+                    <CgWebsite />
+                  </Link>
+                </>
+              </div>
+              <div className={styles.textDescription}>
+                <h2>{member[0]}</h2>
+                <p>{member[4]}</p>
+              </div>
+            </div>
+          )}
+          {/* -------------Gabriele------------- */}
           <div className={styles.containerMember}>
             <div className={styles.photos}>
               <button
@@ -165,26 +225,43 @@ const OurTeam = () => {
                   teamMember(4);
                 }}
               >
-                <a href="#arrivo">
-                  <div className={styles.div}>
-                    <Image
-                      src="https://picsum.photos/200/300"
-                      alt="13"
-                      width={40}
-                      height={31}
-                      priority
-                    />
-                  </div>
-                </a>
+                <div className={styles.div}>
+                  <Image
+                    src={Us[3].Photo}
+                    alt="13"
+                    width={40}
+                    height={31}
+                    priority
+                  />
+                </div>
               </button>
             </div>
             <div className={styles.nameMember}>
-              <h5>Gabriele Chiaramonte</h5>
+              <h5>{Us[3].Name}</h5>
             </div>
             <div className={styles.figureMember}>
               <p>Front End Developer</p>
             </div>
           </div>
+          {member[0] == "Gabriele Chiaramonte" && (
+            <div className={links ? styles.memberDescription : styles.off}>
+              <div className={styles.links}>
+                <>
+                  <Link href={member[2]}>
+                    <GrLinkedin />
+                  </Link>
+                  <Link href={member[3]}>
+                    <GrGithub />
+                  </Link>
+                </>
+              </div>
+              {/* -------------Hysen------------- */}
+              <div className={styles.textDescription}>
+                <h2>{member[0]}</h2>
+                <p>{member[4]}</p>
+              </div>
+            </div>
+          )}
           <div className={styles.containerMember}>
             <div className={styles.photos}>
               <button
@@ -193,47 +270,65 @@ const OurTeam = () => {
                 }}
               >
                 {" "}
-                <a href="#arrivo">
-                  <div className={styles.div}>
-                    <Image
-                      src="https://picsum.photos/200/300"
-                      alt="13"
-                      width={40}
-                      height={31}
-                      priority
-                    />
-                  </div>
-                </a>
+                <div className={styles.div}>
+                  <Image
+                    src={Us[4].Photo}
+                    alt="13"
+                    width={40}
+                    height={31}
+                    priority
+                  />
+                </div>
               </button>
             </div>
             <div className={styles.nameMember}>
-              <h5>Hysen Shemollari</h5>
+              <h5>{Us[4].Name}</h5>
             </div>
             <div className={styles.figureMember}>
               <p>Full Stack Developer</p>
             </div>
+            {member[0] == "Hysen Shemollari" && (
+              <div className={links ? styles.memberDescription : styles.off}>
+                <div className={styles.links}>
+                  <>
+                    <Link href={member[2]}>
+                      <GrLinkedin />
+                    </Link>
+                    <Link href={member[3]}>
+                      <GrGithub />
+                    </Link>
+                  </>
+                </div>
+                <div className={styles.textDescription}>
+                  <h2>{member[0]}</h2>
+                  <p>{member[4]}</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
-        <div className={links ? styles.memberDescription : styles.off}>
-          <div className={styles.links}>
+        {/* -------------Description Column------------- */}
+        <div className={links ? styles.memberDescription_2 : styles.off}>
+          <div className={styles.links2}>
             {links && (
               <>
-                <Link href={`https://www.linkedin.com${linkedin}`}>
+                <Link href={member[2]}>
                   <GrLinkedin />
                 </Link>
-                <Link href={`https://github.com/${github}`}>
+                <Link href={member[3]}>
                   <GrGithub />
                 </Link>
-                <Link href={`${instagram}`}>
-                  <CgWebsite />
-                </Link>
+                {member[5] && (
+                  <Link href={member[5]}>
+                    <CgWebsite />
+                  </Link>
+                )}
               </>
             )}
           </div>
-          <div className={styles.textDescription}>
-            <a name="arrivo"></a>
-            <h2>{member}</h2>
-            <p>{descrizione}</p>
+          <div className={styles.textDescription2}>
+            <h2>{member[0]}</h2>
+            <p>{member[4]}</p>
           </div>
         </div>
       </div>
