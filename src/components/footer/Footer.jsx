@@ -8,7 +8,7 @@ const Footer = () => {
           <h2>Risparmia tempo e denaro!</h2>
           <h3>Iscriviti e ti invieremo le migliori offerte</h3>
         </div>
-        <form>
+        <form className={styles.mailForm}>
           <input
             className={styles.mail}
             type="email"
