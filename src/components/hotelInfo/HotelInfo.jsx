@@ -9,7 +9,7 @@ const HotelInfo = ({ pid }) => {
         accusantium
       </p>
       <Link href={`/reservation/${pid}`}>
-        <button>Prenota Adesso</button>
+        <button className={styles.reserveBtn}>Prenota Adesso</button>
       </Link>
     </div>
   );

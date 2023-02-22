@@ -8,6 +8,11 @@ const HotelHeader = ({ dataHotelReview }) => {
   //   } else if (positionData.geo_info.city_centre.distance < 2000) {
   //     const positionHotel = "Buona posizione - Vicino al centro";
   //   }
+  let str = "";
+  let starStr = "⭐";
+  for (let i = 0; i < dataHotelReview.class; i++) {
+    str += starStr;
+  }
 
   return (
     <div className={styles.HotelHeader}>
@@ -16,9 +21,11 @@ const HotelHeader = ({ dataHotelReview }) => {
           <div className={styles.topHeader}>
             <div>
               <span className={styles.typo}>
-                {dataHotelReview.booking_home.group}
-              </span>{" "}
-              <span className={styles.class}>{dataHotelReview.class}</span>
+                {dataHotelReview.booking_home.group.replaceAll("_", " ")}
+              </span>
+              <span className={styles.class}>
+                {!dataHotelReview.class ? "" : str}
+              </span>
             </div>
             <Heart data={dataHotelReview} />
           </div>

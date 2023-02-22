@@ -14,6 +14,11 @@
     align-items: center;
     padding-bottom: 10px;
 
+    div {
+      display: flex;
+      gap: 1rem;
+    }
+
     .typo {
       text-transform: capitalize;
       background-color: $dark-gray;
