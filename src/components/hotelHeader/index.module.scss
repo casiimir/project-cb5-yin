@@ -13,6 +13,31 @@
     align-items: center;
     padding-bottom: 10px;
 
+    .fav {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        background-color: rgba(0, 67, 202, 0.801);
+        color: white;
+        margin-top: 0;
+        padding: 5px;
+        display: none;
+      }
+
+      p:hover {
+        background-color: rgba(0, 39, 116, 0.995);
+      }
+    }
+
+    .fav:hover {
+      p {
+        display: block;
+      }
+    }
     .left {
       display: flex;
       gap: 5px;

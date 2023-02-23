@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import HotelReserve from "@/components/hotelReserve/HotelReserve";
 import Heart from "@/atoms/Heart/Heart";
 import Image from "next/image";
+import Link from "next/link";
 
 const HotelHeader = ({ dataHotelReview }) => {
   //console.log(positionData);
@@ -59,7 +60,12 @@ const HotelHeader = ({ dataHotelReview }) => {
               </span>
             </div>
             <div className={styles.right}>
-              <Heart data={dataHotelReview} />
+              <div className={styles.fav}>
+                <Heart data={dataHotelReview} />
+                <Link href={"/yournexttrip"}>
+                  <p>Vai ai preferiti</p>
+                </Link>
+              </div>
               <HotelReserve pid={pid} />
             </div>
           </div>
