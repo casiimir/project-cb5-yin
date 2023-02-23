@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { wait } from "@/utils/utils";
 import styles from "./index.module.scss";
 
-const LoginForm = ({ setLoading }) => {
+const LoginForm = ({ setLoading, authMessage }) => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
 
@@ -36,13 +36,8 @@ const LoginForm = ({ setLoading }) => {
           onHandleSubmit(e);
         }}
       >
-        <img
-          className={styles.logo}
-          width="150px"
-          src="/bookyn_color.svg"
-          alt="Bookyn Logo"
-        />
         <h2>Accedi</h2>
+        <div className={styles.AuthMessage}>{authMessage}</div>
         <label className={styles.user}>
           <h4>User</h4>
           <input

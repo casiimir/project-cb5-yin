@@ -7,6 +7,7 @@ import styles from "@/styles/login.module.scss";
 export default function Login() {
   const [loading, setLoading] = useState(false);
   const [toggle, setToggle] = useState(false);
+  const [authMessage, setAuthMessage] = useState("");
 
   const onHandleToggle = () => {
     setToggle(!toggle);
@@ -17,12 +18,21 @@ export default function Login() {
         <Loader />
       ) : (
         <>
+          <img
+            className={styles.logo}
+            width="150px"
+            src="/bookyn_color.svg"
+            alt="Bookyn Logo"
+          />
           {toggle ? (
-            <LoginForm setLoading={setLoading} />
+            <LoginForm setLoading={setLoading} authMessage={authMessage} />
           ) : (
-            <RegistrationForm />
+            <RegistrationForm
+              setToggle={setToggle}
+              setAuthMessage={setAuthMessage}
+            />
           )}
-          <h6 onClick={onHandleToggle}>{toggle ? "Registrazione" : "Login"}</h6>
+          <h5 onClick={onHandleToggle}>{toggle ? "Registrati" : "Accedi"}</h5>
 
           <div className={styles.copyright}>
             <p>

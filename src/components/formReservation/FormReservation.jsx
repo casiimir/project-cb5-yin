@@ -2,8 +2,11 @@ import ModalCheckOut from "@/components/modalCheckOut/ModalCheckOut";
 import styles from "./index.module.scss";
 
 const FormReservation = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
-    <div className={styles.Form}>
+    <div className={styles.Form} onSubmit={(e) => handleSubmit(e)}>
       <div className={styles.Top}>
         <h3>Inserisci le tue informazioni</h3>
         <p>*campi obbligatori</p>
