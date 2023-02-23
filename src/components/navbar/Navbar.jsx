@@ -9,7 +9,7 @@ const Navbar = () => {
     <div className={styles.Navbar}>
       <ul>
         <Link href={"/"}>
-          <li className={pathname === "/" && `${styles.active}`}>
+          <li className={pathname === "/" ? `${styles.active}` : ""}>
             <Image
               className={styles.svg}
               src="/soggiorni.svg"
@@ -35,7 +35,9 @@ const Navbar = () => {
           </li>
         </Link>
         <Link href={"/yournexttrip"}>
-          <li className={pathname === "/yournexttrip" && `${styles.active}`}>
+          <li
+            className={pathname === "/yournexttrip" ? `${styles.active}` : ""}
+          >
             <Image
               className={styles.svg}
               src="/heart.svg"
@@ -48,7 +50,7 @@ const Navbar = () => {
           </li>
         </Link>
         <Link href={"/about"}>
-          <li className={pathname === "/about" && `${styles.active}`}>
+          <li className={pathname === "/about" ? `${styles.active}` : ""}>
             <Image
               className={styles.svg}
               src="/team.svg"

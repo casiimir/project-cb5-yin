@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 
 import HotelReserve from "@/components/hotelReserve/HotelReserve";
 import Heart from "@/atoms/Heart/Heart";
+import Image from "next/image";
 
 const HotelHeader = ({ dataHotelReview }) => {
   //console.log(positionData);
@@ -26,20 +27,19 @@ const HotelHeader = ({ dataHotelReview }) => {
   const router = useRouter();
   const { pid } = router.query;
 
-    useEffect(() => {
-      if (router.isReady) {
+  useEffect(() => {
+    if (router.isReady) {
+      GET(
+        `hotels/reviews?hotel_id=${pid}&locale=it&sort_type=SORT_MOST_RELEVANT&customer_type=solo_traveller%2Creview_category_group_of_friends&language_filter=it%2Cde%2Cfr`
+      )
+        .then((response) => {
+          setReviewData(response.result);
+        })
+        .catch((error) => console.log(error));
 
-        GET(
-          `hotels/reviews?hotel_id=${pid}&locale=it&sort_type=SORT_MOST_RELEVANT&customer_type=solo_traveller%2Creview_category_group_of_friends&language_filter=it%2Cde%2Cfr`
-        )
-          .then((response) => {
-            setReviewData(response.result);
-          })
-          .catch((error) => console.log(error));
-
-        setLoading(false);
-      }
-    }, [router.isReady]);
+      setLoading(false);
+    }
+  }, [router.isReady]);
 
   return (
     <div className={styles.HotelHeader}>
@@ -69,7 +69,15 @@ const HotelHeader = ({ dataHotelReview }) => {
             </span>
             <span className={styles.address}>
               {dataHotelReview.address}, {dataHotelReview.city}
-              <br></br>
+            </span>
+
+            <span className={styles.country}>
+              <Image
+                src={`https://flagcdn.com/${dataHotelReview?.countrycode}.svg`}
+                width={20}
+                height={15}
+                alt="flag"
+              />
               {dataHotelReview.country}
             </span>
             <div className={styles.score}>
