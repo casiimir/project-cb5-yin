@@ -7,13 +7,13 @@ import HotelReviews from "@/components/hotelReviews/HotelReviews";
 import HotelHeader from "@/components/hotelHeader/HotelHeader";
 import HotelCarousel from "@/components/hotelCarousel/HotelCarousel";
 import HotelDescription from "@/components/hotelDescription/HotelDescription";
-import HotelGallery from "@/components/hotelGallery/HotelGallery";
+import HotelGallery from "./../../components/HotelGallery/HotelGallery";
 import HotelSimilarCard from "@/components/hotelSimilarCard/HotelSimilarCard";
 
 import Loader from "@/atoms/Loader/Loader";
 import MainLayout from "@/layout/mainLayout/MainLayout";
 
-import styles from "@/styles/hotel.module.scss";
+import styles from "./../../styles/Hotel.module.scss";
 
 function Hotel({ galleryData, descriptionData, dataHotelReview }) {
   //const [dataHotelReview, setDataHotelReview] = useState([]);

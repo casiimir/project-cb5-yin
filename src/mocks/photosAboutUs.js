@@ -6,7 +6,8 @@ export const Us = [
     Linkedin: "https://www.linkedin.com/in/chiara-cirrito-90a2021b7/",
     Github: "https://github.com/chiacirrito",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, omnis?",
+      "Hi, I'm a 24 years old sicilian web developer, Edgemony scholarship winner since October. ",
+    Sito: "https://chiacirrito.github.io/newportfolio/home.html",
   },
   {
     Name: "Edward Catrimi",

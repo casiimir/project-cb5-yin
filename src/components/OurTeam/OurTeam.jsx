@@ -4,11 +4,10 @@ import styles from "./index.module.scss";
 import Link from "next/link";
 import { GrGithub, GrLinkedin } from "react-icons/gr";
 import { CgWebsite } from "react-icons/cg";
-import { Us } from "../../mocks/photosAboutUs";
+import { Us } from "./../../mocks/photosAboutUs";
 
 const OurTeam = () => {
   const [member, setMember] = useState([0]);
-  const [description, setDescription] = useState([0]);
   const [links, setLinks] = useState(false);
 
   const teamMember = (member) => {
@@ -16,18 +15,6 @@ const OurTeam = () => {
     setLinks(true);
     switch (member) {
       case 1:
-        //-------------Edward-------------
-        setMember([
-          Us[1].Name,
-          Us[1].Photo,
-          Us[1].Linkedin,
-          Us[1].Github,
-          Us[1].description,
-        ]);
-
-        break;
-
-      case 2:
         //-------------Chiara-------------
         setMember([
           Us[0].Name,
@@ -35,17 +22,23 @@ const OurTeam = () => {
           Us[0].Linkedin,
           Us[0].Github,
           Us[0].description,
+          Us[0].Sito,
         ]);
 
-        {/*setDescription(
-          "Hi, I'm a 24 years old sicilian web developer, Edgemony scholarship winner since October. "
-        );
-        setInstagram("https://chiacirrito.github.io/newportfolio/home.html");
-        setGitHub("/chiacirrito");
-        setLinkedIn("/in/chiara-cirrito-90a2021b7/");
-        setMember("Chiara Cirrito");*/}
         break;
 
+      case 2:
+        //-------------Edward-------------
+        setMember([
+          Us[1].Name,
+          Us[1].Photo,
+          Us[1].Linkedin,
+          Us[1].Github,
+          Us[1].description,
+          Us[1].Sito,
+        ]);
+
+        break;
       case 3:
         //-------------Francesco-------------
         setMember([
@@ -66,8 +59,10 @@ const OurTeam = () => {
           Us[3].Linkedin,
           Us[3].Github,
           Us[3].description,
+          Us[3].Sito,
         ]);
         break;
+
       case 5:
         //-------------Hysen-------------
         setMember([
@@ -76,8 +71,10 @@ const OurTeam = () => {
           Us[4].Linkedin,
           Us[4].Github,
           Us[4].description,
+          Us[4].Sito,
         ]);
         break;
+
       default:
         console.error("errore");
     }
@@ -89,7 +86,7 @@ const OurTeam = () => {
           <h4>Our </h4> <h2 className={styles.colorBlue}>Team</h2>
         </div>
         <div className={styles.container}>
-          {/* -------------Edward------------- */}
+          {/* -------------Chiara------------- */}
           <div className={styles.containerMember}>
             <div className={styles.photos}>
               <button
@@ -97,12 +94,63 @@ const OurTeam = () => {
                   teamMember(1);
                 }}
               >
+                {" "}
+                <div className={styles.div}>
+                  <Image
+                    src={Us[0].Photo}
+                    alt={Us[0].Name}
+                    width={400}
+                    height={400}
+                    priority
+                  />
+                </div>{" "}
+              </button>
+            </div>
+            <div className={styles.nameMember}>
+              <h5>{Us[0].Name}</h5>
+            </div>
+            <div className={styles.figureMember}>
+              <p>Front End Developer</p>
+            </div>
+          </div>
+          {member[0] == "Chiara Cirrito" && (
+            <div className={links ? styles.memberDescription : styles.off}>
+              <div className={styles.links}>
+                <>
+                  <Link href={member[2]}>
+                    <GrLinkedin />
+                  </Link>
+                  <Link href={member[3]}>
+                    <GrGithub />
+                  </Link>
+                  {member[5] && (
+                    <Link href={member[5]}>
+                      <CgWebsite />
+                    </Link>
+                  )}
+                </>
+              </div>
+              <div className={styles.textDescription}>
+                <h2>{member[0]}</h2>
+                <p>{member[4]}</p>
+              </div>
+            </div>
+          )}
+
+          {/* -------------Edward------------- */}
+          <div className={styles.containerMember}>
+            <div className={styles.photos}>
+              <button
+                onClick={() => {
+                  teamMember(2);
+                }}
+              >
                 <div className={styles.div}>
                   <Image
                     src={Us[1].Photo}
-                    alt="13"
-                    width={40}
-                    height={31}
+                    alt={Us[1].Name}
+                    width={400}
+                    height={400}
                     priority
                   />
                 </div>
@@ -124,6 +172,11 @@ const OurTeam = () => {
                     <Link href={member[3]}>
                       <GrGithub />
                     </Link>
+                    {member[5] && (
+                      <Link href={member[5]}>
+                        <CgWebsite />
+                      </Link>
+                    )}
                   </>
                 </div>
                 <div className={styles.textDescription}>
@@ -133,51 +186,7 @@ const OurTeam = () => {
               </div>
             )}
           </div>
-          {/* -------------Chiara------------- */}
-          <div className={styles.containerMember}>
-            <div className={styles.photos}>
-              <button
-                onClick={() => {
-                  teamMember(2);
-                }}
-              >
-                {" "}
-                <div className={styles.div}>
-                  <Image
-                    src={Us[0].Photo}
-                    alt="13"
-                    width={40}
-                    height={31}
-                    priority
-                  />
-                </div>{" "}
-              </button>
-            </div>
-            <div className={styles.nameMember}>
-              <h5>{Us[2].Name}</h5>
-            </div>
-            <div className={styles.figureMember}>
-              <p>Front End Developer</p>
-            </div>
-          </div>
-          {member[0] == "Chiara Cirrito" && (
-            <div className={links ? styles.memberDescription : styles.off}>
-              <div className={styles.links}>
-                <>
-                  <Link href={member[2]}>
-                    <GrLinkedin />
-                  </Link>
-                  <Link href={member[3]}>
-                    <GrGithub />
-                  </Link>
-                </>
-              </div>
-              <div className={styles.textDescription}>
-                <h2>{member[0]}</h2>
-                <p>{member[4]}</p>
-              </div>
-            </div>
-          )}
+
           {/* -------------Francesco------------- */}
           <div className={styles.containerMember}>
             <div className={styles.photos}>
@@ -189,9 +198,9 @@ const OurTeam = () => {
                 <div className={styles.div}>
                   <Image
                     src={Us[2].Photo}
-                    alt="13"
-                    width={40}
-                    height={31}
+                    alt={Us[2].Name}
+                    width={400}
+                    height={400}
                     priority
                   />
                 </div>
@@ -214,9 +223,11 @@ const OurTeam = () => {
                   <Link href={member[3]}>
                     <GrGithub />
                   </Link>
-                  <Link href={Us[2].Sito}>
-                    <CgWebsite />
-                  </Link>
+                  {member[5] && (
+                    <Link href={member[5]}>
+                      <CgWebsite />
+                    </Link>
+                  )}
                 </>
               </div>
               <div className={styles.textDescription}>
@@ -236,9 +247,9 @@ const OurTeam = () => {
                 <div className={styles.div}>
                   <Image
                     src={Us[3].Photo}
-                    alt="13"
-                    width={40}
-                    height={31}
+                    alt={Us[3].Name}
+                    width={400}
+                    height={400}
                     priority
                   />
                 </div>
@@ -261,6 +272,11 @@ const OurTeam = () => {
                   <Link href={member[3]}>
                     <GrGithub />
                   </Link>
+                  {member[5] && (
+                    <Link href={member[5]}>
+                      <CgWebsite />
+                    </Link>
+                  )}
                 </>
               </div>
               {/* -------------Hysen------------- */}
@@ -281,9 +297,9 @@ const OurTeam = () => {
                 <div className={styles.div}>
                   <Image
                     src={Us[4].Photo}
-                    alt="13"
-                    width={40}
-                    height={31}
+                    alt={Us[4].Name}
+                    width={400}
+                    height={400}
                     priority
                   />
                 </div>
@@ -305,6 +321,11 @@ const OurTeam = () => {
                     <Link href={member[3]}>
                       <GrGithub />
                     </Link>
+                    {member[5] && (
+                      <Link href={member[5]}>
+                        <CgWebsite />
+                      </Link>
+                    )}
                   </>
                 </div>
                 <div className={styles.textDescription}>
