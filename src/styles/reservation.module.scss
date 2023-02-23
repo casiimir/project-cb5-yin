@@ -3,10 +3,24 @@
 .container {
   display: flex;
   justify-content: center;
+
   flex-direction: column;
 
-  @media screen and (min-width: 800px) {
+  .loadingWrapper {
+    min-height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    min-height: 900px;
     flex-direction: row;
+    align-items: flex-start;
+    .loadingWrapper {
+      min-height: 900px;
+    }
   }
   .wrap {
     padding: 1rem;
