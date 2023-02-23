@@ -4,7 +4,7 @@ import styles from "@/styles/Home.module.scss";
 import FormSearch from "@/components/formSearch/FormSearch";
 import WorkTeam from "@/components/workTeam/WorkTeam";
 import CityList from "@/components/cityList/CityList";
-import FilterHotelList from "@/components/filterHotelList/filterHotelList";
+import FilterHotelList from "./../components/FilterHotelList/filterHotelList";
 import SectionOne from "@/components/sectionOneHotel/SectionOneHotel";
 
 export default function Home() {
