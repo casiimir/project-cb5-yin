@@ -127,10 +127,7 @@ const reducer = (state, action) => {
         },
       };
     case cases.REMOVE_CHILDREN:
-      console.log({
-        ...state,
-      });
-      if (state.prenotation.children >= 1) {
+      if (state.prenotation.children > 1) {
         return {
           ...state,
           prenotation: {
