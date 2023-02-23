@@ -24,6 +24,12 @@
       }
     }
 
+    .country {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
     button {
       padding: 10px 12px;
       border: none;

@@ -47,11 +47,13 @@ const HotelSimilarCard = ({ dataHotelReview }) => {
       <h4>Strutture simili</h4>
       <div className={styles.hotelContainer} ref={ref}>
         {hotels.map((elem, index) => {
-          console.log(elem);
           return (
             <Link key={index} href={`/hotel/${elem.hotel_id}`}>
               <div key={index} className={styles.cardHotel}>
-                <img src={elem.entrance_photo_url} alt="img" />
+                <img
+                  src={elem.entrance_photo_url.replace("square60", "square300")}
+                  alt="img"
+                />
                 <div className={styles.content}>
                   <div className={styles.typo}>
                     <span>
@@ -70,19 +72,19 @@ const HotelSimilarCard = ({ dataHotelReview }) => {
                     </p>
                   </div>
                 </div>
-                  <button
-                    className={styles.reserveButton}
-                    onClick={() => {
-                      {
-                        <Link
-                          key={index}
-                          href={`/hotel/${elem.hotel_id}`}
-                        ></Link>;
-                      }
-                    }}
-                  >
-                    Scopri di più
-                  </button>
+                <button
+                  className={styles.reserveButton}
+                  onClick={() => {
+                    {
+                      <Link
+                        key={index}
+                        href={`/hotel/${elem.hotel_id}`}
+                      ></Link>;
+                    }
+                  }}
+                >
+                  Scopri di più
+                </button>
               </div>
             </Link>
           );

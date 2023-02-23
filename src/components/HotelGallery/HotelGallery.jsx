@@ -9,18 +9,18 @@ function HotelGallery({ galleryData }) {
         <div className={styles.GalleryTopWrapper}>
           <img
             className={styles.GalleryWrapperTopImg}
-            src={galleryData[1].url_max}
-            alt=""
+            src={galleryData[1]?.url_max}
+            alt="Image"
           />
           <img
             className={styles.GalleryWrapperBottomImg}
-            src={galleryData[2].url_max}
-            alt=""
+            src={galleryData[2]?.url_max}
+            alt="Image"
           />
         </div>
         <div className={styles.GalleryTopImg}>
           <img
-            src={galleryData[0].url_max}
+            src={galleryData[0]?.url_max}
             alt={galleryData[0]?.tags[0]?.tag}
           />
         </div>
@@ -32,8 +32,8 @@ function HotelGallery({ galleryData }) {
             <div key={id}>
               <img
                 className={styles.GalleryBottomImg}
-                src={photo.url_max}
-                alt={photo.tags[0]?.tag}
+                src={photo?.url_max}
+                alt={photo?.tags[0]?.tag}
               />
             </div>
           );

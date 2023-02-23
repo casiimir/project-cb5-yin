@@ -50,6 +50,12 @@
     display: flex;
     flex-direction: column;
 
+    .country {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
     .address {
       font-size: 14px;
     }

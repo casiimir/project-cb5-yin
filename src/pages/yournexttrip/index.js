@@ -4,6 +4,7 @@ import { getFavouritesFromLS } from "@/utils/utils";
 import styles from "@/styles/Favourites.module.scss";
 import Review from "@/atoms/Review/Review";
 import Image from "next/image";
+import { AiOutlineHeart } from "react-icons/ai";
 
 function nextTrip() {
   const [favourites, setFavuorites] = useState(null);
@@ -36,8 +37,18 @@ function nextTrip() {
 
                 <h3>{el.name}</h3>
                 <div>
+                  <div className={styles.country}>
+                    <Image
+                      src={`https://flagcdn.com/${el?.countrycode}.svg`}
+                      width={20}
+                      height={15}
+                      alt="flag"
+                    />
+
+                    <p>{el.country}</p>
+                  </div>
                   <p>
-                    {el.country} {el.city} {el.address}
+                    {el.city} {el.address}
                   </p>
                   <Review data={el} />
                 </div>
