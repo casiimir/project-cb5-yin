@@ -5,12 +5,12 @@ import Loader from "@/atoms/Loader/Loader";
 import { GET } from "@/utils/http";
 import FormSearchPages from "@/components/formSearchPages/FormSearchPages";
 import SearchPagination from "@/components/searchPagination/SearchPagination";
-import NotFoundSearch from "@/components/notFoundSearch/NotFoundSearch";
+import NotFoundSearch from "./../NotFoundSearch/NotFoundSearch";
 import { useRouter } from "next/router";
 import { buildSearchQueryString } from "@/utils/utils";
 import { counterReducer } from "@/store/reducers";
 import { counterCases } from "@/store/reducers";
-import Select from "../select/Select";
+import Select from "./../Select/Select";
 
 function SearchWrapper() {
   const [navigation, navigationDispatch] = useReducer(counterReducer, {
