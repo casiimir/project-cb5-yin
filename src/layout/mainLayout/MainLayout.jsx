@@ -6,10 +6,12 @@ import { useRouter } from "next/router";
 import { useContext, useLayoutEffect, useState } from "react";
 import MainModal from "@/components/mainModal/MainModal";
 import AppContext from "@/store/context";
+import { useWindowSize } from "react-use";
 
 const MainLayout = ({ children }) => {
   const [banner, setBanner] = useState();
   const router = useRouter();
+  const { width } = useWindowSize();
   const { state } = useContext(AppContext);
 
   useLayoutEffect(() => {
@@ -18,7 +20,7 @@ const MainLayout = ({ children }) => {
 
   return (
     <div className={styles.MainLayout}>
-      {state.showModal && <MainModal />}
+      {state.showModal && width < 1024 && <MainModal />}
       <Header />
       {banner && <HeroBanner />}
       <div className={styles.Main}>{children}</div>

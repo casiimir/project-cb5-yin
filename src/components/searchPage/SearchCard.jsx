@@ -3,10 +3,11 @@ import styles from "./index.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Review from "@/atoms/Review/Review";
+import Heart from "@/atoms/Heart/Heart";
 
 function SearchCard({ el }) {
   const router = useRouter();
-  // TODO: Completare card
+  console.log(el);
   return (
     <div className={styles.Card}>
       <Image
@@ -16,12 +17,7 @@ function SearchCard({ el }) {
         height={200}
         alt="str"
       />
-      {/* <img
-        className={styles.CardImage}
-        src={el.max_photo_url}
-        width="200px"
-        alt=""
-      /> */}
+
       <div className={styles.CardInfo}>
         <div className={styles.CardWrapper}>
           <h4>{el.hotel_name}</h4>
@@ -30,7 +26,9 @@ function SearchCard({ el }) {
           <p>{el?.distances[0].text}</p>
         </div>
         <div className={styles.CardDetailedInfo}>
-          <Review data={el} />
+          <div>
+            <Review data={el} />
+          </div>
 
           <button
             onClick={() => {

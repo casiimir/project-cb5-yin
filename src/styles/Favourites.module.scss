@@ -24,6 +24,27 @@
       }
     }
 
+    .CardHeader {
+      h3 {
+        display: inline-block;
+      }
+      align-items: flex-start;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .Cardinfo {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .address {
+        margin-bottom: 1rem;
+        height: 25px;
+      }
+    }
+
     .country {
       display: flex;
       gap: 0.5rem;

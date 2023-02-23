@@ -1,27 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import MainLayout from "@/layout/mainLayout/MainLayout";
 import { getFavouritesFromLS } from "@/utils/utils";
 import styles from "@/styles/Favourites.module.scss";
 import Review from "@/atoms/Review/Review";
 import Image from "next/image";
-import { AiOutlineHeart } from "react-icons/ai";
+import { useRouter } from "next/router";
+import Heart from "@/atoms/Heart/Heart";
+import AppContext from "@/store/context";
 
 function nextTrip() {
-  const [favourites, setFavuorites] = useState(null);
+  const { state, dispatch } = useContext(AppContext);
+
+  const router = useRouter();
 
   useEffect(() => {
-    const fav = getFavouritesFromLS();
-    setFavuorites(fav);
+    dispatch({ type: "SET_FAVOURITES", payload: getFavouritesFromLS() });
   }, []);
 
   return (
     <MainLayout>
       <div className={styles.FavouritesWrapper}>
-        {!favourites ? (
+        {!state.favourites ? (
           <h2>No results</h2>
         ) : (
           <>
-            {favourites.map((el, idx) => (
+            {state.favourites?.map((el, idx) => (
               <div key={idx} className={styles.Card}>
                 <div className={styles.ImageWrapper}>
                   <Image
@@ -35,8 +38,11 @@ function nextTrip() {
                   />
                 </div>
 
-                <h3>{el.name}</h3>
-                <div>
+                <div className={styles.CardHeader}>
+                  <h3>{el.name}</h3>
+                  <Heart data={el} />
+                </div>
+                <div className={styles.Cardinfo}>
                   <div className={styles.country}>
                     <Image
                       src={`https://flagcdn.com/${el?.countrycode}.svg`}
@@ -47,12 +53,15 @@ function nextTrip() {
 
                     <p>{el.country}</p>
                   </div>
-                  <p>
+                  <p className={styles.address}>
                     {el.city} {el.address}
                   </p>
                   <Review data={el} />
                 </div>
-                <button>Vedi struttura</button>
+
+                <button onClick={() => router.push(`hotel/${el.hotel_id}`)}>
+                  Vedi struttura
+                </button>
               </div>
             ))}
           </>
