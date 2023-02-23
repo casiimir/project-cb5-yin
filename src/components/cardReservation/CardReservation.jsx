@@ -9,7 +9,7 @@ function CardReservation({ results }) {
         <>
           <Image
             className={styles.CardImage}
-            src={results?.main_photo_url.replace("square60", "square500")}
+            src={results?.main_photo_url?.replace("square60", "square500")}
             width={200}
             height={200}
             alt="str"

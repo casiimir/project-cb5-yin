@@ -14,13 +14,13 @@ function nextTrip() {
   const router = useRouter();
 
   useEffect(() => {
+    console.log(getFavouritesFromLS());
     dispatch({ type: "SET_FAVOURITES", payload: getFavouritesFromLS() });
   }, []);
-
   return (
     <MainLayout>
       <div className={styles.FavouritesWrapper}>
-        {!state.favourites ? (
+        {!state.favourites || state.favourites.length === 0 ? (
           <h2>No results</h2>
         ) : (
           <>
