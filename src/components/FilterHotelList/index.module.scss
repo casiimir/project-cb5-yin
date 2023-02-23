@@ -13,7 +13,21 @@
       justify-content: left;
       align-items: center;
       overflow: hidden;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
       gap: 20px;
+
+      &::-webkit-scrollbar {
+        height: 7px;
+        background-color: transparent;
+        border-radius: 5px;
+        display: none;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: #007bb5;
+      }
 
       .cardHotel {
         background-color: rgb(255, 255, 255);
@@ -59,6 +73,22 @@
       }
     }
   }
+  
+    .arrowLeft {
+    cursor: pointer;
+    opacity: 1;
+    pointer-events: all;
+    border-radius: 50%;
+    visibility: visible;
+    border: none;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.24);
+    position: absolute;
+    top: 30%;
+    left: -20px;
+  }
+
   .arrowRight {
     cursor: pointer;
     opacity: 1;
