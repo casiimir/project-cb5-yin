@@ -1,86 +1,61 @@
+@import "/src/styles/variables.scss";
 .Form {
-  margin: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  box-shadow: 0 0 4px 0 rgba(black, 0.3);
-  border-radius: 6px;
-  padding: 40px;
-  box-shadow: 0 0 4px #242424;
-
-  /*  .FormAffari {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px 0;
-
-    .risposte {
-      display: flex;
-      gap: 10px;
-    }
-  } */
+  border-radius: 2px;
+  padding: 1rem;
+  box-shadow: 0 0 4px rgba($color: #242424, $alpha: 0.3);
+  .Top {
+    padding: 0.8rem 0;
+    text-align: center;
+  }
 
   .FormReservation {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
+
+    gap: 1rem;
+
+    h4 {
+      margin-top: 1rem;
+    }
   }
+
   label {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
   input[type="text"] {
-    width: 300px;
+    width: 100%;
     height: 30px;
-    padding: 5px;
     outline: none;
     border: none;
-    box-shadow: 0 0 4px #242424;
+    box-shadow: 0 0 4px rgba($color: #242424, $alpha: 0.3);
   }
   input {
-    border-radius: 5px;
+    border-radius: 2px;
     padding: 2px 8px;
-  }
-
-  input:hover {
-    background-color: rgba(128, 128, 128, 0.249);
-  }
-
-  /*   .FormPrenotazione {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 0;
-    gap: 10px;
-
-    .risposte {
-      display: flex;
-      gap: 10px;
+    &:focus {
+      outline: 2px solid $blue-button;
     }
-  } */
+  }
+
   .ModalCheckOut {
     display: flex;
     align-items: flex-end;
   }
 
-  .recapiti {
-    p {
-      font-size: 12pt;
-      padding: 30px 0;
-    }
-    label {
-      padding: 5px 0;
-    }
-    select {
-      padding: 10px;
-      font-size: 12pt;
-      box-shadow: 0 0 2px #242424;
-      border-radius: 6px;
+  select {
+    padding: 10px;
+    font-size: 12pt;
+    box-shadow: 0 0 4px rgba($color: #242424, $alpha: 0.3);
+    outline: none;
+    border: none;
+    &:focus {
+      outline: 2px solid $blue-button;
     }
   }
 }
