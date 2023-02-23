@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import OurTeam from "./../ourTeam/OurTeam";
+import OurTeam from "../OurTeam/OurTeam";
 const AboutDescription = () => {
   return (
     <div className={styles.main}>
