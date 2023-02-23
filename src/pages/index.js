@@ -1,5 +1,5 @@
 import Head from "next/head";
-import MainLayout from "@/layout/mainLayout";
+import MainLayout from "./../layout/mainLayout/MainLayout";
 import styles from "@/styles/Home.module.scss";
 import FormSearch from "@/components/formSearch";
 import WorkTeam from "../components/workTeam";

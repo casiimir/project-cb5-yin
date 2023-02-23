@@ -1,5 +1,5 @@
 import FormReservation from "@/components/formReservation";
-import MainLayout from "@/layout/mainLayout";
+import MainLayout from "./../../layout/mainLayout/MainLayout";
 import ModalCheckOut from "../../components/modalCheckOut/ModalCheckOut";
 import Head from "next/head";
 import BookingDetails from "@/components/bookingDetails";

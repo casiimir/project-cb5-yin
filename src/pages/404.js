@@ -1,10 +1,7 @@
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 import FormSearchPages from "@/components/formSearchPages";
 import Link from "next/link";
 import styles from "./../styles/404.module.scss";
-import { Main } from "next/document";
-import MainLayout from "@/layout/mainLayout";
+import MainLayout from "./../layout/mainLayout/MainLayout";
 
 const QuattroZeroQuattro = () => {
   return (
