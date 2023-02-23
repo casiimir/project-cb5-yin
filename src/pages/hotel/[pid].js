@@ -8,7 +8,7 @@ import HotelHeader from "@/components/hotelHeader/HotelHeader";
 import HotelCarousel from "@/components/hotelCarousel/HotelCarousel";
 import HotelDescription from "@/components/hotelDescription/HotelDescription";
 import HotelGallery from "@/components/hotelGallery/HotelGallery";
-import HotelList from "@/components/hotelList/HotelList";
+import HotelSimilarCard from "@/components/hotelSimilarCard/HotelSimilarCard";
 
 import Loader from "@/atoms/Loader/Loader";
 import MainLayout from "@/layout/mainLayout/MainLayout";
@@ -73,38 +73,40 @@ function Hotel({ galleryData, descriptionData, dataHotelReview }) {
 
   return (
     <MainLayout>
-      <div className={styles.main}>
+      <div className={styles.Hotel}>
         {loading ? (
           <Loader />
         ) : (
           <>
-            <div>
-              <HotelHeader dataHotelReview={dataHotelReview} />
-              <div className={styles.SearchAndGalleryWrapper}>
-                {galleryData && (
-                  <div>
-                    <HotelCarousel galleryData={galleryData} />
-                    <HotelGallery galleryData={galleryData} />
+            <div className={styles.columnWrapper}>
+              <div className={styles.columnRight}>
+                <div>
+                  <HotelHeader dataHotelReview={dataHotelReview} />
+                  <div className={styles.SearchAndGalleryWrapper}>
+                    {galleryData && (
+                      <div>
+                        <HotelCarousel galleryData={galleryData} />
+                        <HotelGallery galleryData={galleryData} />
+                      </div>
+                    )}
                   </div>
-                )}
+                </div>
+                <div>
+                  {descriptionData && (
+                    <HotelDescription descriptionData={descriptionData} />
+                  )}
+                </div>
               </div>
-            </div>
-            <div>
-              {descriptionData && (
-                <HotelDescription descriptionData={descriptionData} />
-              )}
-              <FormSearch />
+              <div className={styles.columnLeft}>
+                <FormSearch />
+              </div>
             </div>
             <HotelReviews
               reviewData={reviewData}
               dataHotelReview={dataHotelReview}
             />
             {/*<HotelFacilities dataHotelReview={dataHotelReview} />*/}
-            <h2>
-              Chi ha guardato{` ${dataHotelReview?.name}`} ha guardato anche
-              queste strutture
-            </h2>
-            <HotelList dataHotelReview={dataHotelReview} />
+            <HotelSimilarCard dataHotelReview={dataHotelReview} />
           </>
         )}
       </div>

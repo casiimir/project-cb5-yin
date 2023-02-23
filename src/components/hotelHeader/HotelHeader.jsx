@@ -48,7 +48,11 @@ const HotelHeader = ({ dataHotelReview }) => {
           <div className={styles.topHeader}>
             <div className={styles.left}>
               <span className={styles.typo}>
-                {dataHotelReview.booking_home.group.replaceAll("_", " ")}
+                {
+                  dataHotelReview.booking_home.group
+                    .replaceAll("_", " ")
+                    .split(" ")[0]
+                }
               </span>
               <span className={styles.class}>
                 {!dataHotelReview.class ? "" : str}
