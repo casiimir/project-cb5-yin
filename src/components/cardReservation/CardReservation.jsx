@@ -1,8 +1,8 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
+import Review from "@/atoms/Review/Review";
 
 function CardReservation({ results }) {
-  console.log(results);
   return (
     <div className={styles.Card}>
       {results && (
@@ -21,20 +21,9 @@ function CardReservation({ results }) {
                 {results?.address}, {results?.city}, {results?.country},
                 {results?.zip}
               </p>
-              <p>
-                {results?.review_score_word}--{results?.review_score}
-              </p>
             </div>
-            <div className={styles.CardDetailedInfo}>
-              <div className={styles.CardReviews}>
-                <div className={styles.ReviewScore}>
-                  <p>{results?.review_score}</p>
-                </div>
-                <div className={styles.ReviewsWrapper}>
-                  <span>{results?.review_nr} reviews</span>
-                </div>
-              </div>
-            </div>
+
+            <Review data={results} />
           </div>
         </>
       )}

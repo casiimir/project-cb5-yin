@@ -4,15 +4,11 @@ import styles from "./index.module.scss";
 const FormReservation = () => {
   return (
     <div className={styles.Form}>
-      <h3>Inserisci le tue informazioni</h3>
-      <p>*campi obbligatori</p>
-      {/* <form className={styles.FormAffari}>
-        <label>Viaggi per affari?</label>
-        <div className={styles.risposte}>
-          <input type="radio" value="si" name="si" /> Si
-          <input type="radio" value="no" name="no" /> No
-        </div>
-      </form> */}
+      <div className={styles.Top}>
+        <h3>Inserisci le tue informazioni</h3>
+        <p>*campi obbligatori</p>
+      </div>
+
       <form className={styles.FormReservation}>
         <label>
           Nome *
@@ -26,9 +22,8 @@ const FormReservation = () => {
           Indirizzo e-mail *
           <input type="text" placeholder="Es. mariorossi@gmail.com" required />
         </label>
-      </form>
-      <form className={styles.recapiti}>
-        <p>I tuoi recapiti</p>
+
+        <h4>I tuoi recapiti</h4>
         <label>
           Indirizzo *
           <input type="text" required />
@@ -74,14 +69,7 @@ const FormReservation = () => {
           <input type="text" required />
         </label>
       </form>
-      {/*  <form className={styles.FormPrenotazione}>
-        <label>Per chi stai prenotando?</label>
-        <div className={styles.risposte}>
-          <input type="radio" value="chi" name="chi" /> Per me
-          <input type="radio" value="chi" name="chi" />
-          Per un'altra persona
-        </div>
-      </form> */}
+
       <div className={styles.ModalCheckOut}>
         <ModalCheckOut />
       </div>

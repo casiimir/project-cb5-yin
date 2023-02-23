@@ -42,25 +42,24 @@ export default function Reservation() {
           href="https://cf.bstatic.com/static/img/b25logo/favicon/ebc77706da3aae4aee7b05dadf182390f0d26d11.ico"
         />
       </Head>
-      {loading ? (
-        <Loader />
-      ) : (
-        <>
-          <main className={styles.main}>
-            <MainLayout>
-              <div className={styles.container}>
-                <div className={styles.wrapper}>
-                  <BookingDetails results={results} />
-                </div>
-                <div className={styles.wrap}>
-                  <CardReservation results={results} />
-                  <FormReservation />
-                </div>
+      <MainLayout>
+        <div className={styles.container}>
+          {loading ? (
+            <Loader />
+          ) : (
+            <>
+              <div className={styles.wrapper}>
+                <BookingDetails results={results} />
               </div>
-            </MainLayout>
-          </main>
-        </>
-      )}
+              <div className={styles.wrap}>
+                <h2>Le tue informazioni</h2>
+                <CardReservation results={results} />
+                <FormReservation />
+              </div>
+            </>
+          )}
+        </div>
+      </MainLayout>
     </>
   );
 }
