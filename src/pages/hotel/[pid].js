@@ -2,16 +2,16 @@ import { GET } from "../../utils/http";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
-import FormSearch from "@/components/formSearch";
-import HotelReviews from "@/components/hotelReviews";
+import FormSearch from "@/components/formSearch/FormSearch";
+import HotelReviews from "@/components/hotelReviews/HotelReviews";
 import HotelHeader from "@/components/hotelHeader/HotelHeader";
 import HotelCarousel from "@/components/hotelCarousel/HotelCarousel";
 import HotelDescription from "@/components/hotelDescription/HotelDescription";
 import HotelGallery from "@/components/hotelGallery/HotelGallery";
-import HotelList from "@/components/hotelList";
+import HotelList from "@/components/hotelList/HotelList";
 
 import Loader from "@/atoms/Loader/Loader";
-import MainLayout from "./../../layout/mainLayout/MainLayout";
+import MainLayout from "@/layout/mainLayout/MainLayout";
 
 import styles from "@/styles/hotel.module.scss";
 

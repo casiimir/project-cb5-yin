@@ -1,7 +1,7 @@
-import FormSearchPages from "@/components/formSearchPages";
+import FormSearchPages from "@/components/formSearchPages/FormSearchPages";
 import Link from "next/link";
-import styles from "./../styles/404.module.scss";
-import MainLayout from "./../layout/mainLayout/MainLayout";
+import styles from "@/styles/404.module.scss";
+import MainLayout from "@/layout/mainLayout/MainLayout";
 
 const QuattroZeroQuattro = () => {
   return (

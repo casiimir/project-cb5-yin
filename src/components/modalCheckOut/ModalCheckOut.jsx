@@ -7,6 +7,11 @@ import Link from "next/link";
 const ModalCheckOut = () => {
   const [showModal, setShowModal] = useState(false);
 
+  let audio = new Audio("/SuperMarioBros.mp3");
+  const start = () => {
+    audio.play();
+  };
+
   //   const onHandleClose = () => setShowModal(false);
   const onHandleShow = () => setShowModal(true);
 
@@ -15,7 +20,7 @@ const ModalCheckOut = () => {
   const { width, height } = useWindowSize();
   return (
     <>
-      <button className={styles.Btn} onClick={onHandleShow}>
+      <button className={styles.Btn} onClick={() => { onHandleShow(); start();}}>
         Prenota subito
       </button>
       {showModal && (

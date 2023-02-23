@@ -4,10 +4,11 @@ import styles from "./index.module.scss";
 import Link from "next/link";
 import { GrGithub, GrLinkedin } from "react-icons/gr";
 import { CgWebsite } from "react-icons/cg";
-import { Us } from "./../../mocks/photosAboutUs";
+import { Us } from "../../mocks/photosAboutUs";
 
 const OurTeam = () => {
   const [member, setMember] = useState([0]);
+  const [description, setDescription] = useState([0]);
   const [links, setLinks] = useState(false);
 
   const teamMember = (member) => {
@@ -36,13 +37,13 @@ const OurTeam = () => {
           Us[0].description,
         ]);
 
-        setDescrizione(
+        {/*setDescription(
           "Hi, I'm a 24 years old sicilian web developer, Edgemony scholarship winner since October. "
         );
         setInstagram("https://chiacirrito.github.io/newportfolio/home.html");
         setGitHub("/chiacirrito");
         setLinkedIn("/in/chiara-cirrito-90a2021b7/");
-        setMember("Chiara Cirrito");
+        setMember("Chiara Cirrito");*/}
         break;
 
       case 3:

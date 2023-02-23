@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import styles from "./index.module.scss";
 import Button from "@/atoms/Button/Button";
 
-const Filters = ({ filterByStars, setFilterByStars }) => {
+const StarFilter = ({ filterByStars, setFilterByStars }) => {
   useEffect(() => {}, [filterByStars]);
 
   function handleOnClick(star) {
@@ -64,4 +64,4 @@ const Filters = ({ filterByStars, setFilterByStars }) => {
   );
 };
 
-export default Filters;
+export default StarFilter;

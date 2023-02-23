@@ -2,7 +2,7 @@ import styles from "./index.module.scss";
 import { FaRegUserCircle } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import Button from "@/atoms/Button/Button";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/navbar/Navbar";
 import AppContext from "@/store/context";
 import { useContext } from "react";
 import { cases } from "@/store/reducers";

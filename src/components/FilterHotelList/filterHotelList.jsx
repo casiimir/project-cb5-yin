@@ -1,4 +1,4 @@
-import Filters from "../filters";
+import StarFilter from "@/components/starFilter/StarFilter";
 import { hotels } from "@/mocks/hotels";
 import styles from "./index.module.scss";
 import { useState, useRef } from "react";
@@ -21,7 +21,7 @@ const FilterHotelList = () => {
         Stanze, Ville, Chalet... persino Castelli! Scopri i nostri migliori
         alloggi.
       </p>
-      <Filters
+      <StarFilter
         filterByStars={filterByStars}
         setFilterByStars={setFilterByStars}
       />

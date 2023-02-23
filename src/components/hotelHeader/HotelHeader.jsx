@@ -4,7 +4,7 @@ import { GET } from "../../utils/http";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
-import HotelReserve from "@/components/hotelReserve";
+import HotelReserve from "@/components/hotelReserve/HotelReserve";
 import Heart from "@/atoms/Heart/Heart";
 
 const HotelHeader = ({ dataHotelReview }) => {

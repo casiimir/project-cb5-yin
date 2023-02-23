@@ -1,11 +1,11 @@
 import Head from "next/head";
-import MainLayout from "./../layout/mainLayout/MainLayout";
+import MainLayout from "@/layout/mainLayout/MainLayout";
 import styles from "@/styles/Home.module.scss";
-import FormSearch from "@/components/formSearch";
-import WorkTeam from "../components/workTeam";
-import CityList from "@/components/cityList";
-import FilterHotelList from "@/components/FilterHotelList";
-import SectionOne from "@/components/sectionOneHotel";
+import FormSearch from "@/components/formSearch/FormSearch";
+import WorkTeam from "@/components/workTeam/WorkTeam";
+import CityList from "@/components/cityList/CityList";
+import FilterHotelList from "@/components/filterHotelList/filterHotelList";
+import SectionOne from "@/components/sectionOneHotel/SectionOneHotel";
 
 export default function Home() {
   return (

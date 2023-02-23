@@ -1,7 +1,7 @@
 import styles from "./index.module.scss";
-import CounterAdulti from "../counter/counterForm/CounterAdulti";
-import CounterBambini from "../counter/counterForm/CounterBambini";
-import CounterCamere from "../counter/counterForm/CounterCamere";
+import CounterAdulti from "@/components/counterForm/CounterAdulti/CounterAdulti";
+import CounterBambini from "@/components/counterForm/CounterBambini/CounterBambini";
+import CounterCamere from "@/components/counterForm/CounterCamere/CounterCamere";
 import Button from "@/atoms/Button/Button";
 
 const ModalOccupancy = ({ setOpenModal }) => {
