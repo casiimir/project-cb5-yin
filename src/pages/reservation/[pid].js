@@ -45,7 +45,9 @@ export default function Reservation() {
       <MainLayout>
         <div className={styles.container}>
           {loading ? (
-            <Loader />
+            <div className={styles.loadingWrapper}>
+              <Loader />
+            </div>
           ) : (
             <>
               <div className={styles.wrapper}>
