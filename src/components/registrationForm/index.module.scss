@@ -1,15 +1,23 @@
-.login {
+.signup {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
   gap: 20px;
   padding-top: 3rem;
+
+  .errorMessage {
+    p {
+      color: red;
+    }
+    height: 1rem;
+  }
+
   h2 {
     text-align: center;
     padding: 1rem 0;
   }
+
   .form {
     display: flex;
     align-items: center;
@@ -38,6 +46,10 @@
       input[type="password"]:focus {
         border: 2px solid #006ce4;
       }
+
+      .error {
+        border: 2px solid red;
+      }
     }
 
     input[type="submit"] {
@@ -48,6 +60,7 @@
       padding: 5px 37px;
       width: 360px;
       height: 50px;
+      cursor: pointer;
       &:hover {
         transition: all 0.3s ease;
         background: #003580;
