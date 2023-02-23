@@ -1,7 +1,6 @@
 @import "@/styles/variables.scss";
 
 .Footer {
-
   .blue {
     background-color: $blue-night;
     padding: 50px 0;
@@ -33,7 +32,7 @@
     }
   }
 
-  form {
+  .form {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -88,4 +87,11 @@
   }
 }
 
-
+@media screen and (min-width: 992px) {
+  .Footer {
+    .form {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
