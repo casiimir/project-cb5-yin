@@ -1,13 +1,19 @@
 import Filters from "../filters";
 import { hotels } from "@/mocks/hotels";
 import styles from "./index.module.scss";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
 const FilterHotelList = () => {
   const [filterByStars, setFilterByStars] = useState([2, 3, 4]);
   const router = useRouter();
+
+  const ref = useRef(null);
+  const scroll = (scrollOffset) => {
+    ref.current.scrollLeft += scrollOffset;
+  };
+
   return (
     <div className={styles.HotelList}>
       <h2>Soggiorna in una delle nostre strutture migliori</h2>
@@ -43,7 +49,17 @@ const FilterHotelList = () => {
               </div>
             );
           })}
-          <button className={styles.arrowRight}>
+          <button onClick={() => scroll(-340)} className={styles.arrowLeft}>
+            <Image
+              className={styles.svg}
+              src="/arrowleft.svg"
+              alt=""
+              width={20}
+              height={20}
+              priority
+            />
+          </button>
+          <button onClick={() => scroll(340)} className={styles.arrowRight}>
             <Image
               className={styles.svg}
               src="/arrowright.svg"
