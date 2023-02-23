@@ -4,6 +4,7 @@
   padding: 10px;
 
   .container {
+    padding: 40px 60px;
     gap: 40px;
     flex-direction: column;
     align-items: center;
@@ -11,19 +12,23 @@
     justify-content: center;
 
     .title {
+      padding-top: 30px;
       flex-direction: column;
       display: flex;
       justify-content: center;
+      align-items: center;
 
       h1 {
       }
     }
     .description {
+      padding: 10px 70px;
       margin-top: 40px;
       display: flex;
       flex-direction: column;
       gap: 20px;
       width: 75vw;
+      text-align: justify;
       .titleDescription {
         display: flex;
         justify-content: center;
