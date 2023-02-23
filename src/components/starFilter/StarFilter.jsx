@@ -12,7 +12,7 @@ const StarFilter = ({ filterByStars, setFilterByStars }) => {
       setFilterByStars([...filterByStars, star]);
     } else {
       //Rimuovi
-
+      if (filterByStars.length === 1) return;
       setFilterByStars(filterByStars.filter((el) => el !== star));
     }
   }

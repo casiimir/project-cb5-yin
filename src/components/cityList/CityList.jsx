@@ -35,7 +35,10 @@ const CityList = () => {
                 onClick={() => handleDynamicRoute(city.dest_id)}
               ></div>
               <h3 className={styles.cityName}>{city.name}</h3>
-              <h2 className={styles.cityCTA}>
+              <h2
+                className={styles.cityCTA}
+                onClick={() => handleDynamicRoute(city.dest_id)}
+              >
                 Scopri<br></br>
                 {city.name}
               </h2>
