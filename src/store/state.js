@@ -4,7 +4,7 @@ const initialValue = {
   check_out: "22-12-2012",
   prenotation: {
     adults: 2,
-    children: 0,
+    children: 1,
     rooms: 1,
   },
   auth: {
