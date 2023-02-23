@@ -1,14 +1,28 @@
 @import "./variables.scss";
 
-.main {
-
-.SearchAndGalleryWrapper {
-  display: flex;
-  flex-direction: column-reverse;
-  
-  @media screen and (min-width: 992px) {
-    flex-direction: row;
-    justify-content: space-between;
+.Hotel {
+  .SearchAndGalleryWrapper {
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
+  @media screen and (min-width: 800px) {
+    .Hotel {
+      .columnWrapper {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items:baseline;
+      padding-top: 20px;
+
+      .columnRight {
+        width: 70%;
+      }
+      .columnLeft {
+        width: 30%;
+      }
 }
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+

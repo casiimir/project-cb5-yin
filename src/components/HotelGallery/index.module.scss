@@ -1,8 +1,9 @@
 $gallery-width: 800px;
+
 .Gallery {
   display: none;
   overflow: hidden;
-  width: $gallery-width;
+  max-width: $gallery-width;
 
   img {
     object-fit: cover;
@@ -13,7 +14,7 @@ $gallery-width: 800px;
 }
 .GalleryTop {
   display: flex;
-  padding: 0.5rem;
+  padding: 8px 0px 8px 8px;
   gap: 0.5rem;
   height: 450px;
 
@@ -41,11 +42,14 @@ $gallery-width: 800px;
 }
 
 .GalleryBottom {
-  padding: 0.5rem;
+  padding: 8px;
   padding-top: 0;
   height: 100px;
+  width: 100%;
   display: flex;
+  overflow: hidden;
   gap: 0.5rem;
+  
   .GalleryBottomImg {
     height: 100%;
     width: calc(($gallery-width - 3rem) / 5);

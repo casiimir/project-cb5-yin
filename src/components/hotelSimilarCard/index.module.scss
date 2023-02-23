@@ -1,0 +1,98 @@
+@import "@/styles/variables.scss";
+
+.HotelSimilarCard {
+  position: relative;
+  overflow: visible;
+  padding: 16px 0px 16px 16px;
+
+  .hotelContainer {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    gap: 10px;
+    padding-top: 10px;
+    scroll-behavior: smooth;
+    touch-action: pan-x;
+
+    .cardHotel {
+      position: relative;
+      background-color: $white;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      width: 215px;
+      height: 370px;
+      border-radius: 3px;
+      box-shadow: 0 3px 4px 0 rgb(0 0 0 / 14%), 0 1px 8px 0 rgb(0 0 0 / 12%),
+        0 2px 3px -1px rgb(0 0 0 / 20%);
+      -webkit-box-shadow: 0 3px 4px 0 rgb(0 0 0 / 14%),
+        0 1px 8px 0 rgb(0 0 0 / 12%), 0 2px 3px -1px rgb(0 0 0 / 20%);
+      margin-bottom: 8px;
+      margin-left: 2px;
+
+      img {
+        object-fit: cover;
+        height: 215px;
+        width: 100%;
+        border-radius: 3px 3px 0px 0px;
+      }
+
+      .content {
+        padding: 8px;
+
+        .typo {
+          font-size: 12px;
+          text-transform: capitalize;
+
+          :last-child {
+            font-size: 10px;
+          }
+        }
+
+        .score {
+          font-size: 14px;
+        }
+      }
+      .reserveButton {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        background-color: $blue-button;
+        color: $white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.arrowLeft {
+  cursor: pointer;
+  opacity: 1;
+  pointer-events: all;
+  border-radius: 50%;
+  visibility: visible;
+  border: none;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.24);
+  position: absolute;
+  top: 45%;
+  left: 0px;
+}
+
+.arrowRight {
+  cursor: pointer;
+  opacity: 1;
+  pointer-events: all;
+  border-radius: 50%;
+  visibility: visible;
+  border: none;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.24);
+  position: absolute;
+  top: 45%;
+  right: 0px;
+}

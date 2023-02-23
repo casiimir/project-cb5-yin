@@ -95,21 +95,26 @@ const FormSearch = () => {
         <div className={styles.title}>
           <h3>Non sei convinto? Cerca ancora</h3>
         </div>
-        <div className={styles.wrapperSearch}>
-          <div className={styles.inputSearch}>
-            <input
-              value={
-                state.location.city_name ? state.location.city_name : location
-              }
-              onChange={(e) => onHandleChangeInput(e.target.value)}
-              type="search"
-              placeholder="Dove ti va di andare?"
-            />
-            {location !== "" && (
-              <div className={styles.deleteInput}>
-                <button onClick={() => handleRemoveInput()}> </button>
-              </div>
-            )}
+        <div>
+          <p className={styles.formSpecification}>
+            Destinazione/nome struttura:
+          </p>
+          <div className={styles.wrapperSearch}>
+            <div className={styles.inputSearch}>
+              <input
+                value={
+                  state.location.city_name ? state.location.city_name : location
+                }
+                onChange={(e) => onHandleChangeInput(e.target.value)}
+                type="search"
+                placeholder="Dove ti va di andare?"
+              />
+              {location !== "" && (
+                <div className={styles.deleteInput}>
+                  <button onClick={() => handleRemoveInput()}> </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
         {openModal && (
@@ -121,19 +126,24 @@ const FormSearch = () => {
         )}
 
         <div className={styles.inputDate}>
+          <p className={styles.formSpecification}>Data Check-in</p>
           <input type="date" onChange={(e) => handleCheckIn(e.target.value)} />
+          <p className={styles.formSpecification}>Data Check-out</p>
           <input type="date" onChange={(e) => handleCheckOut(e.target.value)} />
         </div>
-        <div className={styles.inputOccupancy}>
-          <button
-            type="button"
-            onClick={() => {
-              setModalOpen(true);
-            }}
-          >
-            {state.prenotation.adults} adulti - {state.prenotation.children}{" "}
-            bambini - {state.prenotation.rooms} camera
-          </button>
+        <div>
+          <p className={styles.formSpecification}>Numero posti letto</p>
+          <div className={styles.inputOccupancy}>
+            <button
+              type="button"
+              onClick={() => {
+                setModalOpen(true);
+              }}
+            >
+              {state.prenotation.adults} adulti - {state.prenotation.children}{" "}
+              bambini - {state.prenotation.rooms} camera
+            </button>
+          </div>
         </div>
 
         {modalOpen && <ModalOccupancy setOpenModal={setModalOpen} />}

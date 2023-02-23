@@ -1,3 +1,5 @@
+@import "/src/styles/variables.scss";
+
 .main {
   padding: 16px;
 
@@ -11,5 +13,13 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
+  }
+  button {
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    width: fit-content;
+    color: $blue-button;
+    font-weight: bold;
   }
 }

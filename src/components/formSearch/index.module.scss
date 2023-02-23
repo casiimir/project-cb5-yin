@@ -6,6 +6,10 @@
   align-items: center;
   padding: 16px;
 
+  .formSpecification {
+    display: none;
+  }
+
   .title {
     display: none;
     text-align: left;
@@ -26,6 +30,10 @@
     background: $yellow;
     padding: 5px;
     position: relative;
+
+    :nth-child(n) {
+      width: 100%;
+    }
 
     .wrapperSearch {
       position: relative;
@@ -169,25 +177,46 @@
 }
 
 .FormSearchOther {
-  padding:0;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  .formSpecification {
+    display: none;
+  }
 
   .title {
     display: block;
+    text-align: left;
   }
 
-.wrapper {
-  padding: 10px;
-  border-radius: 0;
-  gap: 12px;
+  .wrapper {
+    padding: 10px;
+    border-radius: 0;
+    gap: 12px;
+    display: flex;
+
+    :nth-child(n) {
+      width: 100%;
+    }
+  }
 }
-}
+
 @media only screen and (min-width: 992px) {
   .FormSearch {
     padding: 0px 16px;
     margin-top: -25px;
 
+    .formSpecification {
+      display: none;
+    }
+
     .wrapper {
       flex-direction: row;
+
+      :nth-child(n) {
+        width: inherit !important;
+      }
 
       .wrapperSearch {
         width: 350px;
@@ -212,11 +241,186 @@
       }
 
       .inputSubmit {
-        width: auto;
+        width: 115px !important;
 
         input[type="submit"] {
           width: 115px;
           flex: 1;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 800px) {
+  .FormSearchOther {
+    margin-top: 0px;
+
+    .formSpecification {
+      display: flex;
+      display: block;
+      padding-bottom: 4px;
+    }
+
+    .title {
+      display: block;
+      text-align: left;
+      padding-bottom: 20px;
+    }
+
+    .wrapper {
+      height: 715px;
+      width: 100%;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: left;
+      gap: 4px;
+      background: $yellow;
+      padding: 16px;
+      position: relative;
+
+      .wrapperSearch {
+        position: relative;
+        display: flex;
+        width: 100%;
+        background-color: $white;
+
+        .inputSearch {
+          position: relative;
+          display: flex;
+          width: 100%;
+          padding: 8px;
+
+          &:hover {
+            outline: 0.3px solid #ff8000;
+          }
+
+          input[type="search"] {
+            height: calc(50px - 16px);
+            width: 100%;
+            border: none;
+            border-radius: 2px;
+            padding: 4px;
+            background-image: url(../../../public/search.svg);
+            background-repeat: no-repeat;
+            background-size: 20px;
+            background-position: 4px 50%;
+            padding-left: 42px;
+            padding-right: 50px;
+
+            &:focus {
+              outline: 2px solid $light-blue;
+            }
+
+            &::-webkit-search-cancel-button {
+              display: none;
+            }
+          }
+
+          .deleteInput {
+            display: flex;
+            align-items: center;
+            align-items: center;
+            justify-content: center;
+            background-image: url(../../../public/delete.svg);
+            background-repeat: no-repeat;
+            background-size: 20px;
+            background-position: 0px 50%;
+            position: absolute;
+            cursor: pointer;
+            height: 100%;
+            width: 16px;
+            top: 0;
+            right: 20px;
+
+            button {
+              width: 16px;
+              height: 16px;
+              border: none;
+              cursor: pointer;
+              background-color: transparent;
+            }
+          }
+        }
+      }
+      .inputDate {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 155px;
+        gap: 4px;
+
+        input[type="date"] {
+          position: relative;
+          height: 50px;
+          width: 100%;
+          border: none;
+          border-radius: 2px;
+          padding: 4px;
+          background-image: url(../../../public/calendar.svg);
+          background-repeat: no-repeat;
+          background-size: 20px;
+          background-position: 12px 50%;
+          padding-left: 50px;
+
+          &:hover {
+            outline: 0.3px solid #ff8000;
+          }
+
+          &::-webkit-calendar-picker-indicator {
+            position: absolute;
+            left: 10px;
+            font-size: 20px;
+            opacity: 0;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .inputOccupancy {
+        display: flex;
+        width: 100%;
+
+        button {
+          background-color: white;
+          height: 50px;
+          width: 100%;
+          border: none;
+          border-radius: 2px;
+          background-image: url(../../../public/arrowbottom.svg),
+            url(../../../public/occupancy.svg);
+          background-size: 20px;
+          background-position: top 50% right 16px, top 50% left 16px;
+          background-repeat: no-repeat;
+          padding-left: 40px;
+          padding-right: 40px;
+          backdrop-filter: invert(1);
+          &:hover {
+            outline: 0.3px solid #ff8000;
+          }
+        }
+      }
+
+      .inputSubmit {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        padding: 5px;
+
+        input[type="submit"] {
+          width: 100%;
+          background: $blue-button;
+          border-radius: 2px;
+          border: none;
+          color: white;
+          font-size: x-large;
+          height: 50px;
+          transition: all 0.2s ease;
+          &:hover {
+            background: $dark-blue;
+            cursor: pointer;
+          }
         }
       }
     }
