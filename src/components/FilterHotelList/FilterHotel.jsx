@@ -26,7 +26,7 @@ const FilterHotelList = () => {
         setFilterByStars={setFilterByStars}
       />
       <div className={styles.container}>
-        <div className={styles.hotelContainer}>
+        <div className={styles.hotelContainer} ref={ref}>
           {hotels.map((elem, index) => {
             if (!filterByStars.includes(elem.class)) return undefined;
             return (
