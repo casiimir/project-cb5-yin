@@ -50,14 +50,14 @@
 }
 
 .Card {
-  border: 1px solid black;
+  border: 1px solid rgba($color: #242424, $alpha: 0.1);
   display: flex;
   padding: 1rem;
-  border-radius: 4px;
+  border-radius: 2px;
   gap: 1rem;
 
   .CardImage {
-    border-radius: 4px;
+    border-radius: 2px;
     object-fit: cover;
   }
   .CardInfo {
@@ -70,6 +70,7 @@
     .CardDetailedInfo {
       display: flex;
       flex-direction: column;
+      gap: 1rem;
       justify-content: space-between;
     }
 
@@ -79,49 +80,10 @@
       border-radius: 6px;
       color: white;
       padding: 8px 12px;
+      cursor: pointer;
     }
     @media screen and (min-width: 768px) {
       flex-direction: row;
     }
   }
 }
-/* @media screen and (min-width: 768px) {
-  .Card {
-    border: 1px solid black;
-    padding: 1rem;
-    border-radius: 4px;
-    gap: 1rem;
-    justify-content: space-between;
-    .CardImage {
-      border-radius: 4px;
-    }
-    .CardInfo{
-      flex-direction: row;
-      
-    .CardWrapper {
-    }
-    .CardDetailedInfo {
-      flex-direction: column;
-      padding: 0.5rem;
-      justify-content: space-between;
-    }
-    .CardReviews {
-      padding: 0.5rem;
-      justify-content: space-between;
-      .ReviewsWrapper {
-        font-size: 12px;
-
-        flex-direction: column;
-      }
-      .ReviewScore {
-        background-color: blue;
-        color: white;
-        border-radius: 4px 4px 4px 0;
-        padding: 2px;
-      }
-    }
-    
-    }
-  }
-}
- */

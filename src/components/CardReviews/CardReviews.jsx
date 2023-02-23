@@ -1,8 +1,6 @@
 import styles from "./index.module.scss";
 
 const CardReviews = () => {
-  //console.log(customer.author.avatar);
-
   return (
     <div className={styles.container}>
       <div className={styles.userReview}>
@@ -16,11 +14,3 @@ const CardReviews = () => {
   );
 };
 export default CardReviews;
-{
-  /* <img
-          src={customer.author.avatar} //{entrance_photo_url}
-          alt="nameHotel" //{nameHotel}
-          width={40}
-          height={40}
-        /> */
-}

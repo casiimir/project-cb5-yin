@@ -4,6 +4,7 @@ import SearchCard from "./SearchCard";
 import Loader from "@/atoms/Loader/Loader";
 import { GET } from "@/utils/http";
 import FormSearchPages from "@/components/formSearchPages/FormSearchPages";
+import FormSearch from "../formSearch";
 import SearchPagination from "@/components/searchPagination/SearchPagination";
 import NotFoundSearch from "./../NotFoundSearch/NotFoundSearch";
 import { useRouter } from "next/router";
@@ -52,8 +53,8 @@ function SearchWrapper() {
     <div className={styles.Container}>
       <div className={styles.SearchWrapper}>
         <div className={styles.LeftSection}>
-          <FormSearchPages />
-          {/* <FormSearch />  TODO: FRA  */}
+          {/* <FormSearchPages /> */}
+          <FormSearch />
         </div>
         <div className={styles.RightSection}>
           {loading ? (

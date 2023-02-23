@@ -8,7 +8,7 @@ function Review({ data }) {
         <p>{data?.review_score}</p>
       </div>
       <div className={styles.ReviewsWrapper}>
-        <span>{data?.review_score_word}</span>
+        <span className={styles.word}>{data?.review_score_word}</span>
         <span>{data?.review_nr} reviews</span>
       </div>
     </div>

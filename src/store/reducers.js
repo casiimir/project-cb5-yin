@@ -21,6 +21,7 @@ const cases = {
 
   ADD_FAVOURITE: "ADD_FAVOURITE",
   REMOVE_FAVOURITE: "REMOVE_FAVOURITE",
+  SET_FAVOURITES: "SET_FAVOURITES",
 
   TOGGLE_MODAL: "TOGGLE_MODAL",
 };
@@ -62,6 +63,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         showModal: !state.showModal,
+      };
+    case cases.SET_FAVOURITES:
+      return {
+        ...state,
+        favourites: action.payload,
       };
     case cases.ADD_FAVOURITE:
       let updatedFav = [...state.favourites, action.payload];
