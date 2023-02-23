@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import { GET } from "@/utils/http";
 import AppContext from "@/store/context";
-import ModalInput from "../modalInput/ModalInput";
+import ModalInput from "@/components/modalInput/ModalInput";
 import styles from "./index.module.scss";
-import ModalOccupancy from "../modalOccupancy";
+import ModalOccupancy from "@/components/modalOccupancy/ModalOccupancy";
 import { useRouter } from "next/router";
 //componente da rimuovere
 const FormSearchPages = () => {

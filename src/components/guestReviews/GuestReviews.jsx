@@ -1,6 +1,5 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
-import { customersReview } from "../../mocks/review_customers";
 
 const GuestReviews = ({ dataHotelReview, reviewData }) => {
   console.log(reviewData);

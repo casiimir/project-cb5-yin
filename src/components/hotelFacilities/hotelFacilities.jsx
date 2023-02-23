@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./index.module.scss";
-import { MetaPropertiesDescription } from "./../../mocks/metaPropertiesDescription";
+import { MetaPropertiesDescription } from "../../mocks/metaPropertiesDescription";
 
 function HotelFacilities({ dataHotelReview }) {
   const data_HotelFacilityType_id = dataHotelReview.hotel_facilities;

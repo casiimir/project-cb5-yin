@@ -3,15 +3,14 @@ import styles from "./index.module.scss";
 import SearchCard from "./SearchCard";
 import Loader from "@/atoms/Loader/Loader";
 import { GET } from "@/utils/http";
-import FormSearchPages from "../formSearchPages";
-import SearchPagination from "./../searchPagination/index";
-import NotFoundSearch from "../NotFoundSearch/NotFoundSearch";
+import FormSearchPages from "@/components/formSearchPages/FormSearchPages";
+import SearchPagination from "@/components/searchPagination/SearchPagination";
+import NotFoundSearch from "@/components/notFoundSearch/NotFoundSearch";
 import { useRouter } from "next/router";
 import { buildSearchQueryString } from "@/utils/utils";
 import { counterReducer } from "@/store/reducers";
 import { counterCases } from "@/store/reducers";
-import FormSearch from "../formSearch";
-import Select from "../Select/Select";
+import Select from "../select/Select";
 
 function SearchWrapper() {
   const [navigation, navigationDispatch] = useReducer(counterReducer, {

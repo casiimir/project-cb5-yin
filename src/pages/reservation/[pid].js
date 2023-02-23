@@ -1,9 +1,9 @@
-import FormReservation from "@/components/formReservation";
-import MainLayout from "./../../layout/mainLayout/MainLayout";
+import FormReservation from "@/components/formReservation/FormReservation";
+import MainLayout from "@/layout/mainLayout/MainLayout";
 import Head from "next/head";
-import BookingDetails from "@/components/bookingDetails";
-import styles from "../../styles/reservation.module.scss";
-import CardReservation from "@/components/cardReservation";
+import BookingDetails from "@/components/bookingDetails/BookingDetails";
+import styles from "@/styles/reservation.module.scss";
+import CardReservation from "@/components/cardReservation/CardReservation";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Loader from "@/atoms/Loader/Loader";

@@ -1,4 +1,4 @@
-import ModalCheckOut from "../modalCheckOut";
+import ModalCheckOut from "@/components/modalCheckOut/ModalCheckOut";
 import styles from "./index.module.scss";
 
 const FormReservation = () => {

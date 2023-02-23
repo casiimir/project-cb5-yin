@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Loader from "@/atoms/Loader/Loader";
-import LoginForm from "./../../components/loginForm/LoginForm";
-import RegistrationForm from "./../../components/registrationForm/RegistrationForm";
-import styles from "../../styles/login.module.scss";
+import LoginForm from "@/components/loginForm/LoginForm";
+import RegistrationForm from "@/components/registrationForm/RegistrationForm";
+import styles from "@/styles/login.module.scss";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MainLayout from "./../../layout/mainLayout/MainLayout";
+import MainLayout from "@/layout/mainLayout/MainLayout";
 import { getFavouritesFromLS } from "@/utils/utils";
 import styles from "@/styles/Favourites.module.scss";
 import Review from "@/atoms/Review/Review";
