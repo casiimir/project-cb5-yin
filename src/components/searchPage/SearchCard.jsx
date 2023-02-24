@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import Review from "@/atoms/Review/Review";
 import Heart from "@/atoms/Heart/Heart";
-import SectionOne from "../sectionOneHotel";
+import SectionOne from "../heroOffers";
 
 function SearchCard({ el }) {
   const router = useRouter();

@@ -46,11 +46,8 @@ export default function Reservation() {
   return (
     <>
       <Head>
-        <title>Booking | The best Booking clone built with NextJS</title>
-        <meta
-          name="description"
-          content="Booking | The best Booking clone built with NextJS"
-        />
+        <title>Booking | Prenota il tuo soggiorno</title>
+        <meta name="description" content="Booking | Prenota il tuo soggiorno" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
           rel="icon"

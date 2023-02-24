@@ -99,7 +99,7 @@ const FormSearch = () => {
         <div className={styles.title}>
           <h3>Non sei convinto? Cerca ancora</h3>
         </div>
-        <div>
+        <div className={styles.field}>
           <p className={styles.formSpecification}>
             Destinazione/nome struttura:
           </p>
@@ -135,7 +135,7 @@ const FormSearch = () => {
           <p className={styles.formSpecification}>Data Check-out</p>
           <input type="date" onChange={(e) => handleCheckOut(e.target.value)} />
         </div>
-        <div>
+        <div className={styles.field}>
           <p className={styles.formSpecification}>Numero posti letto</p>
           <div className={styles.inputOccupancy}>
             <button

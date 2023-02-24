@@ -12,6 +12,7 @@ import HotelSimilarCard from "@/components/hotelSimilarCard/HotelSimilarCard";
 
 import Loader from "@/atoms/Loader/Loader";
 import MainLayout from "@/layout/mainLayout/MainLayout";
+import Head from "next/head";
 
 import styles from "./../../styles/Hotel.module.scss";
 import AppContext from "@/store/context";
@@ -57,48 +58,59 @@ function Hotel({ galleryData, descriptionData, dataHotelReview }) {
   }, [router.isReady]);
 
   return (
-    <MainLayout>
-      <div className={styles.Hotel}>
-        {loading ? (
-          <Loader />
-        ) : (
-          <>
-            <div className={styles.columnWrapper}>
-              <div className={styles.columnRight}>
-                <div>
-                  <HotelHeader
-                    dataHotelReview={dataHotelReview}
-                    additionalstr={additionalstr}
-                  />
-                  <div className={styles.SearchAndGalleryWrapper}>
-                    {galleryData && (
-                      <div>
-                        <HotelCarousel galleryData={galleryData} />
-                        <HotelGallery galleryData={galleryData} />
-                      </div>
+    <>
+      <Head>
+        <title>Booking | The best Booking clone built with NextJS</title>
+        <meta
+          name="description"
+          content="Booking | The best Booking clone built with NextJS"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          rel="icon"
+          href="https://cf.bstatic.com/static/img/b25logo/favicon/ebc77706da3aae4aee7b05dadf182390f0d26d11.ico"
+        />
+      </Head>
+      <MainLayout>
+        <div className={styles.Hotel}>
+          {loading ? (
+            <Loader />
+          ) : (
+            <>
+              <div className={styles.columnWrapper}>
+                <div className={styles.columnRight}>
+                  <div>
+                    <HotelHeader dataHotelReview={dataHotelReview} />
+                    <div className={styles.SearchAndGalleryWrapper}>
+                      {galleryData && (
+                        <div>
+                          <HotelCarousel galleryData={galleryData} />
+                          <HotelGallery galleryData={galleryData} />
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  <div>
+                    {descriptionData && (
+                      <HotelDescription descriptionData={descriptionData} />
                     )}
                   </div>
                 </div>
-                <div>
-                  {descriptionData && (
-                    <HotelDescription descriptionData={descriptionData} />
-                  )}
+                <div className={styles.columnLeft}>
+                  <FormSearch />
                 </div>
               </div>
-              <div className={styles.columnLeft}>
-                <FormSearch />
-              </div>
-            </div>
-            <HotelReviews
-              reviewData={reviewData}
-              dataHotelReview={dataHotelReview}
-            />
-            {/*<HotelFacilities dataHotelReview={dataHotelReview} />*/}
-            <HotelSimilarCard dataHotelReview={dataHotelReview} />
-          </>
-        )}
-      </div>
-    </MainLayout>
+              <HotelReviews
+                reviewData={reviewData}
+                dataHotelReview={dataHotelReview}
+              />
+              {/*<HotelFacilities dataHotelReview={dataHotelReview} />*/}
+              <HotelSimilarCard dataHotelReview={dataHotelReview} />
+            </>
+          )}
+        </div>
+      </MainLayout>
+    </>
   );
 }
 
