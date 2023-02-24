@@ -11,6 +11,7 @@ export const hotels = [
     city: "Berlin",
     country: "Germany",
     class: 4,
+    review_nr: 15763,
   },
 
   {
@@ -25,6 +26,7 @@ export const hotels = [
     city: "Kaprun",
     country: "Austria",
     class: 0,
+    review_nr: 21,
   },
 
   {
@@ -39,6 +41,7 @@ export const hotels = [
     city: "Kaunas",
     country: "Lithuania",
     class: 4,
+    review_nr: 1867,
   },
 
   {
@@ -53,6 +56,7 @@ export const hotels = [
     city: "Sveti Petar u Šumi",
     country: "Croatia",
     class: 2,
+    review_nr: 9,
   },
 
   {
@@ -67,6 +71,7 @@ export const hotels = [
     city: "Hannover",
     country: "Germany",
     class: 0,
+    review_nr: 4,
   },
 
   {
@@ -81,6 +86,7 @@ export const hotels = [
     city: "Yekaterinburg",
     country: "Russia",
     class: 0,
+    review_nr: 1,
   },
 
   {
@@ -95,6 +101,7 @@ export const hotels = [
     city: "Positano",
     country: "Italy",
     class: 0,
+    review_nr: 5,
   },
   {
     hotel_id: 1377057,
@@ -108,6 +115,7 @@ export const hotels = [
     city: "Casa Marchetti",
     country: "Italia",
     class: 0,
+    review_nr: 4,
   },
   {
     hotel_id: 1377056,
@@ -120,7 +128,12 @@ export const hotels = [
     countrycode: "hr",
     city: "Bol",
     country: "Croatia",
+<<<<<<< Updated upstream
     class: 1,
+=======
+    class: 3,
+    review_nr: 7,
+>>>>>>> Stashed changes
   },
   {
     hotel_id: 1377050,
@@ -134,6 +147,7 @@ export const hotels = [
     city: "Reutov",
     country: "Russia",
     class: 0,
+    review_nr: 93,
   },
 
   {
@@ -148,6 +162,7 @@ export const hotels = [
     city: "Perth",
     country: "Australia",
     class: 0,
+    review_nr: 824,
   },
   {
     hotel_id: 1377047,
@@ -161,6 +176,7 @@ export const hotels = [
     city: "Novalja",
     country: "Croatia",
     class: 2,
+    review_nr: 4,
   },
   {
     hotel_id: 1377074,
@@ -174,58 +190,7 @@ export const hotels = [
     city: "Vodice",
     country: "Croatia",
     class: 5,
-  },
-  {
-    hotel_id: 1377075,
-    hoteltype_id: 220,
-    name: "Chalet en Palma de Mallorca",
-    entrance_photo_url:
-      "https://cf.bstatic.com/images/hotel/square60/472/47262686.jpg",
-    review_score: "3.2",
-    review_score_word: "",
-    countrycode: "es",
-    city: "Son Sardina",
-    country: "Spain",
-    class: 1,
-  },
-  {
-    hotel_id: 1377076,
-    hoteltype_id: 204,
-    name: "Astarta Hotel",
-    entrance_photo_url:
-      "https://cf.bstatic.com/images/hotel/square60/472/47262758.jpg",
-    review_score: "6.0",
-    review_score_word: "Passable",
-    countrycode: "bg",
-    city: "Lozenets",
-    country: "Bulgaria",
-    class: 2,
-  },
-  {
-    hotel_id: 1377077,
-    hoteltype_id: 201,
-    name: "Apartamento El Pozuelo III",
-    entrance_photo_url:
-      "https://cf.bstatic.com/images/hotel/square60/216/216840309.jpg",
-    review_score: "4.0",
-    review_score_word: "Passable",
-    countrycode: "es",
-    city: "Tarifa",
-    country: "Spain",
-    class: 1,
-  },
-  {
-    hotel_id: 1377078,
-    hoteltype_id: 201,
-    name: "Apartamentos El Pozuelo IV",
-    entrance_photo_url:
-      "https://cf.bstatic.com/images/hotel/square60/151/151588399.jpg",
-    review_score: "5.00",
-    review_score_word: "Passable",
-    countrycode: "es",
-    city: "Tarifa",
-    country: "Spain",
-    class: 1,
+    review_nr: 11,
   },
   {
     hotel_id: 1377079,
@@ -239,6 +204,7 @@ export const hotels = [
     city: "Conil de la Frontera",
     country: "Spain",
     class: 0,
+    review_nr: 0,
   },
   {
     hotel_id: 1377097,
@@ -252,6 +218,7 @@ export const hotels = [
     city: "Benalmádena",
     country: "Spain",
     class: "2",
+    review_nr: 0,
   },
   {
     hotel_id: 1377100,
@@ -265,6 +232,7 @@ export const hotels = [
     city: "Chiclana de la Frontera",
     country: "Spain",
     class: "5",
+    review_nr: 25,
   },
   {
     hotel_id: 1377112,
@@ -278,58 +246,7 @@ export const hotels = [
     city: "El Puerto de Santa María",
     country: "Spain",
     class: "1",
-  },
-  {
-    hotel_id: 1377170,
-    hoteltype_id: 213,
-    name: "Villa Les Lauriers",
-    entrance_photo_url:
-      "https://cf.bstatic.com/images/hotel/square60/472/47263244.jpg",
-    review_score: "5.0",
-    review_score_word: "",
-    countrycode: "fr",
-    city: "Lambesc",
-    country: "France",
-    class: 4,
-  },
-  {
-    hotel_id: 1377180,
-    hoteltype_id: 201,
-    name: "Apart strolz",
-    entrance_photo_url:
-      "https://cf.bstatic.com/images/hotel/square60/472/47263814.jpg",
-    review_score: "9.6",
-    review_score_word: "Exceptional",
-    countrycode: "at",
-    city: "Sankt Anton am Arlberg",
-    country: "Austria",
-    class: 5,
-  },
-  {
-    hotel_id: 1377190,
-    hoteltype_id: 208,
-    name: "Bed en Breakfast Panamera",
-    entrance_photo_url:
-      "https://cf.bstatic.com/images/hotel/square60/489/48917377.jpg",
-    review_score: "8.9",
-    review_score_word: "Fabulous",
-    countrycode: "nl",
-    city: "Sint Annaparochie",
-    country: "Netherlands",
-    class: 1,
-  },
-  {
-    hotel_id: 1377200,
-    hoteltype_id: 216,
-    name: "BAYANA Hotel & Hostel",
-    entrance_photo_url:
-      "https://cf.bstatic.com/images/hotel/square60/251/251947761.jpg",
-    review_score: "8.5",
-    review_score_word: "Very good",
-    countrycode: "kg",
-    city: "Osh",
-    country: "Kyrgyzstan",
-    class: 5,
+    review_nr: 4,
   },
   {
     hotel_id: 1377240,
@@ -343,6 +260,7 @@ export const hotels = [
     city: "Trabzon",
     country: "Turkey",
     class: 0,
+    review_nr: 0,
   },
   {
     hotel_id: 1377250,
@@ -356,6 +274,7 @@ export const hotels = [
     city: "Gorodomlya",
     country: "Russia",
     class: 0,
+    review_nr: 0,
   },
   {
     hotel_id: 1377251,
@@ -369,6 +288,7 @@ export const hotels = [
     city: "Teplice",
     country: "Czech Republic",
     class: 0,
+    review_nr: 0,
   },
   {
     hotel_id: 1377253,
@@ -382,6 +302,7 @@ export const hotels = [
     city: "Méribel",
     country: "France",
     class: 5,
+    review_nr: 1,
   },
   {
     hotel_id: 1377255,
@@ -395,32 +316,7 @@ export const hotels = [
     city: "Los Arcos",
     country: "Spain",
     class: 0,
-  },
-  {
-    hotel_id: 1377257,
-    hoteltype_id: 203,
-    name: "Mt Hutt Bunkhouse & Lodge",
-    entrance_photo_url:
-      "https://cf.bstatic.com/images/hotel/square60/765/76545181.jpg",
-    review_score: "9.4",
-    review_score_word: "Superb",
-    countrycode: "nz",
-    city: "Methven",
-    country: "New Zealand",
-    class: 5,
-  },
-  {
-    hotel_id: 1377258,
-    hoteltype_id: 201,
-    name: "Old Town Square 2BR",
-    entrance_photo_url:
-      "https://cf.bstatic.com/images/hotel/square60/472/47266938.jpg",
-    review_score: "3.5",
-    review_score_word: "Passable",
-    countrycode: "cz",
-    city: "Prague",
-    country: "Czech Republic",
-    class: 3,
+    review_nr: 494,
   },
   {
     hotel_id: 1377259,
@@ -434,18 +330,80 @@ export const hotels = [
     city: "Chamonix-Mont-Blanc",
     country: "France",
     class: 0,
+    review_nr: 0,
   },
   {
-    hotel_id: 13778265,
+    hotel_id: 1377162,
     hoteltype_id: 201,
-    name: "Cerise",
+    name: "Apartments Hedona",
     entrance_photo_url:
-      "https://cf.bstatic.com/images/hotel/square60/594/59437719.jpg",
-    review_score: "6.2",
-    review_score_word: "Very Good",
-    countrycode: "fr",
-    city: "Chamonix-Mont-Blanc",
-    country: "France",
-    class: 1,
+      "https://cf.bstatic.com/images/hotel/square60/148/148864502.jpg",
+    review_score: "9.6",
+    review_score_word: "Exceptional",
+    countrycode: "hr",
+    city: "Pula",
+    country: "Croatia",
+    class: 3,
+    review_nr: 172,
+  },
+
+  {
+    hotel_id: 1377038,
+    hoteltype_id: 216,
+    name: "Apartment Toni 555",
+    entrance_photo_url:
+      "https://cf.bstatic.com/images/hotel/square60/286/286416180.jpg",
+    review_score: "10.0",
+    review_score_word: "Exceptional",
+    countrycode: "hr",
+    city: "Primošten",
+    country: "Croatia",
+    class: 3,
+    review_nr: 1,
+  },
+
+  {
+    hotel_id: 1377022,
+    hoteltype_id: 206,
+    name: "Blue Karma Dijiwa Ubud",
+    entrance_photo_url:
+      "https://cf.bstatic.com/images/hotel/square60/302/302213550.jpg",
+    review_score: "9.0",
+    review_score_word: "Superb",
+    countrycode: "id",
+    city: "Ubud",
+    country: "Indonesia",
+    class: 4,
+    review_nr: 342,
+  },
+
+  {
+    hotel_id: 1377013,
+    hoteltype_id: 204,
+    name: "Schlosshotel Steinburg",
+    entrance_photo_url:
+      "https://cf.bstatic.com/images/hotel/square60/478/47854420.jpg",
+    review_score: "8.1",
+    review_score_word: "Very good",
+    countrycode: "de",
+    city: "Würzburg",
+    country: "Germany",
+    class: 4,
+    review_nr: 607,
+  },
+
+  {
+    hotel_id: 1377011,
+    hoteltype_id: 204,
+    name: "RS Boutique Hotel",
+    entrance_photo_url:
+      "https://cf.bstatic.com/images/hotel/square60/225/225837143.jpg",
+    review_score: "7.9",
+    review_score_word: "Good",
+    countrycode: "my",
+    city: "Kluang",
+    country: "Croatia",
+    class: 2,
+    review_nr: 208,
   },
 ];

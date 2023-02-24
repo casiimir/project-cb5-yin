@@ -77,7 +77,7 @@ const FilterHotelList = () => {
                 </p>
                 <div className={styles.scoreContainer}>
                   <h6 className={styles.score}>{elem.review_score}</h6>
-                  <p className={styles.review}> xxx recensioni</p>
+                  <p className={styles.review}> {elem.review_nr}</p>
                 </div>
               </div>
             );
