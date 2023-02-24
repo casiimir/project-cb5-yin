@@ -12,6 +12,7 @@ import ModalCheckOut from "@/components/modalCheckOut";
 import DateFormReservation from "@/components/dateFormReservation/DateFormReservation";
 
 export default function Reservation() {
+  const [errorMsg, setErrorMsg] = useState(false);
   const [results, setResults] = useState({});
   const [loading, setLoading] = useState(true);
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
@@ -79,12 +80,20 @@ export default function Reservation() {
                   check_in={dates.check_in}
                   check_out={dates.check_out}
                 />
-                <DateFormReservation dates={dates} setDates={setDates} />
+                <DateFormReservation
+                  dates={dates}
+                  setDates={setDates}
+                  errorMsg={errorMsg}
+                />
               </div>
               <div className={styles.wrap}>
                 <h2>Le tue informazioni</h2>
                 <CardReservation results={results} />
-                <FormReservation setShowCheckoutModal={setShowCheckoutModal} />
+                <FormReservation
+                  setShowCheckoutModal={setShowCheckoutModal}
+                  dates={dates}
+                  setErrorMsg={setErrorMsg}
+                />
               </div>
             </>
           )}
