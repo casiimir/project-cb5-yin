@@ -120,7 +120,7 @@ export const hotels = [
     countrycode: "hr",
     city: "Bol",
     country: "Croatia",
-    class: 3,
+    class: 1,
   },
   {
     hotel_id: 1377050,
