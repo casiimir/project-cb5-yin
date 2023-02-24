@@ -1,10 +1,21 @@
+@import "@/styles/variables.scss";
+
+
 .MainLayout {
   overflow: hidden;
+  background-color: $white;
+}
+
+.MainLayoutWish {
+  overflow: hidden;
+  background-color: $light-gray;
 }
 
 @media screen and (min-width: 992px) {
+  .MainLayout {
   .Main {
     margin: 0 auto;
     max-width: 1110px;
   }
+}
 }

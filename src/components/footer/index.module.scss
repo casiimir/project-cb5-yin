@@ -9,89 +9,95 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-  }
-  .description {
-    color: $white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
-    h2 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    h3 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      margin: 5px 0px 10px 0px;
-    }
-  }
-
-  .form {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-
-    input {
-      border-radius: 5px;
-      height: 40px;
-      padding: 10px;
-      border: none;
-    }
-
-    .mail {
-      width: 300px;
-      color: $black;
-      border: none;
-      font-size: 16px;
-    }
-
-    .submit {
-      background-color: #0071c2;
+    .content {
       color: $white;
-      font-size: 20px;
-      padding-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 5px 0px 10px 0px;
+      }
     }
 
-    .submit:hover {
-      cursor: pointer;
-      background-color: rgba(0, 0, 105, 0.429);
+    .form {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      input {
+        border-radius: 5px;
+        height: 40px;
+        padding: 10px;
+        border: none;
+      }
+
+      .mail {
+        width: 300px;
+        color: $black;
+        border: none;
+        font-size: 16px;
+      }
+
+      .submit {
+        background-color: #0071c2;
+        color: $white;
+        font-size: 20px;
+        padding-bottom: 30px;
+      }
+
+      .submit:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 105, 0.429);
+      }
     }
   }
+  .white {
+    background-color: $white;
 
-  .copyright {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 30px;
-    font-size: 10pt;
-    color: rgb(39, 39, 39);
-  }
+    .copyright {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+      font-size: 10pt;
+      color: rgb(39, 39, 39);
+    }
 
-  .logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    padding: 20px;
+    .logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      padding: 20px;
+    }
   }
 }
 
 @media screen and (min-width: 992px) {
   .Footer {
-    .form {
-      display: flex;
-      flex-direction: row;
+    .blue {
+      .form {
+        display: flex;
+        flex-direction: row;
+      }
     }
   }
 }

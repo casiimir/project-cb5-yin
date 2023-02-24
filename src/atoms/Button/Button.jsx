@@ -9,6 +9,7 @@ const buttonStyleMap = {
   outline: styles.Outline,
   operation: styles.Operation,
   outlineRounded: styles.OutlineRounded,
+  submit: styles.Submit,
 };
 
 function Button({ content, style, onClick = null }) {

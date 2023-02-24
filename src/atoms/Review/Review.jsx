@@ -3,14 +3,12 @@ import styles from "./index.module.scss";
 
 function Review({ data }) {
   return (
-    <div className={styles.CardReviews}>
-      <div className={styles.ReviewScore}>
-        <p>{data?.review_score}</p>
-      </div>
-      <div className={styles.ReviewsWrapper}>
-        <span className={styles.word}>{data?.review_score_word}</span>
-        <span>{data?.review_nr} reviews</span>
-      </div>
+    <div className={styles.score}>
+      <span className={styles.scoreNumber}>{data.review_score}</span>{" "}
+      <span className={styles.scoreText}>{data.review_score_word}</span> ·{" "}
+      <span className={styles.reviewNumber}>
+        {data.review_nr.toLocaleString("de-DE")} recensioni
+      </span>
     </div>
   );
 }

@@ -13,13 +13,25 @@ const MainLayout = ({ children }) => {
   const router = useRouter();
   const { width } = useWindowSize();
   const { state } = useContext(AppContext);
+  const [layoutType, setlayoutType] = useState();
+
 
   useLayoutEffect(() => {
     setBanner(router.pathname === "/");
   }, []);
 
+    useLayoutEffect(() => {
+      setlayoutType(router.pathname == "/yournexttrip" ? "yournexttrip" : "");
+    }, [router.isReady]);
+
   return (
-    <div className={styles.MainLayout}>
+    <div
+      className={
+        layoutType === "yournexttrip"
+          ? `${styles.MainLayoutWish}`
+          : `${styles.MainLayout}`
+      }
+    >
       {state.showModal && width < 1024 && <MainModal />}
       <Header />
       {banner && <HeroBanner />}
