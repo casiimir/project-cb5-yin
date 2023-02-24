@@ -3,8 +3,7 @@ import React from "react";
 function Stars({ number = 0 }) {
   const parsedNum = parseInt(number);
   if (parsedNum < 0 || parsedNum > 5 || Number.isNaN(parsedNum)) {
-    console.log(number, parsedNum);
-    return <span>voglio un numero</span>;
+    return <span></span>;
   }
   let str = "";
   let starStr = "⭐";
