@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import Review from "@/atoms/Review/Review";
 import Heart from "@/atoms/Heart/Heart";
+import SectionOne from "../sectionOneHotel";
 
 function SearchCard({ el }) {
   const router = useRouter();
@@ -13,23 +14,24 @@ function SearchCard({ el }) {
       <Image
         className={styles.CardImage}
         src={el.max_photo_url}
-        width={200}
-        height={200}
+        width={120}
+        height={150}
         alt="str"
       />
 
       <div className={styles.CardInfo}>
         <div className={styles.CardWrapper}>
-          <h4>{el.hotel_name}</h4>
-          <p>{el.city}</p>
-          <p>{el.address}</p>
-          <p>{el?.distances[0].text}</p>
+          <div className={styles.SectionOne}>
+            <h4>{el.hotel_name}</h4>
+            <div>
+              <Review data={el} />
+            </div>
+          </div>
+          <p>
+            {el.city} - {el?.distances[0].text}
+          </p>
         </div>
         <div className={styles.CardDetailedInfo}>
-          <div>
-            <Review data={el} />
-          </div>
-
           <button
             onClick={() => {
               router.push(`/hotel/${el.hotel_id}`);

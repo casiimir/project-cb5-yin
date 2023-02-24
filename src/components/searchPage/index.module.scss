@@ -6,7 +6,7 @@
   padding: 1rem;
 }
 .SearchWrapper {
-  padding: 2rem 0;
+  padding: 10px 0;
   display: flex;
   max-width: 1024px;
   flex-direction: column;
@@ -60,6 +60,13 @@
     border-radius: 2px;
     object-fit: cover;
   }
+
+  .CardWrapper {
+    .sectionOne {
+      display: flex;
+      flex-direction: column;
+    }
+  }
   .CardInfo {
     display: flex;
     flex-direction: column;
@@ -67,23 +74,46 @@
     gap: 1rem;
     flex: 1;
 
+    h4 {
+      color: #0053c7;
+    }
+
+    p {
+      font-size: 10pt;
+      padding: 8px 0;
+    }
+
     .CardDetailedInfo {
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      justify-content: space-between;
+
+      .CardButton {
+        background: #003580;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+      .CardButton:hover {
+        background-color: #003580;
+      }
     }
 
-    .CardButton {
-      background: #003580;
-      border: none;
-      border-radius: 6px;
-      color: white;
-      padding: 8px 12px;
-      cursor: pointer;
-    }
     @media screen and (min-width: 768px) {
       flex-direction: row;
+
+      .CardWrapper {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .SectionOne {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
     }
   }
 }
