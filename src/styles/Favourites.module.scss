@@ -1,76 +1,249 @@
 @import "../styles/variables.scss";
 
+.headerWrapper {
+  background-color: $white;
+  border-bottom: 1px solid #e6e6e6;
+  height: fit-content;
+  padding: 10px 0px;
+
+  .headerContainer {
+    margin: 0 auto;
+    position: relative;
+    padding: 0px 16px;
+
+    h1 {
+      font-size: 28px;
+    }
+  }
+}
+
 .FavouritesWrapper {
-  min-height: 500px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  .Card {
-    outline: 1px solid lightgray;
-    border-radius: 4px;
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  margin: 0 auto;
 
-    .ImageWrapper {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 1 / 1;
-
-      img {
-        object-fit: cover;
-      }
-    }
-
-    .CardHeader {
-      h3 {
-        display: inline-block;
-      }
-      align-items: flex-start;
-      height: 50px;
+  .Fav {
+    .Card {
+      border: 1px solid $light-gray;
+      max-width: 400px;
+      max-height: 500px;
+      padding: 8px;
+      margin: 8px 0px;
+      background-color: white;
       display: flex;
-      justify-content: space-between;
-    }
 
-    .Cardinfo {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+      .ImageWrapper {
+        position: relative;
+        width: 40%;
+        aspect-ratio: 1 / 1;
 
-      .address {
-        margin-bottom: 1rem;
-        height: 25px;
+        img {
+          object-fit: cover;
+        }
       }
-    }
+      .Cardinfo {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-left: 8px;
+        width: 60%;
 
-    .country {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-    }
+        .CardHeader {
+          align-items: center;
+          display: flex;
+          justify-content: space-between;
+        }
 
-    button {
-      padding: 10px 12px;
-      border: none;
-      color: white;
-      border-radius: 2px;
-      box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-      cursor: pointer;
-      transition: all 0.5s ease;
-      background: $blue-button;
-      &:hover {
-        box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+        .address {
+          font-size: 12px;
+          line-height: 14px;
+
+          .country {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+          }
+        }
+
+        .input {
+          button {
+          font-size: small;
+          }
+        }
       }
     }
   }
 
-  @media screen and (min-width: 992px) {
-    flex-direction: row;
-    .Card {
-      width: 250px;
-      height: fit-content;
+  .noFav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    background: url(https://cf.bstatic.com/static/img/profile/accounts/empty_listview_hotel/5355f5122b364f59825ba6846ce25ff648b6a0c4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 30px 0px;
+
+    .icon {
+      padding-top: 20px;
+      width: 80px;
+      height: 40px;
+      border-radius: 40px 40px 0 0;
+      background-color: rgba(0, 0, 0, 0.7);
+
+      img {
+        filter: invert(1);
+      }
+    }
+
+    .content {
+      background: rgba(0, 0, 0, 0.7);
+      width: 100%;
+      padding: 32px 16px;
+      color: $white;
+      font-size: 15.5px;
+
+      h1 {
+        line-height: 35px;
+        padding: 20px 0px;
+        font-size: 25px;
+      }
+
+      span {
+        text-align: left;
+
+        li {
+          list-style: decimal;
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .headerWrapper {
+    .headerContainer {
+      max-width: 1110px;
+      padding: 16px 32px;
+
+      h1 {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .FavouritesWrapper {
+    max-width: 1110px;
+    padding: 16px 32px;
+
+    .Fav {
+      .Card {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+
+        .ImageWrapper {
+          width: 100%;
+
+          img {
+            object-fit: cover;
+          }
+        }
+        .Cardinfo {
+          display: flex;
+          width: 100%;
+          padding: 8px;
+
+          .CardHeader {
+            align-items: center;
+
+            
+          }
+
+          .star {
+            border-bottom: 1px solid $light-gray;
+            padding-bottom: 8px;
+          }
+
+          .review {
+            border-bottom: 1px solid $light-gray;
+            padding: 8px 0px;
+          }
+
+          .address {
+            border-bottom: 1px solid $light-gray;
+            padding: 8px 0px;
+
+            .country {
+              display: flex;
+            }
+          }
+
+          .input {
+            button {
+            padding: 6px 10px;
+            width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .noFav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      width: 100%;
+      min-height: 500px;
+      margin: 0 auto;
+      background: url(https://cf.bstatic.com/static/img/profile/accounts/empty_listview_hotel/5355f5122b364f59825ba6846ce25ff648b6a0c4.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      margin: 50px 0px !important;
+
+      .icon {
+        padding-top: 20px;
+        width: 80px;
+        height: 40px;
+        border-radius: 40px 40px 0 0;
+        background-color: rgba(0, 0, 0, 0.7);
+
+        img {
+          filter: invert(1);
+        }
+      }
+
+      .content {
+        background: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        padding: 32px 110px;
+        color: $white;
+        font-size: 15.5px;
+
+        h1 {
+          line-height: normal;
+          padding-bottom: 0px;
+          font-size: xx-large;
+        }
+
+        span {
+          text-align: left;
+
+          li {
+            list-style: decimal;
+            margin-left: 16px;
+          }
+        }
+      }
     }
   }
 }
