@@ -21,33 +21,36 @@ export default function Login() {
           <img
             className={styles.logo}
             width="150px"
-            src="/bookyn_color.svg"
+            src="/booking.svg"
             alt="Bookyn Logo"
           />
-          {toggle ? (
-            <LoginForm setLoading={setLoading} authMessage={authMessage} />
-          ) : (
-            <RegistrationForm
-              setToggle={setToggle}
-              setAuthMessage={setAuthMessage}
-            />
-          )}
-          <h5 onClick={onHandleToggle}>{toggle ? "Registrati" : "Accedi"}</h5>
+          <div className={styles.form}>
+            {toggle ? (
+              <LoginForm setLoading={setLoading} authMessage={authMessage} />
+            ) : (
+              <RegistrationForm
+                setToggle={setToggle}
+                setAuthMessage={setAuthMessage}
+              />
+            )}
+            <h5 onClick={onHandleToggle}>
+              {toggle
+                ? "Non hai ancora un account? Iscriviti"
+                : "Hai già un account? Accedi"}
+            </h5>
+          </div>
 
           <div className={styles.copyright}>
             <p>
-              Effettuando l'accesso o creando un account accetti i Termini e le
-              <br />
-              Condizioni e l’Informativa sulla Privacy
+              Effettuando l'accesso o creando un account accetti i Termini
+              <br />e le Condizioni e l’Informativa sulla Privacy
             </p>
-            <div className={styles.other}>
               <p>
                 Tutti i diritti riservati.
                 <br />
-                Copyright (1996 – 2023) Booking.com™.
+                Copyright (1996 – 2023) Booking.com™
               </p>
             </div>
-          </div>
         </>
       )}
     </div>

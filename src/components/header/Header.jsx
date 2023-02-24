@@ -54,7 +54,9 @@ const Header = () => {
             </div>
             <h3 className={styles.desktopBtnsLogin}>{state.auth.username}</h3>
             <div className={styles.desktopBtnsLogin}>
-              <Button style="primary" content="Iscriviti" />
+              <Link href={"/login"}>
+                <Button style="primary" content="Iscriviti" />
+              </Link>
               {state.auth.username ? (
                 <Button onClick={logout} style="primary" content="Logout" />
               ) : (
