@@ -128,12 +128,8 @@ export const hotels = [
     countrycode: "hr",
     city: "Bol",
     country: "Croatia",
-<<<<<<< Updated upstream
-    class: 1,
-=======
     class: 3,
     review_nr: 7,
->>>>>>> Stashed changes
   },
   {
     hotel_id: 1377050,
