@@ -1,10 +1,13 @@
 import Link from "next/link";
 import styles from "./index.module.scss";
 
-const HotelReserve = ({ pid }) => {
+const HotelReserve = ({ pid, additionalstr }) => {
+  const linktoReservation = additionalstr
+    ? `/reservation/${pid}${additionalstr}`
+    : `/reservation/${pid}`;
   return (
     <div className={styles.HotelReserve}>
-      <Link href={`/reservation/${pid}`}>
+      <Link href={linktoReservation}>
         <button>Prenota ora</button>
       </Link>
     </div>

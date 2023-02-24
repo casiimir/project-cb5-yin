@@ -50,6 +50,8 @@ const FormSearch = () => {
   };
 
   const handleCheckIn = (value) => {
+    dispatch({ type: cases.SET_CHECKIN, payload: value });
+
     setDates((prev) => {
       return {
         ...prev,
@@ -59,6 +61,8 @@ const FormSearch = () => {
   };
 
   const handleCheckOut = (value) => {
+    dispatch({ type: cases.SET_CHECKOUT, payload: value });
+
     setDates((prev) => {
       return {
         ...prev,

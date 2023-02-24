@@ -13,11 +13,8 @@ const cases = {
   SET_AUTH: "SET_AUTH",
   LOGOUT: "LOGOUT",
 
-  TOGGLE_STAR1: "TOGGLE_STAR1",
-  TOGGLE_STAR2: "TOGGLE_STAR2",
-  TOGGLE_STAR3: "TOGGLE_STAR3",
-  TOGGLE_STAR4: "TOGGLE_STAR4",
-  TOGGLE_STAR5: "TOGGLE_STAR5",
+  SET_CHECKIN: "SET_CHECKIN",
+  SET_CHECKOUT: "SET_CHECKOUT",
 
   ADD_FAVOURITE: "ADD_FAVOURITE",
   REMOVE_FAVOURITE: "REMOVE_FAVOURITE",
@@ -59,6 +56,16 @@ const counterReducer = (state, action) => {
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case cases.SET_CHECKOUT:
+      return {
+        ...state,
+        check_out: action.payload,
+      };
+    case cases.SET_CHECKIN:
+      return {
+        ...state,
+        check_in: action.payload,
+      };
     case cases.TOGGLE_MODAL:
       return {
         ...state,

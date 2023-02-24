@@ -1,13 +1,15 @@
 import styles from "./index.module.scss";
+import { datedifference } from "@/utils/utils";
 
-const BookingDetails = ({ results }) => {
+const BookingDetails = ({ results, check_in, check_out }) => {
+  const numOfDays = datedifference(check_in, check_out);
   return (
     <div className={styles.BookingDetails}>
       <h3>I tuoi dati di soggiorno</h3>
       <div className={styles.wrapper}>
         <div className={styles.checkIn}>
           <p>Check-in</p>
-          <h4>DATA</h4>
+          <h4>{check_in ? check_in : "Seleziona Data"}</h4>
           <p>
             {results?.checkin.from} - {results?.checkin.to}
           </p>
@@ -15,7 +17,7 @@ const BookingDetails = ({ results }) => {
 
         <div className={styles.checkOut}>
           <p>Check-out</p>
-          <h4>DATA</h4>
+          <h4>{check_out ? check_out : "Seleziona Data"}</h4>
           <p>
             {results?.checkout.from} - {results?.checkout.to}
           </p>
@@ -24,7 +26,7 @@ const BookingDetails = ({ results }) => {
 
       <div className={styles.stay}>
         <p>Durata soggiorno:</p>
-        <h4> n. notti search</h4>
+        {!!numOfDays && <h4>{numOfDays} notti</h4>}
       </div>
     </div>
   );

@@ -58,3 +58,23 @@ export const wait = (func, time) => {
     console.log("TOPPETEEEE");
   }, time);
 };
+
+export const datedifference = (check_in, check_out) => {
+  const dataInizio = new Date(check_in);
+  const dataFine = new Date(check_out);
+
+  // Calcola la differenza in millisecondi tra le due date
+  const differenzaInMillisecondi = dataFine - dataInizio;
+
+  // Converti i millisecondi in giorni
+  const millisecondiInUnGiorno = 1000 * 60 * 60 * 24;
+  const differenzaInGiorni = Math.floor(
+    differenzaInMillisecondi / millisecondiInUnGiorno
+  );
+
+  // Stampa il risultato
+  console.log(
+    `La differenza tra le due date è di ${differenzaInGiorni} giorni.`
+  );
+  return differenzaInGiorni;
+};
