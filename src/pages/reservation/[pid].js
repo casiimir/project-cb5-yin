@@ -8,10 +8,12 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Loader from "@/atoms/Loader/Loader";
 import { GET } from "@/utils/http";
+import ModalCheckOut from "@/components/modalCheckOut";
 
 export default function Reservation() {
   const [results, setResults] = useState({});
   const [loading, setLoading] = useState(true);
+  const [showCheckoutModal, setShowCheckoutModal] = useState(false);
 
   const router = useRouter();
   const { pid } = router.query;
@@ -42,7 +44,16 @@ export default function Reservation() {
           href="https://cf.bstatic.com/static/img/b25logo/favicon/ebc77706da3aae4aee7b05dadf182390f0d26d11.ico"
         />
       </Head>
+
+      <ModalCheckOut
+        showCheckoutModal={showCheckoutModal}
+        setShowCheckoutModal={setShowCheckoutModal}
+      />
       <MainLayout>
+        <div
+          onClick={() => setShowCheckoutModal(false)}
+          className={styles.overlay}
+        ></div>
         <div className={styles.container}>
           {loading ? (
             <div className={styles.loadingWrapper}>
@@ -56,7 +67,7 @@ export default function Reservation() {
               <div className={styles.wrap}>
                 <h2>Le tue informazioni</h2>
                 <CardReservation results={results} />
-                <FormReservation />
+                <FormReservation setShowCheckoutModal={setShowCheckoutModal} />
               </div>
             </>
           )}
