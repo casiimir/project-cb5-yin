@@ -26,7 +26,7 @@ const Navbar = () => {
               height={20}
               priority
             />
-            <p>Home</p>
+            <p>Soggiorni</p>
           </li>
         </Link>
         <Link href={`/hotel/${random}?mi_sento_fortunato=true`}>

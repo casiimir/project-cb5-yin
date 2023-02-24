@@ -1,0 +1,92 @@
+@import "@/styles/variables.scss";
+
+.main {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    .card {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        object-position: right;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h4 {
+          font-size: 14px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+
+      button {
+        background-color: $blue-button;
+        color: $white;
+        border: 2px solid $blue-button;
+        border-radius: 2px;
+        font-size: 12px;
+        font-weight: 500;
+        width: fit-content;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    .container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .card {
+        position: relative;
+        .img {
+          display: flex;
+          object-fit: cover;
+          height: 180px;
+          width: 530px;
+        }
+        .content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 20px;
+          position: absolute;
+          padding: 32px 16px;
+          color: white;
+          width: 50%;
+          
+        h4 {
+          font-size: 16px;
+        }
+        p {
+          font-size: 14px;
+        }
+        }
+        button {
+        font-size: 14px;
+      }
+      }
+    }
+  }
+}

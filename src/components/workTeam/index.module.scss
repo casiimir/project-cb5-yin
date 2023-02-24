@@ -1,6 +1,7 @@
 @import "@/styles/variables.scss";
 
 .main {
+  padding: 16px;
   display: flex;
   flex-direction: column;
   justify-content: central;
@@ -15,13 +16,12 @@
     flex-wrap: wrap;
     padding: 10px;
     p {
-      margin-top: 10px;
+      margin: 16px;
     }
   }
   .photos {
     padding: 10px;
     display: flex;
-    // flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
@@ -57,9 +57,8 @@
       display: flex;
       justify-content: center;
       border-radius: 100%;
-      width: 125px;
-      height: 125px;
-      border: none;
+      width: 100px;
+      height: 100px;
 
       @media screen and (min-width: 568px) {
         width: 150px;
