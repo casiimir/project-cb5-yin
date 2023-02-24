@@ -42,13 +42,12 @@ function SearchWrapper() {
         `hotels/search?${qs}&children_ages=5%2C0&categories_filter_ids=class%3A%3A2%2Cclass%3A%3A4%2Cfree_cancellation%3A%3A1`
       )
         .then((res) => {
-          console.log(res);
           setSearchResults(res);
         })
         .finally(() => setLoading(false));
     }
   }, [router.isReady, navigation.current, selectFilter]);
-
+  console.log(searchResults);
   return (
     <div className={styles.Container}>
       <div className={styles.SearchWrapper}>
@@ -66,16 +65,21 @@ function SearchWrapper() {
                   <NotFoundSearch />
                 ) : (
                   <>
-                    <h3>{searchResults?.result.length} Strutture trovate</h3>
                     <Select
                       selectFilter={selectFilter}
                       setSelectFilter={setSelectFilter}
                     />
+
+                    <h3>
+                      {searchResults?.total_count_with_filters} STRUTTURE
+                      TROVATE
+                    </h3>
                     {searchResults?.result.map((el, id) => (
                       <SearchCard key={id} el={el} />
                     ))}
 
                     <SearchPagination
+                      searchResults={searchResults}
                       navigation={navigation}
                       navigationDispatch={navigationDispatch}
                     />
