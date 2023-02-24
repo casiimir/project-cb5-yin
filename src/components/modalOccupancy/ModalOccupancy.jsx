@@ -1,12 +1,27 @@
-import styles from "./index.module.scss";
+import { useState, useEffect } from "react";
 import CounterAdulti from "@/components/counterForm/CounterAdulti/CounterAdulti";
 import CounterBambini from "@/components/counterForm/CounterBambini/CounterBambini";
 import CounterCamere from "@/components/counterForm/CounterCamere/CounterCamere";
 import Button from "@/atoms/Button/Button";
+import { useRouter } from "next/router";
+import styles from "./index.module.scss";
 
 const ModalOccupancy = ({ setOpenModal }) => {
+  const [modalType, setModalType] = useState("home");
+  const router = useRouter();
+
+  useEffect(() => {
+    setModalType(router.pathname == "/" ? "home" : "search");
+  }, [router.isReady]);
+
   return (
-    <div className={styles.ModalOccupancy}>
+    <div
+      className={
+        modalType == "home"
+          ? `${styles.ModalOccupancy}`
+          : `${styles.ModalOccupancy} ${styles.modalOccupancyOther}`
+      }
+    >
       <div
         className={styles.modalOverlay}
         onClick={() => {

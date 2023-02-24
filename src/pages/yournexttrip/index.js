@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import CloseBtn from "@/atoms/CloseBtn/CloseBtn";
 import Button from "@/atoms/Button/Button";
 import AppContext from "@/store/context";
+import Stars from "@/atoms/Stars/Stars";
 
 function nextTrip() {
   const { state, dispatch } = useContext(AppContext);
@@ -97,7 +98,9 @@ function nextTrip() {
                         <h3>{el.name}</h3>
                         <CloseBtn data={el} />
                       </div>
-                      <div className={styles.star}>⭐</div>
+                      <div className={styles.star}>
+                        <Stars number={el.class} />
+                      </div>
                     </div>
                     <div className={styles.review}>
                       <Review data={el} />
