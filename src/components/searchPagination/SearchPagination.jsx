@@ -2,7 +2,14 @@ import styles from "./index.module.scss";
 import Image from "next/image";
 import { counterCases } from "@/store/reducers";
 
-const SearchPagination = ({ navigation, navigationDispatch }) => {
+const SearchPagination = ({
+  searchResults,
+  navigation,
+  navigationDispatch,
+}) => {
+  let totalPage = Math.ceil(searchResults.total_count_with_filters / 20);
+
+  console.log(navigation.current);
   return (
     <nav className={styles.searchPagination}>
       {navigation.current > 1 && (
@@ -22,6 +29,21 @@ const SearchPagination = ({ navigation, navigationDispatch }) => {
       )}
 
       <ol>
+        {navigation.current == totalPage && totalPage > 2 && (
+          <li>
+            <button
+              onClick={() =>
+                navigationDispatch({
+                  type: counterCases.SET,
+                  payload: navigation.current - 2,
+                })
+              }
+            >
+              {navigation.current - 2}
+            </button>
+          </li>
+        )}
+
         {navigation.current > 1 && (
           <li>
             <button
@@ -37,10 +59,11 @@ const SearchPagination = ({ navigation, navigationDispatch }) => {
           </li>
         )}
 
-        <li>
+        <li className={styles.actuallPage}>
           <button>{navigation.current}</button>
         </li>
-        {navigation.current <= navigation.pages && (
+
+        {navigation.current < totalPage && (
           <li>
             <button
               onClick={() =>
@@ -54,8 +77,23 @@ const SearchPagination = ({ navigation, navigationDispatch }) => {
             </button>
           </li>
         )}
+
+        {navigation.current == 1 && totalPage > 2 ? (
+          <li>
+            <button
+              onClick={() =>
+                navigationDispatch({
+                  type: counterCases.SET,
+                  payload: navigation.current + 2,
+                })
+              }
+            >
+              {navigation.current + 2}
+            </button>
+          </li>
+        ) : null}
       </ol>
-      {navigation.current <= navigation.pages && (
+      {navigation.current < totalPage && (
         <button
           className={styles.btnArrow}
           onClick={() => navigationDispatch({ type: counterCases.INCREMENT })}
