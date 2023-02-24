@@ -1,7 +1,7 @@
 const initialValue = {
   location: {},
-  check_in: "21-12-2012",
-  check_out: "22-12-2012",
+  check_in: "",
+  check_out: "",
   prenotation: {
     adults: 2,
     children: 1,

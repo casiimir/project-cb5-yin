@@ -1,6 +1,6 @@
 import { GET } from "../../utils/http";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 import FormSearch from "@/components/formSearch/FormSearch";
 import HotelReviews from "@/components/hotelReviews/HotelReviews";
@@ -14,9 +14,10 @@ import Loader from "@/atoms/Loader/Loader";
 import MainLayout from "@/layout/mainLayout/MainLayout";
 
 import styles from "./../../styles/Hotel.module.scss";
+import AppContext from "@/store/context";
 
 function Hotel({ galleryData, descriptionData, dataHotelReview }) {
-  //const [dataHotelReview, setDataHotelReview] = useState([]);
+  const { state } = useContext(AppContext);
   const [reviewData, setReviewData] = useState([]);
 
   const [loading, setLoading] = useState(true);
@@ -24,31 +25,15 @@ function Hotel({ galleryData, descriptionData, dataHotelReview }) {
   const router = useRouter();
   const { pid } = router.query;
 
-  //------Description---------//
-  //GET 1 --> DESCRIPTION HOTEL
-  //GET 2 --> REVIEW HOTEL
-  //GET 3 --> REVIEW USER
-  //GET 4 --> POSITION HOTEL
+  const additionalstr =
+    state.check_in && state.check_out
+      ? `?check_in=${state.check_in}&check_out=${state.check_out}`
+      : null;
+
+  console.log(additionalstr);
 
   useEffect(() => {
     if (router.isReady) {
-      /*  GET(`hotels/description?hotel_id=${pid}&locale=it`)
-        .then((res) => {
-          console.log(res);
-          setdescriptionData(res);
-        })
-        .catch((error) => console.log(error));
- */
-      //wait(1000);
-
-      /* GET(`hotels/data?locale=it&hotel_id=${pid}`)
-        .then((response) => {
-          setDataHotelReview(response);
-        })
-        .catch((error) => console.log(error)); */
-
-      //wait(1000);
-
       GET(
         `hotels/reviews?hotel_id=${pid}&locale=it&sort_type=SORT_MOST_RELEVANT&customer_type=solo_traveller%2Creview_category_group_of_friends&language_filter=it%2Cde%2Cfr`
       )
@@ -81,7 +66,10 @@ function Hotel({ galleryData, descriptionData, dataHotelReview }) {
             <div className={styles.columnWrapper}>
               <div className={styles.columnRight}>
                 <div>
-                  <HotelHeader dataHotelReview={dataHotelReview} />
+                  <HotelHeader
+                    dataHotelReview={dataHotelReview}
+                    additionalstr={additionalstr}
+                  />
                   <div className={styles.SearchAndGalleryWrapper}>
                     {galleryData && (
                       <div>

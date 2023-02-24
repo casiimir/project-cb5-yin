@@ -10,17 +10,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Stars from "@/atoms/Stars/Stars";
 
-const HotelHeader = ({ dataHotelReview }) => {
-  //console.log(positionData);
-  //   if (positionData.geo_info.city_centre.distance < 500) {
-  //     const positionHotel = "Ottima posizione - In centro";
-  //   } else if (positionData.geo_info.city_centre.distance < 2000) {
-  //     const positionHotel = "Buona posizione - Vicino al centro";
-  //   }
-
-  const [reviewData, setReviewData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
+const HotelHeader = ({ dataHotelReview, additionalstr }) => {
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const { pid } = router.query;
 
@@ -56,11 +47,8 @@ const HotelHeader = ({ dataHotelReview }) => {
             <div className={styles.right}>
               <div className={styles.fav}>
                 <Heart data={dataHotelReview} />
-                <Link href={"/yournexttrip"}>
-                  <p>Vai ai preferiti</p>
-                </Link>
               </div>
-              <HotelReserve pid={pid} />
+              <HotelReserve pid={pid} additionalstr={additionalstr} />
             </div>
           </div>
           <div className={styles.mainHeader}>

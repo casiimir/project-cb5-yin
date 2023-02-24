@@ -9,14 +9,26 @@ import { useRouter } from "next/router";
 import Loader from "@/atoms/Loader/Loader";
 import { GET } from "@/utils/http";
 import ModalCheckOut from "@/components/modalCheckOut";
+import DateFormReservation from "@/components/dateFormReservation/DateFormReservation";
 
 export default function Reservation() {
   const [results, setResults] = useState({});
   const [loading, setLoading] = useState(true);
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
+  const [dates, setDates] = useState({
+    check_in: "",
+    check_out: "",
+  });
 
   const router = useRouter();
-  const { pid } = router.query;
+
+  const { pid, check_in, check_out } = router.query;
+
+  useEffect(() => {
+    if (router.query.check_in && router.query.check_out) {
+      setDates({ check_in: check_in, check_out: check_out });
+    }
+  }, []);
 
   useEffect(() => {
     setLoading(true);
@@ -62,7 +74,12 @@ export default function Reservation() {
           ) : (
             <>
               <div className={styles.wrapper}>
-                <BookingDetails results={results} />
+                <BookingDetails
+                  results={results}
+                  check_in={dates.check_in}
+                  check_out={dates.check_out}
+                />
+                <DateFormReservation dates={dates} setDates={setDates} />
               </div>
               <div className={styles.wrap}>
                 <h2>Le tue informazioni</h2>
