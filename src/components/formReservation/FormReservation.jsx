@@ -1,9 +1,13 @@
 import styles from "./index.module.scss";
 
 const FormReservation = ({ setShowCheckoutModal }) => {
-  let audio = new Audio("/SuperMarioBros.mp3");
+  let audio;
+  if (typeof audio != "undefined") {
+    audio = new Audio("/SuperMarioBros.mp3");
+  }
   const start = () => {
-    audio.play();
+    if (audio) return audio?.play();
+    return undefined;
   };
 
   const handleSubmit = (e) => {
@@ -80,7 +84,7 @@ const FormReservation = ({ setShowCheckoutModal }) => {
         className={styles.ReserveNow}
         onClick={() => {
           setShowCheckoutModal(true);
-          //start();
+          start();
         }}
       >
         Prenota subito

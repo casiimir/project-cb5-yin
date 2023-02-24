@@ -15,7 +15,7 @@ const HotelReviews = ({ dataHotelReview, reviewData }) => {
           </span>{" "}
           ·{" "}
           <span className={styles.reviewNumber}>
-            {dataHotelReview.review_nr.toLocaleString("de-DE")} recensioni
+            {dataHotelReview.review_nr?.toLocaleString("de-DE")} recensioni
           </span>
         </div>
       </div>
