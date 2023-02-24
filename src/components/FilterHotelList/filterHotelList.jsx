@@ -67,7 +67,10 @@ const FilterHotelList = () => {
                   router.push(`/hotel/${elem.hotel_id}`);
                 }}
               >
-                <img src={elem.entrance_photo_url} alt="img" />
+                <img
+                  src={elem.entrance_photo_url.replace("square60", "square300")}
+                  alt="img"
+                />
                 <h3>{elem.name}</h3>
                 <p>
                   {elem.country}, {elem.city}
