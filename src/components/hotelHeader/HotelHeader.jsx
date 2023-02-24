@@ -8,6 +8,7 @@ import HotelReserve from "@/components/hotelReserve/HotelReserve";
 import Heart from "@/atoms/Heart/Heart";
 import Image from "next/image";
 import Link from "next/link";
+import Stars from "@/atoms/Stars/Stars";
 
 const HotelHeader = ({ dataHotelReview }) => {
   //console.log(positionData);
@@ -16,11 +17,6 @@ const HotelHeader = ({ dataHotelReview }) => {
   //   } else if (positionData.geo_info.city_centre.distance < 2000) {
   //     const positionHotel = "Buona posizione - Vicino al centro";
   //   }
-  let str = "";
-  let starStr = "⭐";
-  for (let i = 0; i < dataHotelReview.class; i++) {
-    str += starStr;
-  }
 
   const [reviewData, setReviewData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -55,9 +51,7 @@ const HotelHeader = ({ dataHotelReview }) => {
                     .split(" ")[0]
                 }
               </span>
-              <span className={styles.class}>
-                {!dataHotelReview.class ? "" : str}
-              </span>
+              <Stars number={dataHotelReview.class} />
             </div>
             <div className={styles.right}>
               <div className={styles.fav}>
