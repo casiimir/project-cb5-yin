@@ -1,46 +1,18 @@
-import { useState } from "react";
-import useWindowSize from "react-use/lib/useWindowSize";
-import Confetti from "react-confetti";
 import styles from "./index.module.scss";
-import Link from "next/link";
+import { FiX } from "react-icons/fi";
+import Button from "@/atoms/Button/Button";
+import { useRouter } from "next/router";
+import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
 
-const ModalCheckOut = () => {
-  const [showModal, setShowModal] = useState(false);
-
-  let audio = new Audio("/SuperMarioBros.mp3");
-  const start = () => {
-    audio.play();
-  };
-
-  //   const onHandleClose = () => setShowModal(false);
-  const onHandleShow = () => setShowModal(true);
-
-  const onHandleModal = () => setShowModal(false);
-
+const ModalCheckOut = ({ showCheckoutModal, setShowCheckoutModal }) => {
+  const router = useRouter();
   const { width, height } = useWindowSize();
   return (
     <>
-      <button className={styles.Btn} onClick={() => { onHandleShow(); start();}}>
-        Prenota subito
-      </button>
-      {showModal && (
+      {showCheckoutModal && (
         <>
           <div className={styles.ModalCheckOut}>
-            <div className={styles.content}>
-              <div className={styles.close}>
-                <p onClick={onHandleModal}>X</p>
-              </div>
-              <div className={styles.write}>
-                <h3>Congratulazioni</h3>
-                <h4>La tua prenotazione è andata a buon fine</h4>
-                <Link href={"/"}>
-                  <p>Vai alla Home</p>
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div onClick={onHandleModal} className={styles.overlay}>
             <Confetti
               width={width}
               height={height}
@@ -48,6 +20,31 @@ const ModalCheckOut = () => {
               initialVelocityY={3}
               colors={["#0071c2", "#ffff", "#febb02"]}
             />
+            <div
+              className={styles.overlay}
+              onClick={() => {
+                setShowCheckoutModal(false);
+              }}
+            ></div>
+            <div className={styles.content}>
+              <i className={styles.close}>
+                <FiX
+                  onClick={() => {
+                    setShowCheckoutModal(false);
+                  }}
+                />
+              </i>
+              <div className={styles.text}>
+                <h2>Congratulazioni!</h2>
+                <h4>La tua prenotazione è andata a buon fine</h4>
+              </div>
+
+              <Button
+                style={"secondary"}
+                content={"Vai alla home"}
+                onClick={() => router.push("/")}
+              />
+            </div>
           </div>
         </>
       )}

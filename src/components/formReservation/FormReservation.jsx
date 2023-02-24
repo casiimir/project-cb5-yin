@@ -1,7 +1,11 @@
-import ModalCheckOut from "@/components/modalCheckOut/ModalCheckOut";
 import styles from "./index.module.scss";
 
-const FormReservation = () => {
+const FormReservation = ({ setShowCheckoutModal }) => {
+  let audio = new Audio("/SuperMarioBros.mp3");
+  const start = () => {
+    audio.play();
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -72,10 +76,15 @@ const FormReservation = () => {
           <input type="text" required />
         </label>
       </form>
-
-      <div className={styles.ModalCheckOut}>
-        <ModalCheckOut />
-      </div>
+      <button
+        className={styles.ReserveNow}
+        onClick={() => {
+          setShowCheckoutModal(true);
+          //start();
+        }}
+      >
+        Prenota subito
+      </button>
     </div>
   );
 };

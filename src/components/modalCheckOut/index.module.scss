@@ -1,84 +1,59 @@
 .ModalCheckOut {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 2s;
+  transition: opacity 2s;
   animation: fadeIn 1s;
   z-index: 1;
-  margin: 75px;
-  width: 33%;
+  height: 100vh;
+  width: 100vw;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(63, 63, 63, 0.8);
+    z-index: -1;
+  }
 
   .content {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 30px;
-    gap: 20px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
-    border-radius: 5px;
     width: 350px;
     height: 300px;
     background: rgb(0, 113, 194);
     color: white;
-    padding: 40px;
+    padding: 10px;
+    gap: 3rem;
 
     .close {
-      padding-left: 300px;
-
-      p {
-        color: #003580;
-        font-size: 8pt;
-        border: 1px solid white;
-        background-color: white;
-        border-radius: 80%;
-        padding: 4px 6px;
-      }
-      // padding-bottom: 100px;
-    }
-
-    .write {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      padding: 4px;
+
+      cursor: pointer;
+      &:hover {
+        background: white;
+        color: rgb(0, 113, 194);
+      }
+    }
+
+    .text {
       text-align: center;
-      gap: 5px;
-      font-size: 16pt;
-      letter-spacing: 1px;
-    }
-
-    h1 {
-      font-size: 300%;
     }
   }
-
-  p {
-    cursor: pointer;
-    color: white;
-  }
-  &:hover {
-    color: rgb(78, 75, 75);
-  }
-}
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(63, 63, 63, 0.881);
-  z-index: -1;
-}
-
-.Btn {
-  margin-top: 1rem;
-  background: #003580;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  padding: 8px 12px;
 }
 
 @keyframes fadeIn {
