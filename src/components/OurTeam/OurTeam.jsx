@@ -83,7 +83,7 @@ const OurTeam = () => {
     <>
       <div className={styles.main}>
         <div className={styles.titleTeam}>
-          <h4>Our </h4> <h2 className={styles.colorBlue}>Team</h2>
+          <h4>Il nostro </h4> <h4 className={styles.colorBlue}> Team</h4>
         </div>
         <div className={styles.container}>
           {/* -------------Chiara------------- */}

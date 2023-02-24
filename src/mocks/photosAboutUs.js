@@ -6,7 +6,7 @@ export const Us = [
     Linkedin: "https://www.linkedin.com/in/chiara-cirrito-90a2021b7/",
     Github: "https://github.com/chiacirrito",
     description:
-      "Hi, I'm a 24 years old sicilian web developer, Edgemony scholarship winner since October. ",
+      "Sviluppatrice Web siciliana, vincitrice della borsa di studio offerta da Edgemony per il coding bootcamp. Passione per il web design e per tutto ciò che richiede creatività.",
     Sito: "https://chiacirrito.github.io/newportfolio/home.html",
   },
   {
@@ -16,7 +16,7 @@ export const Us = [
     Linkedin: "https://www.linkedin.com/in/edwardcatrimi/",
     Github: "https://github.com/edwardsicily",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, omnis?",
+      "Sviluppatore Web, con la passione per la scienza e la tecnologia. Sempre alla ricerca di nuove opportunità per sviluppare le mie conoscenze e contribuire alla creazione di soluzioni innovative e di facile utilizzo.",
   },
   {
     Name: "Francesco De Caro Carella",
@@ -25,7 +25,7 @@ export const Us = [
     Linkedin: "https://www.linkedin.com/in/francescodecarocarella/",
     Github: "https://github.com/FrancescoDeCaroCarella",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, omnis?",
+      "Specialista appassionato della progettazione grafica e dello sviluppo di applicativi web. Adoro lo studio e il ragionamento che risiedono dietro la composizione di elementi visivi che siano di impatto ma anche sintesi di efficienza e usabilità.",
     Sito: "https://francescodecarocarella.it/",
   },
   {
@@ -35,7 +35,7 @@ export const Us = [
     Linkedin: "https://www.linkedin.com/in/gabriele-chiaramonte/",
     Github: "https://github.com/Gabriele9102",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, omnis?",
+      "Sviluppatore Web con un passato da chef, più di 10 anni nel settore della ristorazione. Attualmente alla ricerca di un'opportunità che mi permetta di proseguire il mio percorso professionale e di studio nel mondo del coding. ",
   },
   {
     Name: "Hysen Shemollari",
@@ -44,6 +44,6 @@ export const Us = [
     Linkedin: "https://www.linkedin.com/in/hysen-shemollari/",
     Github: "https://github.com/ZaoTosh",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, omnis?",
+      "Ingegnere informatico, programmatore, sviluppatore di software. Attualmente alla ricerca di un lavoro come Full Stack Developer, Software Engineer.",
   },
 ];
