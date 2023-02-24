@@ -12,20 +12,24 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-
-    flex-wrap: wrap;
     padding: 10px;
     margin-bottom: 50px;
+    border-bottom: 1px solid #00358090;
 
-    h2 {
+    .colorBlue {
       color: #003580;
     }
   }
   .container {
+    border: 1px solid red;
+    padding: 10px 50px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow: hidden;
+    justify-content: left;
     gap: 20px;
+
     @media screen and (min-width: 767px) {
       flex-direction: row;
       gap: 50px;
