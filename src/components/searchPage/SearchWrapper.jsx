@@ -66,12 +66,11 @@ function SearchWrapper() {
                   <NotFoundSearch />
                 ) : (
                   <>
+                    <h3>{searchResults?.result.length} Strutture trovate</h3>
                     <Select
                       selectFilter={selectFilter}
                       setSelectFilter={setSelectFilter}
                     />
-
-                    <h3>{searchResults?.result.length} STRUTTURE TROVATE</h3>
                     {searchResults?.result.map((el, id) => (
                       <SearchCard key={id} el={el} />
                     ))}
