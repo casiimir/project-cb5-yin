@@ -2,7 +2,7 @@ import React from "react";
 import { datedifference } from "@/utils/utils";
 import styles from "./index.module.scss";
 
-function DateFormReservation({ dates, setDates }) {
+function DateFormReservation({ dates, setDates, errorMsg }) {
   const handleSetCheckIn = (value) => {
     if (!dates.check_in || datedifference(value, dates.check_out) > 0) {
       setDates((prev) => {
@@ -30,6 +30,7 @@ function DateFormReservation({ dates, setDates }) {
       <label>
         Check in
         <input
+          className={errorMsg && styles.Error}
           type="date"
           onChange={(e) => handleSetCheckIn(e.target.value)}
           value={dates.check_in}
@@ -39,6 +40,7 @@ function DateFormReservation({ dates, setDates }) {
       <label>
         Check out
         <input
+          className={errorMsg && styles.Error}
           type="date"
           onChange={(e) => handleSetCheckOut(e.target.value)}
           value={dates.check_out}

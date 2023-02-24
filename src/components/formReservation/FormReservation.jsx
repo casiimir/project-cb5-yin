@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 
-const FormReservation = ({ setShowCheckoutModal }) => {
+const FormReservation = ({ setShowCheckoutModal, dates, setErrorMsg }) => {
   let audio = new Audio("/SuperMarioBros.mp3");
   const start = () => {
     audio.play();
@@ -75,16 +75,20 @@ const FormReservation = ({ setShowCheckoutModal }) => {
           Numero di telefono *
           <input type="text" required />
         </label>
+        <input
+          type="submit"
+          value={"Prenota subito"}
+          className={styles.ReserveNow}
+          onClick={() => {
+            if (!dates.check_in || !dates.check_out) {
+              setErrorMsg(true);
+              return;
+            }
+            setShowCheckoutModal(true);
+            //start();
+          }}
+        />
       </form>
-      <button
-        className={styles.ReserveNow}
-        onClick={() => {
-          setShowCheckoutModal(true);
-          //start();
-        }}
-      >
-        Prenota subito
-      </button>
     </div>
   );
 };
