@@ -10,6 +10,7 @@ import CloseBtn from "@/atoms/CloseBtn/CloseBtn";
 import Button from "@/atoms/Button/Button";
 import AppContext from "@/store/context";
 import Stars from "@/atoms/Stars/Stars";
+import Head from "next/head";
 
 function nextTrip() {
   const { state, dispatch } = useContext(AppContext);
@@ -106,55 +107,55 @@ function nextTrip() {
                         sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
-                      priority
-                    />
-                  </div>
-                  <div className={styles.Cardinfo}>
-                    <div>
-                      <div className={styles.CardHeader}>
-                        <h3>{el.name}</h3>
-                        <CloseBtn data={el} />
-                      </div>
-                      <div className={styles.star}>
-                        <Stars number={el.class} />
-                      </div>
-                    </div>
-                    <div className={styles.review}>
-                      <Review data={el} />
-                    </div>
-                    <div className={styles.address}>
-                      <div className={styles.country}>
-                        <Image
-                          src={`https://flagcdn.com/${el?.countrycode}.svg`}
-                          width={25}
-                          height={20}
-                          alt="flag"
-                        />
-                        <span>
-                          <p>
-                            {el.country}, {el.city}
-                            <br></br>
-                            {el.address}
-                          </p>
-                        </span>
-                      </div>
-                    </div>
-                    <div className={styles.input}>
-                      <Button
-                        onClick={() => router.push(`hotel/${el.hotel_id}`)}
-                        style="submit"
-                        content="Vedi struttura"
+                        priority
                       />
                     </div>
+                    <div className={styles.Cardinfo}>
+                      <div>
+                        <div className={styles.CardHeader}>
+                          <h3>{el.name}</h3>
+                          <CloseBtn data={el} />
+                        </div>
+                        <div className={styles.star}>
+                          <Stars number={el.class} />
+                        </div>
+                      </div>
+                      <div className={styles.review}>
+                        <Review data={el} />
+                      </div>
+                      <div className={styles.address}>
+                        <div className={styles.country}>
+                          <Image
+                            src={`https://flagcdn.com/${el?.countrycode}.svg`}
+                            width={25}
+                            height={20}
+                            alt="flag"
+                          />
+                          <span>
+                            <p>
+                              {el.country}, {el.city}
+                              <br></br>
+                              {el.address}
+                            </p>
+                          </span>
+                        </div>
+                      </div>
+                      <div className={styles.input}>
+                        <Button
+                          onClick={() => router.push(`hotel/${el.hotel_id}`)}
+                          style="submit"
+                          content="Vedi struttura"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </>
-        )}
-      </div>
-    </MainLayout>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      </MainLayout>
+    </>
   );
 }
-
 export default nextTrip;
