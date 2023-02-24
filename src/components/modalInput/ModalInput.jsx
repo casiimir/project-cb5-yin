@@ -1,10 +1,14 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import AppContext from "@/store/context";
+import { useRouter } from "next/router";
 
 import styles from "./index.module.scss";
 
 const ModalInput = ({ data, setOpenModal, setDestid }) => {
+  const [modalType, setModalType] = useState("home");
   const { dispatch, state } = useContext(AppContext);
+  const router = useRouter();
+
   const dispatchHandler = (el) => {
     setOpenModal(false);
     dispatch({
@@ -14,8 +18,18 @@ const ModalInput = ({ data, setOpenModal, setDestid }) => {
     setDestid(el.dest_id);
   };
 
+  useEffect(() => {
+    setModalType(router.pathname == "/" ? "home" : "search");
+  }, [router.isReady]);
+
   return (
-    <div className={styles.ModalInput}>
+    <div
+      className={
+        modalType === "home"
+          ? `${styles.ModalInput}`
+          : `${styles.ModalInput} ${styles.modalInputOther}`
+      }
+    >
       <div className={styles.wrapperLabel}>
         {data?.map((el, index) => (
           <div
