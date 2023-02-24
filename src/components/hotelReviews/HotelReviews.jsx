@@ -40,14 +40,12 @@ const HotelReviews = ({ dataHotelReview, reviewData }) => {
                   <h5>{customer.author.name}</h5>
                   <span>
                     <Image
-                      src={
-                        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAxlBMVEX///8AAAAAAAAAAAAAAAD////t7e2UzrCOyquDxqN+w6B5wJx1v5nulJZtupNquZHtjY9ftIles4hXsIPsg4dVr4JQrn7sf4JMqnvreX1IqHfqdXlEpXPobXA2oms7n2zpam4zn2gzmWYqm2PnX2MulmEjmV3mXmEplF4fllrmWFwjj1gfjVXjU1fmUFXgTFDeSkrjQkfdQkfeQkLXOD7gNjzgMzjWNDngLzXULzTfKjDfJyzSKzHeIynRJizQIyjdHyTNHyRobP1rAAAABXRSTlMAESIzRJTdRHwAAACYSURBVBgZrcE7DsJQDEXBc22HT2paSva/HBbADhANoLyHQxqL0CAxA38jxDddOjRmVxYn3s6hdqO6MDsqMBmpsRhJdwgkowjS5ARmTjGQmgjMnWJLmkRgHhRb0iQCHzYUThqNgN1AMZIejcBwPkkE6lRGMhF4o3LS1Am8OSuO4azJCOBB8WQmAu2ZicWGhWRirTchvun87AVVDBm1+yb5GwAAAABJRU5ErkJggg=="
-                      }
-                      alt="italia"
-                      width={15}
+                      src={`https://flagcdn.com/${customer?.countrycode}.svg`}
+                      width={20}
                       height={15}
+                      alt="flag"
                     />
-                    Italia
+                    <p>{customer?.countrycode.toUpperCase()}</p>
                   </span>
                 </div>
               </div>
