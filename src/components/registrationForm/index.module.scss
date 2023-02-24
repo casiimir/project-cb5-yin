@@ -1,13 +1,14 @@
 .signup {
-  display: flex;
+  /*display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
-  padding-top: 3rem;
+  gap: 20px;*/
 
   .errorMessage {
     p {
+      margin-top: 5px;
+      text-align: center;
       color: red;
     }
     height: 1rem;
@@ -15,7 +16,6 @@
 
   h2 {
     text-align: center;
-    padding: 1rem 0;
   }
 
   .form {

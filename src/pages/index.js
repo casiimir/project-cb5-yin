@@ -11,10 +11,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Book Yin | Un clone in NextJS creato con gustoso diletto</title>
+        <title>Booking | The best Booking clone built with NextJS</title>
         <meta
           name="description"
-          content="Book Yin | Un clone in NextJS creato con gustoso diletto"
+          content="Booking | The best Booking clone built with NextJS"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
