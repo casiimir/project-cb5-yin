@@ -2,7 +2,6 @@ import styles from "./index.module.scss";
 import Image from "next/image";
 
 const GuestReviews = ({ dataHotelReview, reviewData }) => {
-  console.log(reviewData);
   return (
     <div className={styles.main}>
       <h2>Recensioni degli ospiti</h2>

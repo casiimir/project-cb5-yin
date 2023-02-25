@@ -120,7 +120,7 @@ const OurTeam = () => {
             <div className={styles.figureMember}>
               <p>Front End Developer</p>
             </div>
-            <div className={links == 1 && styles.flagPerson}></div>
+            <div className={links == 1 ? styles.flagPerson : null}></div>
           </div>
 
           {/* -------------Edward------------- */}
@@ -148,7 +148,7 @@ const OurTeam = () => {
             <div className={styles.figureMember}>
               <p>Front End Developer</p>
             </div>
-            <div className={links == 2 && styles.flagPerson}></div>
+            <div className={links == 2 ? styles.flagPerson : null}></div>
           </div>
 
           {/* -------------Francesco------------- */}
@@ -176,7 +176,7 @@ const OurTeam = () => {
             <div className={styles.figureMember}>
               <p>Front End Developer - UX Designer</p>
             </div>
-            <div className={links == 3 && styles.flagPerson}></div>
+            <div className={links == 3 ? styles.flagPerson : null}></div>
           </div>
 
           {/* -------------Gabriele------------- */}
@@ -204,7 +204,7 @@ const OurTeam = () => {
             <div className={styles.figureMember}>
               <p>Front End Developer</p>
             </div>
-            <div className={links == 4 && styles.flagPerson}></div>
+            <div className={links == 4 ? styles.flagPerson : null}></div>
           </div>
 
           {/* -------------Hysen------------- */}
@@ -234,7 +234,7 @@ const OurTeam = () => {
             <div className={styles.figureMember}>
               <p>Full Stack Developer</p>
             </div>
-            <div className={links == 5 && styles.flagPerson}></div>
+            <div className={links == 5 ? styles.flagPerson : null}></div>
           </div>
         </div>
         {/* -------------Description Column------------- */}
