@@ -65,7 +65,7 @@
 
         .input {
           button {
-          font-size: small;
+            font-size: small;
           }
         }
       }
@@ -137,10 +137,13 @@
   }
 
   .FavouritesWrapper {
+    display: flex;
     max-width: 1110px;
     padding: 16px 32px;
 
     .Fav {
+      display: flex;
+      gap: 20px;
       .Card {
         width: 300px;
         display: flex;
@@ -161,8 +164,6 @@
 
           .CardHeader {
             align-items: center;
-
-            
           }
 
           .star {
@@ -186,8 +187,8 @@
 
           .input {
             button {
-            padding: 6px 10px;
-            width: 100%;
+              padding: 6px 10px;
+              width: 100%;
             }
           }
         }
