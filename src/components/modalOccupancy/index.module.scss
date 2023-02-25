@@ -57,6 +57,73 @@
   }
 }
 
+.modalOccupancyOther {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $white;
+  width: 100%;
+  height: 250px;
+  padding: 32px;
+  z-index: 9;
+
+  .modalOverlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .modalContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: -32px;
+    background-color: $white;
+    width: auto;
+    height: 250px;
+    padding: 32px;
+    z-index: 10;
+
+    .modalRow {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .modalCounter {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      outline: 1px solid $light-black;
+      width: 125px;
+      height: 40px;
+      margin-bottom: 4px;
+    }
+
+    .modalInput {
+      padding: 16px 0px 0px;
+    }
+  }
+}
+
+@media screen and (min-width: 1110px) {
+.modalOccupancyOther {
+      .modalOverlay {
+              .modalContainer {
+                display: flex;
+}
+}
+}
+}
+
 /*@media screen and (min-width: 568px) {
   .ModalOccupancy {
     width: 240px;

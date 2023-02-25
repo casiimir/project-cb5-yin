@@ -27,7 +27,7 @@ const ModalInput = ({ data, setOpenModal, setDestid }) => {
       className={
         modalType === "home"
           ? `${styles.ModalInput}`
-          : `${styles.ModalInput} ${styles.modalInputOther}`
+          : `${styles.modalInputOther}`
       }
     >
       <div className={styles.wrapperLabel}>

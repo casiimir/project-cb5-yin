@@ -66,7 +66,7 @@ const AboutDescription = () => {
               degli ovvi limiti dell'API utilizzata.
               <br />
               <br /> Maggiori dettagli sul progetto nonché il codice nella sua
-              interezza, sono visionabilit all'interno delle pagine{" "}
+              interezza, sono visionabili all'interno delle pagine{" "}
               <b>Github</b> dei rispettivi autori developer, i cui link sono a
               seguire in descrizione.{" "}
             </p>

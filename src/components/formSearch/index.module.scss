@@ -30,7 +30,7 @@
     background: $yellow;
     padding: 5px;
     position: relative;
-    
+
     .field {
       width: 100%;
     }
@@ -395,13 +395,11 @@
       }
 
       .inputSubmit {
-        width: 100%;
         position: absolute;
         bottom: 0;
         padding: 5px;
 
         input[type="submit"] {
-          width: 100%;
           background: $blue-button;
           border-radius: 2px;
           border: none;
