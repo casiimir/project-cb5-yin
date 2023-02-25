@@ -11,15 +11,17 @@
     font-size: 14px;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
+    //-webkit-box-orient: vertical;
+    //-webkit-line-clamp: 8;
   }
-  button {
+  /*button {
     border: none;
     background-color: transparent;
     text-align: left;
     width: fit-content;
     color: $blue-button;
     font-weight: bold;
-  }
+    cursor: pointer;
+    padding-top: 15px;
+  }*/
 }
