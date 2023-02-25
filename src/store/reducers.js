@@ -1,3 +1,4 @@
+import { datedifference } from "@/utils/utils";
 const cases = {
   ADD_LOCATION: "ADD_LOCATION",
   REMOVE_LOCATION: "REMOVE_LOCATION",
@@ -57,11 +58,22 @@ const counterReducer = (state, action) => {
 const reducer = (state, action) => {
   switch (action.type) {
     case cases.SET_CHECKOUT:
+      if (state.check_in && datedifference(state.check_in, action.payload) < 0)
+        return {
+          ...state,
+        };
       return {
         ...state,
         check_out: action.payload,
       };
     case cases.SET_CHECKIN:
+      if (
+        state.check_out &&
+        datedifference(action.payload, state.check_out) < 0
+      )
+        return {
+          ...state,
+        };
       return {
         ...state,
         check_in: action.payload,
@@ -87,7 +99,7 @@ const reducer = (state, action) => {
       const updatedFavourites = state.favourites.filter(
         (el) => el.hotel_id !== action.payload
       );
-      console.log(state.favourites, updatedFavourites);
+
       localStorage.setItem(
         "next-trip-favourites",
         JSON.stringify(updatedFavourites)
@@ -129,9 +141,6 @@ const reducer = (state, action) => {
         };
 
     case cases.ADD_CHILDREN:
-      console.log({
-        ...state,
-      });
       return {
         ...state,
         prenotation: {
@@ -153,9 +162,6 @@ const reducer = (state, action) => {
           ...state,
         };
     case cases.ADD_ROOMS:
-      console.log({
-        ...state,
-      });
       return {
         ...state,
         prenotation: {
@@ -164,9 +170,6 @@ const reducer = (state, action) => {
         },
       };
     case cases.REMOVE_ROOMS:
-      console.log({
-        ...state,
-      });
       if (state.prenotation.rooms >= 2) {
         return {
           ...state,

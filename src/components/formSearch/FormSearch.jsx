@@ -37,12 +37,7 @@ const FormSearch = () => {
   const handleSubmit = (e) => {
     //controlli se checkout < checkin
     e.preventDefault();
-    console.log(
-      dates.checkIn,
-      dates.checkOut,
-      destid,
-      !dates.checkIn || !dates.checkOut || !destid
-    );
+
     if (!dates.checkIn || !dates.checkOut || !destid) return;
     router.push(
       `/search?dest_id=${destid}&checkin_date=${dates.checkIn}&checkout_date=${dates.checkOut}&adults_number=${state.prenotation.adults}&children_number=${state.prenotation.children}&room_number=${state.prenotation.rooms}`
@@ -131,9 +126,17 @@ const FormSearch = () => {
 
         <div className={styles.inputDate}>
           <p className={styles.formSpecification}>Data Check-in</p>
-          <input type="date" onChange={(e) => handleCheckIn(e.target.value)} />
+          <input
+            type="date"
+            value={state.check_in}
+            onChange={(e) => handleCheckIn(e.target.value)}
+          />
           <p className={styles.formSpecification}>Data Check-out</p>
-          <input type="date" onChange={(e) => handleCheckOut(e.target.value)} />
+          <input
+            type="date"
+            value={state.check_out}
+            onChange={(e) => handleCheckOut(e.target.value)}
+          />
         </div>
         <div className={styles.field}>
           <p className={styles.formSpecification}>Numero posti letto</p>
