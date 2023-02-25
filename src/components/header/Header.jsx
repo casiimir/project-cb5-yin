@@ -39,6 +39,7 @@ const Header = () => {
               height={24}
               src="https://t-cf.bstatic.com/design-assets/assets/v3.56.0/images-flags/It@3x.png"
               alt="im"
+              priority
             />
             <Button style="icon" content={<FaRegUserCircle />} />
             <div className={styles.mobileBtnsLogin}>
