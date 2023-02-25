@@ -1,7 +1,7 @@
 # Booking.com Clone App
 
 <p>
-<img src="./public/" alt="banner" align="center">
+<img src="https://raw.githubusercontent.com/casiimir/project-cb5-yin/main/public/TheBookingClone.jpg" alt="banner" align="center">
 </p>
 
 <br>
