@@ -5,7 +5,7 @@ const BookingDetails = ({ results, check_in, check_out }) => {
   const numOfDays = datedifference(check_in, check_out);
   return (
     <div className={styles.BookingDetails}>
-      <h3>I tuoi dati di soggiorno</h3>
+      <h4>I tuoi dati di soggiorno</h4>
       <div className={styles.wrapper}>
         <div className={styles.checkIn}>
           <p>Check-in</p>

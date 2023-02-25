@@ -12,7 +12,7 @@ const FormReservation = ({ setShowCheckoutModal, dates, setErrorMsg }) => {
   return (
     <div className={styles.Form} onSubmit={(e) => handleSubmit(e)}>
       <div className={styles.Top}>
-        <h3>Inserisci le tue informazioni</h3>
+        <h4>Completa la prenotazione<br />con le tue informazioni</h4>
         <p>*campi obbligatori</p>
       </div>
 
@@ -77,7 +77,7 @@ const FormReservation = ({ setShowCheckoutModal, dates, setErrorMsg }) => {
         </label>
         <input
           type="submit"
-          value={"Prenota subito"}
+          value={"Conferma prenotazione"}
           className={styles.ReserveNow}
           onClick={() => {
             if (!dates.check_in || !dates.check_out) {
@@ -85,7 +85,7 @@ const FormReservation = ({ setShowCheckoutModal, dates, setErrorMsg }) => {
               return;
             }
             setShowCheckoutModal(true);
-            //start();
+            start();
           }}
         />
       </form>

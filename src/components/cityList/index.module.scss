@@ -56,13 +56,76 @@
       .cityCard {
         width: 32% !important;
         height: auto !important;
+
+        &:hover .cityCTA {
+          top: 50%;
+          left: 50%;
+          opacity: 1;
+          visibility: visible;
+        }
+        &:hover .cityOverlay {
+          top: 0;
+          left: 0;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .cityImage {
+        height: 265px !important;
+        object-fit: cover;
+      }
+
+      .cityOverlay {
+        display: block !important;
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        height: 99%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: all 0.4s ease-in-out 0s;
+        -moz-transition: all 0.4s ease-in-out 0s;
+        transition: all 0.4s ease-in-out 0s;
+        cursor: pointer;
+      }
+
+      .cityCTA {
+        display: block !important;
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+        color: $yellow;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-transition: all 0.5s ease-in-out 0s;
+        -moz-transition: all 0.5s ease-in-out 0s;
+        transition: all 0.5s ease-in-out 0s;
+        font-size: xx-large;
+        cursor: pointer;
+        &:first-line {
+          font-size: small;
+        }
       }
     }
-        .cityName {
+      }
+              .cityName {
       display: none;
     }
-  }
-}
+    }
+
+  
+
 
 @media only screen and (min-width: 1110px) {
   .CityList {

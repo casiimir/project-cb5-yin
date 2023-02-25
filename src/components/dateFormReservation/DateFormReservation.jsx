@@ -25,8 +25,8 @@ function DateFormReservation({ dates, setDates, errorMsg }) {
   };
 
   return (
-    <form className={styles.Form}>
-      <h3>Modifica le date di soggiorno</h3>
+    <form className={styles.FormDate}>
+      <h4>Inserisci le date di soggiorno</h4>
       <label>
         Check in
         <input
