@@ -41,24 +41,10 @@
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1110px) {
   .ModalInput {
     width: 350px;
     height: 250px;
-    position: absolute;
-    left: auto;
-    right: 0;
-    top: 170px;
-    box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.24);
-
-    .wrapperLabel {
-      width: 350px;
-    }
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .ModalInput {
     position: absolute;
     left: auto;
     left: 5px;
