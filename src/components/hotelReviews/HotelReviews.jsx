@@ -53,7 +53,7 @@ const HotelReviews = ({ dataHotelReview, reviewData }) => {
                 {/*<h3>{customer.title}</h3>*/}
                 <div>
                   <h5>Pro</h5>
-                  <span>«{customer.pros}»</span>
+                  <span>«{customer.pros ? customer.pros : "Nessuno"}»</span>
                 </div>
                 <div>
                   <h5>Contro</h5>

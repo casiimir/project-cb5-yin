@@ -75,9 +75,11 @@ function SearchWrapper() {
                         TROVATE
                       </h3>
                     </div>
-                    {searchResults?.result.map((el, id) => (
-                      <SearchCard key={id} el={el} />
-                    ))}
+                    <div className={styles.cardContainer}>
+                      {searchResults?.result.map((el, id) => (
+                        <SearchCard key={id} el={el} />
+                      ))}
+                    </div>
 
                     <SearchPagination
                       searchResults={searchResults}

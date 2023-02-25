@@ -8,7 +8,7 @@ import SectionOne from "../heroOffers";
 
 function SearchCard({ el }) {
   const router = useRouter();
-
+  
   return (
     <div className={styles.Card}>
       <Image
