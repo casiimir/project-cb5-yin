@@ -31,7 +31,7 @@ This project is the final exame of the training and Skill development program to
 - [React.js](https://reactjs.org/) as JavaScript library.
 - [Next.js](https://nextjs.org/) as React framework.
 
-### Other used 🔥
+### Other Tech used 🔥
 
 - Material-UI
 - API

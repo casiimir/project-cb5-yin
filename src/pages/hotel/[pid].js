@@ -31,8 +31,6 @@ function Hotel({ galleryData, descriptionData, dataHotelReview }) {
       ? `?check_in=${state.check_in}&check_out=${state.check_out}`
       : null;
 
-  console.log(additionalstr);
-
   useEffect(() => {
     if (router.isReady) {
       GET(
