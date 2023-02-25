@@ -45,10 +45,8 @@ const Navbar = () => {
             <p>Mi sento fortunato</p>
           </li>
         </Link>
-        <Link href={"/yournexttrip"}>
-          <li
-            className={pathname === "/yournexttrip" ? `${styles.active}` : ""}
-          >
+        <Link href={"/mywishlist"}>
+          <li className={pathname === "/mywishlist" ? `${styles.active}` : ""}>
             <Image
               className={styles.svg}
               src="/heart.svg"

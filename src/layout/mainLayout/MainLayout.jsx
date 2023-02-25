@@ -15,19 +15,18 @@ const MainLayout = ({ children }) => {
   const { state } = useContext(AppContext);
   const [layoutType, setlayoutType] = useState();
 
-
   useLayoutEffect(() => {
     setBanner(router.pathname === "/");
   }, []);
 
-    useLayoutEffect(() => {
-      setlayoutType(router.pathname == "/yournexttrip" ? "yournexttrip" : "");
-    }, [router.isReady]);
+  useLayoutEffect(() => {
+    setlayoutType(router.pathname == "/mywishlist" ? "mywishlist" : "");
+  }, [router.isReady]);
 
   return (
     <div
       className={
-        layoutType === "yournexttrip"
+        layoutType === "mywishlist"
           ? `${styles.MainLayoutWish}`
           : `${styles.MainLayout}`
       }
