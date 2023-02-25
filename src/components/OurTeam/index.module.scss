@@ -33,16 +33,35 @@
     scroll-behavior: smooth;
     justify-content: left;
     gap: 20px;
-
+    @media screen and (min-width: 874px) {
+      justify-content: center;
+      gap: 20px;
+      overflow: hidden !important;
+    }
     @media screen and (min-width: 1000px) {
       justify-content: center;
       gap: 50px;
+      overflow: hidden !important;
     }
     .containerMember {
       height: 250px;
       display: flex;
       flex-direction: column;
-
+      position: relative;
+      .flagPerson {
+        @media screen and (min-width: 874px) {
+          &::before {
+            content: "";
+            background-color: #ebebeb;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            clip-path: polygon(50% 0%, 0 52%, 100% 52%);
+            bottom: -30px;
+            left: 35%;
+          }
+        }
+      }
       .photos {
         display: flex;
         justify-content: center;
@@ -94,9 +113,8 @@
 
   .memberDescription {
     max-width: 990px;
-    height: 300px;
+    height: fit-content;
     background-color: #ebebeb;
-    margin-top: 20px;
     border-radius: 5px;
     padding: 32px;
     @media screen and (min-width: 1000px) {
@@ -104,16 +122,6 @@
       width: 100vw;
       height: fit-content;
       position: relative;
-      &::before {
-        content: "";
-        background-color: #ebebeb;
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        rotate: 45deg;
-        top:-5px;
-        left: 48%;
-      }
     }
 
     .textDescription {
@@ -128,20 +136,18 @@
         gap: 10px;
         flex-direction: column;
       }
-
     }
     .links {
       display: flex;
       gap: 15px;
       justify-content: center;
       align-items: center;
-      font-size: 30px;
+      font-size: 20px;
       @media screen and (min-width: 767px) {
         display: block;
         display: flex;
         gap: 15px;
         font-size: 20px;
-
         text-align: end;
         justify-content: flex-end;
       }
