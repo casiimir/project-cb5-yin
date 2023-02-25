@@ -23,9 +23,7 @@ function SearchCard({ el }) {
         <div className={styles.CardWrapper}>
           <div className={styles.SectionOne}>
             <h4>{el.hotel_name}</h4>
-            <div>
-              <ReviewSearch data={el} />
-            </div>
+            <div>{el && <ReviewSearch data={el} />}</div>
           </div>
           <p>
             {el.city}
