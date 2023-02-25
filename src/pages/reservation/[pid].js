@@ -10,6 +10,7 @@ import Loader from "@/atoms/Loader/Loader";
 import { GET } from "@/utils/http";
 import ModalCheckOut from "@/components/modalCheckOut";
 import DateFormReservation from "@/components/dateFormReservation/DateFormReservation";
+import Image from "next/image";
 
 export default function Reservation() {
   const [errorMsg, setErrorMsg] = useState(false);
@@ -70,26 +71,68 @@ export default function Reservation() {
             </div>
           ) : (
             <>
-              <div className={styles.wrapper}>
-                <BookingDetails
-                  results={results}
-                  check_in={dates.check_in}
-                  check_out={dates.check_out}
-                />
-                <DateFormReservation
-                  dates={dates}
-                  setDates={setDates}
-                  errorMsg={errorMsg}
-                />
+              <div className={styles.header}>
+                <span className={styles.step}>
+                  <span>
+                    <Image
+                      className={styles.svg}
+                      src="/stepreserve.svg"
+                      alt=""
+                      width={22}
+                      height={22}
+                      priority
+                    />
+                  </span>
+                  <span>La tua selezione</span>
+                </span>
+                <span className={styles.step}>
+                  <span>
+                    <Image
+                      className={styles.svg}
+                      src="/stepreserve.svg"
+                      alt=""
+                      width={22}
+                      height={22}
+                      priority
+                    />
+                  </span>
+                  <span>I tuoi dati</span>
+                </span>
+                <span className={styles.step}>
+                  <span>
+                    <Image
+                      className={styles.svg}
+                      src="/stepreserve.svg"
+                      alt=""
+                      width={22}
+                      height={22}
+                      priority
+                    />
+                  </span>
+                  <span>Ultima conferma</span>
+                </span>
               </div>
-              <div className={styles.wrap}>
-                <h2>Le tue informazioni</h2>
-                <CardReservation results={results} />
-                <FormReservation
-                  setShowCheckoutModal={setShowCheckoutModal}
-                  dates={dates}
-                  setErrorMsg={setErrorMsg}
-                />
+              <div className={styles.main}>
+                <div className={styles.wrapper}>
+                  <CardReservation results={results} />
+                  <DateFormReservation
+                    dates={dates}
+                    setDates={setDates}
+                    errorMsg={errorMsg}
+                  />
+                  <BookingDetails
+                    results={results}
+                    check_in={dates.check_in}
+                    check_out={dates.check_out}
+                  />
+                </div>
+                <div className={styles.form}>
+                  <FormReservation
+                    setShowCheckoutModal={setShowCheckoutModal}
+                    dates={dates}
+                    setErrorMsg={setErrorMsg}
+                  />
+                </div>
               </div>
             </>
           )}

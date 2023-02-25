@@ -153,6 +153,7 @@
 
         .ImageWrapper {
           width: 100%;
+          height: 245px;
 
           img {
             object-fit: cover;
@@ -163,12 +164,16 @@
           width: 100%;
           padding: 8px;
 
+          .CardTop {
+            height: 55px;
+            border-bottom: 1px solid $light-gray;
+          }
+
           .CardHeader {
             align-items: center;
           }
 
           .star {
-            border-bottom: 1px solid $light-gray;
             padding-bottom: 8px;
           }
 

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import MainLayout from "@/layout/mainLayout/MainLayout";
 import { getFavouritesFromLS } from "@/utils/utils";
 import styles from "@/styles/Favourites.module.scss";
-import Review from "@/atoms/Review/Review";
+import ReviewFav from "@/atoms/ReviewFav/ReviewFav";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -110,7 +110,7 @@ function nextTrip() {
                       />
                     </div>
                     <div className={styles.Cardinfo}>
-                      <div>
+                      <div className={styles.CardTop}>
                         <div className={styles.CardHeader}>
                           <h3>{el.name}</h3>
                           <CloseBtn data={el} />
@@ -120,7 +120,7 @@ function nextTrip() {
                         </div>
                       </div>
                       <div className={styles.review}>
-                        <Review data={el} />
+                        <ReviewFav data={el} />
                       </div>
                       <div className={styles.address}>
                         <div className={styles.country}>

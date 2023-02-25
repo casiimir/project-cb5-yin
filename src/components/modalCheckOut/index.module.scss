@@ -1,3 +1,5 @@
+@import "@/styles/variables.scss";
+
 .ModalCheckOut {
   position: fixed;
   display: flex;
@@ -26,11 +28,12 @@
     align-items: center;
     flex-direction: column;
     width: 350px;
-    height: 300px;
+    height: 350px;
     background: rgb(0, 113, 194);
     color: white;
     padding: 10px;
     gap: 3rem;
+    border: 16px solid $yellow;
 
     .close {
       display: flex;
@@ -51,7 +54,18 @@
     }
 
     .text {
+      position: absolute;
       text-align: center;
+      top: 30%
+    }
+
+    button {
+      position: absolute;
+      bottom: 20px;
+      background-color: $white;
+      color: $blue-button;
+      padding: 6px 14px;
+      font-size: 14px;
     }
   }
 }

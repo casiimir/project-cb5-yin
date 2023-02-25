@@ -36,12 +36,12 @@ const ModalCheckOut = ({ showCheckoutModal, setShowCheckoutModal }) => {
               </i>
               <div className={styles.text}>
                 <h2>Congratulazioni!</h2>
-                <h4>La tua prenotazione è andata a buon fine</h4>
+                <h4>La tua prenotazione è confermata</h4>
               </div>
 
               <Button
-                style={"secondary"}
-                content={"Vai alla home"}
+                style={"submit"}
+                content={"Torna alla home"}
                 onClick={() => router.push("/")}
               />
             </div>
