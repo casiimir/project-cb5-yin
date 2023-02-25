@@ -16,12 +16,10 @@ function CloseBtn({ data }) {
         <button
           className={styles.button}
           onClick={() => {
-            console.log(data.hotel_id);
             dispatch({
               type: cases.REMOVE_FAVOURITE,
               payload: data.hotel_id,
             });
-            console.log("remove", isFav);
           }}
         >
           <Image src={"closebtn.svg"} width={18} height={18} alt="close" />
@@ -33,7 +31,6 @@ function CloseBtn({ data }) {
               type: cases.ADD_FAVOURITE,
               payload: data,
             });
-            console.log("add", isFav);
           }}
         >
           <Image src={"closebtn.svg"} width={15} height={15} alt="close" />

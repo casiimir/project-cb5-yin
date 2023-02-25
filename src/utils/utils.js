@@ -11,19 +11,6 @@ export const getFavouritesFromLS = () => {
   return favouritesData;
 };
 
-/* const getTodayDate = () => {
-  const oggi = new Date();
-  const anno = oggi.getFullYear();
-  const mese = (oggi.getMonth() + 1).toString().padStart(2, "0");
-  const giorno = oggi.getDate().toString().padStart(2, "0");
-
-  const domani = new Date();
-  domani.setDate(oggi.getDate() + 1);
-  console.log("mentre domani è: ", domani);
-
-  return `${anno}-${mese}-${giorno}`;
-}; */
-
 export const buildSearchQueryString = (params = {}) => {
   // Aggiungi eventuali parametri di default
   const defaultParams = {
@@ -73,8 +60,5 @@ export const datedifference = (check_in, check_out) => {
   );
 
   // Stampa il risultato
-  console.log(
-    `La differenza tra le due date è di ${differenzaInGiorni} giorni.`
-  );
   return differenzaInGiorni;
 };

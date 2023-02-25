@@ -36,7 +36,6 @@ export default function Reservation() {
     if (router.isReady) {
       GET(`hotels/data?hotel_id=${pid}&locale=it`)
         .then((res) => {
-          console.log(res);
           setResults(res);
         })
         .finally(() => setLoading(false));

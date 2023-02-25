@@ -18,7 +18,6 @@ function nextTrip() {
   const router = useRouter();
 
   useEffect(() => {
-    console.log(getFavouritesFromLS());
     dispatch({ type: "SET_FAVOURITES", payload: getFavouritesFromLS() });
   }, []);
   return (
