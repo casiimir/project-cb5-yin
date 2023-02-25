@@ -1,7 +1,7 @@
 .main {
   display: flex;
   justify-content: center;
-  padding: 0;
+  padding-top: 32px;
 
   a {
     font-weight: bolder;
@@ -24,6 +24,10 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      
+      :first-child {
+        color: #003580;
+      }
 
       .imgCasi {
         margin: 20px;
@@ -34,7 +38,7 @@
       }
     }
     .description {
-      padding: 50px 70px;
+      padding: 32px 16px;
       margin-top: 30px;
       display: flex;
       flex-direction: column;
@@ -45,12 +49,15 @@
       .titleDescription {
         display: flex;
         justify-content: center;
+        text-align: center;
         color: black;
       }
       .miniDescription {
         display: flex;
+        margin: 0 auto;
         font-size: 12pt;
         gap: 10px;
+        max-width: 1110px;
 
         p {
           text-align: start;
@@ -68,7 +75,7 @@
 @media screen and (min-width: 767px) {
   .container {
     .description {
-      padding: 50px 80px;
+      padding: 100px 70px !important;
     }
   }
 }

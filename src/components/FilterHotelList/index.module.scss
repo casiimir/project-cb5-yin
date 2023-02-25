@@ -6,6 +6,7 @@
   .container {
     position: relative;
     overflow: visible;
+    
 
     .hotelContainer {
       display: flex;
@@ -16,6 +17,7 @@
       overflow-x: scroll;
       scroll-behavior: smooth;
       gap: 20px;
+      min-height: 285px;
 
       &::-webkit-scrollbar {
         height: 7px;

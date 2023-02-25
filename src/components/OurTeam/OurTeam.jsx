@@ -89,7 +89,9 @@ const OurTeam = () => {
     <>
       <div className={styles.main}>
         <div className={styles.titleTeam}>
-          <h4>Il nostro </h4> <h4 className={styles.colorBlue}> Team</h4>
+          <h3>
+            Our<br></br> <span>Team</span>
+          </h3>
         </div>
         <div className={styles.container}>
           {/* -------------Chiara------------- */}
