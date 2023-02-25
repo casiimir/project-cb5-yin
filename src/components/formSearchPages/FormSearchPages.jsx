@@ -15,7 +15,6 @@ const FormSearchPages = () => {
 
   const { state } = useContext(AppContext);
   const router = useRouter();
-  console.log(router.pathname);
 
   useEffect(() => {
     if (location == "") return;

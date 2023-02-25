@@ -21,6 +21,7 @@ const AboutDescription = () => {
             alt={"img"}
             width={200}
             height={200}
+            priority
           />
         </div>
         <div className={styles.description}>
@@ -66,9 +67,11 @@ const AboutDescription = () => {
               degli ovvi limiti dell'API utilizzata.
               <br />
               <br /> Maggiori dettagli sul progetto nonché il codice nella sua
-              interezza, sono visionabili all'interno delle pagine{" "}
-              <b>Github</b> dei rispettivi autori developer, i cui link sono a
-              seguire in descrizione.{" "}
+              interezza, sono visionabili all'interno delle pagine <b>
+                Github
+              </b>{" "}
+              dei rispettivi autori developer, i cui link sono a seguire in
+              descrizione.{" "}
             </p>
           </div>
         </div>

@@ -17,6 +17,7 @@ function SearchCard({ el }) {
         width={120}
         height={150}
         alt="str"
+        priority
       />
 
       <div className={styles.CardInfo}>

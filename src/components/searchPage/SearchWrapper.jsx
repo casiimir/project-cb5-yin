@@ -47,7 +47,7 @@ function SearchWrapper() {
         .finally(() => setLoading(false));
     }
   }, [router.isReady, navigation.current, selectFilter]);
-  console.log(searchResults);
+  
   return (
     <div className={styles.Container}>
       <div className={styles.SearchWrapper}>

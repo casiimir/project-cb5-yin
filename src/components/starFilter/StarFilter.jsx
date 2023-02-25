@@ -6,7 +6,6 @@ const StarFilter = ({ filterByStars, setFilterByStars }) => {
   useEffect(() => {}, [filterByStars]);
 
   function handleOnClick(star) {
-    console.log(filterByStars, star, filterByStars.includes(star));
     if (!filterByStars.includes(star)) {
       //Aggiungi
       setFilterByStars([...filterByStars, star]);

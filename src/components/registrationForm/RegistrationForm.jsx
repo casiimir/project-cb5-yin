@@ -44,7 +44,7 @@ const RegistrationForm = ({ setToggle, setAuthMessage }) => {
         <label className={styles.user}>
           <h4>Password</h4>
           <input
-            className={error.state && `${styles.error}`}
+            className={error.state ? `${styles.error}` : null}
             type="password"
             value={passRegistration}
             onChange={(e) => setPassRegistration(e.target.value)}
@@ -55,7 +55,7 @@ const RegistrationForm = ({ setToggle, setAuthMessage }) => {
         <label className={styles.user}>
           <h4>Conferma password</h4>
           <input
-            className={error.state && `${styles.error}`}
+            className={error.state ? `${styles.error}` : null}
             type="password"
             value={confirmPass}
             onChange={(e) => setConfirmPass(e.target.value)}

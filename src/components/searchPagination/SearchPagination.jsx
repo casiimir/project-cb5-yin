@@ -9,7 +9,6 @@ const SearchPagination = ({
 }) => {
   let totalPage = Math.ceil(searchResults.total_count_with_filters / 20);
 
-  console.log(navigation.current);
   return (
     <nav className={styles.searchPagination}>
       {navigation.current > 1 && (

@@ -2,17 +2,19 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./index.module.scss";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const Navbar = () => {
   const { pathname, query } = useRouter();
 
-  let randomValue = Math.floor(Math.random() * (1377074 - 1377071)) + 1377071;
-  const [random, setRandom] = useState(randomValue);
+  const [random, setRandom] = useState(0);
+
+  useEffect(() => {
+    setRandom(Math.floor(Math.random() * (1377074 - 1377071)) + 1377071);
+  }, []);
 
   const onHandleRandom = () => {
-    setRandom(randomValue);
+    setRandom(random);
   };
-
   return (
     <div className={styles.Navbar}>
       <ul>
@@ -76,4 +78,9 @@ const Navbar = () => {
   );
 };
 
+export async function getStaticProps() {
+  return {
+    random: random,
+  };
+}
 export default Navbar;
