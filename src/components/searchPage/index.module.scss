@@ -3,56 +3,96 @@
 .Container {
   display: flex;
   justify-content: center;
-  padding: 1rem;
 }
+
 .SearchWrapper {
-  padding: 10px 0;
   display: flex;
-  max-width: 1024px;
   flex-direction: column;
-  gap: 2rem;
+  gap: 16px;
 
   .LeftSection {
     width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 1rem;
-
-    .Filter {
-      min-width: 200px;
-    }
-    @media screen and (min-width: 768px) {
-      width: 300px;
-    }
   }
+
   .RightSection {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     align-items: center;
     justify-content: center;
-    min-width: 200px;
+    padding-bottom: 32px;
 
     .ResultWrapper {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-    }
-  }
+      gap: 8px;
 
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-    .RightSection {
-      width: 700px;
+      .HeaderWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 0 16px;
+
+        .headerTitle {
+          text-align: center;
+        }
+      }
     }
   }
 }
 
 .Card {
+  border: 1px solid $light-gray;
+  padding: 8px;
+  background-color: white;
+  display: flex;
+  gap: 8px;
+
+  .CardImage {
+    border-radius: 2px;
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .CardInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    flex: 1;
+
+    h4 {
+      font-size: 14px;    }
+
+    p {
+      font-size: 10pt;
+      padding: 8px 0;
+    }
+
+    .CardDetailedInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .CardButton {
+        background: #003580;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+      .CardButton:hover {
+        background-color: #003580;
+      }
+    }
+  }
+}
+
+/*.Card {
   border: 1px solid rgba($color: #242424, $alpha: 0.1);
   display: flex;
-  padding: 1rem;
   border-radius: 2px;
   gap: 1rem;
 
@@ -100,20 +140,66 @@
         background-color: #003580;
       }
     }
+  }
+}*/
 
-    @media screen and (min-width: 768px) {
-      flex-direction: row;
+@media screen and (min-width: 768px) {
+  .SearchWrapper {
+    display: flex;
+    max-width: 1024px;
+    flex-direction: row;
+    gap: 16px;
 
-      .CardWrapper {
+    .LeftSection {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 1rem;
+
+      .Filter {
+        min-width: 200px;
+      }
+      @media screen and (min-width: 768px) {
+        width: 300px;
+      }
+    }
+
+    .RightSection {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      min-width: 200px;
+      width: 700px;
+
+      .ResultWrapper {
         display: flex;
         flex-direction: column;
+        padding: 0px 16px;
+        gap: 2rem;
+        .headerTitle {
+          text-align: center;
+        }
       }
+    }
+  }
+}
 
-      .SectionOne {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-      }
+@media screen and (min-width: 768px) {
+  .Card {
+    flex-direction: row;
+
+    .CardWrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .SectionOne {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
     }
   }
 }

@@ -52,7 +52,6 @@ function SearchWrapper() {
     <div className={styles.Container}>
       <div className={styles.SearchWrapper}>
         <div className={styles.LeftSection}>
-          {/* <FormSearchPages /> */}
           <FormSearch />
         </div>
         <div className={styles.RightSection}>
@@ -65,15 +64,17 @@ function SearchWrapper() {
                   <NotFoundSearch />
                 ) : (
                   <>
-                    <Select
-                      selectFilter={selectFilter}
-                      setSelectFilter={setSelectFilter}
-                    />
+                    <div className={styles.HeaderWrapper}>
+                      <Select
+                        selectFilter={selectFilter}
+                        setSelectFilter={setSelectFilter}
+                      />
 
-                    <h3>
-                      {searchResults?.total_count_with_filters} STRUTTURE
-                      TROVATE
-                    </h3>
+                      <h3 className={styles.headerTitle}>
+                        {searchResults?.total_count_with_filters} STRUTTURE
+                        TROVATE
+                      </h3>
+                    </div>
                     {searchResults?.result.map((el, id) => (
                       <SearchCard key={id} el={el} />
                     ))}

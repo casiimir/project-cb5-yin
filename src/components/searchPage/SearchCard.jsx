@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./index.module.scss";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import Review from "@/atoms/Review/Review";
+import { useRouter, useState } from "next/router";
+import ReviewSearch from "@/atoms/ReviewSearch/ReviewSearch";
 import Heart from "@/atoms/Heart/Heart";
 import SectionOne from "../heroOffers";
 
@@ -24,11 +24,13 @@ function SearchCard({ el }) {
           <div className={styles.SectionOne}>
             <h4>{el.hotel_name}</h4>
             <div>
-              <Review data={el} />
+              <ReviewSearch data={el} />
             </div>
           </div>
           <p>
-            {el.city} - {el?.distances[0].text}
+            {el.city}
+            <br />
+            {el?.distances[0].text}
           </p>
         </div>
         <div className={styles.CardDetailedInfo}>
