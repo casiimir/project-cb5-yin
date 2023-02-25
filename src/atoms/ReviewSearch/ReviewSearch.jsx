@@ -11,15 +11,16 @@ function ReviewSearch({ data }) {
 
   return (
     <div className={styles.score}>
-      <span className={cltrExist && styles.scoreNumber}>
+      <span className={cltrExist ? styles.scoreNumber : null}>
         {data?.review_score}
       </span>{" "}
-      <span className={cltrExist && styles.scoreText}>
+      <span className={cltrExist ? styles.scoreText : null}>
         {data?.review_score_word}
       </span>{" "}
-      {cltrExist && "·"}{" "}
+      {cltrExist ? "·" : null}{" "}
       <span className={styles.reviewNumber}>
-        {data.review_nr?.toLocaleString("de-DE")} {cltrExist && "recensioni"}
+        {data.review_nr?.toLocaleString("de-DE")}{" "}
+        {cltrExist ? "recensioni" : null}
       </span>
     </div>
   );
