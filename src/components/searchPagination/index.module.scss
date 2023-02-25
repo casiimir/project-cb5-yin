@@ -4,10 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  outline: 1px solid lightgray;
   width: 100%;
   gap: 3px;
-  padding: 0.5rem;
+  padding: 16px;
 
   ol {
     display: flex;
@@ -23,11 +22,11 @@
     align-items: center;
   }
   .actuallPage {
-    background-color: lightblue;
+    outline: 3px solid $blue-button;
+    
   }
   button {
     background: none;
-    color: $blue-button;
     border: none;
     outline: 1px solid lightgray;
     padding: 0.3rem;
