@@ -1,4 +1,4 @@
-# Fdcc Advice Generator App
+# Booking.com Clone App
 
 <p>
 <img src="./public/" alt="banner" align="center">
