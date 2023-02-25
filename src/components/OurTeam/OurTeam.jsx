@@ -7,12 +7,18 @@ import { CgWebsite } from "react-icons/cg";
 import { Us } from "./../../mocks/photosAboutUs";
 
 const OurTeam = () => {
-  const [member, setMember] = useState([0]);
-  const [links, setLinks] = useState(false);
+  //const [links, setLinks] = useState(false);
+  const [member, setMember] = useState([
+    Us[0].Name,
+    Us[0].Photo,
+    Us[0].Linkedin,
+    Us[0].Github,
+    Us[0].description,
+    Us[0].Sito,
+  ]);
 
   const teamMember = (member) => {
-    let displayLinks = true;
-    setLinks(true);
+    //setLinks(true);
     switch (member) {
       case 1:
         //-------------Chiara-------------
@@ -113,29 +119,6 @@ const OurTeam = () => {
               <p>Front End Developer</p>
             </div>
           </div>
-          {member[0] == "Chiara Cirrito" && (
-            <div className={links ? styles.memberDescription : styles.off}>
-              <div className={styles.links}>
-                <>
-                  <Link href={member[2]}>
-                    <GrLinkedin />
-                  </Link>
-                  <Link href={member[3]}>
-                    <GrGithub />
-                  </Link>
-                  {member[5] && (
-                    <Link href={member[5]}>
-                      <CgWebsite />
-                    </Link>
-                  )}
-                </>
-              </div>
-              <div className={styles.textDescription}>
-                <h2>{member[0]}</h2>
-                <p>{member[4]}</p>
-              </div>
-            </div>
-          )}
 
           {/* -------------Edward------------- */}
           <div className={styles.containerMember}>
@@ -162,29 +145,6 @@ const OurTeam = () => {
             <div className={styles.figureMember}>
               <p>Front End Developer</p>
             </div>
-            {member[0] == "Edward Catrimi" && (
-              <div className={links ? styles.memberDescription : styles.off}>
-                <div className={styles.links}>
-                  <>
-                    <Link href={member[2]}>
-                      <GrLinkedin />
-                    </Link>
-                    <Link href={member[3]}>
-                      <GrGithub />
-                    </Link>
-                    {member[5] && (
-                      <Link href={member[5]}>
-                        <CgWebsite />
-                      </Link>
-                    )}
-                  </>
-                </div>
-                <div className={styles.textDescription}>
-                  <h2>{member[0]}</h2>
-                  <p>{member[4]}</p>
-                </div>
-              </div>
-            )}
           </div>
 
           {/* -------------Francesco------------- */}
@@ -213,29 +173,7 @@ const OurTeam = () => {
               <p>Front End Developer - UX Designer</p>
             </div>
           </div>
-          {member[0] == "Francesco De Caro Carella" && (
-            <div className={links ? styles.memberDescription : styles.off}>
-              <div className={styles.links}>
-                <>
-                  <Link href={member[2]}>
-                    <GrLinkedin />
-                  </Link>
-                  <Link href={member[3]}>
-                    <GrGithub />
-                  </Link>
-                  {member[5] && (
-                    <Link href={member[5]}>
-                      <CgWebsite />
-                    </Link>
-                  )}
-                </>
-              </div>
-              <div className={styles.textDescription}>
-                <h2>{member[0]}</h2>
-                <p>{member[4]}</p>
-              </div>
-            </div>
-          )}
+
           {/* -------------Gabriele------------- */}
           <div className={styles.containerMember}>
             <div className={styles.photos}>
@@ -262,30 +200,9 @@ const OurTeam = () => {
               <p>Front End Developer</p>
             </div>
           </div>
-          {member[0] == "Gabriele Chiaramonte" && (
-            <div className={links ? styles.memberDescription : styles.off}>
-              <div className={styles.links}>
-                <>
-                  <Link href={member[2]}>
-                    <GrLinkedin />
-                  </Link>
-                  <Link href={member[3]}>
-                    <GrGithub />
-                  </Link>
-                  {member[5] && (
-                    <Link href={member[5]}>
-                      <CgWebsite />
-                    </Link>
-                  )}
-                </>
-              </div>
-              {/* -------------Hysen------------- */}
-              <div className={styles.textDescription}>
-                <h2>{member[0]}</h2>
-                <p>{member[4]}</p>
-              </div>
-            </div>
-          )}
+
+          {/* -------------Hysen------------- */}
+
           <div className={styles.containerMember}>
             <div className={styles.photos}>
               <button
@@ -311,51 +228,24 @@ const OurTeam = () => {
             <div className={styles.figureMember}>
               <p>Full Stack Developer</p>
             </div>
-            {member[0] == "Hysen Shemollari" && (
-              <div className={links ? styles.memberDescription : styles.off}>
-                <div className={styles.links}>
-                  <>
-                    <Link href={member[2]}>
-                      <GrLinkedin />
-                    </Link>
-                    <Link href={member[3]}>
-                      <GrGithub />
-                    </Link>
-                    {member[5] && (
-                      <Link href={member[5]}>
-                        <CgWebsite />
-                      </Link>
-                    )}
-                  </>
-                </div>
-                <div className={styles.textDescription}>
-                  <h2>{member[0]}</h2>
-                  <p>{member[4]}</p>
-                </div>
-              </div>
-            )}
           </div>
         </div>
         {/* -------------Description Column------------- */}
-        <div className={links ? styles.memberDescription_2 : styles.off}>
-          <div className={styles.links2}>
-            {links && (
-              <>
-                <Link href={member[2]}>
-                  <GrLinkedin />
-                </Link>
-                <Link href={member[3]}>
-                  <GrGithub />
-                </Link>
-                {member[5] && (
-                  <Link href={member[5]}>
-                    <CgWebsite />
-                  </Link>
-                )}
-              </>
+        <div className={styles.memberDescription}>
+          <div className={styles.links}>
+            <Link href={member[2]}>
+              <GrLinkedin />
+            </Link>
+            <Link href={member[3]}>
+              <GrGithub />
+            </Link>
+            {member[5] && (
+              <Link href={member[5]}>
+                <CgWebsite />
+              </Link>
             )}
           </div>
-          <div className={styles.textDescription2}>
+          <div className={styles.textDescription}>
             <h2>{member[0]}</h2>
             <p>{member[4]}</p>
           </div>
