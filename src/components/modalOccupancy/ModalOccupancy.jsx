@@ -19,7 +19,7 @@ const ModalOccupancy = ({ setOpenModal }) => {
       className={
         modalType == "home"
           ? `${styles.ModalOccupancy}`
-          : `${styles.ModalOccupancy} ${styles.modalOccupancyOther}`
+          : `${styles.modalOccupancyOther}`
       }
     >
       <div
