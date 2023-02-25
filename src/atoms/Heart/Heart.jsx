@@ -12,28 +12,25 @@ function Heart({ data }) {
 
   return (
     <div className={styles.wishBtn}>
-        {isFav ? (
-          <AiFillHeart
-            onClick={() => {
-              console.log(data.hotel_id);
-              dispatch({
-                type: cases.REMOVE_FAVOURITE,
-                payload: data.hotel_id,
-              });
-              console.log("remove", isFav);
-            }}
-          />
-        ) : (
-          <AiOutlineHeart
-            onClick={() => {
-              dispatch({
-                type: cases.ADD_FAVOURITE,
-                payload: data,
-              });
-              console.log("add", isFav);
-            }}
-          />
-        )}
+      {isFav ? (
+        <AiFillHeart
+          onClick={() => {
+            dispatch({
+              type: cases.REMOVE_FAVOURITE,
+              payload: data.hotel_id,
+            });
+          }}
+        />
+      ) : (
+        <AiOutlineHeart
+          onClick={() => {
+            dispatch({
+              type: cases.ADD_FAVOURITE,
+              payload: data,
+            });
+          }}
+        />
+      )}
     </div>
   );
 }

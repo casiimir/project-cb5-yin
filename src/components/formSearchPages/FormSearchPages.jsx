@@ -21,7 +21,6 @@ const FormSearchPages = () => {
     if (location == "") return;
     GET(`hotels/locations?locale=it&name=${location}`).then((res) => {
       if (Array.isArray(res)) {
-        console.log(res);
         setData(res);
       }
     });

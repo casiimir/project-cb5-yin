@@ -9,7 +9,6 @@ import styles from "./index.module.scss";
 import { Navigation, Pagination } from "swiper";
 
 function HotelCarousel({ galleryData }) {
-  //console.log(galleryData);
   return (
     <div className={styles.HotelCarousel}>
       <Swiper
