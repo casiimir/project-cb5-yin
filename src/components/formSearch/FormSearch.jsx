@@ -27,6 +27,7 @@ const FormSearch = () => {
   }, [router.isReady]);
 
   useEffect(() => {
+    if (location.length < 3) return;
     GET(`hotels/locations?locale=it&name=${location}`).then((res) => {
       if (Array.isArray(res)) {
         setData(res);

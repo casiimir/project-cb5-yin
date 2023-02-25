@@ -7,42 +7,12 @@ import { useRouter } from "next/router";
 
 const FilterHotelList = () => {
   const [filterByStars, setFilterByStars] = useState([4, 5]);
-  // const [showLeftArrow, setshowLeftArrow] = useState(false);
-  // const [showRightArrow, setshowRightArrow] = useState(true);
 
   const router = useRouter();
 
   const ref = useRef(null);
   const scroll = (scrollOffset) => {
     ref.current.scrollLeft += scrollOffset;
-    // if (ref.current.scrollLeft == 0) {
-    //   setshowLeftArrow(showLeftArrow);
-    //   console.log("ehy");
-    // } else {
-    //   setshowLeftArrow(!showLeftArrow);
-    //   console.log("test");
-    // }
-    // if (
-    //   ref.current.scrollLeft + ref.current.offsetWidth ==
-    //   ref.current.scrollWidth
-    // ) {
-    //   setshowRightArrow(!showRightArrow);
-    //   console.log("hey2");
-    // } else {
-    //   setshowRightArrow(showRightArrow);
-    //   console.log("test2");
-    // }
-
-    // console.table({
-    //   scrollWidth: ref.current.scrollWidth,
-    //   offsetWidth: ref.current.offsetWidth,
-    //   offsetLeft: ref.current.offsetLeft,
-    //   clientWidth: ref.current.clientWidth,
-    //   clientLeft: ref.current.clientLeft,
-    //   childElementCount: ref.current.childElementCount,
-    //   scrollLeft: ref.current.scrollLeft,
-    //   scrollOffset: ref.current.scrollOffset,
-    // });
   };
   return (
     <div className={styles.HotelList}>
