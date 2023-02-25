@@ -7,7 +7,7 @@ import { CgWebsite } from "react-icons/cg";
 import { Us } from "./../../mocks/photosAboutUs";
 
 const OurTeam = () => {
-  //const [links, setLinks] = useState(false);
+  const [links, setLinks] = useState(1);
   const [member, setMember] = useState([
     Us[0].Name,
     Us[0].Photo,
@@ -18,7 +18,7 @@ const OurTeam = () => {
   ]);
 
   const teamMember = (member) => {
-    //setLinks(true);
+    setLinks(member);
     switch (member) {
       case 1:
         //-------------Chiara-------------
@@ -120,6 +120,7 @@ const OurTeam = () => {
             <div className={styles.figureMember}>
               <p>Front End Developer</p>
             </div>
+            <div className={links == 1 && styles.flagPerson}></div>
           </div>
 
           {/* -------------Edward------------- */}
@@ -147,6 +148,7 @@ const OurTeam = () => {
             <div className={styles.figureMember}>
               <p>Front End Developer</p>
             </div>
+            <div className={links == 2 && styles.flagPerson}></div>
           </div>
 
           {/* -------------Francesco------------- */}
@@ -174,6 +176,7 @@ const OurTeam = () => {
             <div className={styles.figureMember}>
               <p>Front End Developer - UX Designer</p>
             </div>
+            <div className={links == 3 && styles.flagPerson}></div>
           </div>
 
           {/* -------------Gabriele------------- */}
@@ -201,6 +204,7 @@ const OurTeam = () => {
             <div className={styles.figureMember}>
               <p>Front End Developer</p>
             </div>
+            <div className={links == 4 && styles.flagPerson}></div>
           </div>
 
           {/* -------------Hysen------------- */}
@@ -230,6 +234,7 @@ const OurTeam = () => {
             <div className={styles.figureMember}>
               <p>Full Stack Developer</p>
             </div>
+            <div className={links == 5 && styles.flagPerson}></div>
           </div>
         </div>
         {/* -------------Description Column------------- */}

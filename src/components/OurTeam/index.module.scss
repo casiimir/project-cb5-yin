@@ -28,7 +28,6 @@
     align-items: center;
     display: flex;
     flex-direction: row;
-    overflow: hidden;
     overflow-x: scroll;
     scroll-behavior: smooth;
     justify-content: left;
@@ -39,10 +38,25 @@
       gap: 50px;
     }
     .containerMember {
+      margin-bottom: 20px;
       height: 250px;
       display: flex;
       flex-direction: column;
-
+      position: relative;
+      .flagPerson {
+        @media screen and (min-width: 1000px) {
+          &::before {
+            content: "";
+            background-color: #ebebeb;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            rotate: 45deg;
+            bottom: -60px;
+            left: 35%;
+          }
+        }
+      }
       .photos {
         display: flex;
         justify-content: center;
@@ -94,9 +108,8 @@
 
   .memberDescription {
     max-width: 990px;
-    height: 300px;
+    height: fit-content;
     background-color: #ebebeb;
-    margin-top: 20px;
     border-radius: 5px;
     padding: 32px;
     @media screen and (min-width: 1000px) {
@@ -104,16 +117,6 @@
       width: 100vw;
       height: fit-content;
       position: relative;
-      &::before {
-        content: "";
-        background-color: #ebebeb;
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        rotate: 45deg;
-        top:-5px;
-        left: 48%;
-      }
     }
 
     .textDescription {
@@ -128,14 +131,13 @@
         gap: 10px;
         flex-direction: column;
       }
-
     }
     .links {
       display: flex;
       gap: 15px;
       justify-content: center;
       align-items: center;
-      font-size: 30px;
+      font-size: 20px;
       @media screen and (min-width: 767px) {
         display: block;
         display: flex;
