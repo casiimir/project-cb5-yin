@@ -1,27 +1,34 @@
 import React from "react";
 import { datedifference } from "@/utils/utils";
 import styles from "./index.module.scss";
+import { getTodayDate } from "@/utils/utils";
 
 function DateFormReservation({ dates, setDates, errorMsg }) {
   const handleSetCheckIn = (value) => {
-    if (!dates.check_in || datedifference(value, dates.check_out) > 0) {
-      setDates((prev) => {
-        return {
-          ...prev,
-          check_in: value,
-        };
-      });
-    }
+    if (
+      datedifference(value, getTodayDate()) >= 0 ||
+      (dates.check_out && datedifference(value, dates.check_out) < 1)
+    )
+      return;
+    setDates((prev) => {
+      return {
+        ...prev,
+        check_in: value,
+      };
+    });
   };
   const handleSetCheckOut = (value) => {
-    if (!dates.check_out || datedifference(dates.check_in, value) > 0) {
-      setDates((prev) => {
-        return {
-          ...prev,
-          check_out: value,
-        };
-      });
-    }
+    if (
+      datedifference(value, getTodayDate()) >= -1 ||
+      (dates.check_in && datedifference(dates.check_in, value) < 1)
+    )
+      return;
+    setDates((prev) => {
+      return {
+        ...prev,
+        check_out: value,
+      };
+    });
   };
 
   return (
