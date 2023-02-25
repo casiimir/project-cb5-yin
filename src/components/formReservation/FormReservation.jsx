@@ -8,11 +8,21 @@ const FormReservation = ({ setShowCheckoutModal, dates, setErrorMsg }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!dates.check_in || !dates.check_out) {
+      setErrorMsg(true);
+      return;
+    }
+    setShowCheckoutModal(true);
+    start();
   };
   return (
     <div className={styles.Form} onSubmit={(e) => handleSubmit(e)}>
       <div className={styles.Top}>
-        <h4>Completa la prenotazione<br />con le tue informazioni</h4>
+        <h4>
+          Completa la prenotazione
+          <br />
+          con le tue informazioni
+        </h4>
         <p>*campi obbligatori</p>
       </div>
 
@@ -27,7 +37,7 @@ const FormReservation = ({ setShowCheckoutModal, dates, setErrorMsg }) => {
         </label>
         <label>
           Indirizzo e-mail *
-          <input type="text" placeholder="Es. mariorossi@gmail.com" required />
+          <input type="email" placeholder="Es. mariorossi@gmail.com" required />
         </label>
 
         <h4>I tuoi recapiti</h4>
@@ -79,14 +89,6 @@ const FormReservation = ({ setShowCheckoutModal, dates, setErrorMsg }) => {
           type="submit"
           value={"Conferma prenotazione"}
           className={styles.ReserveNow}
-          onClick={() => {
-            if (!dates.check_in || !dates.check_out) {
-              setErrorMsg(true);
-              return;
-            }
-            setShowCheckoutModal(true);
-            start();
-          }}
         />
       </form>
     </div>
