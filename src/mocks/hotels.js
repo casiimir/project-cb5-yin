@@ -25,7 +25,7 @@ export const hotels = [
     countrycode: "at",
     city: "Kaprun",
     country: "Austria",
-    class: 0,
+    class: 1,
     review_nr: 21,
   },
 
@@ -157,7 +157,7 @@ export const hotels = [
     countrycode: "au",
     city: "Perth",
     country: "Australia",
-    class: 0,
+    class: 1,
     review_nr: 824,
   },
   {

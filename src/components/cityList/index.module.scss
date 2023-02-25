@@ -48,8 +48,24 @@
       }
     }
   }
+}
 
-  @media only screen and (min-width: 767px) {
+@media only screen and (min-width: 835px) and (max-width: 1110px) {
+  .CityList {
+    .cityGallery {
+      .cityCard {
+        width: 32% !important;
+        height: auto !important;
+      }
+    }
+        .cityName {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 1110px) {
+  .CityList {
     .cityGallery {
       display: flex;
       align-items: center;
@@ -61,10 +77,7 @@
       .cityCard {
         width: calc((1110px - 16px * 2 - 16px * 2) / 3) !important;
         padding-top: 0 !important;
-        /*&:hover .cityCTA {
-          visibility: visible;
-          opacity: 1;
-        }*/
+
         &:hover .cityCTA {
           top: 50%;
           left: 50%;
@@ -82,30 +95,7 @@
       .cityImage {
         height: 265px !important;
         object-fit: cover;
-        /*-webkit-transition: 0.3s ease-in-out;
-        transition: 0.3s ease-in-out;
-        -webkit-filter: blur(0);
-        filter: blur(0);
-        &:hover {
-          -webkit-filter: blur(2px);
-          filter: blur(2px);
-        }*/
       }
-
-      /*.cityCTA {
-        display: block !important;
-        position: absolute;
-        top: 45%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-size: 1;
-        color: $yellow;
-        visibility: hidden;
-        opacity: 0;
-        text-transform: uppercase;
-        text-align: center;
-        transition: opacity 0.2s, visibility 0.2s;
-      }*/
 
       .cityOverlay {
         display: block !important;

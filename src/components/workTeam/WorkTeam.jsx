@@ -9,7 +9,7 @@ const WorkTeam = () => {
     <>
       <div className={styles.main}>
         <div className={styles.titleTeam}>
-          <h3>About Us</h3>
+          <h1>About Us</h1>
           <p>
             Ti piace questo progetto?<br />Scopri i professionisti che lo hanno
             realizzato

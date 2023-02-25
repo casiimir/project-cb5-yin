@@ -27,7 +27,7 @@
     gap: 10px;
 
     @media screen and (min-width: 568px) {
-      gap: 30px;
+      gap: 16px;
     }
 
     .div {
@@ -44,6 +44,8 @@
       gap: 10px;
       transition: all 0.4s ease;
       padding-top: 10px;
+      color: #003580;
+      font-size: 20px;
     }
 
     .div:hover {
@@ -63,6 +65,7 @@
       @media screen and (min-width: 568px) {
         width: 150px;
         height: 150px;
+        cursor: pointer;
       }
     }
   }
@@ -74,8 +77,7 @@
     button {
       background: #0071c2;
       color: whitesmoke;
-      font-size: 1.1rem;
-      border-radius: 40px;
+      font-size: 16px;
       border: none;
       width: 150px;
       height: 40px;

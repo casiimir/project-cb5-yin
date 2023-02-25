@@ -25,7 +25,7 @@ export const Us = [
     Linkedin: "https://www.linkedin.com/in/francescodecarocarella/",
     Github: "https://github.com/FrancescoDeCaroCarella",
     description:
-      "Specialista appassionato della progettazione grafica e dello sviluppo di applicativi web. Adoro lo studio e il ragionamento che risiedono dietro la composizione di elementi visivi che siano di impatto ma anche sintesi di efficienza e usabilità.",
+      "Web Developer Front-End e Graphic Designer specializzato nella realizzazione di applicativi web, prodotti digitali e stampati che siano di impatto, accessibili e ad alta efficienza comunicativa e prestazionale.",
     Sito: "https://francescodecarocarella.it/",
   },
   {

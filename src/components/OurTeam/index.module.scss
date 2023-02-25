@@ -6,19 +6,21 @@
   flex-direction: column;
   justify-content: central;
   align-items: center;
-  margin-bottom: 80px;
-  margin-top: 80px;
+  margin: 80px 0px;
+
   .titleTeam {
     align-items: center;
+    text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 10px;
-    margin-bottom: 100px;
-    border-bottom: 1px solid #00358090;
+    margin-bottom: 50px;
+    text-transform: uppercase;
 
-    .colorBlue {
+    span {
       color: #003580;
+      font-size: 22px;
     }
   }
   .container {
@@ -26,8 +28,9 @@
     align-items: center;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
     overflow-x: scroll;
-    margin-bottom: 40px;
+    scroll-behavior: smooth;
     justify-content: left;
     gap: 20px;
 
@@ -50,11 +53,12 @@
           height: 150px;
           display: flex;
           border: 0;
-          background: #003580;
+          background: transparent;
           justify-content: center;
           align-items: center;
           border-radius: 100px;
           cursor: pointer;
+
           @media screen and (min-width: 767px) {
             border-radius: 100px;
             &:hover {
@@ -89,33 +93,42 @@
   }
 
   .memberDescription {
-    width: 100vw;
+    max-width: 990px;
     height: 300px;
-    background-color: #24242412;
-    padding: 10px 30px;
-    @media screen and (min-width: 600px) {
+    background-color: #ebebeb;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 32px;
+    @media screen and (min-width: 1000px) {
       justify-content: space-between;
       width: 100vw;
-      height: 180px;
-      padding: 10px 80px;
+      height: fit-content;
+      position: relative;
+      &::before {
+        content: "";
+        background-color: #ebebeb;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        rotate: 45deg;
+        top:-5px;
+        left: 48%;
+      }
     }
 
     .textDescription {
       text-align: left;
       display: flex;
       flex-direction: column;
-      padding: 0 30px;
       gap: 10px;
       @media screen and (min-width: 767px) {
         display: block;
         text-align: left;
         display: flex;
-        padding: 0 30px;
         gap: 10px;
         flex-direction: column;
       }
-      .nameMemberState {
-      }
+
     }
     .links {
       display: flex;
@@ -123,14 +136,11 @@
       justify-content: center;
       align-items: center;
       font-size: 30px;
-      padding-top: 10px;
       @media screen and (min-width: 767px) {
         display: block;
         display: flex;
         gap: 15px;
-        font-size: 30px;
-        padding-top: 10px;
-        padding-right: 60px;
+        font-size: 20px;
 
         text-align: end;
         justify-content: flex-end;

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 const FilterHotelList = () => {
-  const [filterByStars, setFilterByStars] = useState([2, 3, 4]);
+  const [filterByStars, setFilterByStars] = useState([4, 5]);
   // const [showLeftArrow, setshowLeftArrow] = useState(false);
   // const [showRightArrow, setshowRightArrow] = useState(true);
 
@@ -77,12 +77,15 @@ const FilterHotelList = () => {
                 </p>
                 <div className={styles.scoreContainer}>
                   <h6 className={styles.score}>{elem.review_score}</h6>
-                  <p className={styles.review}> {elem.review_nr}</p>
+                  <p className={styles.review}>
+                    {" "}
+                    {elem.review_nr?.toLocaleString("de-DE")}
+                  </p>
                 </div>
               </div>
             );
           })}
-          <button onClick={() => scroll(-340)} className={styles.arrowLeft}>
+          <button onClick={() => scroll(-280)} className={styles.arrowLeft}>
             <Image
               className={styles.svg}
               src="/arrowleft.svg"
@@ -92,7 +95,7 @@ const FilterHotelList = () => {
               priority
             />
           </button>
-          <button onClick={() => scroll(340)} className={styles.arrowRight}>
+          <button onClick={() => scroll(280)} className={styles.arrowRight}>
             <Image
               className={styles.svg}
               src="/arrowright.svg"
