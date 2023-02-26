@@ -37,6 +37,11 @@
           text-align: center;
         }
       }
+      .cardContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
     }
   }
 }
@@ -178,7 +183,7 @@
           }
         }
 
-        .cardContainer{
+        .cardContainer {
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
