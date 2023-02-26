@@ -19,11 +19,13 @@ const HeroOffers = () => {
           <div className={styles.content}>
             <h4>Prenditi un po' di tempo per te</h4>
             <p>Scegli la libertà di un soggiorno mensile con Booking.com</p>
-            <Button
-              style="outline"
-              content={"Scopri il tuo alloggio ideale"}
-              href={"http://localhost:3000/search?dest_id=-123798"}
-            />
+            <Link href={"http://localhost:3000/search?dest_id=-123798"}>
+              <Button
+                style="outline"
+                content={"Scopri il tuo alloggio ideale"}
+                href={"http://localhost:3000/search?dest_id=-123798"}
+              />
+            </Link>
           </div>
         </div>
         <div className={styles.card}>
@@ -35,11 +37,14 @@ const HeroOffers = () => {
           <div className={styles.content}>
             <h4>Anno nuovo, avventure nuove</h4>
             <p>Risparmia se prenoti e soggiorni prima del 31 marzo 2023</p>
-            <Button
-              style="outline"
-              content={"Scopri le ultime offerte"}
-              href={"http://localhost:3000/search?dest_id=-123798"}
-            />
+            <Link href={"http://localhost:3000/search?dest_id=-114787"}>
+              {" "}
+              <Button
+                style="outline"
+                content={"Scopri le ultime offerte"}
+                href={"http://localhost:3000/search?dest_id=-123798"}
+              />
+            </Link>
           </div>
         </div>
       </div>
