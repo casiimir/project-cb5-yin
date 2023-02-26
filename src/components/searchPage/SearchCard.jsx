@@ -14,8 +14,8 @@ function SearchCard({ el }) {
       <Image
         className={styles.CardImage}
         src={el.max_photo_url}
-        width={120}
-        height={150}
+        width={400}
+        height={400}
         alt="str"
         priority
       />
