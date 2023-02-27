@@ -37,7 +37,7 @@ function DateFormReservation({ dates, setDates, errorMsg }) {
       <label>
         Check in
         <input
-          className={errorMsg && styles.Error}
+          className={errorMsg ? styles.Error : null}
           type="date"
           onChange={(e) => handleSetCheckIn(e.target.value)}
           value={dates.check_in}
@@ -47,7 +47,7 @@ function DateFormReservation({ dates, setDates, errorMsg }) {
       <label>
         Check out
         <input
-          className={errorMsg && styles.Error}
+          className={errorMsg ? styles.Error : null}
           type="date"
           onChange={(e) => handleSetCheckOut(e.target.value)}
           value={dates.check_out}
