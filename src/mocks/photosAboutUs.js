@@ -40,7 +40,7 @@ export const Us = [
   {
     Name: "Hysen Shemollari",
     Photo:
-      "https://media.licdn.com/dms/image/D4E35AQH1fXi3h4Fuvw/profile-framedphoto-shrink_400_400/0/1676973857888?e=1677682800&v=beta&t=eWBfUe4M9E-wPI56qL5WIp0fyv_OdqC75gOwCXxd0PM",
+      "https://media.licdn.com/dms/image/D4D35AQEOkv3i3xWt0Q/profile-framedphoto-shrink_400_400/0/1677184571656?e=1678111200&v=beta&t=XonOqQbFwIr-f4mZbtluAPF676a80_pZRuJWt0DfBZ4",
     Linkedin: "https://www.linkedin.com/in/hysen-shemollari/",
     Github: "https://github.com/ZaoTosh",
     description:
