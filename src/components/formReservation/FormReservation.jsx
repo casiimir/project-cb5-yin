@@ -1,11 +1,20 @@
+import { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 
 const FormReservation = ({ setShowCheckoutModal, dates, setErrorMsg }) => {
-  let audio = new Audio("/SuperMarioBros.mp3");
-  const start = () => {
-    audio.play();
-  };
+  const [audioTrack, setAudioTrack] = useState(null);
 
+  useEffect(() => {
+    setAudioTrack(
+      new Audio(
+        "https://vgmsite.com/soundtracks/super-mario-bros/gbkvopfwuy/06%20Level%20Complete.mp3"
+      )
+    );
+  }, []);
+
+  const start = () => {
+    audioTrack.play();
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!dates.check_in || !dates.check_out) {
