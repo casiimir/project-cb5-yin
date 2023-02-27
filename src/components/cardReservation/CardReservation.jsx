@@ -3,13 +3,11 @@ import Image from "next/image";
 import ReviewSearch from "@/atoms/ReviewSearch/ReviewSearch";
 
 function CardReservation({ results }) {
-
   let str = "";
   let starStr = "⭐";
   for (let i = 0; i < results.class; i++) {
     str += starStr;
   }
-
   return (
     <div className={styles.Card}>
       {results && (
@@ -20,13 +18,14 @@ function CardReservation({ results }) {
             width={340}
             height={230}
             alt="str"
+            priority
           />
           <div className={styles.CardInfo}>
             <div className={styles.CardWrapper}>
               <div className={styles.TopCard}>
                 <span className={styles.typo}>
                   {
-                    results?.booking_home.group
+                    results?.booking_home?.group
                       .replaceAll("_", " ")
                       .split(" ")[0]
                   }
@@ -44,6 +43,7 @@ function CardReservation({ results }) {
                     width={20}
                     height={15}
                     alt="flag"
+                    priority
                   />{" "}
                   {results?.country} ({results?.zip})
                 </span>
