@@ -7,7 +7,7 @@ export const Us = [
     Github: "https://github.com/chiacirrito",
     description:
       "Sviluppatrice Web siciliana, vincitrice della borsa di studio offerta da Edgemony per il coding bootcamp. Passione per il web design e per tutto ciò che richiede creatività.",
-    Sito: "https://chiacirrito.github.io/newportfolio/home.html",
+    Sito: "https://portfolio-chi-five-66.vercel.app/",
   },
   {
     Name: "Edward Catrimi",

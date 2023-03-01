@@ -11,8 +11,9 @@ const WorkTeam = () => {
         <div className={styles.titleTeam}>
           <h1>About Us</h1>
           <p>
-            Ti piace questo progetto?<br />Scopri i professionisti che lo hanno
-            realizzato
+            Ti piace questo progetto?
+            <br />
+            Scopri i professionisti che lo hanno realizzato
           </p>
         </div>
         <div className={styles.photos}>
@@ -33,9 +34,7 @@ const WorkTeam = () => {
               <Link href={"https://github.com/chiacirrito"}>
                 <GrGithub />
               </Link>
-              <Link
-                href={"https://chiacirrito.github.io/newportfolio/home.html"}
-              >
+              <Link href={"https://portfolio-chi-five-66.vercel.app/"}>
                 <CgWebsite />
               </Link>
             </div>
