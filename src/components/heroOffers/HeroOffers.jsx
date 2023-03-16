@@ -19,11 +19,11 @@ const HeroOffers = () => {
           <div className={styles.content}>
             <h4>Prenditi un po' di tempo per te</h4>
             <p>Scegli la libertà di un soggiorno mensile con Booking.com</p>
-            <Link href={"/search?dest_id=-114787"}>
+            <Link href={"http://localhost:3000/search?dest_id=-123798"}>
               <Button
                 style="outline"
                 content={"Scopri il tuo alloggio ideale"}
-                href={"/search?dest_id=-114787"}
+                href={"http://localhost:3000/search?dest_id=-123798"}
               />
             </Link>
           </div>
