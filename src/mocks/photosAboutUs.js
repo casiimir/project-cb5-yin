@@ -31,7 +31,7 @@ export const Us = [
   {
     Name: "Gabriele Chiaramonte",
     Photo:
-      "https://media.licdn.com/dms/image/D4D35AQHeH5oS-tddYg/profile-framedphoto-shrink_400_400/0/1675848640079?e=1677682800&v=beta&t=qaYEKOnUuCFApa9F_9bcM4pWQcUy27lDaRx4e9IKnLw",
+      "https://media.licdn.com/dms/image/D4D35AQHeH5oS-tddYg/profile-framedphoto-shrink_400_400/0/1675848640079?e=1680602400&v=beta&t=qumDlGGnzHPWUJDjILXxvvrOjOedTvv56_1kt2nvjLg",
     Linkedin: "https://www.linkedin.com/in/gabriele-chiaramonte/",
     Github: "https://github.com/Gabriele9102",
     description:
@@ -40,7 +40,7 @@ export const Us = [
   {
     Name: "Hysen Shemollari",
     Photo:
-      "https://media.licdn.com/dms/image/D4D35AQEOkv3i3xWt0Q/profile-framedphoto-shrink_400_400/0/1677184571656?e=1678111200&v=beta&t=XonOqQbFwIr-f4mZbtluAPF676a80_pZRuJWt0DfBZ4",
+      "https://media.licdn.com/dms/image/D4D35AQEOkv3i3xWt0Q/profile-framedphoto-shrink_400_400/0/1677184571656?e=1680602400&v=beta&t=rwr2068lxewQP78T0OM_AJa_Lpz0REIcQ2K_qWaXG1Q",
     Linkedin: "https://www.linkedin.com/in/hysen-shemollari/",
     Github: "https://github.com/ZaoTosh",
     description:
